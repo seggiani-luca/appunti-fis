@@ -1,0 +1,71 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{11 Aprile 2024}
+
+\begin{document}
+\maketitle
+\section{Urti}
+Ricordiamo la definizione di impulso per una forza:
+$$ \vec{I}_{t_0\rightarrow t} = \int_{t_0}^t \vec{F}dt'$$
+e il fatto che la sua variazione sulle forze esterne equivale alla variazione della quantità di moto di un sistema:
+$$ \vec{p}(t) - \vec{p}(t_0) = \int_{t_0}^t \vec{F}dt' $$
+
+\par\smallskip
+\textbf{Forze impulsive} \\
+Una forza impulsiva è una forsa che viene esercitata per un tempo estremamente limitato. Spesso
+l'intensità di una forza impulsiva $F_{imp}$ è talmente grande che il suo effetto viene comunque apprezzato,
+e anzi è talmente predominante da permettere di trascurare gli effetti di altre forze, ovvero:
+$$ \sum_{i=0}^n \vec{F}_i^{(est)} \approx \vec{F_{imp}} $$
+A volte si conosce la variazione della quantità di moto di un corpo su cui ha agito una forza impulsiva per un
+certo periodo di tempo, ma di cui è sconosciuta l'intensità. Si può allora determinare la forza media impulsiva
+$<F_{imp}>$ che avrebbe sortito il medesimo effetto fosse stata applicata sull'intervallo $\Delta t$:
+$$ <\vec{F_{imp}}> = \frac{\int_{t_i}^{t_f} \vec{F_{imp}}}{\Delta t} = \frac{\Delta \vec{p}}{\Delta t}$$
+Facciamo un'esempio non intuitivo sulla forza media. Un corpo in movimento con velocità costante $v_1$ subisce ad un certo
+punto un'impulso che lo spinge verso l'alto, dandogli nell'istante immediatamente successivo velocità uguale in modulo
+a $v_1$ ma orientata di un'angolo $\theta$ rispetto all'orizzontale. Possiamo impostare:
+$$ v_1 = (v_1, 0), \quad v_2 = (v_1\cos{\theta}, v_1\sin{\theta}) $$
+Possiamo impostare la conservazione per trovare la forza media:
+$$  <\vec{F_{imp}}> + mg = \frac{\int_{0}^{t} \vec{F}dt'}{dt} = \frac{m(v_1-v_2)}{t} $$
+possiamo impostare quindi le equazioni sui diversi assi, ricordando che $mg$ agisce solamente sull'asse y!
+$$ <\vec{F_{imp}}_x> = \frac{m(v_{2x} - v_{1x})}{t} = m(\frac{v_1(\cos{\theta}-1)}{t}) $$
+$$ <\vec{F_{imp}}_y> = \frac{m(v_{2y} - v_{1y})}{t} = m(\frac{v_1\sin{\theta}}{t}) $$
+\par\smallskip
+\textbf{Collisioni} \\
+Quando due punti materiali si avvicinano fra di loro, la loro mutuale interazione produce un cambiamento del loro stato
+di moto, comportando:
+\begin{itemize}
+  \item Scambio di quantità di moto;
+  \item Scambio di energia cinetica.
+\end{itemize}
+Quando la variazione di quantità di moto è notevole, mentre la durata dell'interazione molto piccola, si parla
+di un urto (o collisione). Le forze che producono un urto sono forze impulsive e interne al sistema dei due
+corpi che collidono, quindi come sempre possiamo trascurare l'effetto delle altre forze non impulsive. Cosa
+ancorà più importante, visto che le forze impulsive sviluppate sono forze interne al sistema, la quantità
+di moto totale del sistema si conserva sempre durante un urto. Come vedremo non sempre vale lo stesso per
+l'energia cinetica. \\ Analizziamo adesso il moto di ude sfere che si incontrano l'un l'altra. Possiamo dividere
+il moto in 3 fasi:
+\begin{itemize}
+  \item Nella prima fase, entrambi i corpi si muovono l'uno verso l'altro, imperturbati da qualsiasi interazione reciproca;
+  \item la seconda fase avviene durante l'urto, in cui avviene l'interazione vera e propria fra i due corpi.
+    In questa fase entrambi i corpi tendono ad occupare lo spazio altrui provocando deformazioni reciproche. Queste
+    deformazioni portano allo sviluppo di una forza elastica che si oppone alla deformazione stessa e cerca di ristabilire
+    l'equilibrio precedente, allontanando quindi le sfere. La variazione è brusca, ergo esiste una forza impulsiva.
+  \item Nella fase immediatamente successiva all'urto, i due corpi si trovano nuovamente in moto imperturbati, ma con
+    moti diversi a quelli di partenza.
+\end{itemize}
+\par\smallskip
+\textbf{Classificazione delle collisioni} \\
+Possiamo classificare gli urti in due categorie principali:
+\begin{itemize}
+  \item \textbf{Urti anelastici}, dove l'energia cinetica $K$ non si conserva, perchè le forze di deformazione
+    trasformano l'energia meccanica in altre forme. $\vec{P}$ come sempre si conserva. Un caso particolare è l'urto completamente
+    anelastico, dove dopo l'urto i corpi restano attaccati fra di loro.
+  \item \textbf{Urti elastici}, dove sia $K$ che $\vec{P}$ si conservano.
+\end{itemize}
+\end{document}

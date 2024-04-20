@@ -1,0 +1,59 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica 1}
+\author{Luca Seggiani}
+\date{19 Aprile 2024}
+
+\begin{document}
+\maketitle
+\par\smallskip
+\textbf{Rotazione in distribuzione di massa asimmetrica} \\
+Vediamo nel dettaglio la situazione dove la distribuzione di massa è asimmetrica rispetto all'asse di rotazione (può
+comunque essere simmetrica, solo su un asse sghembo rispetto a quello di rotazione). Immaginiamo un manubrio formato da un'asta
+di massa trascurabile e lunghezza $l$ e due punti materiali di massa $M$ alle sue estremità. Il manubrio è piegato di un angolo
+$\theta$ rispetto alla verticale, e ruota invece proprio attorno alla verticale. Avremo che il suo momento angolare sarà la somma
+dei momenti delle due masse:
+$$ \vec{L} = \vec{L_1} + \vec{L_2} $$
+L'angolo formato tra la velocità angolare e il momento angolare sarà allora $(\frac{\pi}{2} - \theta)$, da cui:
+$$ \vec{L} = \sum m_i\vec{R_i} \times \vec{v_i}, \quad v_i = \omega \frac{l}{2} \sin{\theta} \Rightarrow L_1 = L_2 = M \frac{l}{2} \omega \frac{l}{2} \sin{\theta} $$
+Dividiamo allora questo momento sui due assi:
+$$ L_{1_z} = L_{2_z} = L_1\cos{\frac{\pi}{2} - \theta} = L_1\sin{\theta} = 2L_1\sin{\theta} = \frac{M}{2} l^2 \omega \sin{\theta}^2 = I_z\omega$$
+Che corrisponde al momento di inerzia rispetto all'asse di rotazione $\hat{\omega}$. Notiamo che qui il momento angolare vale $I_z = \frac{M}{2} l^2 \sin^2{\theta}$,
+e $l\sin{\theta}$ non è altro che la distanza $d_i$ del punto materiale dall'asse di rotazione. Ergo vale la solita formula per il momento d'inerzia di una massa sospesa:
+$$ I_z = md_i^2, \quad d_i = l\sin{\theta} \Rightarrow I_z = \frac{M}{2}l^2\sin{\theta}^2 $$
+\\ Il momento angolare è inoltre costante lungo l'asse z: il momento delle forze sarà tutto sull'asse x, visto che l'unica forza in gioco è la forza peso.
+Si avrà allora che:
+$$ \tau_z = 0, \quad \frac{dL}{dt} = \vec{\tau} \Rightarrow \frac{dL_z}{dt} = 0, \quad L_z = \mathrm{const.}$$
+La componente $L_\perp$ sarà invece in continua variazione, come avevamo già visto.
+\par\smallskip
+\textbf{Seconda equazione cardinale per momento angolare parallelo all'asse} \\
+Abbiamo quindi che per distribuzioni di massa simmetrica ($\vec{L} \parallel \vec{\omega})$:
+$$ \vec{L} = I_z\omega $$
+Possiamo derivare $\vec{L}$:
+$$ \vec{\tau} = \frac{d\vec{L}}{dt} = \frac{dI_z\omega}{dt} = I_z\vec{\alpha} $$
+Questo significa che il momento delle forze esterne agenti rispetto all'asse di rotazione permette di calcolare l'accelerazione
+angolare $\vec{\alpha}$.
+\section{Lavoro nel moto rotazionale}
+Prendiamo il caso di una carrucola spinta da una forza $T$ posta ad una distanza $R$ dal centro. Avremo che il lavoro su uno spostamento
+infinitesimo $d\mathcal{L}$ è:
+$$ d\mathcal{L} = \vec{T} \cdot \vec{dr} = T dr \cos{0}, \quad dr = Rd\theta $$
+$$ d\mathcal{L} = TRd\theta = \tau_z d\theta $$
+Quindi il momento torcento compie un lavoro pari al momento della forza per la variazione dell'angolo. In generale
+il lavoro per una rotazione finita dall'angolo $\theta_i$ all'angolo $\theta_f$ sarà:
+$$ \mathcal{L}_{\theta_i\rightarrow\theta_f} = \int_{\theta_i}^{\theta_f} \tau_z d\theta = \int_{\theta_i}^{\theta_f} I_z \dot{\omega} d\theta = \int_{\theta_i}^{\theta_f} I_z\dot{\omega}\omega dt = \int_{\theta_i}^{\theta_f} I_z \frac{d\omega}{dt}\omega dt = \int_{\theta_i}^{\theta_f} I_z \omega d\omega$$
+Che da il risultato:
+$$ \mathcal{L} = \frac{1}{2}I_z\omega_f^2 - \frac{1}{2}I_z\omega_i^2 $$
+\par\smallskip
+\textbf{Conservazione dell'energia rotazionale} \\
+Riprendiamo la nostra carrucola. Sia una massa $m$ attaccata alla carrucola attraverso una fune. Calcoliamo allora la variazione di energia
+meccanica quando la massa scende di un tratto $h$, notando che $h = R\theta$:
+$$ \Delta E = L_{NC} = L_{\vec{T}} - L_{\vec{T}} + L_{R_v} = 0 $$
+Ergo se non ci sono forze non conservative l'energia meccanica si conserva:
+$$ E_i = E_f,\quad E_i = mgh_i, \quad E_f = \frac{1}{2}mv_m^2 + \frac{1}{2}I\omega^2 + mgh_f $$
+$$ \Rightarrow mg(h_i-h_f) = \frac{1}{2}mv_m^2 + \frac{1}{2}I\omega^2 $$
+
+\end{document}

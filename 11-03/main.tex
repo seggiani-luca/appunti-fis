@@ -1,0 +1,69 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{11 Marzo 2024}
+
+\usepackage{amsmath}
+
+\begin{document}
+\maketitle
+\section{Moto dei proiettili}
+Studiamo adesso il moto dei proiettili, ovvero corpi lanciati con una certa velocità iniziale $\vec{v_0}$ e
+da lì in poi soggetti all'accelerazione di gravità $g$. Il moto avviene nel piano individuato da $g$ e $\vec{v_0}$,
+e può essere diviso nelle componenti:
+$$
+\begin{aligned}
+\left\{\begin{array}{l}
+  a_x = 0 \cr \\
+  a_y = -g 
+\end{array}\right.
+& 
+\left\{\begin{array}{l}
+  v_x = v_{0x} = \mathrm{const.} \cr \\
+  v_y = v_{0y} - gt 
+\end{array}\right.
+&
+\left\{\begin{array}{l}
+  x = x_0 + v_{0x}t \cr \\
+  y = y_0 + v_{0y}t - \frac{1}{2}gt^2 
+\end{array}\right.
+\end{aligned}
+$$
+
+troviamo adesso dei risultati interessanti riguardo al moto dei proiettili. Possiamo innanzitutto
+determinare:
+\par\smallskip
+\textbf{Traiettoria} \\
+Elminiamo $t$ dalle equazioni della posizione ricavando $t$ dalla prima e sostituendolo nella seconda:
+$$ x = x_0 + v_{0x}t, \quad t = \frac{x-x_0}{v_{0x}} $$
+$$ y = y_0 + v_{0y}(\frac{x-x_0}{v_{0x}})-\frac{1}{2}g(\frac{x-x_0}{v_{0x}})^2 $$
+impostiamo un sistema di riferimento cartesiano centrato sul punto da dove viene lanciato il proiettile,
+ponendo quindi $x_0$ e $y_0$ coordinate iniziali uguali a zero. Inoltre, definiamo $\vec{v_0}$ in coordinate polari,
+ovvero in funzione dell'angolo di lancio $\theta$ e del suo modulo $v_0$:
+$$ x_0, y_0 = 0, \quad \vec{v_0} = (v_0\cos{\theta}, v_0\sin{\theta}) $$
+ottenendo l'equazione finale della traiettoria:
+$$ y = \tan{\theta}x - \frac{gx^2}{2(v_0\cos{\theta})^2}$$
+Determinamo adesso la distanza percorsa dal proiettile, ovvero la:
+\par\smallskip
+\textbf{Gittata} \\
+Cerchiamo il punto dove il proiettile tocca terra, ponendo la seconda equazione dello spostamento a 0:
+$$ 0 = v_{0y}t - \frac{1}{2}gt^2, \quad \frac{1}{2}gt^2 = v_{0y}t $$
+da cui, escludendo la soluzione triviale $t = 0$ (sarebbe il punto da cui lo lanciamo, ch ovviamente coincide con terra), abbiamo:
+$$ t = 2\frac{v_{0y}}{g} $$
+sostituendo nella prima equazione:
+$$ x = v_{0x}t, \quad x = 2\frac{v_{0x}v_{0y}}{g} $$
+Notiamo che per la proprietà trigonometrica:
+$$ \sin{2x} = 2\cos{x}\sin{x} $$
+$v_{0x}v_{0y}$ vale:
+$$ \frac{v_0^2\sin{(2\theta})}{2} $$
+da cui la formula finale per la gittata:
+$$ \frac{v_0^2 \sin{(2\theta)}}{g} $$
+da cui è tra l'altro ovvio che la gittata massima si otterrà ad un angolo $\theta = 45^\circ$ ($\sin{2\frac{\pi}{4}} = 1$).
+
+
+\end{document}

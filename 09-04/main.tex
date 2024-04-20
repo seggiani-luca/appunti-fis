@@ -1,0 +1,58 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica 1}
+\author{Luca Seggiani}
+\date{9 Aprile 2024}
+
+\begin{document}
+\maketitle
+\section{Conservazione della quantità di moto}
+Consideriamo un sistema a 2 masse, $m_1$ e $m_2$, connesse da una molla su un piano privo di attrito.
+Estendendo la molla, i due punti materiali si allontaneranno fra di loro e la molla esprimerà sui due capi (e quindi
+sui punti materiali stessi) due forze identiche in modulo ma in verso opposto. In simboli, visto che la derivata rispetto
+al tempo della quantità di moto equivale alla forza, avremo che:
+$$ \frac{d\vec{p_1}}{dt} = \vec{F_1}, \quad \frac{d\vec{p_2}}{dt} = \vec{F_2} \Rightarrow \vec{F_2} = -\vec{F_1} $$
+Definendo il vettore quantità di moto totale del sistema $\vec{P}$:
+$$ \vec{P} = \vec{p_1} + \vec{p_2}, \quad \frac{\vec{P}}{dt} = \frac{d\vec{p_1}}{dt} + \frac{d\vec{p_2}}{dt} = F_1 + F_2 = 0 $$
+Ciò significa che la variazione di quantita di moto è nulla, ergo la quantità di moto non cambia nel tempo. Più
+propriamente, se su un sistema di punti materiali agiscono solamente forze interne, o se la risultante delle forze esterne è
+nulla (*), allora la quantità di moto $\vec{P}$ del sistema è un vettore costante nel tempo. Ricordando il teorema dell'impulso
+(riportato negli appunti come principio cardinale dei sistemi):
+$$ \frac{d}{dt}\vec{P_{CM}} = \sum \vec{R}^{(est)} $$
+la condizione (*) diventa $\sum \vec{R^{(est)}} = 0$, che come vediamo già risultava in variazione nulla della quantità
+di moto. \\
+Questa legge di conservazione può essere applicata, più generalmente, in due casistiche:
+\begin{itemize}
+  \item La risultante delle forze esterne è nulla;
+  \item Le forze esterne non sono nulle, ma esse sono limitate, e la durata dell'interazione è trascurabile
+    ($t \rightarrow 0$).
+\end{itemize}
+Possiao inoltre applicare la conservazione su un solo asse, nel caso le condizioni precedenti non siano rispettate
+su assi diversi. \\
+\par\smallskip
+\textbf{Applicazioni della conservazione della quantità di moto} \\
+La conservazione della quantità di moto, assieme alla conservazinoe dell'energia, può essere utilizzata per
+modellizzare semplicemente numerosi fenomeni fisici riguardanti l'interazione fra più corpi (si ricordano ad 
+esempio gli urti). Vediamo un esempio interessante: una pallina di massa $m_1$ parte dalla cima di una superficie a profilo
+semicircolare di massa $m_2$, situata su un piano senza attrito. Cadendo, la pallina spinge la superficie, così che al termine
+della caduta entrambe saranno in moto rettilineo uniforme verso direzioni opposte. Si vuole calcolare le velocità finali di entrambi
+i corpi. Iniziamo dalla conservazione dell'energia. L'energia potenziale della pallina sospesa sulla superficie nell'istante iniziale
+verrà interamente convertita in energia cinetica sia della pallina che della superficie, ergo:
+$$ m_1gh = \frac{1}{2}m_1v_1^2 + \frac{1}{2}m_2v_2^2 $$
+Per eliminare le due incognite $v_1$ e $v_2$, potremo sfruttare il fatto che la conservazione della quantità di moto
+valle sull'asse x del sistema, in quanto non intervengono forze esterne. Si ha quindi:
+$$ m_1v_1 + m_2v_2 = p_i $$
+dove $p_i$ è la quantità di moto nell'istante $t=0$, che possiamo subito impostare come nulla in quanto prima della
+caduta entrambi i corpi sono in quiete. Si avrà quindi che:
+$$ m_1v_1 +m_2v_2 = 0, \quad m_1v_1 = -m_2v_2 \Rightarrow v_1 = -\frac{m_2v_2}{m_1}$$
+Sostituendo nella conservazione dell'energia, avremo:
+$$ gh = \frac{1}{2}(\frac{m_2v_2}{m_1})^2+\frac{1}{2}\frac{m_2}{m_1}v_2^2 \Rightarrow v_2 = -\sqrt{\frac{m_1^2gh}{m_2(m_1+m_2)}}$$
+Con ragionamenti simili avrà poi:
+$$ v_2 = -\frac{m_1v_1}{m_2}, \quad gh = \frac{1}{2}v_1^2 + \frac{1}{2}\frac{m_2}{m_1}(\frac{m_2v_2}{m_1})^2 \Rightarrow v_1 = \sqrt{\frac{2m_2gh}{m_1+m_2}} $$
+N.B.: i segni sono stati scelti in modo da rispettare la conservazione della quantità di moto. Si assume che la pallina venga
+spinta verso destra, e la superficie verso sinistra.
+\end{document}

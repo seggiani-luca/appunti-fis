@@ -1,0 +1,63 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{1 Marzo 2024}
+
+\begin{document}
+\maketitle
+\section{Accelerazione media e istantanea nel moto rettilineo}
+Poniamoci il problema di come definire l'accelerazione media e instantanea nel moto rettilineo. Ricaviamo in
+modo simile a ciò che avevamo fatto per la velocità media:
+$$ a_x = \frac{\Delta v_x}{\Delta t} = a_m = \frac{v_x(t+\Delta t) - v_x(t)}{\Delta t} $$
+e quindi istantanea:
+$$ a_x^i = \lim_{\Delta t \rightarrow 0} a_x = \lim_{\Delta t \rightarrow 0} \frac{v_x(t+\Delta t) - v_x(t)}{\Delta t} = \frac{d^2x}{dt^2} $$
+chiaramente, l'accelerazione istantanea di un corpo non è altro che la derivata seconda della posizione di quel corpo
+in funzione del tempo. Si ricorda infine la notazione $\ddot{x}$ per le derivate seconde.
+\par\smallskip
+Vediamo un esepmio. presa la legge oraria:
+$$ v_x(t) = \frac{dx}{dt} = v_0 + a_0t $$
+la velocità non è costante, ma varia linearmente col tempo. Possiamo calcolare quindi l'accelerazione media come:
+$$ a_m = \frac{\Delta v}{\Delta t} = \frac{v_2 - v_1}{t_2- t_1}, \quad [a_m] = \frac{m}{s^2} $$
+\par\medskip
+\textbf{Ricavare l'accelerazione dalla legge oraria} \\
+Se conosciamo la posizione di un corpo in funzione del tempo secondo la legge oraria $x(t)$, possiamo allora determinare,
+come prima affermato, velocità e accelerazione:
+$$ v = \frac{dx(t)}{dt}, \quad a = \frac{dv(t)}{dt} $$
+
+\textbf{Ricavare la legge oraria dall'accelerazione}
+Possiamo svolgere l'operazione inversa attraverso l'operazione di integrale. Noto che accelerazione e velocità
+sono:
+$$ v = \frac{dx(t)}{dt}, \quad a = \frac{dv(t)}{dt}, \quad vdt = dx $$
+e ho quindi per la velocità:
+$$ \int_{t_0}^t a_x dt' = \int_{t_0}^t \frac{dv_x}{dt'} dt' = v_x - v_{0x}, \quad v_x = v_{0x} + \int_{t_0}^t a_x dt' $$
+e per lo spostamento:
+$$ \int_{t_0}^t v_x dt' = \int_{t_0}^t \frac{dx}{dt'} dt' = \int_{x(t_0)}^{x(t)}dx = x(t) - x(t_0) $$
+$$ x(t) = x(t_0) + \int_{v_0}^t v_x dt' = x(t_0)+ \int_{t_0}^{t} v_x dt' $$
+
+\section{Moto rettilineo uniforme}
+Il moto rettilineoo uniforme è un tipo di moto dove la velocità è costante e l'accelerazione nulla. Dalle
+formule precedenti, abbiamo:
+$$ a_x(t) = \frac{dv_x}{dt} = 0, \quad \mathrm{da} \quad v_x = \frac{dx}{dt} = v_{0x} \quad v_{0x}dt = dx $$
+$$ \int_{t_0}^t v_{0x} dt' = \int_{t_0}^t \frac{dx}{dt'} dt' =  \int_{x(t_0)}^{x(t)}dx = x(t) - x(t_0) $$
+$$ x(t) = x(t_0) + \int_{t_0}^{t} v_{0x} dt' = x(t_0) + v_0(t - t_0) $$
+da cui ricaviamo l'ultima formula, legge oraria del moto rettilineo uniforme.
+
+\newpage
+
+\section{Moto uniformemente accelerato}
+Dalle stesse formule precedenti, possiamo ricavare:
+$$ \int_{t_0}^t a_x dt' = \int_{t_0}^t a dt' = a(t-t_0) = \int_{t_0}^t \frac{dv_x}{dt'}dt' = v_x - v_{0x} $$
+$$ v_x = v_{0x} + a(t - t_0) $$
+$$ \int_{t_0}^t v_x dt' = \int_{t_0}^t [v_{0x} + a(t'-t_0)]dt' = \int_{t_0}^{t} \frac{dx}{dt'}dt' 
+= \int_{x(t_0)}^{x(t)} dx = x(t) - x(t_0) $$
+$$ x(t) = x(t_0) + v_{0x}(t-t_0) + \frac{1}{2}a(t-t_0)^2 $$
+Ricordiamo inoltre la formula utile:
+$$ t = \frac{v - v_0}{a} $$
+$$ x = x_0 + v_0t + \frac{1}{2}at^2 = x_0 + v_0\frac{v - v_0}{a} + \frac{1}{2}a(\frac{v - v_0}{a})^2 $$
+$$ x - x_0 = [...] = \frac{v^2 - v_0^2}{2a} $$   
+\end{document}

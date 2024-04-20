@@ -1,0 +1,44 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{14 Marzo 20204}
+
+\begin{document}
+\maketitle
+\section{Forze di contatto}
+La forza di attrito si esprime parallelamente alle superfici di contatto fra i corpi. Si tratta di un interazione
+di contatto, mediata dalle interazioni elettromagnetiche fra le superfici dei corpi. Si oppone al moto dei corpi, e ha valore
+variabile rispetto al loro stato di quiete o moto:
+\begin{itemize}
+  \item \textbf{Attrito statico}: è la forza che mantiene fermo un'oggetto in quiete. In questo caso la forza di attrito
+    ha valore massimo.
+  \item \textbf{Attrito dinamico}: si esprime quando un corpo si muove ("scivola") su una superficie scabra, 
+    e agisce nella direzione opposta a quella del movimento.
+\end{itemize}
+In generale, con $F_s$ forza di attrito  statico, $F_d$ forza di attrito dinamico, e $N$ una forza applicata ad un corpo,
+avremo che l'equilibrio si raggiunge con:
+$$ F_s \leq N\mu_s \quad F_d = N\mu_d $$
+$\mu_s$ e $\mu_d$ sono rispettivamente i coefficienti di attrito statico e dinamico, compresi fra circa 0.05 e 1.5.
+In genere, $\mu_d < \mu_s$, e le due grandezze non dipendono all'area di contatto. La forza di attrito si esprime in direzione
+parallela a quella del moto, proporzionalmente alla forza normale che il corpo applica sulla superficie.
+\par\smallskip
+\textbf{Attrito sul piano inclinato in discesa} \\
+Su un piano scabro, con un corpo in quiete, abbiamo che:
+$$ f_{s} = \mu_sN, \quad N = mg\cos{\theta} $$
+Perchè il corpo sia in quiete, avremo bisogno che:
+$$ mg\sin{\theta} = f_{s} = \mu_sN = \mu_smg\cos{\theta}$$
+da cui si ricava che:
+$$ \mu_s = \tan{\theta} $$
+ovvero il coefficiente di attrito statico corrisponde alla tangente dell'angolo di pendenza massimo in cui il corpo
+è in grado di restare fermo senza scivolare.
+Nel caso il corpo sia in movimento, avremo allora che:
+$$ mg\sin{\theta} > f_d, \quad \tan{\theta} > \mu_s $$
+da cui potremo ricavare l'accelerazione sull'asse parallelo al piano:
+$$ a_x = g(\sin{\theta - \mu_d\cos{\theta}}) $$
+
+\end{document}

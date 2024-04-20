@@ -1,0 +1,140 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{15 Aprile 2024}
+
+\begin{document}
+\maketitle
+\section{Dinamica rotazionale del corpo rigido}
+Le forze agenti su un corpo rigido producono, oltre che una traslazione, anche una rotazione. Questa messa
+in rotazione dipende dal punto di applicazione delle forza rispetto all'asse di rotazione. Ad esempio, immaginiamo
+il banale gesto di aprire una porta: chiaramente risulterà più facile mettere la porta in rotazione spingendo sulla maniglia,
+che non sui cardini. Possiamo quindi dire che la nostra azione sulla maniglia produce sulla porta un'accelerazione angolare,
+accelerazione che è direttamente proporzionale al modulo della forza applicata, al seno che essa forma con l'asse
+orizzontale della porta, e sopratutto alla distanza fra l'asse di rotazione e il punto di applicazione della forza:
+$$ \alpha \propto |\vec{F}|R\sin{\theta}$$
+notiamo che $R\sin{\theta}$, che chiameremo $d$ braccio della forza, rappresenta la lunghezza del segmento
+perpendicolare alla proiezione dell'asse di applicazione delle forza che si congiunge al centro dell'asse di rotazione.
+Questa grandezza sarà uguale a $\vec{R}$ nel caso la forza venga applicata al corpo nella direzione perfettamente perpendicolare
+all'asse. Negli esempi successivi verrà assunto questo caso: in caso contrario servirà considerare $\vec{R}$ per quello che dovrebbe
+veramente essere, ovvero il braccio $d = R\sin{\theta}$.
+A questo punto $\alpha$ sarà perpendicolare ad $\vec{F}$ e $\vec{R}$, e quindi diretta lungo l'asse di rotazione.
+\par\smallskip
+\textbf{Momento di una forza} \\
+Definiamo il momento di una forza rispetto a un certo polo $O$:
+$$ \vec{\tau_0} = \vec{R} \times \vec{F} $$
+$\vec{\tau}$ è una grandezza fisica vettoriale, misurata in $\mathrm{N}\cdot\mathrm{m}$, e non in Joule, in
+quanto non ha nulla ha che fare con il lavoro. Sarà nulla nel caso la forza sia parallela a $\vec{R}$. Nel
+caso si parli di rotazione assiale, definiamo poi il momento assiale specifico a quel singolo asse:
+$$ \tau_z = (\vec{R} \times \vec{F})_Z$$
+Il momento della forza è positivo nel caso se causa una rotazione in senso orario, negativo se in senso antiorario.
+La componente lungo l'asse di rotazione del momento di una forza nota anche come momento assiale o momento torcente.
+\par\smallskip
+\textbf{Momento angolare} \\
+Definiamo adesso il momento angolare rispetto ad un polo per un punto materiale. Questa grandezza è nota anche come
+momento della quantità di moto:
+$$ \vec{L_0} = \vec{R} \times m\vec{V} = \vec{R} \times \vec{P} $$
+$\vec{L_0}$ ci dà informazioni riguardo all'effettiva rotazione di un punto attorno al polo ($\omega$ diretta lungo $\vec{R}\times\vec{V}$),
+è una grandezza fisica vettoriale misurata in $\mathrm{J}\cdot\mathrm{s}$. Per un moto piano attorno al polo $O$ avremo:
+$$ \vec{L_z} = mV_{\theta}R = mR^2\omega$$
+sul solo asse z. Anche in questo caso otteniamo un vettore perpendicolare al piano della rotazione.
+\par\smallskip
+\textbf{Teorema del momento angolare} \\
+La derivata rispetto al tempo del momento angolare di un punto materiale è uguale alla somma vettoriale dei momenti agenti
+sul piano materiale:
+$$ \vec{\tau}_{tot} = \frac{d\vec{L_0}}{dt} = \sum \vec{\tau_i} $$
+N.B.: questo quando momento angolare e momento delle forze sono definiti rispetto allo stesso polo $O$!\\
+Possiamo dimostrare questo risultato con dei semplici passaggi algebrici:
+$$ \frac{d\vec{L_0}}{dt} = \frac{d}{dt} (\vec{R} \times m\vec{V}) = (\frac{d\vec{R}}{dt}) \times m\vec{V} + \vec{R} \times \frac{d}{dt}(m\vec{V}) = \vec{V}\times m\vec{V}+\vec{R}\times\sum{\vec{F}} $$
+Notiamo che $\vec{V} \times m\vec{V} = 0$, ergo:
+$$ \frac{d\vec{L_0}}{dt} = \sum \vec{R} \times \vec{F} = \tau_{tot} $$
+\par\smallskip
+\textbf{Legge di conservazione del momento angolare} \\
+Una conseguenza importante del teorema appena dimostrato è che:
+$$ \vec{\tau}_{tot} = \frac{d\vec{L_0}}{dt} \Rightarrow \vec{\tau}_{tot} = 0 \Leftrightarrow \vec{L} = \mathrm{const.}$$
+ovvero, il momento della quantità di moto (momento angolare) è costante nel caso non agiscano altre forze esterne con momento $\tau>0$.
+\par\smallskip
+\textbf{Forze centrali} \\
+Le forze centrali sono forze che possono essere scritte nella formula generica:
+$$ \vec{F}(R) = \hat{R}f(R)$$
+dove $f(R)$ è una funzione scalare della distanza dal centro di forza e il punto di applicazione della forza stessa. Esempi
+di queste forze sono:
+\begin{itemize}
+  \item La forza gravitazionale;
+  \item La forza coloumbiana
+  \item La forza elastica;
+  \item ecc...
+\end{itemize}
+Se cerchiamo di calcolare il momento di una forza centrale, troviamo subito che tale momento è nullo, in quanto $\vec{R}$
+e $\hat{R}$ sono paralleli per definizione. In altre parole, sotto l'effetto di forze centrali il momento angolare si conserva,
+ovvero è una costante del moto.
+\par\smallskip
+\textbf{Momento angolare di un sistema di punti materiali} \\
+Possiamo estendere il concetto di momento angolare a sistemi di punti materiali:
+$$ \vec{L} = \sum_i^n \vec{L_i} = \sum_i^n \vec{R_i} \times \vec{P_i} $$
+Sempre rispetto al solito polo $O$ per tutti i punti. Questo ci permette di enunciare:
+\par\smallskip
+\textbf{Seconda equazione cardinale della meccanica} \\
+$$ \vec{\tau}_{est} = \sum_i^n \vec{R_i} \times \vec{F}_{est_i} = \frac{d\vec{L}}{dt} $$
+Possiamo dimostrare questo risultato:
+$$ \vec{L} = \sum_i^n \vec{L_i} = \sum_i^n \vec{R_i} \times \vec{P_i}, \quad \frac{d\vec{L}}{dt} = \sum_i^n \frac{d\vec{L_i}}{dt} = \sum_i^n \tau_i = \sum_i^n (\tau_{int_i} + \tau_{est_i}) = \tau_{est} $$
+Questo vale e si dimostra esattamente nello stesso modo per sistemi di punti materiali.
+\par\smallskip
+\textbf{Applicazione del momento angolare al pendolo} \\
+Il momento delle forze e il momento angolare ci permettono di descrivere il moto del pendolo senza dover ricorrere
+all'accelerazione centripeta. Posto un pendolo formato da una massa $M$ legata da un filo di lunghezza $l$ ad un perno
+centrale, potremo calcolare il momento della risultante delle forze sulla massa, ovvero la gravità $-Mg$ e la tensione
+del filo $\vec{T}$:
+$$ \tau_{tot} = \vec{R} \times \vec{F_T} + \vec{R} \times \vec{F_{Mg}} = \vec{R} \times Mg\sin{\theta} = -Mgl\sin{\theta} $$
+Calcoliamo poi il momento angolare della massa:
+$$ \vec{L} = \vec{R} \times M\vec{V} = \vec{R} \times M(\omega \times \vec{R}) = M\omega l^2 $$
+possiamo calcolarne la derivata:
+$$ \frac{d}{dt}\vec{L} = \sum \tau = -Mgl\sin{\theta} $$
+Ricordiamo a questo punto che $\omega = \dot{\theta}, \quad \alpha = \ddot{\theta}$, ovvero possiamo riscrivere
+$\frac{d}{dt}\vec{L}$ anche come:
+$$\frac{d}{dt} \vec{L} = Ml^2\alpha = -Mgl\sin{\theta} $$
+da cui si ottiene l'equazione differenziale:
+$$ \ddot{\theta} = -\frac{g}{l}\sin{\theta} $$
+Possiamo applicare l'usuale approssimazione attraverso Taylor di $\sin{\theta} = \theta$ per valori piccoli di $\theta$,
+porre $\omega = \sqrt{\frac{g}{l}}$, $T=\frac{2\pi}{\omega} = 2\pi\sqrt{\frac{l}{g}}$, ed ottenere il risultato:
+$$ \ddot{\theta} = -\omega^2 \theta \Rightarrow \theta = A\cos(\omega t+ \phi)$$
+Che è coerente con quanto già dimostrato riguardo al pendolo semplice in moto piano. Ovviamente $A$ e $\phi$ dipenderanno
+dalle condizioni iniziali dell'eq. differenziale.
+\par\smallskip
+\textbf{Applicazione dell'energia al pendolo} \\
+Tanto per restare in tema, vediamo come il moto del pendolo può essere agilmente spiegato anche attraverso la conservazione dell'energia.
+Consideriamo il lavoro delle forze: sono tutte conservative, in quanto non c'è attrito, e in particolare $\vec{T}$ e la gravìtà $mg$ nella direzione
+opposta al filo non compiono alcun lavoro. Possiamo impostare la l'energia, notando che l'altezza da terra $h$ della pallina è data
+da $h = 1 - l\cos{\theta}$ e la velocità tangenziale $v$ è $v = \dot{\theta} l$:
+$$ E = U + K = Mgh + \frac{1}{2}Mv^2 = Mg(1 - l\cos{\theta}) + \frac{1}{2}M\dot{\theta}^2l^2 $$
+Dalla conservazione dell'energia, avremo che:
+$$ \frac{d}{dt}E = 0 = 0 -Mgl\sin{\theta}\cdot{\theta} + \frac{2M\dot{\theta}\ddot{\theta}l^2}{2} = -g\sin{\theta} + \ddot{\theta}$$
+da cui si ricava sempre la solita equazione differenziale:
+$$ \ddot{\theta} = -\frac{g}{l}\sin{\theta} $$
+\par\smallskip
+\textbf{Coppia di forze} \\
+Osserviamo come due forze con direzione uguale e verso opposto non generano necessariamente momento nullo.
+Potremo infatti avere:
+$$ F_{1_est} + F_{2_est} = 0, \quad \sum \tau_{est} = \vec{R_1} \times \vec{F_{1_est}} + \vec{R_2} \times \vec{F_{2_est}} = -\frac{d}{2}\vec{F_z} -\frac{d}{2}\vec{F_z} = -d\vec{F_z} \neq 0 $$
+Questo è il caso di una coppia di forze, applicate su assi sfasati, oppure ad un certo angolo fra di loro, su una certa distanza
+$d$ lungo l'oggetto (equivalente a due volte il braccio). Una coppia di forze genera sul corpo una rotazione, ma non una traslazione. Per quanto
+riguarda le forze interne, vediamo che condividono la retta di applicazione (un braccio passante per il polo), ergo:
+$$ \sum \tau_{int} = 0 $$
+\section{Dinamica del corpo rigido}
+Possiamo a questo punto riportare le formule trovate finora sul corpo rigido. Ricordiamo che un corpo rigido non è
+altro che un sistema di punti materiali le cui distanze l'uno dall'altro non cambiano. Una conseguenza di questa limitazione
+è che gli unici due moti possibili di un corpo rigido sono la pura traslazione (del centro di massa) e la pura rotazione attorno ad un asse. Abbiamo
+le leggi:
+\begin{itemize}
+  \item \textbf{Prima equazione cardinale}
+$$ \frac{d\vec{P_{CM}}}{dt} = M\vec{A_{CM}} = \vec{R}_{est} $$
+  \item \textbf{Seconda equazione cardinale}
+$$ \tau_{est} = \sum \vec{R} \times \vec{F_{est}} = \frac{d\vec{L}}{dt}$$
+\end{itemize}
+
+\end{document}

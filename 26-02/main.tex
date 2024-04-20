@@ -1,0 +1,113 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{26 Febbraio 2024}
+
+\begin{document}
+\maketitle
+
+\section{Introduzione al corso}
+\textit{"Che cos'è la fisica?"} La fisica è la disciplina che si occupa della descrizione quantitativa dei
+fenomeni naturali.
+Fondamentale alla fisica è il metodo scientifico, che si applica attraverso:
+
+\begin{itemize}
+  \item Osservazione del fenomeno
+  \item Realizzazione di misure
+  \item Formulazione di un'ipotesi
+  \item Sperimentazione dell'ipotesi
+  \item Formalizzazione di una teoria (o formulazione di una nuova ipotesi)
+\end{itemize}
+
+per la realizzazione di misure, è necessaria la scelta di apposite:
+
+\section{Unità di misura}
+Le unità di misura permettono di confrontare grandezze fisiche a campioni scelti prima della misurazione. Si
+possono fare le seguenti distinzioni:
+
+\textbf{Grandezze scalari e vettoriali}
+\begin{itemize}
+  \item Grandezze scalari:
+    grandezze che possono essere rappresentate da semplici numeri reali (e.g. temperatura, massa, tempo...)
+  \item Grandezze vettoriali:
+    grandezze che vengono rappresentate da vettori sul piano o nello spazio (e.g. spazio, accelerazione, forza...)
+\end{itemize}
+
+\newpage
+
+\textbf{Grandezze intensive ed estensive}
+\begin{itemize}
+  \item Grandezze intensive:
+    grandezze che non dipendono dall'estensione fisica di un corpo ma dalle proprietà delle sostanze che lo
+    compongono
+  \item Grandezze estensie:
+    grandezze che dipendono dall'estensione fisica di un corpo
+\end{itemize}
+
+\textbf{Grandezze fondamentali e derivate}
+\begin{itemize}
+  \item Grandezze fondamentali:
+    grandezze che vengono definite indipendentemente da altre
+  \item Grandezze derivate:
+    grandezze che si definiscono sulla base delle grandezze fondamentali
+\end{itemize}
+
+Le grandezze fondamentali (e le loro unità di misura nel S.I.) sono:
+\begin{center}
+\begin{tabular}{|c|c|c|}
+  Grandezza & U. D. M. & Simbolo \\
+  \hline
+  Spazio & Metro & m \\
+  \hline
+  Massa & Kilogrammo & kg \\
+  \hline
+  Tempo & Secondo & s \\ 
+  \hline
+  Temperatura & Kelvin & K \\
+  \hline
+  Intensità di corrente & Ampere & A \\
+  \hline
+  Intensità luminosa & Candela & Ca \\
+  \hline
+  Quantita di materia & Mole & mol \\
+\end{tabular}
+\end{center}
+
+\section{Analisi dimensionale}
+In fisica le equazioni devono essere dimensionalmente coerenti, ovvero le grandezze espresse in entrambi i lati
+dell'equazione devono essere omogenee fra di loro (avere la stessa unità di misura)
+Per verificare la correttezza di un'equazione si può effettuare l'analisi dimensionale, ad esempio:
+$$ x = \frac{1}{2}at^2 $$ (spostamento $x$ di un corpo sottoposto ad accelerazione $a$ in tempo $t$) diventerà:
+$$ [L] = \frac{[L]}{[t^2]}[t^2] $$ che è chiaramente vero. \\
+(Nota: i coefficienti dei termini non figurano nell'analisi dimensionale)
+
+\newpage
+
+\section{Errori, precisione ed accuratezza}
+L'errore misura la discrepanza fra la grandezza effettiva che vogliamo misurare e il valore restituito dallo
+strumento di misura utilizzato. Esempio: un righello con riportati centimetri e millimetri restituirà valori
+del tipo: $ 15.2cm \pm 1mm $, ovvero 15 centimetri e 2 millimetri con un'errore di 1 millimetro.
+
+Di una misurazione ottenuta da uno strumento possiamo conoscere la precisione e l'accuratezza:
+\begin{itemize}
+  \item Accuratezza:
+    L'accuratezza di una misura rappresenta la differenza (quindi l'errore) fra la misura e la grandezza effettiva
+  \item Precisione:
+    La precisione di una misura è data dal numero delle sue cifre significative 
+\end{itemize}
+
+Le comuni operazioni algebriche modificano la precisione di una misura in tale modo:
+    \begin{itemize}
+      \item Somma / Differenza:
+        La precisione di una somma o una differenza è data dal numero minore di posizioni decimali occupate degli operandi
+      \item Prodotto / Rapporto:
+        La precisione di un prodotto o di un rapporto è data dal numero minore di cifre significative degli operandi
+    \end{itemize}
+
+
+\end{document}
