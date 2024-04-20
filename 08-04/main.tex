@@ -1,0 +1,215 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{8 Aprile 2024}
+
+\begin{document}
+\maketitle
+\section{Quantità di moto}
+La quantità di moto è una grandezza vettoriale definita come:
+$$ \vec{P} = m\vec{v} $$
+dove $m$ è la massa di un corpo e $v$ la sua velocità in un dato istante. Si misura in 
+kg$\cdot$m/s.
+\par\smallskip
+\textbf{Quantità di moto e leggi di Newton} \\
+La quantità di moto ci permette di riformulare il primo principio della dinamica, riguardante l'inerzia, specificando che
+la quantità di un punto materiale isolato resta costante: la sua massa non varia, e per inerzia nemmeno la sua velocità.
+$$ \Delta \vec{p} = \vec{p}(f) - \vec{p}(i) = \int_i^f \vec{F} = 0 \Rightarrow \vec{p} = \mathrm{const.} $$
+Se invece una forza (e quindi un'accelerazione) agisce sul corpo cambiandone la velocità, la quantità di moto varierà come:
+$$ \frac{d\vec{p}}{dt} = \frac{d(m\vec{v})}{dt} = m\vec{a} = \vec{F} $$
+\section{Impulso di una forza}
+L'impulso di una forza è definito, fra due istanti $t_0$ e $t$, come:
+$$ \vec{I}_{t_0\rightarrow t} = \int_{t_0}^t = \vec{F}dt' $$
+L'impulso è una grandezza vettoriale espressa in kg$\cdot$m/s, la stessa unità di misura della quantità di
+moto. Si può quindi dimostrare:
+\par\smallskip
+\textbf{Teorema dell'impulso} \\
+La variazione della quantità di moto $\Delta \vec{p}$ di un punto materiale è pari all'impulso totale delle forze esterne:
+$$ \Delta \vec{p} = \Delta \vec{p}(t) - \Delta \vec{p}(t_0) = \int_{t_0}^t \vec{F} dt'$$
+Questo si può dimostrare da:
+$$ \int_{t_0}^t \vec{F}dt' = \int_{t_0}^t m\vec{a}dt' = [m\vec{v}]_{t_0}^t = m\vec{v}(t) - m\vec{v}(t_0) = \vec{p}(t) - \vec{p}(t_0) = \Delta \vec{p}$$
+\section{Moto di un corpo composto}
+Un corpo composto non'è altro che un corpo formato da un insieme di punti materiali. Quando si considerano sistemi
+formati da più punti materiali connessi fra loro, occorre fare una distinzione fra:
+\begin{itemize}
+  \item \textbf{Forze interne}: forze che sono interne al sistema, esercitate fra i corpi appartenenti al sistema fra di loro;
+  \item \textbf{Forze esterne} forze che sono esterne al sistema. esercitate dall'ambiente sui punti materiali.
+\end{itemize}
+\par\smallskip
+\textbf{Dinamica di un sistema di punti materiali} \\
+Per ciauscino dei punti materiali di un sistema possiamo scrivere:
+$$ m\vec{a_i} = \vec{R_i} $$
+Dove $\vec{R_i}$ è la risultante di tutte le forze sul punto materiale, interne ed esterne.
+$$ \sum m_i\vec{a_i} = \sum R^{est}_i+ \sum_{j \neq i} \vec{F_{ij}} = \sum R^{est}_i + \sum \sum_{j \neq i} \vec{F_{ij}} $$
+dove tutte le sommatorie da senza pedice sono da 1 a $n$ numero di punti materiali nel sistema.
+\par\smallskip
+\textbf{Centro di massa di un sistema} \\
+Definiamo come centro di massa di un sistema il "punto medio" della massa:
+$$ \vec{r_{CM}} = \frac{\sum m_i\vec{r_i}}{\sum m_i} $$
+Definendo la massa del sistema $M$ come: $\sum m_i$ possiamo riscrivere come:
+$$ \vec{r_{CM}} = \frac{\sum m_i\vec{r_i}}{M} $$
+Le coordinate del punto di massa su $x,y$ e $z$ saranno a questo punto:
+$$ \vec{x_{CM}} = \frac{\sum m_i\vec{x_i}}{\sum m_i}, \quad \vec{y_{CM}} = \frac{\sum m_i\vec{y_i}}{\sum m_i}, \quad \vec{z_{CM}} = \frac{\sum m_i\vec{z_i}}{\sum m_i} $$
+Si può definire l'impulso del centro di massa $\vec{P_{CM}}$ come l'impulso sulla massa $M$:
+$$ \vec{P_{CM}} = M\vec{v_{CM}} = \sum m_i\vec{v_i}$$
+Dove dovremo definire la velocità del centro di massa $\vec{V_{CM}}$:
+$$ \vec{V_{CM}} =  \frac{d\vec{r_{CM}}}{dt} = \frac{d}{dt} \frac{\sum m_i\vec{r_i}}{M} = \frac{1}{m}\frac{d}{dt}\sum m_i\vec{r_i} = \frac{1}{M} \sum m\vec{v_i} $$
+Questo ci permette di dire, riguardo all'impulso del centro di massa:
+$$ \vec{P_{CM}} = \sum \vec{p_i} = \sum m_i\vec{a_i} = M\vec{V_{CM}}$$
+\par\smallskip
+\textbf{Primo teorema del centro di massa} \\
+La quantità di moto totale di un sistema (ergo la somma delle quantità di moto di ogni punto del sistema) è uguale
+alla quantità di un punto materiala avente massa uguale alla massa del sistema e velocità uguale alla velocità del centro di
+massa del sistema:
+$$ \vec{P_{CM}} = M\vec{V_{CM}} = \sum m_i\vec{a_i} $$
+\par\smallskip
+\textbf{Forze interne di sistemi di punti materiali} \\
+Se prendiamo un sistema formato da più punti materiali soggetti sia a forze interne (fra di loro), sia a forze esterne
+(esercitate da altri corpi sul sistema), abbiamo dalle equazioni precedenti:
+$$ \vec{P_{CM}} = M\vec{V_{CM}} \Rightarrow \sum m_i\vec{a_i} = M\vec{a_{CM}} $$
+$$ \sum m_i\vec{a_i} = \sum R^{est}_i + \sum \sum_{j \neq i} \vec{F_{ij}} $$
+Se prendiamo il termine $\sum R^{est}_i + \sum \sum_{j \neq i} \vec{F_{ij}}$, abbiamo che la sommatoria
+$\vec{F}_{12} + \vec{F}_{21} + ...$ non è altro che la somma di tutte le forze interne del sistema, e quindi di ogni forza con la sua
+reazione, e non potrà che essere 0. Questo ci permette di enunciare la:
+\par\smallskip
+\textbf{Prima equazione cardinale dei sistemi} \\
+La variazione della quantità di moto di un sistema di punti materiali è uguale alla risultante delle forze esterne
+agenti sul sistema:
+$$ \frac{d}{dt}\vec{P_{CM}} = \sum m_i\vec{a_i} = \sum \vec{R_i^{est}} $$
+\par\smallskip
+\textbf{Secondo teorema del centro di massa} \\
+Il centro di massa di un sistema si muove come un punto materiale di massa uguale alla massa del sistema e sottoposto alla risultante
+delle forze esterne agenti sul sistema:
+$$ M\vec{a_{CM}} = \sum \vec{R_i^{est}} $$
+\section{Applicazioni di quantità di moto e centro di massa}
+Vediamo alcuni esempi che possono essere modellizati attraverso centro di massa e quantità di moto.
+\par\smallskip
+\textbf{Esplosione di un proiettile a mezz'aria} \\
+Poniamo di avere un proiettile, come quelli già studiati, il cui moto comincia dall'origine, con una certa velocità $v_0$
+formante un certo angolo $\theta$ con l'asse x. Nel punto di altezza massima del proiettile, esso esplode dividendosi in due pezzi.
+Il primo pezzo cade direttamente verso il basso, accelerato dalla gravita, mentre l'alto prosegue di moto parabolico. Si vuole
+calcolare le posizioni dove atterrano i due frammenti del proiettile. Inizialmente possiamo dire che le forze coinvolte nell'esplosione
+sono tutte interne, ergo non influenzano la posizione del centro di massa. Questo significa che il centro di massa proseguirà di moto
+parabolico. Calcoliamo quindi la "gittata" del centro di massa, applicando le formule già note del moto dei proiettili:
+$$ x_{CM} = R = \frac{v_0^2\sin{2\theta}}{g} $$
+Possiamo allora impostarne la posizione x:
+$$ x_{CM} = \frac{m_1x_1 + m_2x_2}{m_1+m_2} $$
+Dove $x_1$ e $x_1$ saranno rispettivamente la posizione del frammento caduto verso il basso e del frammento che prosegue il moto.
+$x_1$ sarà quindi nota, essendo essa coincidente con il punto di altezza massima della parabola descritta dal proettile prima della
+caduta, ovvero la metà della gittata del C.M.:
+$$ x_1 = \frac{R}{2} = \frac{v_0^2\sin{2\theta}}{2g} $$
+Questo ci porta a scrivere la gittata completa:
+$$ R = \frac{m\frac{R}{2} + mx_2}{m_1+m_2} \Rightarrow x_2 = \frac{3}{2}R = \frac{3}{2}\frac{v_0^2\sin{2\theta}}{g}$$
+$x_1$ e $x_2$ sono i valori cercati (si noti che il frammento con posizione orizzontale $x_1$ resta sulla stessa ascissa finchè non
+tocca terra).
+\par\smallskip
+\textbf{Disco rotante con massa sul perimetro} \\
+Si abbia un disco in rotazione, quindi in moto circolare uniforme, di raggio $r$ e di massa $M$. Sull'estremità del disco, ovvero
+sul suo perimetro, è disposta una massetta $m$, che chiaramente ruoterà solidalmente al disco. Il centro di massa di questo sistema
+sarà in costante rotazione, in quanto verrà sfasato dalla presenza della massetta $m$. In particolare, possiamo impostare:
+$$ x_{CM} = \frac{mx_1 + Mx_2}{m+M}, \quad y_{CM} = \frac{my_1 + My_2}{m+M} $$
+Scelto un sistema di coordinate cartesiane centrato sul disco in rotazione, si avrà che $x_2$, ovvero il raggio che collega
+il centro del disco a se stesso, sarà 0, mentre $x_1$, ovvero il raggio che collega il centro del disco alla massetta, è il raggio
+stesso del disco. Questo ci permette di ottenere un raggio $r_{CM}$, che collega il centro del disco al centro di massa:
+$$ r_{CM} = \frac{mr}{m+M} $$
+Applicando le solite formule del moto circolare uniforme avremo velocità e accelerazione:
+$$ v = \omega \frac{mR}{m+M}, \quad a = \omega^2 \frac{mr}{m+M} $$
+
+\section{Corpo rigido}
+Vediamo alcune nozioni preliminari per il calcolo del centro di massa del corpo rigido. Si inizia con le definizioni
+di densità:
+\begin{itemize}
+  \item \textbf{Densità (di volume) di massa} \\
+    La densità di massa  $\rho_m$ è definita come la derivata della massa rispetto al volume:
+    $$ \rho_m = \frac{dM}{dV}$$
+    si misura in $\frac{kg}{m^3}$.
+  \item \textbf{Densità superficiale di massa} \\
+    La densità superficiale di massa  $\sigma_m$ è definita come la derivata della massa rispetto alla superficie:
+    $$ \sigma_m = \frac{dM}{dA}$$
+    si misura in $\frac{kg}{m^2}$. La densità superficiale di massa viene usata nei casi in cui lo spessore dell'oggeto considerato
+    sia trascurabile.
+  \item \textbf{Densità lineare di massa} \\
+    La densità lineare di massa  $\lambda_m$ è definita come la derivata della massa rispetto alla lunghezza:
+    $$ \lambda_m = \frac{dM}{dl}$$
+    si misura in $\frac{kg}{m}$. La densità lineare di massa viene utilizzata nei casi in cui l'unica grandezza rilevante del corpo è la lunghezza.
+\end{itemize}
+Notiamo che in generale, $\rho_m, \sigma_m$ e $\lambda_m$ sono funzioni delle dimensioni (grandezze estensive) dei corpi considerati.
+\par\smallskip
+\textbf{Calcolo del centro di massa di un corpo rigido} \\
+Se per un sistema contenente un numero finito di punti materiali avevamo:
+$$ \vec{r_{CM}} = \frac{\sum m_i\vec{r_i}}{M} = \frac{1}{M} \sum m_i\vec{r_i} $$ 
+Per un corpo rigido di forma qualsiasi, sarà necessario passare al corrispettivo continuo della sommatoria, cioè l'integrale:
+$$ \vec{r_{CM}} = \frac{1}{M} \int \vec{r_i}dm $$
+che diventerà, sulla base delle definizioni precedenti potremo esprimere:
+$$ \vec{r_{CM}} = \frac{1}{M} \int \vec{r} \rho(\vec{r})dV $$
+in funzione del volume $V$ (o di altre grandezze estensive nel caso si decida di utilizzarle).
+Vediamo quindi come si svolge il calcolo dei centri di massa di alcuni corpi:
+\begin{itemize}
+  \item 
+    \par\smallskip
+    \textbf{Sbarra con densità lineare di massa costante} \\
+    Supponiamo di avere una sbarra di larghezza e profondità trascurabile, e di cui ci interessa quindi solamente
+    la lunghezza $L$. Calcoleremo allora la densità lineare di massa $\lambda_m\frac{dM}{dL} = \frac{M}{L}$ (densità lineare
+    costante). Applichiamo allora l'equazione precedente per la posizione del centro di massa $\vec{R_{CM}}$:
+    $$ x_{CM} = \frac{1}{M}\int_0^L x\lambda_m dx = \frac{\lambda_m}{M} \cdot \frac{x^2}{L}\Big|^L_0  = \frac{\lambda_m}{M} \frac{L^2}{2} = \frac{L}{2} $$
+    che corrisponde al punto medio della sbarra, come l'intuito potrebbe suggerire.
+  \item
+    \par\smallskip
+    \textbf{Lamina a profilo semicircolare} \\
+    Prendiamo una lamina di forma semicircolare, abbastanza sottile da trascurarne la profondità, e calcoliamone
+    il baricentro. Prima di tutto sarà necessario trovare la densità superficiale di massa $\sigma_m = \frac{dM}{dA}$:
+    $$ A = \frac{\pi r^2}{2} \Rightarrow \sigma_m = \frac{2M}{\pi r^2} $$
+    Il centro di massa avrà posizione $x = 0$ per la simmetria della semicirconferenza. Resta da calcolare la posizione $y$.
+    Possiamo impostare l'integrale prendendo "strisce" di altezza $\Delta y$ dalla posizione $y = 0$ alla posizione $y = R$
+    sull'asse verticale della circonferenza. La larghezza di queste strisce sarà sempre uguale a $2x$, con $x$ la larghezza
+    di uno dei due segmenti in cui l'asse centrale divide la striscia presa sulla circonferenza. L'area della striscia sarà
+    quindi $2xy$. Ciò si esprime come:
+    $$ y_{CM} = \frac{1}{M}\int_0^r \sigma_m 2xydy $$
+    per eliminare la $x$ possiamo prendere dall'equazione della circonferenza:
+    $$ x^2 + y^2 = r^2 \Rightarrow x = \sqrt{r^2 - y^2} $$
+    da cui:
+    $$ y_{CM} = \frac{1}{M}\int_0^r \sigma_m 2y\sqrt{r^2 - y^2}dy $$
+    L'integrale di $y\sqrt{r^2 - y^2}$ è:
+    $$ \int y\sqrt{r^2 - y^2} dy = -\frac{1}{3}(r^2 - y^2)^\frac{3}{2}, \quad \int_0^r y\sqrt{r^2 - y^2} dy = -\frac{1}{3}(r^2 - y^2)^\frac{3}{2} \Big|^r_0 = \frac{1}{3}r^3 $$
+    da cui:
+    $$ y_{CM} = \frac{1}{M} \sigma_m \frac{2}{3}r^3 = \frac{1}{M}\frac{2M}{\pi r^2} \frac{2}{3}r^3 = \frac{4r}{3\pi} $$
+  \item 
+    \par\smallskip
+    \textbf{Lamina a profilo triangolare} \\
+    Facciamo un'esempio simile al precedente, ma con un profilo triangolare retto anziché semicircolare. Chiameremo $a$ e $b$
+    i lati del triangolo. Adottiamo la metodologia usuale: calcoliamo innanzitutto la densità di massa superficiale $\sigma_m$:
+    $$ A = \frac{ab}{2} \Rightarrow \sigma_m = \frac{2M}{ab} $$
+    E adottiamo un approccio di calcolo integrale. Possiamo pensare di dividere il triangolo in strisce orizzontali e verticali
+    per calcolare le posizioni $x$ e $y$ del centro di massa. Avremo che per la $x$, la striscia ha area: 
+    $$ x \cdot by $$
+    su altezza $y$ con larghezza $x$. Volendo eliminare la $y$, riscriviamola in funzione di $x$:
+    $$ x \cdot \frac{b}{a} x $$
+    dove notiamo fra l'altro il termine $\frac{b}{a} = \tan{\theta}$ angolo al centro. Impostiamo quindi l'integrale.
+    $$ x_{CM} = \frac{1}{M} \int_0^a \sigma_ x \cdot \frac{b}{a} x dx = \frac{1}{M} \frac{2M}{ab} \frac{b}{a} \int_0^a x^2 dx = \frac{2}{a^2} \frac{a^3}{3} = \frac{2}{3}a$$
+    Per il calcolo di $y$, il procedimento è analogo, con l'unica differenza il fatto che che la larghezza in $y$ più piccoli è
+    più grande, e viceversa, ovvero l'area è:
+    $$ y \cdot \frac{a}{b}(b-y) $$
+    da cui l'integrale:
+    $$ y_{CM} = \frac{1}{M} \int_0^b \sigma_m y \cdot \frac{a}{b}(b-y) dy = \frac{2}{b^2}\int_0^b (yb-y^2) dy = \frac{2}{b^2} (b \frac{y^2}{2} \Big|_0^b - \frac{y^3}{3} \Big|_0^b)= \frac{1}{3}a$$
+    abbiamo quindi che il baricentro del triangolo è in $(\frac{2}{3}a, \frac{1}{3}b)$. Questo risultato si può avere anche, più
+    direttamente, dalle formule per il baricentro di un triangolo qualsiasi:
+    $$ x_{CM} = \frac{x_A+x_B+x_c}{3}, \quad y_{CM} = \frac{y_A+y_B+y_c}{3} $$
+    sui punti $A = (0,0), \quad B = (a,0), \quad C = (a,b)$.
+  \item 
+    \par\smallskip
+    \textbf{Semianello rigido} \\
+    Prendiamo un'esempio apparentemente simile a quello della semicirconferenza: quello di un semianello rigido di 
+    raggio $r$ e massa $M$. Considereremo la densità lineare di massa, che sarà uguale a $\lambda_m = \frac{M}{\pi r}$.
+    Per la simmetria, come nell'esempio semicircolare, la posizione orizzontale del centro di massa sarà $x=0$. Resta
+    da calcolare la componente verticale: può rendersi utile in questo caso un passaggio alle coordinate polari, con:
+    $$ x = r\cos{\theta}, \quad y r\sin{\theta} $$
+    da cui l'integrale:
+    $$ y_{CM} = \frac{1}{M}\int_0^\pi \lambda_m R \cdot R \sin{\theta} d\theta = \frac{1}{M} \frac{M}{2\pi} r^2 (-\cos{\theta}\Big|^\pi_0) = \frac{2r}{\pi}$$
+    
+\end{itemize}
+\end{document}

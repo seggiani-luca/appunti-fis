@@ -1,0 +1,40 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{4 Marzo 2024}
+
+\usepackage{gensymb}
+
+\begin{document}
+\maketitle
+\section{Formule del moto circolare}
+Riportiamo brevemente la formula del vettore $\vec{OP}$, raggio di angolo $theta$ di una circonferenza
+di raggio $r$:
+$$ \vec{OP} = (r\cos{\theta}, r\sin{\theta}), \quad \hat{OP} = (\cos{\theta}, \sin{\theta}) $$
+troviamo adesso il vettore con la coda corrispondente alla punta di $\vec{OP}$ tangente alla circonferenza.
+Iniziando dalla definizione di prodotto scalare:
+$$ \vec{A} \cdot \vec{B} = |\vec{A}||\vec{B}|\cos{\theta} = 0 \Rightarrow \mathrm{ortogonale} $$
+$$ \vec{A} = (a, b), \quad \vec{B} = (-b, a) \quad \mathrm{o} \quad \vec{B} = (b, -a) $$
+
+\section{Moto dei gravi}
+Studiamo adesso il moto dei corpi in caduta libera. Prendiamo $g$ (accelerazione di gravita) di 9.81 $\frac{\mathrm{m}}{\mathrm{s^2}}$
+(misurata sul $45^\circ$ parallelo). Potremo allora definire la velocità e la legge oraria di un corpo in caduta
+libera come:
+
+$$ v(t) = -gt, \quad y(t) = -\frac{1}{2}gt^2 $$ 
+
+Poniamo di voler trovare la posizione spaziotemporale della pallina nel suo momento di quota massima. Sapendo
+che a quota massima $v = 0$:
+
+$$ v = at + v_0,, \quad = t^* = -\frac{v_0}{a} $$
+$$ y = y_0 + v_0t + -\frac{1}{2}gt^2, \quad y_{max} = y_0 + v_0t^* + \frac{1}{2}g(t^*)^2 $$
+
+infine, cerchiamo il tempo impiegato per tornare nella posizione di partenza :
+$$ t^* = \frac{-2v_0}{a} $$ 
+
+\end{document}

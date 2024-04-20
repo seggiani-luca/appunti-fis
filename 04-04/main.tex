@@ -1,0 +1,181 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{4 Aprile 2024 (svegliati è primavera!)}
+
+\usepackage{amsmath}
+
+\begin{document}
+\maketitle
+\section{Sistemi di riferimento inerziali}
+Si riportano alcuni esempi di applicazione della relatività galileiana.
+\subsection{Treno in moto}
+Facciamo l'esempio di un treno in moto con velocità $v_0$ costante. Sul treno, un passeggero lascia cadere
+un gesso che si muove spinto dall'accelerazione gravitazionale $g$. Sia $S'$ il sistema di riferimento del treno,
+e $S$ il sistema di riferimento di laboratorio (poniamo della banchina), e siano i due sistemi di riferimento
+coincidenti nell'istante in cui si lascia cadere il gesso. Possiamo applicare le trasformazioni di Galileo:
+$$ 
+\left\{\begin{array}{l}
+  \vec{r} = \vec{r'} + \vec{v_0}t \cr \\
+  \vec{v} = \vec{v'} + \vec{v_0} \cr \\
+  \vec{a} = \vec{a'}
+\end{array}\right.
+$$
+in $t=0$ le coordinate del gesso sono identiche nei due sistemi, e il gesso ha velocità iniziale nulla
+e accelerazione $-gt\hat{y}$ sull'asse verticale identica nei due sistemi. Sia $(x_0, y_0)$ la posizione
+iniziale del gesso, la sua posizione rispetto al treno sarà allora:
+$$ \vec{r'} = (x_0, y_0 -\frac{1}{2}gt^2) $$
+Applicando le trasformazioni galileiane avremo che, rispetto al laboratorio:
+$$ 
+\vec{a} = -g\hat{y}, \quad
+\vec{v} = v_0\hat{x} - gt\hat{y}, \quad
+\vec{r} = (x_0 + v_0t, y_0 - \frac{1}{2}gt^2) 
+$$
+Avremo allora che il tempo impiegato a toccare terra sarà uguale nei due sistemi di riferimento sarà identico:
+$$ t^* = \sqrt{\frac{2y_0}{g}}$$
+mentre le velocità saranno diverse:
+$$ \vec{v'}(t^*) = -\sqrt{2gy_0}\hat{y}, \quad \vec{v}(t^*) = v_0\hat{x} - \sqrt{2gy_0}\hat{y} $$
+\subsection{Angolo della pioggia}
+Calcoliamo l'angolo ottimale a cui va tenuto un ombrello se ci sposta con velocità $v_u$ di 3m/s
+e la pioggia cade a $v_p$ di 8m/s. Applicando le trasformazioni avremo che:
+$$ \vec{v_p'} = \vec{v_p} - v_u\hat{x}$$
+L'angolo di $\vec{v_p}'$, ovvero la velocità della pioggia nel sistema di riferimento dell'uomo, sarà allora:
+$$ \tan^{-1}{\frac{v_u}{v_p}} = 20.55^\circ$$
+\subsection{Barca con velocità relativa}
+Una barca parte dall'origine e si dirige verso la riva opposta di un fiume di larghezza $L$ 
+dove la corrente scorre con velocità $V_A$ costante. La barca, di per sé, si muove con velocità $V_B$ costante
+verso la riva, mantenendosi sempre perpendicolare al fiume. Calcoliamo allora il punto $K$ dove la barca arriva a riva.
+Avremo un sistema di riferimento $S'$ solidale all'acqua, dove:
+$$ \vec{v_0} = -V_A\hat{x}, \quad \vec{v'} = V_B\hat{y} $$
+$$ \vec{v} = \vec{v'} + \vec{v_0} = (V_A, V_B) $$
+Il tempo impiegato a toccare riva sarà:
+$$ t = \frac{L}{V_B} $$
+E avremo quindi che il punto $K$ sarà dato da:
+$$ \vec{K} = (V_At, V_Bt) = (V_At, L) $$
+\\
+Mettiamo che il punto $K$ si trovi oltre una pericolosa cascata: avremo quindi bisogno di opporci alla corrente
+per raggiungere un secondo punto, detto $H$, più vicino. La velocità $V_B$ della barca non sarà quindi perpendicolare
+alla riva, ma formerà con essa un certo angolo $\theta$:
+$$ \vec{v'} = \vec{V_B} = -V_B\cos{\theta}\hat{x} + V_B\sin{\theta}\hat{y} $$
+da cui:
+$$ \vec{v} = (V_A - V_B\sin{\theta}, V_B\cos{\theta}) = (0, V_B\cos{\theta}) $$
+Il tempo di raggiungimento della riva sarà allora:
+$$ t = \frac{L}{V_B\cos{\theta}} $$
+Abbiamo chiaramente che:
+$$ \frac{L}{V_B} \leq \frac{L}{V_B\cos{\theta}} $$
+ovvero, opporsi alla corrente significa evitare la cascata, ma anche impiegare un tempo maggiore a raggiungere
+la riva!
+\section{Sistemi di riferimento uniformemente accelerati}
+Prendiamo adesso in considerazione un sistema di riferimento mobile $SM$ in moto con velocità $\vec{v_t}$ e accelerazione
+costante $\vec{a_t}$. Il moto d $SM$ va considerato come puramente traslatorio, i suoi assi non ruotano. La relazione
+fra le posizioni diventa quindi:
+$$ \vec{r} = \vec{r'} + \vec{r}_{OO'}(t) $$
+che deriveremo in:
+$$ \vec{v} = \vec{v'} + \vec{v_t}, \quad \vec{v_t} = \frac{d\vec{r}_{OO'}}{dt} $$
+$$ \vec{a} = \vec{a'} + \vec{a_t}, \quad \vec{a_t} = \frac{d\vec{v_t}}{dt} $$
+$$ \vec{a} = \vec{a'} + \vec{a_r} $$
+Ovvero:
+$$ 
+\left\{\begin{array}{l}
+    \vec{r} = \vec{r'} + \vec{r}_{OO'}(t) \cr \\
+  \vec{v} = \vec{v'} + \vec{v_t} \cr \\
+  \vec{a} = \vec{a'} + \vec{a_T}
+\end{array}\right.
+$$
+Si noti che nel sistema di riferimento accelerato non vale l'inerzia. Sein un sistema di riferimento
+inerziale si ha:
+$$ \sum \vec{F}  = m\vec{a} = m(\vec{a} + \vec{a_r})$$
+nel sistema accelerato questa legge non vale:
+$$ ma' = \sum \vec{F} - m \vec{a_T} $$
+E si osserva una forza, detta forza apparente, pari a $\vec{F_a} = -m\vec{a_T}$:
+$$ \sum \vec{F} -m\vec{a_T} = \sum(\vec{F}+\vec{F_{app}})$$
+Una forza apparente non è data da l'interazione fra due corpi, ma dall'inerzia. Per essa non vale il
+terzo principio della dinamica (azione e reazione). La stessa cosa non si osserva in un sistema inerziale
+(e qui dovrebbe diventare chiaro) in quanto:
+$$ m\vec{a_T} = 0 \Rightarrow \vec{F_{app}}, \quad m\vec{a} = \sum \vec{F} + 0$$
+\subsection{Treno in frenata}
+Consideriamo lo stesso treno di prima, che dopo un tratto a velocità costante $v_0$, inizia a frenare e si arresta
+in tempo $t$. Un passeggero di massa $m$, che resta seduto durante la frenata, percepisce una certa forza
+apparente, pari a $ma_T$, dove $a_T$ è l'accelerazione del treno in frenata, data da:
+$$ a_T = \frac{v_0}{t} $$
+Quando il treno si ferma, rispetto al treno il viaggiatore è fermo, ergo $|\vec{a}| = 0$, e:
+$$ m\vec{a'} = \sum (\vec{F} + \vec{F_{app}}) = 0 \Rightarrow \sum \vec{F} = -\vec{F_{app}} = m\vec{a_T} $$
+\subsection{Cartellina sul tettuccio}
+Un signore sbadato dimentica sul tettuccio della sua automobile una cartellina, prima di partire di moto rettilineo uniformemente
+accelerato. Vogliamo calcolare il coefficiente di attrito statico minimo fra la cartellina e il tettuccio dell'automobile
+necessario a non farla scivolare via. Nel sistema di riferimento della cartellina, avremo una forza apparente data
+dall'accelerazione dell'automobile:
+$$ F_{app} = -m\vec{a_T} $$
+E una forza d'attrito:
+$$ F_s = mg \mu_s $$
+diretta nella direzione dello spostamento dell'automobile. La condizione di equilibrio sarà raggiunta quando
+queste due forze (di cui una apparente!) si eguaglieranno in modulo (in modo da annullarsi):
+$$ m\vec{a_T} = mg \mu_s, \quad \mu_s = \frac{\vec{a_T}}{g} $$
+Mettiamo che il coefficiente di attrito effettivo $\mu_s$ sia minore del coefficiente ottimale appena calcolato. In
+questo caso la cartellina scivola via opposta da una forza di attrito dinamico con coefficiente $\mu_d$. Possiamo
+calcolare l'accelerazione subita dalla cartellina nel sistema di riferimento dell'automobile e di laboratorio (fermo rispetto
+alla cartellina e all'automobile). Da terra vedremo che l'unica accelerazione a cui è sottoposta la cartellina
+è quella dell'attrito dinamico:
+$$ m\vec{a} = F_d = mg\mu_d $$
+mentre dal punto di vista dell'automobile l'accelerazione è pari alla differenza fra l'accelerazione impressa dall'attrito
+dinamico e quella propria dell'automobile stessa:
+$$ m\vec{a'} = F_d - ma_T = mg\mu_d - ma_T $$
+\subsection{Treno accelerato}
+Un treno si muove sui binari di moto rettilineo uniformemente accelerato. In un certo istante, diciamo $t = 0$ (con treno
+in partenza da fermo), viene lanciata una monetina con una certa velocità iniziale verso l'alto $v_0$. Ci poniamo il problema
+di calcolare la distanza sul pavimento del treno a cui atterra la monetina, ovvero lo spazio percorso dalla monetina 
+lungo l'asse $x$, nel sistema di riferimento del treno, una volta caduta nuovamente a terra. Impostando le relazioni:
+$$ 
+\left\{\begin{array}{l}
+    \vec{r} = \vec{r'} + \vec{r}_{OO'}(t) \cr \\
+  \vec{v} = \vec{v'} + \vec{v_t} \cr \\
+  \vec{a} = \vec{a'} + \vec{a_T}
+\end{array}\right.
+$$
+osserviamo che, sul sistema di riferimento del treno non è accelerato rispetto all'asse y, ergo sull'asse verticale
+il moto uniformemente accelerato della monetina in caduta libera si svolge in modo identico a quanto si sarebbe svolto
+in un sistema di riferimento inerziale. A questo punto la velocità percorsa dalla monetina sarà uguale alla distanza percorsa
+dal treno nel tempo che la monetina impiega a cadere nuovamente a terra (questo rispetto al treno, avessimo voluto calcolare
+la distanza rispetto a terra avremmo dovuto tenere conto della velocità iniziale della monetina lungo la direzione
+di spostamento del treno, che potrebbe essere stata maggiore di zero per $t > 0$). Possiamo quindi calcolare il
+tempo di caduta della monetina sull'asse verticale:
+$$ h = v_0t-\frac{1}{2}gt^2, \quad t_1 = 0, \quad t_2 = \frac{2v_0}{g}$$
+dove le due soluzioni della quadratica rappresentano il punto di partenza a $t=0$, quando la monetina è chiaramente al livello del pavimento,
+e il punto di atterraggio che a noi interessa. A questo punto calcoliamo la distanza percorsa dal treno nel tempo calcolato (che potremmo
+chiamare $t*$):
+$$ d = \frac{1}{2}at^{*2} = \frac{2av_0^2}{g^2} $$
+dove si è chiaramente assunto spostamento e velocità iniziale del treno come nulle. \\
+Potremo allora porci il problema, leggermente più complesso, di ricavare la traiettoria percorsa dalla monetina
+nel sistema di riferimento del treno, come in quello di laboratorio (che non sono uguali!):
+\begin{itemize}
+  \item \textbf{Traiettoria nel S.R. di laboratorio: } possiamo applicare le relazioni impostate prima,
+    con le leggi orarie dei moti verticali ed orizzontali della monetina:
+    $$ \vec{r} = \vec{r'} + \vec{r}_{OO'}(t), \quad \vec{r}_{OO'}(t) = \vec{r}_{OO'}(0) + \vec{v}_{OO'}(0) + \frac{at^2}{2}\hat{x} $$
+    $$ \vec{r'} = -\frac{at^2}{2}\hat{x} + (-\frac{gt^2}{2} + v_0t)\hat{y} $$
+    da cui:
+    $$ \vec{r} = (-\frac{gt^2}{2} + v_0t)\hat{y} + \vec{r}_{OO'}(0) + \vec{v}_{OO'}(0) $$
+    che è l'equazione (simmetrica) di una parabola.
+  \item \textbf{Traiettoria nel S.R. del treno: } nel sistema di riferimento del treno, potremo assumere $g'$ come la nostra forza di gravità,
+    composta non solo dalla componente verticale $g\hat{y}$, ma anche dalla componente orizzontale data dall'accelerazione del treno $-a_T\hat{x}$.
+    Modulo e angolo di questa forza saranno rispettivamente:
+    $$  |g'| = \sqrt{a^2 + g^2}, \quad \theta = \tan^-1(\frac{a}{g})$$
+    Il risultato, come nel caso precedente, sarà una parabola, ma questa volta asimmetrica: l'asse sarà infatti
+    parallelo alla direzione della "nuova" accelerazione di gravità percepita all'interno del treno, e avrà quindi angolo:
+    $$ \theta = \tan^-1(\frac{a}{g}) $$
+\end{itemize}
+Può essere interessante considerare la traiettoria della monetina nel caso il treno si muova di moto rettilineo uniforme anzichè uniformemente accelerato.
+\begin{itemize}
+  \item \textbf{Traiettoria nel S.R. di laboratorio: } visto che la monetina viene lanciata con una velocità iniziale pari a quella del
+    treno, si ha dalle relazioni galileiane che la velocità sull'asse x è:
+    $$ v_x = v'_x + v_0, \quad v'_x = v_0 \Rightarrow v_0 = 0 $$
+    ergo la monetina resta ferma sull'asse x, parte da un punto sul pavimento del treno e atterra esattamente al solito posto.
+  \item \textbf{Traiettoria nel S.R. del treno: } il caso sarà qui analogo agli esempi visti prima, la legge oraria sarà infatti:
+    $$ \vec{r} = (v_0t, v_it - \frac{1}{2}gt^2) $$
+    che è la traiettoria di una parabola simmetrica (come conseguenza, qui anche più chiara, del teorema della funzione implicita). 
+\end{itemize}
+\end{document}

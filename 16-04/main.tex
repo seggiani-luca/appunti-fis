@@ -1,0 +1,62 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{16 Aprile 2024}
+
+\usepackage{amsmath}
+
+\begin{document}
+\maketitle
+\section{Energia potenziale gravitazionale per sistemi di punti materiali}
+Possiamo dare una definizione di energia potenziale gravitazionale per sistemi di punti materiali, e quindi corpi rigidi,
+tale per cui l'altezza $h$ in $mgh$ (come avevamo trovato per i punti materiali) vale quanto l'altezza del corpo rigido, ovvero:
+$$ U_{grav} = \sum_i^n m_igz_i = Mg \frac{\sum_i^f m_iz_i}{M} = Mgz_{CM}$$
+notando che:
+$$ \frac{\sum_i^f m_iz_i}{M} = \frac{1}{M}\int zdm = z_{CM}$$
+\section{Teorema di König per i sistemi di punti materiali}
+Dimostriamo adesso un'importante risultato riguardante l'energia cinetica.
+Stiamo considerando un sistema di punti materiali: definiamo due sistemi di riferimento inerziali. Il primo è
+il sistema di laboratorio $S_0(x,y,z)$, e il secondo è il sistema del centro di massa $S_{CM}(x',y',z')$ con assi
+paralleli a $S_0$ la cui origine è solidale al centro di massa. Vale la relazione:
+$$ 
+\left\{\begin{array}{l}
+    \vec{r_i} = \vec{r_i} + \vec{v_i'}t \cr \\ 
+    \vec{v_i} = \vec{v_{CM}} + \vec{v_i'} \cr \\
+    \vec{a_i} = \vec{a_i'}
+\end{array}\right.
+$$
+possiamo ricavare sulla base di questa relazione una formula per l'energia cinetica:
+$$ K = \sum \frac{1}{2}m_1v_1^2 = \sum \frac{1}{2} m_i(\vec{v_{CM}} + \vec{v_i'})^2 = \sum \frac{1}{2} m_i\vec{v_{CM}}^2  + \sum \frac{1}{2}m_i\vec{v_i'}^2 + \vec{v_{CM}} \cdot \sum m_i\vec{v_i'}$$
+Notiamo a questo punto che il termine $\sum m_i\vec{v_i'}$ equivale alla quantità di moto complessiva nel sistema di riferimento
+del centro di massa, che è nulla. Possiamo quindi riscrivere il tutto come:
+$$ K = \frac{1}{2}M\vec{v_{CM}}^2 + \sum \frac{1}{2}m_i\vec{v_i'}^2 $$
+Questa formula rappresenta ciò che viene enunciato dal teorema di König:
+L'energia cinetica totale di un sistema di punti materiali coincide con la somma dell'energia cinetica
+di traslazione del centro di massa (ovvero l'energia cinetica che avrebbe un corpo di massa uguale alla massa totale
+dei punti materiali e velocità pari a quella del centro di massa)
+e dell'energia cinetica di tutti i punti materiali misurata in un sistema
+di riferimento con origine solidale al centro di massa e assi paralleli a quelli di laboratorio. L'energia cinetica
+del centro di massa è data da $\frac{1}{2}M\vec{v_{CM}}^2$, e quella dei punti materiali nel sistema di riferimento proprio da
+$ \sum \frac{1}{2}m_i\vec{v_i'}^2 $, da cui la formula sopra riportata.
+\section{Teorema di König per il corpo rigido}
+Vediamo il significato del teorema di König per i corpi rigidi. Ripartiamo dalla definizione data per i sistemi
+di punti materiali:
+$$ K = \frac{1}{2}M\vec{v_{CM}}^2 + \sum \frac{1}{2}m_i\vec{v_i'}^2 $$
+Si avrà che il primo termine, riguardante il centro di massa, avrà esattamente la stessa forma per il corpo rigido.
+A cambiare sarà il secondo termine, riguardante i moti dei punti materiali rispetto al sistema di riferimento centrato
+sul centro di massa del sistema: nel caso del corpo rigido, dove le distanze relative fra punti materiali sono costanti,
+avremo che tale fattore dipende dal moto rotazionale del corpo stesso. Per la precisione, avremo che per qualsiasi
+punto a distanza $d_i$ dal centro di massa, la velocità relativa $\vec{v_i'}$ sarà:
+$$ \vec{v_i'} = \omega d_i \Rightarrow K = \frac{1}{2}M\vec{v_{CM}}^2 + \frac{1}{2}\sum m_id_i^2\omega^2$$
+Definiamo la quantità $I_{CM}$, detta momento d'inerzia. 
+$$ I_{CM} = \sum_i^n m_id_i^2 $$
+Il momento di inerzia andrà inteso come il "corrispettivo rotazionale della massa", anche se è importante notare che, a differenza della massa, dipende dall'asse di rotazione scelto. In ogni caso,
+possiamo ricavare la formula definitiva:
+$$ K = \frac{1}{2}M\vec{v_{CM}}^2 + \frac{1}{2}I_{CM}\omega^2 $$
+dove il primo termine dipende, come già detto, dal moto traslatorio del centro di massa, e il secondo termine dal moto rotazionale del corpo rigido e dal suo momento di inerzia.
+\end{document}

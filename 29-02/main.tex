@@ -1,0 +1,78 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{29 Febbraio 2024}
+
+\begin{document}
+\maketitle
+\section{Concetto di campo}
+In fisica definiamo un campo come una funzione multivariabile dallo spazio o dal piano ad un campo scalare
+o ad uno spazio vettoriale, rispettivamente (nello spazio):
+\begin{itemize}
+  \item Campo scalare:
+    $$ T = T(x, y, z) $$
+  \item Campo vettoriale:
+    $$ V = V(x, y, z) = V_x(x, y, z)\hat{i} + V_y(x, y, z)\hat{j} + V_z(x, y, z)\hat{k} $$
+\end{itemize}
+
+\section{Introduzione alla meccanica classica}
+La meccanica classica è la branca della fisica che si occupa dello studio di corpi statici e in movimento,
+con dimensioni superiori a quelle delle particelle subatomiche e velocità non comparabili a quella della luce,
+(compito rispettivamente della meccanica quantistica e relativistica). Possiamo ulteriormente dividere la meccanica
+classica in:
+\begin{itemize}
+  \item Cinematica:
+    descrizione della traiettoria dei corpi in funzione del tempo, senza tener conto delle cause dei loro moti
+  \item Dinamica:
+    studio delle cause dei moti dei corpi (quindi delle forze)
+  \item Statica:
+    studio dell'equilibrio dei corpi in quiete.
+\end{itemize}
+
+\textbf{Il punto materiale} \\
+Il punto materiale è un'approssimazione che adottiamo nel caso in cui l'estensione dei corpi di cui parliamo
+sia irrilevante ala situazione che vogliamo analizzare. Un punto materiale non ha quindi estensione, ma solamente
+una posizione ed una certa massa (da cui la dicitura "punto di massa,  \textit{mass point}").
+\par \medskip
+\textbf{Moto rettilineo}
+Definisco la posizione $x$ di un corpo su una retta in funzione del tempo come:
+$$ x(t) $$
+che prende il nome di \textit{legge oraria} del moto .
+Una variazione di spazio (quindi uno spostamento) da $x(t_2)$ a $x(t_1)$ punti distinti nel tempo sarà quindi:
+$$ \Delta x = x(t_1)-x(t_2) $$
+
+A questo punto la variazione di tempo fra $t_1$ e $t_2$, noto $t_2 > t_1$, sarà:
+$$ \Delta t = t_2 - t_1 $$
+e potrò definire la velocità media:
+$$ v_x = \frac{\Delta x}{\Delta t} = \frac{x(t_2)- x(t_1)}{t_2- t_1} $$
+
+si nota che questo corrisponde di fatto a $\tan{\alpha}$ con $\alpha$ uguale all'angolo formato dalla tangente
+del grafico della legge oraria in un dato punto $x_0 \in [x(t_1), x(t_2)]$.
+
+Si definisce poi la traiettoria di un punto materiale come il \textit{"Luogo geometrico dei punti occupati nel tempo da
+un punto materiale"}, ergo tutti i punti che la mia legge oraria $x(t)$ restituisce in un dato intervallo di $t$.
+\par\smallskip
+Prendiamo adesso in esempio la legge oraria di un moto rettilineo uniformemente accelerato:
+$$ x(t) = x_0+v_0t + \frac{1}{2}a_0t^2 $$
+considerando le unità di misura di $x_0$, $v_0$ e $a_0$, ovvero m, $\frac{\mathrm{m}}{\mathrm{s}}$ e $\frac{\mathrm{m}}{\mathrm{s}^2}$,
+posso studiare la coerenza dimensionale:
+$$ [L] + \frac{[L]}{[T]} [T] + \frac{[L]}{[T]^2}[T]^2 = [L]+ [L]+ [L] $$
+che è dimensionalmente coerente.
+\par\smallskip
+Adottiamo adesso alcuni degli strumenti del calcolo per ottenere da una curva continua della legge oraria
+(magari ottenuta dal curve-fitting di dati sperimentali), il grafico della velocità del punto materiale.
+Si renderà necessario un passaggio da velocità media a velocità \textit{istantanea}, definita come la derivata
+della legge oraria $x(t)$ in un dato punto $x_0$. Formalmente, presa la precedente definizione di velocità media
+possiamo dire:
+$$ v_x = \frac{x_2-x_1}{t_2-t_1} \rightarrow \lim_{\Delta t \rightarrow 0} \frac{x(t + \Delta t) - x(t)}{t} $$
+ovvero il limite del rapporto incrementale in un punto $x_0 = x(t)$ su variazioni infinitesimali di $t$.
+Questo si può inoltre esprimere come:
+$$ v(t_0) = \frac{dx}{dt} \bigg |_{t=t_0} $$
+e si nota inoltre che in fisica è comune la notazione $\dot{x}$ per le derivate.
+
+\end{document}

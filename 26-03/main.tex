@@ -1,0 +1,95 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{26 Marzo 2024}
+
+\begin{document}
+\maketitle
+\section{Equilibrio}
+Il grafico dell'energia potenziale ci permette di ottenere informazioni riguardanti l'equilibrio del sistema studiato. In particolare, distinguiamo i casi:
+\begin{itemize}
+  \item Punto stazionario, massimo locale: si parla di equilibrio instabile. Una minima variazione delle condizioni
+    del sistema porterebbe all'alterazione di esso, probabilmente verso un punto di equilibrio stabile
+  \item Punto stazionario, minimo locale: si parla di equilibrio stabile. Una variazione delle condizioni
+    del sistema sufficientemente piccola non ha grandi conseguenze sul sistema, che torna naturalmente al suo stato 
+    di equilibrio
+  \item Punto stazionario, funzione costante in un suo intorno: si parla di equilibrio indifferente. Il sistema
+    non reagisce a minime variazioni delle sue condizioni.
+\end{itemize}
+\section{Energia meccanica e principio di conservazione dell'energia meccanica}
+Riprendiamo il teorema delle forze vive:
+$$ K_f - K_i = L_{totale} = L_{cons} + L_{non \ cons} = -(U_f - U_i) + L_{non \ cons}$$
+Definiamo allora l'\textbf{energia meccanica}:
+$$ E = K + U $$
+per cui la formula precedente diventa:
+$$ K_f + U_f - (K_i + U_i) = E_f - E_i = L_{non \ cons} $$
+noto anche come \textbf{principio di conservazione dell'energia meccanica}. In particolare, se on ci sono forze
+non conservative, o se ci sono ma compiono lavoro nullo:
+$$ E(P) = K(P) + U(P) = \mathrm{const.} = K(P_1) + U(P_1) $$
+su due punti $P$ e $P_1$ arbitrari.
+\section{Applicazioni della conservazione dell'energia}
+Vediamo alcuni esempi di problemi che richiedono l'applicazione del principio di conservazione dell'energia.
+\par\smallskip
+\textbf{Pendolo sul piano verticale senza attrito} \\
+Poniamo un pendolo, ovvero una massa legata da un filo di lunghezza $r$ a un perno centrale. Vogliamo spingere
+la massa, modellizzata come un punto materiale, dal punto più basso $P_1$ a quello più alto $P_2$ della circonferenza, e vogliamo
+quindi calcolare la velocità minima con cui il punto deve partire da $P_1$. Notiamo che non basterà raggiungere
+$P_1$, ma dovremo raggiungerlo con una velocità tale da proseguire il moto circolare senza cadere per via della gravita.
+Notiamo inoltre che l'unico punto critico sarà $P_2$, in quanto il suo raggiungimento (e superamento) significa anche il
+raggiungimento di tutti gli altri punti ad esso sottostanti. \\
+Cerchiamo innanzitutto la velocità minima necessaria all'arrivo sulla verticale. La reazione del filo sarà:
+$$ T = mg\cos{\theta} + m\frac{v^2}{r} \geq 0 $$
+Una $T$ maggiore di zero ci assicura che il filo sta esercitando una forza per mantenere la massa in rotazione, e quindi
+che è in tensione. Poniamo quindi:
+$$ \frac{v^2}{r} \geq -g\cos{\theta}, \quad v_{P_2} = \sqrt{gr\cos{\theta}}$$
+Infine, prendiamo $v_{P_2}$, con $\theta = \pi$: $v_{P_2} = \sqrt{gr}$ in valore assoluto. \\
+Utilizziamo allora il principio della conservazione dell'energia: sappiamo che:
+$$ \Delta K = -\Delta U $$
+ovvero la variazione di energia cinetica è uguale all'opposto della variazione di energia potenziale. 
+La variazione di energia cinetica equivale alla differenza fra l'energia cinetica alla velocità minima appena trovata (nel caso peggiore, più lento
+possibile) e quella alla velocità $v_i$ che volevamo cercare:
+$$ \Delta K = \frac{1}{2}mv_{P_2}^2 - \frac{1}{2}mv_i^2 = \frac{1}{2}mgr - \frac{1}{2}mv_i^2$$
+Posto poi l'origine del sistema di riferimento alla base della circonferenza, avremo che l'energia potenziale è 0 in $P_1$,
+ergo la sua variazione una volta toccato $P_2$ sarà:
+$$ \Delta U = 2mgr$$
+Possiamo allora impostare:
+$$ \frac{1}{2}mgr - \frac{1}{2}mv_i^2 = -2mgr $$
+da cui si ricava la velocità iniziale necessaria, $vi = \sqrt{5gr}$.
+\par\smallskip
+\textbf{Pendolo sul piano verticale senza attrito, $\theta$ arbitrario} \\
+Cerchiamo di trovare la velocità necessaria al raggiungimento di angoli $\theta_0$ arbitrari. Definiamo l'energia potenziale,
+invece che in funzione dell'altezza massima $2r$, in funzione dell'angolo, con:
+$$ U(\theta) = mgL(1-\cos{\theta}) $$
+Avremo dalla conservazione dell'energia che:
+$$ U(0) + \frac{1}{2}mv^2 = U(\theta_0) + \frac{1}{2mv^2} \Rightarrow \frac{1}{2}mv^2 = mgL(1-\cos{\theta_0})$$
+visto che la potenziale all'istante 0 è nulla, come è nulla l'energia cinetica nel punto che vogliamo raggiungere
+(che sarà di cambio direzione). Da questo otteniamo $v_0 = \sqrt{2gL(1-\cos{\theta})}$.
+\par\smallskip
+\textbf{Pendolo oscillante} \\
+Descriviamo adesso il fenomeno oscillatorio presentato dal pendolo. Possiamo individuare le forze agenti sulla sua massa in direzione
+radiale:
+$$ -T + mg\cos{\theta} = ma_r = -m \frac{v^2}{r} $$
+e tangenziale:
+$$ -mg\sin{\theta} = ma_\theta = m \frac{dv}{dt} $$
+Il moto analizzato è effettivamente un moto circolare vario, con accelerazione centripeta in direzione radiale, e inoltre
+accelerazione variabile in direzione longitudinale. Conviene definire quest'ultima in funzione della velocità tangenziale,
+sfruttando l'equivalenza dell'arco $s = L\theta$:
+$$ v(t) = \frac{ds}{dt} = \frac{dL\theta}{dt} = L \frac{d\theta}{dt} = L\omega(t) $$
+$$ a_\theta(t) = \frac{dv(t)}{dt} = \frac{d\omega}{dt} = L\frac{d\omega}{dt} = L\frac{d^2\omega}{dt^2} $$
+da cui ricaviamo nuovamente la componente tangenziale:
+$$ -mg\sin{\theta} = mL \frac{d^2 \theta}{dt^2} $$
+ma stavolta in funzione di una derivata di $\theta$. Questo ci permette di impostare l'equazione differenziale:
+$$ \frac{d^2\theta}{dt^2} + \frac{g}{L}\sin{\theta} = 0$$
+Notiamo che compare la funzione seno. Per piccoli angoli $\theta$ conviene usare l'approssimazione $x$ per il seno,
+ovvero la sua formula di Taylor di primo grado centrata in 0 (quindi formula di MacLaurin...):
+$$ \frac{d^2\theta}{dt} + \frac{g}{L}\theta = 0 \Rightarrow \frac{d^2\theta}{dt} + \Omega^2\theta = 0, \quad \Omega = \sqrt{\frac{g}{L}} $$
+Che è l'equazione differenziale del moto armonico, e ha come soluzione:
+$$ \omega{t} = A\cos{\Omega t + \phi} $$
+con pulsazione $\Omega$ e periodo $T = 2\pi\sqrt{\frac{L}{g}}$. Come sempre, le costanti si determinano dalle condizioni iniziali di velocità
+e posizione.
+\end{document}

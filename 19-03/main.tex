@@ -1,0 +1,108 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisisca I}
+\author{Luca Seggiani}
+\date{19 Marzo 2024}
+
+\begin{document}
+\maketitle
+\section{Moto circolare uniforme sul piano verticale}
+Vediamo adesso il moto circolare uniforme, dal punto di vista delle forze, svolto su un piano verticale, ovvero
+sotto l'effetto della forza di gravità. Supponiamo di avere un corpo che ruota su un giro della morte. Poniamo
+$T$ come la reazione vincolare della superficie, che mantiene il corpo sulla traiettoria circolare. L'accelerazione 
+del corpo corpo sarà allora:
+$$ \vec{T} + m\vec{g} = m\vec{a} $$
+o sulle componenti di un sistema di riferimento polare:
+$$ -T + mg\cos{\theta} = ma_r = -m\frac{v^2}{r} $$
+$$ -mg\sin{\theta} = ma_\theta = m \frac{dv}{dt} $$
+Queste sono le  equazioni di un moto vario, ovvero dove l'accelerazione sulla direzione tangenziale del corpo varia.
+Vediamo qual'è la velocità minima perchè il corpo raggiunga la posizione $\theta = \pi$, ovvero riesca a svolgere un
+giro completo. Abbiamo da prima:
+$$ g\cos{\theta} \leq \frac{v^2}{r}, \quad v_{min} = \sqrt{gr} $$
+visto che $T$ sarà maggiore di zero nel caso di un contatto con la superficie della rampa.
+\section{Forze fra corpi deformabili}
+Vediamo ora le forze dovute all'interazione fra due corpi deformabili in contatto fra di loro. Questo tipo di forze si
+dividono in:
+\begin{itemize}
+  \item Forze fra due corpi deformabili anelasticamente, spesso in modo permanente. In questo caso non
+    esistono leggi, e si può solo applicare il terzo principio della dinamica.
+  \item Forze fra due corpi deformabili elasticamente, che si possono modellizzare come molle.
+\end{itemize}
+\par\smallskip
+\textbf{Forza elastica} \\
+Vediamo nel dettaglio l'ultima categoria. Una mmolla con un certo coefficiente elastico $k$, sottoposta ad una sollecitazione
+che riesce a spostarla di una certa $\Delta R$, esprime in direzione opposta una forza pari a:
+$$ \vec{F_{el}} = -k\Delta R$$
+La costante $k$ è detta costante della molla e si misura in $\frac{\mathrm{N}}{\mathrm{m}}$. Notiamo che le molle
+che prenderemo in considerazione sono molle ideali, ovvero prive di massa e indeformabili (a $k$ costante).
+\section{Moto armonico}
+Vediamo una configurazione dove una massa collegata da una molla ad una parete oscilla attorno alla posizione di riposo.
+Abbiamo che in ogni istante:
+$$ ma = m \frac{d^2x}{dt^2} = -kx $$
+ovvero
+$$ \frac{d^2x(t)}{dt^2} = -\frac{k}{m}x(t) = -\omega^2x(t)$$
+introducendo $ \omega = \sqrt{\frac{k}{m}}$, detta pulsazione della molla. \\
+L'equazione differenziale ha soluzione:
+$$ x(t) = Acos(\omega t + \phi) $$
+dove $A$ è l'ampiezza, $\omega$ la pulsazione e $\phi$ la fase.
+Posso ricavare poi la velocità:
+$$ v(t) = -A\omega\sin{\omega t + \phi} $$
+e l'accelerazione:
+$$ a(t) = -A\omega^2\cos(\omega t + \phi) $$
+\newpage
+\textbf{Dimostrazione} \\
+\begin{itemize}
+  \item \textbf{Equazione differenziale del moto armonico} \\
+prendiamo la legge elastica $\vec{F} = -kx$. Applicando la seconda legge
+della dinamica, abbiamo che:
+$$ m\vec{a} = -kx, \quad \vec{a} = -\frac{kx}{m}, \quad \frac{d^2x(t)}{dt^2} = -\frac{kx}{m} $$
+da cui si ricava l'equazione differenziale ordinaria di secondo grado:
+$$ \ddot{x}(t) +\frac{k}{m}x(t) = 0 $$
+il polinomio caratteristico dell'equazione è:
+$$ \lambda^2 + \frac{k}{m} = 0 $$
+da cui si ottengono 2 soluzioni immaginarie coniugate, $\pm i\sqrt{\frac{k}{m}}$. L'integrale generale è quindi:
+$$ x(t) = c_1e^{+i\frac{k}{m}} + c_2e^{-i\frac{k}{m}} $$
+Conviene a questo punto chiamare $\sqrt{\frac{k}{m}} = \omega$, detta pulsazione dell'oscillatore armonico (impropiamente
+velocità angolare). A questo punto potremo, tra l'altro, riscrivere la differenziale come:
+$$ \ddot{x}(t) + \omega^2x(t) = 0 $$
+Applicando la legge di Eulero all'integrale generale, avremo:
+$$ x(t) = c_1\cos{\sqrt{\frac{k}{m} t}} + c_2\sin{\sqrt{\frac{k}{m}} t} = c_1\cos{\omega t} + c_2\sin{\omega t} $$
+ \item \textbf{Forma cosinusoidale} \\
+A questo punto riportiamo la formula nella forma $A\cos{\omega t + \phi}$, in funzione di ampiezza, pulsazione e fase.
+Diciamo innanzitutto:
+$$ A = \sqrt{c_1^2 + c_2^2} \Rightarrow \frac{A^2}{A^2} = \frac{c_1^2+c_2^2}{A^2}, \quad (\frac{c_1^2}{A})^2 + (\frac{c_2^2}{A})^2 = 1 $$
+Notiamo la somiglianza con l'identità trigonometrica fondamentale $\sin^2{\theta} + \cos^2{\theta} = 1$. Possiamo infatti
+avere che:
+$$ \frac{c_1}{A} = \cos{\psi}, \quad \frac{c_2}{A} = \sin{\psi} \Rightarrow c_1 = A\cos{\psi}, \quad c_2 = A\sin{\psi} $$
+per un qualsiasi angolo $\psi$. Sostituiamo quindi nell'integrale generale:
+$$ x(t) = A\cos{\psi}\cos{\omega t} + A\sin{\psi}\sin{\omega t} = A(\cos{\psi}\cos{\omega t} + \sin{\psi}\sin{\omega t}) $$
+su cui possiamo applicare la formula della sottrazione del coseno $\cos{(\alpha - \beta)} = \cos{\alpha}\cos{\beta} + \sin{\alpha}{\sin{\beta}}$:
+$$ A(\cos{\psi}\cos{\omega t} + \sin{\psi}\sin{\omega t}) = A\cos{(\omega t - \psi)} $$
+dove $ \cos{(\omega t - \psi)} = \cos{(\psi - \omega t)}$ (per la parità del coseno o per la commutatività della moltiplicazione
+nella formula di sottrazione, fai un po' te). Troviamo allora $\psi$ in funzione di $c_1$ e $c_2$, accorgendoci di poter
+ricavare dalle formule sopra riportate $\tan{\psi}$:
+$$ \tan{\psi} = \frac{\sin{\psi}}{\cos{\psi}} = \frac{c_1}{A} \cdot \frac{A}{c_2} = \frac{c_2}{c_1} $$
+definiamo, per convenienza, l'opposto di $\psi$ come $\phi = -\psi$. Questo ci permette di scrivere:
+$$ x(t) = A\cos{(\omega t + \phi)} $$
+Dalla disparità della tangente, avremo
+che:
+$$ \tan{\phi} = -\tan{(-\phi)} = -\tan{\psi} = \tan{-\psi} $$
+$$ \phi = \arctan{(-\frac{c_2}{c_1})}, \quad \psi = \arctan{\frac{c_2}{c_1}} $$
+  \item \textbf{Condizioni iniziali} \\
+Diamo infine un significato fisico alle costanti $c_1$, e $c_2$, imponendo le condizioni iniziali dell'equazione differenziale.
+Iniziamo dalla posizione al tempo 0, ovvero $x(t = 0)$:
+$$ x(0) = c_1\cos{0} + c_2\sin{0} = c_1, \quad c_1 = x(0) $$
+Deriviamo poi $x(t)$ per ricavare la velocità $\frac{d}{dt}x(t) = v(t)$:
+$$ \frac{d}{dt}x(t) = -c_1\omega\sin{\omega t} + c_2\omega\cos{\omega t} $$
+e quindi la velocità al tempo 0, ovvero $v(t = 0)$:
+$$ v(0) = -c_1\omega\sin{0} + c_2\omega\cos{0} = c_2\omega, \quad c_2 = \frac{v(0)}{\omega} $$
+chiamiamo $v(0) = v_0$ e $x(0) = x_0$ e sostituiamo nella formula cosinusoidale:
+$$ A\cos{(\omega t + \phi)} = \sqrt{c_1^2 + c_2^2}\cos{(\omega t + \arctan{(-\frac{c_2}{c_1})})} $$
+$$ A = \sqrt{c_1^2+c_2^2} = \sqrt{x_0^2 + (\frac{v_0}{\omega})^2}, \quad \phi = \arctan{(-\frac{c_2}{c_1})} = \arctan{(-\frac{v_0}{\omega x_0})} $$
+$$ A\cos{(\omega t + \phi)} = \sqrt{x_0^2 + (\frac{v_0}{\omega})^2}\cos{(\omega t + \arctan{(-\frac{v_0}{\omega x_0})})} $$
+\end{itemize}
+\end{document}

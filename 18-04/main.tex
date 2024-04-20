@@ -1,0 +1,129 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{18 Aprile 2024}
+
+\usepackage{hyperref}
+
+\begin{document}
+\maketitle
+\section{Momento di inerzia rispetto ad un asse}
+Consideriamo una massa $M$ in rotazione a distanza $R$ dal suo asse. Potremo calcolare il suo momento di inerzia come:
+$$ I_0 = \sum m_ir_i^2 = MR^2$$
+\par\smallskip
+\textbf{Momento di inerzia di una sbarretta sottile}\\
+Calcoliamo il momento di inerzia di una sbarretta sottile di massa $M$ e lunghezza $L$ in rotazione rispetto al suo punto medio.
+Dovremo conoscere la densità lineare di massa $\lambda$ della sbarretta:
+$$ \lambda = \frac{M}{L} = \frac{dm}{dx}, \quad dm = \lambda dx $$
+Potremo allora calcolare il momento di inerzia applicando la definizione:
+$$ I= dm d^2, \quad I = \int_{\frac{L}{2}}^{\frac{L}{2}} \lambda dx x^2 = \frac{2\lambda}{3} \left(\frac{L}{2}\right)^3 = \frac{ML^2}{12} $$
+\par\smallskip
+\textbf{Momento di inerzia di un anello omogeneo} \\
+Calcoliamo il momento di inerzia di un'anello di massa $M$ e raggio $R$, vuoto, in rotazinoe rispetto al suo centro. Ragioniamo in
+modo analogo a prima. La densità lineare di massa sarà:
+$$ \lambda = \frac{M}{2\pi R} $$
+mentre la variazione di lunghezza sull'anello $dl$ sarà:
+$$ dm = \lambda dl, \quad dl = Rd\phi $$
+da cui possiamo quindi calcolare la massa su $dl$:
+$$ dm = \lambda dl = \frac{M}{2\pi R}Rd\phi = \frac{M}{2\pi}d\phi$$
+Impostiamo allora il momento di inerzia dalla definizione:
+$$ I = \int_{anello} R^2 dm = R^2\int_0^{2\pi} \frac{M}{2\pi}d\phi $$
+Notiamo che l'integrale rappresenta semplicemente tutta la massa dell'anello. Avremo quindi che, come prima:
+$$ I = MR^2 $$
+\par\smallskip
+\textbf{Momento di inerzia di un disco omogeneo} \\
+Studiamo il caso analogo al precedente, ma dove l'anello è pieno. Avremo bisogno della densità superficiale
+di massa:
+$$ \rho = \frac{dm}{ds} = \frac{M}{\pi R^2}, \quad dm = \rho ds, \quad ds = 2\pi r dr $$
+Calcoliamo allora il momento d'inerzia:
+$$ I = \int dm d^2 = \int \rho ds r^2 = \rho \int 2\pi rdrr^2 = \rho 2\pi \frac{R^4}{M} = M \frac{R^2}{2} $$
+\par\smallskip
+\textbf{Cubo di masse puntiformi} \\
+Calcoliamo il centro di massa di un cubo formato da un punto materiale per ogni suo vertice. Possiamo iniziare
+sull'asse x: 4 delle masse avranno coordinata $x=0$, e le altre 4 avranno coordinata $x=l$ con $l$ lato del cubo.
+Questo mi porta a dire:
+$$ x_{CM} = \frac{(4x_l + 4x_0)m}{8m} = \frac{l}{2} $$
+Possiamo ripetere quest'operazione su tutti e tre gli assi, ottenendo:
+$$ \vec{r_{CM}} = \left(\frac{l}{2}, \frac{l}{2}, \frac{l}{2}\right) $$
+Com'è abbastanza intuitivo. \\
+Vediamo ora di calcolare il momento di inerzia dello stesso corpo. Sull'asse x si avrà che:
+$$ I_x = \sum m_i (y_i^2 + z_i^2) $$
+Se abbiamo centrato la figura facendo corrispondere il centro di massa all'origine degli assi cartesiani, è vero che:
+$$ x = \pm \frac{l}{2}, \quad y = \pm \frac{l}{2}, \quad z = \pm \frac{l}{2} $$
+Potrò sostituire queste coordinate nella formula precedente ottenendo:
+$$ I_x = 8m\left(\frac{l^2}{2}\right) = 4ml^2, \quad \vec{I_{CM}} = 4ml^2 $$
+\par\smallskip
+\textbf{Cubo omogeneo} \\
+Rifacciamo quanto appena fatto per un cubo omogeneo di massa $M$. Per quanto riguarda il centro di massa, avremo
+che il baricentro è dato da:
+$$ \vec{r_{CM}} = \frac{1}{M} \int dm \vec{r} $$
+Con la densità volumetrica di massa: 
+$$ dm = \rho dv, \quad \rho = \frac{dm}{dv} = \frac{M}{l^3} $$
+Possiamo quindi impostare l'integrale:
+$$ \vec{x_{CM}} = \frac{\rho}{M} \int_0^l x dx \int_0^l dy \int_0^l dz = \frac{\rho}{M}\frac{l^4}{2} = \frac{l}{2} $$
+Che è identico al caso discreto. \\ Calcoliamo allora il momento di inerzia:
+$$ I_x = \int dm(y^2+z^2) $$
+è perfettamente analogo al caso precedente, solo considerando variazioni continue di massa. Si riprende la
+densità volumetrica di massa:
+$$ dm = \rho dv, \quad \rho = \frac{dm}{dv} = \frac{M}{l^3} $$
+e si imposta l'integrale:
+$$ I_x = \rho\int dxdydz(y^2+z^2) = \rho\int_{\frac{l}{2}}^{\frac{l}{2}} dx \int_{\frac{l}{2}}^{\frac{l}{2}} dy \int_{\frac{l}{2}}^{\frac{l}{2}} (y^2+z^2)dz = \rho l \int_{\frac{l}{2}}^{\frac{l}{2}} (lx^2 + \frac{y^3}{3}\Bigg|^{\frac{l}{2}}_{\frac{l}{2}})dx = [...] $$
+che dà il risultato finale di:
+$$ I = \frac{Ml^2}{6}$$
+\par\smallskip
+\textbf{Teorema degli assi paralleli} \\
+Il teorema degli assi paralleli, anche noto come teorema di Steiner, ci permette di calcolare in modo più agevole il momento d'inerzia
+di un corpo. Supponiamo di aver calcolato il momento di inerzia di un corpo rispetto al suo centro di massa. Poniamo però che il corpo
+stia adesso ruotando, ma non attorno al suo centro di massa, bensì attorno ad un asse che è parallelo a quello da cui eravamo partiti e sta
+da esso ad una certa distanza $D$. Possiamo allora dire che:
+$$ I' = I_{CM} + MD^2$$
+Dimostriamo questo risultato. Se il momento d'inerzia era stato calcolato ad una distanza $d'$ da $dm$, allora:
+$$ \vec{a'} = \vec{D} + \vec{d} $$
+Da cui si imposta l'integrale:
+$$ I' = \int dmd'^2 = \int dm(\vec{D} + \vec{d})\cdot(\vec{D} + \vec{d}) = \int dm(D^2 + 2\vec{d}\cdot\vec{D}+d^2)  $$
+$$ = D^2\int dm + 2\vec{D} \cdot \int dm\vec{d} + \int dmd^2$$
+Notiamo che:
+$$2\vec{D}\cdot\int dm\vec{d} = 2D_x\int dmx + 2D_y\int dm y = 0$$
+L'integrale allora potrà ridursi a:
+$$ I' = D^2 \int dm + \int dm(x^2+y^2) = MD^2 + I_{CM}$$
+Vediamo un applicazione.
+\par\smallskip
+\textbf{Applicazione del teorema di Steiner} \\
+Supponiamo di avere un manubrio formato da due sfere di massa $M$ e raggio $R$ unite fra di loro da un asta lunga $L$ e di massa $m$. Cerchiamo
+di calcolare il momento di inerzia del corpo rispetto a un asse passante per il centro dell'asta.
+Innanzituttto potremo calcolare il momento di inerzia dell'asta, rispetto all'asse che passa attravero il suo centro:
+$$ I_{asta} = I_{asta}^{CM} = \frac{mL^2}{12} $$
+Si calcolerà poi il momento di inerzia di una sfera, applicando il teorema di Steiner:
+$$ I_{sfera} = I_{sfera}^{CM} + M(R+\frac{L}{2})^2 = \frac{2}{5}MR^2 + M(R+ \frac{L}{2})^2 $$
+Il momento di inerzia totale a questo punto sarà dato da:
+$$ I_{tot} = I_{asta} + 2I_{sfera} = \frac{mL^2}{12} + 2(\frac{2}{5}MR^2 + M(R+ \frac{L}{2})^2)$$
+\section{Momento angolare di un corpo rigido attorno ad un asse}
+Vediamo come descrivere il momento angolare di un corpo rigido formato da una distribuzione di massa continua di punti materiali.
+Avremo che, se il corpo ruota attorno ad un asse con $\omega$ velocità angolare costante, allora ogni suo punto ruoterà
+attorno a tale asse con velocità angolare costante, descrivendo una circonferenza ortogonale all'asse e di raggio tale alla 
+distanza del punto dall'asse. Possiamo allora applicare la definizione di momento angolare:
+$$ \vec{L} = \sum m_i\vec{R_i} \times \vec{v_i} $$
+Ricordiamo allora che $\vec{v_i} = \vec{\omega} \times \vec{R_i}$ per quanto riguarda il moto circolare uniforme. Allora:
+$$ \vec{L}=\sum m_i\vec{R_i} \times (\vec{\omega} \times \vec{R_i})$$
+Questo può essere risolto applicando il prodotto vettoriale triplo (niente baci sui taxi!):
+$$ \vec{a} \times (\vec{b} \times \vec{c}) = \vec{b} \times (\vec{a} \cdot \vec{c}) - \vec{c} \times (\vec{a} \cdot \vec{b}) $$
+da cui:
+$$ \vec{L} = \sum m_i (R_i^2 \vec{\omega} - (\vec{R_i}\cdot\vec{\omega})\vec{R_i}) = \sum m_i (R_i^2 \vec{\omega} - \omega R_i \vec{R_i} \cos{\theta_i}) $$
+A questo punto conviene scomporre $\vec{R_i}$ in due componenti (e da qui la grande intuizione): una parallela alla velocità angolare $\vec{\omega}$ ($\hat{\omega}$), e una ortogonale
+ad essa ($\hat{u}$):
+$$ \vec{R_i} = \hat{\omega}R_i\cos{\theta_i} + \hat{u}R_i\sin{\theta_i} $$
+Questo ci porta a riscrivere $\vec{L}$ in due componenti, quella lungo $\hat{\omega}$ e quella lungo $\hat{u}$. Dai calcoli, si avrà che la componente lungo $\hat{\omega}$
+(detta componente assiale) varrà:
+$$ \vec{L_z} = \sum m_i d_i^2 \omega= I_z\omega $$
+Ovvero momento di inerzia per velocità angolare, come si era già trovato. Notiamo che siamo passati da $R_i$ a $d_i$, ovvero $R_i\sin{\theta_i}$, la distanza del punto dall'asse di rotazione del corpo.
+\\Particolare sarà invece la componente ortogonale $\hat{u}$, che però si osserverà
+solo nel caso l'asse di rotazione non sia coincidente con uno degli assi di simmetria della distribuzione di massa del corpo rigido:
+$$ L_u = \sum m_i\omega R_i^2 \sin{\theta_i}\cos{\theta_i} $$
+Lo svolgimento completo dei calcoli si può trivare a pagina 68 di:
+\url{https://github.com/Guray00/IngegneriaInformatica/blob/master/PRIMO%20ANNO/II%20SEMESTRE/Fisica%20Generale%20I/Dispense%20(A.A.%20corrente)/Lezione11-Moto_di_un_Corpo_RIgido.pdf}
+\end{document}

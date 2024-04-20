@@ -1,0 +1,142 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{18 Marzo 2024}
+
+\usepackage{amsmath}
+
+\begin{document}
+\maketitle
+\section{Resistenza fluidodinamica}
+Un fluido (quindi un liquido o gas) esercita una forza di resistenza $\vec{R}$ su di un oggetto che si muove immerso in esso.
+La direzione di $\vec{R}$ è opposta alla direzione $\vec{v}$ del moto dell'oggetto relativo al fluido. Il suo modulo
+dipende invece dalle caratteristiche del fluido, dalla forma dell'oggetto immerso e dalla sua velocità. 
+\par\smallskip
+\textbf{Proporzionalità diretta} \\
+Generalmente, in un fluido possiamo applicare una qualche proporzionalità diretta del tipo:
+$$ \vec{R} = -\beta\vec{v} $$
+Ad esempio, volessimo modellizzare il moto di una particella in un fluido, con resistenza proporzionale alla velocità,
+avremo l'equazione differenziale:
+$$ m\frac{dv}{dt} = -\beta v+mg \Rightarrow \frac{dv}{dt} = -\frac{\beta}{m}v+g $$
+la cui omogenea associata è:
+$$ \frac{dv}{dt} = -\frac{\beta}{m}v $$
+L'omogenea è a variabili separabili, e abbiamo quindi:
+$$ \frac{dv}{v} = -\frac{\beta}{m}dt \Rightarrow \int{\frac{dv}{v}} = \int{-\frac{\beta}{m}dt} \Rightarrow \log{v} = -\frac{\beta}{m}t + A, \quad  v(t) = Ae^{-\frac{\beta}{m}t} $$
+La soluzione generale si ottiene imponendo la condizione di regime (velocità costante):
+$$ \frac{dv}{dt} = 0 \Rightarrow 0 = -\frac{\beta}{m}v_l + g, \quad v_l = \frac{mg}{\beta} $$
+da cui ricaviamo la soluzione globale:
+$$ v(t) = Ae^{-\frac{\beta}{m}t}+v_l = Ae^{-\frac{\beta}{m}t}+\frac{mg}{\beta} $$
+A questo punto possiamo imporre le nostre condizioni iniziali. Assumiamo che la velocità del corpo all'istante $t=0$ sia nulla:
+$$ 0 = A + \frac{mg}{b}, \quad A = -\frac{mg}{b} $$
+da cui otteniamo:
+$$ v(t) = -\frac{mg}{b} e^{-\frac{\beta}{m}t} + \frac{mg}{\beta} = \frac{mg}{b}(1-e^{-\frac{\beta}{m}t}) $$
+\par\smallskip
+\textbf{Proporzionalità quadratica} \\
+Nel caso di corpi non piccoli che si muovono a velocità elevate, la resistenza $\vec{R}$ è circa proporzionale a $v^2$ invece che a $v$, secondo
+la formula:
+$$ \vec{R} = \frac{1}{2}C\rho Av^2$$
+dove $C$ è il coefficiente di attrito (resistenza aerodinamica), $\rho$ la densità del fluido, e $A$ l'area efficace (la sezione trasversale nella
+direzione del moto). Possiamo già da questa forza ricavare la velocità limite:
+$$ ma = mg - \frac{1}{2}C\rho Av^2 $$
+$$ mg - \frac{1}{2}C\rho A{v_l}^2 = 0 \Rightarrow v_l = \sqrt{\frac{2mg}{CA\rho}}$$
+
+\section{Moto circolare uniforme sul piano orizzontale}
+Vediamo ora le forze in gioco in un moto circolare uniforme. Abbiamo che l'accelerazione centripeta è:
+$$ |a_r| = \frac{v^2}{r} = \omega^2 r$$
+Di conseguenza, perchè si verifichi un moto circolare, significherà che esite una forza:
+$$ F = m \cdot \frac{v^2}{r} = m \cdot \omega^2 r$$
+detta forza centripeta. N.B.: La forza centripeta non è un particolare tipo di forza, ma solamente una forza qualsiasi
+che si comporta come tale.
+\par\smallskip
+\textbf{Pendolo conico} \\
+Prendiamo adesso in esempio un pendolo, formato da una corda di lunghezza $L$ fissata ad un punto fisso, posta
+ad angolo $\theta$ rispetto all'asse verticale, con una massa $m$ fissata ad un estremità. La massa si muove di
+moto circolare uniforme su una certa orbita di raggio $r$ con velocità costante $\omega$. Conviene allora
+stabilire un sistema di riferimento cilndrico centrato sul centro dell'orbita, con $\hat{k}$ (z) orientato nella direzione
+opposta alla forza peso. Avremo allora che la tensione $T$ della corda lungo l'interno della circonferenza e lungo
+l'asse verticale è:
+
+$$
+\begin{aligned}
+\left\{\begin{array}{l}
+  T\sin{\theta} = m\omega^2r\cr \\
+  T\cos{\theta = mg}
+\end{array}\right..
+\end{aligned}
+$$
+
+Sostituiamo $r$ nella prima equazione, notando che:
+$$ r = L\sin{\theta} $$
+ottenendo:
+$$ T\sin{\theta} = m\omega^2L\sin{\theta} \Rightarrow T = m\omega^2L $$
+Dalla seconda equazione otteniamo invece:
+$$ T = \frac{mg}{\cos{\theta}} $$
+
+eguagliando $T$ nelle due equazioni ottieniamo:
+$$ m\omega^2L = \frac{mg}{\cos{\theta}} \Rightarrow = \omega^2 = \frac{mg}{mL\cos{\theta}}, \quad \omega = \sqrt{\frac{g}{L\cos{\theta}}}$$
+da cui notiamo tra l'altro che la velocità del pendolo non dipende dalla massa del corpo.
+\par\smallskip
+\textbf{Conca sferica} \\
+Impostiamo un problema sostanzialmente analogo: quello di un corpo che ruota su una conca sferica di raggio $r$. Notiamo che la reazione
+vincolare della conca è esattamente identica a quella della tensione della corda nel caso precedente, solo nella direzione opposta. Possiamo allora
+dire che come prima:
+$$ \omega = \sqrt{\frac{g}{L\cos{\theta}}}$$
+\newpage
+\textbf{Veicoli in curva} \\
+Esaminiamo adesso un'automobile che percorre una curva di raggio $r$ a velocità tangenziale $v$ costante, sfruttando
+la componente radiale (scelto un sistema di riferimento cilindrico) della forza d'attrito statico degli pneumatici 
+(sia il coefficiente di attrito statico $\mu_s$). La forza centripeta necessaria per percorrere la curva sarà:
+$$ f_s = ma_r = m\frac{v^2}{r}$$
+e la forza di attrito statico sarà invece:
+$$ f_a = \mu_sN = \mu_s mg $$
+Ponendo la diseguaglianza:
+$$ m \frac{v^2}{r} \leq \mu_s mg \Rightarrow v \leq \sqrt{\mu_s gr} = v_{crit} $$
+otteniamo la velocità critica $v_{crit}$, al di sopra della quale l'attrito degli pneumatici non è più in grado
+di mantenere l'automobile sulla sua traiettoria circolare, e di conseguenza si verifica uno sbandamento.
+\par\smallskip
+\textbf{Veicoli in curva sopraelevata} \\
+Un caso migliore sarà quello della percorrenza di una curva sopraelevata, ovvero a sezione longitudinale approssimativamente
+parabolica. Curve del genere si possono trovare negli autodromi, per permettere alle automobili di raggiungere,
+a parità di aderenza, velocità più elevate. Impostiamo l'accelerazione dell'automobile, con $N$ reazione vincolare
+della superficie della curva:
+
+$$
+\begin{aligned}
+\left\{\begin{array}{l}
+  ma_z = 0 = N\cos{\theta} - mg \cr \\
+  ma_r = -m\frac{v^2}{r} = -N\sin{\theta}
+\end{array}\right..
+\end{aligned}
+$$
+
+da cui:
+$$ \frac{N\sin{\theta}}{N\cos{\theta}} = \frac{mv^2}{rmg} = \frac{v^2}{rg} \Rightarrow \tan{\theta} = \frac{v^2}{rg}, \quad \theta = \tan^{-1}{\frac{v^2}{rg}}$$
+
+Trovo $\theta$, l'angolo necessario a percorrere una curva di raggio $r$ a velocità $v$. A $\theta$ troppo grandi,
+la componente orizzontale $ma_r$ è troppo grande, con conseguente scivolamento verso l'interno della curva a causa della gravità. In caso
+contrario, $ma_r$ è troppo piccola, e si verifica uno sbandamento.
+\newpage
+\textbf{Veicoli in curva sopraelevata con attrito} \\
+Vediamo adesso il caso in cui una vettura percorre una curva sopraelevata di angolo $\theta$ e raggio $r$, a velocità $v$, con
+coefficiente di attrito statico degli pneumatici sulla strada di $\mu_s$. Chiamando $f_s$ la forza di attrito:
+$$ f_s = -\mu_smg\sin{\theta}$$
+$$
+\begin{aligned}
+\left\{\begin{array}{l}
+    ma_z = 0 = N\cos{\theta} - mg - f_s\sin{\theta} \cr \\
+    ma_r = -m\frac{v^2}{r} = -f_s\cos{\theta} - N\sin{\theta}
+\end{array}\right..
+\end{aligned}
+$$
+
+visto che $N = -mg\sin{\theta}$, avremo:
+$$m\frac{v^2}{r} = N(\sin{\theta} + \mu_s\cos{\theta}), \quad mg = N(\cos{\theta - \mu_s\sin{\theta}}) $$
+da cui:
+$$ m\frac{v^2}{r} = mg\frac{\sin{\theta} + \mu_s\cos{\theta}}{\cos{\theta-\mu_s\sin{\theta}}}, \Rightarrow v = \sqrt{gr\frac{\sin{\theta} + \mu_s\cos{\theta}}{\cos{\theta-\mu_s\sin{\theta}}}}$$
+dove $v$ rappresenta la velocità massima di percorrenza del tratto di curva.
+\end{document}

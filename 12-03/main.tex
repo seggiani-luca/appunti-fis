@@ -1,0 +1,194 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{12 Marzo 2024}
+
+\begin{document}
+\maketitle
+\section{Relatività galileiana}
+Consideriamo due sistemi di riferimento. Il primo, $S$, detto riferimento stazionario o di laboratorio, è 
+"relativamente" in quiete. Il secondo, $S'$, è in moto rettilineo uniforme con una certa velocità $v_0$, detta
+velocità di trascinamento. Al tempo $t=0$ le origini di $S$ e $S'$ coincidono. Vale allora, che per un qualsiasi
+vettore $\vec{r'}$ individuato da $S'$, lo stesso vettore nel riferimento $S$ sarà:
+$$ \vec{r} = \vec{r'} + \vec{v_0}t$$
+Andiamo a derivare questa espressione (trasformazione di Galileo):
+$$ \vec{v} = \vec{v'} + \vec{v_0}$$
+Derivando nuovamente avremo:
+$$ \vec{a} = \vec{a'}$$
+ovvero l'accelerazione non cambia al cambiare del sistema di riferimento (questo finchè i sistemi di riferimento
+considerati sono inerziali, ovvero in quiete o in moto rettilineo uniforme). Si dice che l'accelerazione è un invariante
+della relatività galileiana. \\
+Diciamo inoltre che nelle formule appena riportate, $\vec{v}$ prende il nome di velocità assoluta, $\vec{v'}$ di velocità
+relativa, e come già detto, $\vec{v_0}$ di velocità di trascinamento.
+\par\smallskip
+\textbf{Riferimenti non inerziali} \\
+Esaminiamo il caso in cui il nostro sistema di riferimento $SM$ (sistema mobile) si muove di velocita $\vec{v_t}$ e accelerazione
+costante $\vec{a_t}$ rispetto al sistema di laboratorio $SL$. La relazione fra le posizioni diventa:
+$$ \vec{r} = \vec{r'} + \vec{r}_{OO'}(t) $$
+che deriveremo per ottenere la velocità:
+$$ \vec{v} = \vec{v'} + \vec{v_t}, \quad \vec{v_t} = \frac{d\vec{r_{OO'}}}{dt} $$
+e l'accelerazione (notiamo che non è più invariante):
+$$ \vec{a} = \vec{a'} + \vec{a_t}, \quad \vec{a_t} = \frac{d\vec{r_{OO'}}^2}{d^2t} $$
+con $\vec{r}_{OO'}$ uguale al vettore spostamento dall'origine in $SL$ all'origine in $SM$. \\
+Ricordiamo poi che i sistemi di riferimento non sono sistemi di coordinate: più propriamente sono sistemi di coordinate
+dotati di una certa misura dello spazio (un metro) e del tempo (un orologio).
+
+\section{Introduzione alla dinamica}
+Introduciamo ora le leggi fondamentali della dinamica. Innanzitutto possiamo dire che queste leggi si applicano
+nei casi in cui:
+\begin{itemize}
+  \item Le velocità prese in considerazione sono molto più piccole di quelle della luca ($\vec{V} < c$);
+  \item Le dimensioni dei corpi non sono in ordini di grandezza subatomici;
+  \item I campi gravitazionali sono deboli.
+\end{itemize}
+
+nel primo e nel secondo caso, avremo bisogno rispettivamente della relatività ristretta e generale. Nel terzo caso
+invece ci servirà la meccanica quantistica.
+\par\smallskip
+\textbf{Definizione di Forca} \\
+La forza è un'interazione fra due corpi, che può essere:
+\begin{itemize}
+  \item \textbf{A distanza}, ovvero attraverso le cosiddette forze fondamentali o di campo (gravitazionali, elettriche,
+    magnetiche, ecc...);
+  \item \textbf{Per contatto}, ovvero le forze che si studiano nella meccanica (attrito, forza elastica, ecc...). Derivano
+    da manifestazioni macroscopiche delle interazioni elettromagnetiche.
+\end{itemize}
+
+Le forze sono grandezze fisiche vettoriali (hanno punto d'applicazione, direzione modulo e verso). Si misurano
+staticamente con il dinamometro.
+\newpage
+\textbf{Prima legge di Newton}
+Il primo principio della dinamica, detto anche prima legge di Newton o legge d'inerzia, riguarda l'assenza di interazioni
+(forze):
+\begin{center}
+  Esiste almeno un sistema di riferimento in cui un corpo non soggetto a forze (oppure soggetto ad un sistema di
+  forze a risultante nulla $\sum\vec{F} = \vec{0}$) prosegue nel suo stato di quiete o di moto rettilineo uniforme.
+\end{center}
+in simboli:
+$$ \sum\vec{F} = \vec{0} \Rightarrow \vec{a} = \vec{0} $$
+\par\smallskip
+\textbf{Sistemi di riferimento inerziali} \\
+Un sistema di riferimento inerziale è un sistema in cui vale il principio d'inerzia (e quindi $\vec{F} = m\vec{a}$). 
+I sistemi di riferimento inerziali formano una classe di sistemi (godono di riflessività, simmetria e transitività, ergo tutti i sistemi in movimento
+fra di loro con velocità costante sono inerziali).
+\par\smallskip
+\textbf{Seconda legge di Newton} \\
+Il secondo principio della dinamica, detto anche seconda legge di Newton o legge fondamentale della dinamica, mette
+in relazione massa, forza e accelerazione di un corpo:
+$$ \sum \vec{F} = m \vec{a} $$
+dove $m$ è la massa, una grandezza scalare, proprietà intrinseca della composizione di un corpo.
+\par\smallskip
+\textbf{Terza legge di Newton} \\
+Il terzo principio della dinamica, detto anche terza legge di Newton o principio di azione-reazione, stabilisce
+che ogni forza esercitata su di un corpo è seguita da una reazione, ovvero una forza con lo stesso modulo e direzione
+in verso opposto. Un esempio classico della terza legge di Newton è la forza vincolante espressa da ogni corpo
+in collisione con un'altro corpo, che ad esempio permette al terreno di impedirci di sprofondare verso il centro della terra
+sotto l'effetto della gravità.
+\par\smallskip
+\textbf{Le quattro interazioni fondamentali} \\
+Adesso può essere conveniente esaminare, almeno a livello superficiale, le quattro interazioni (forze) fondamentali
+individuate ad oggi dalla comunità scientifica:
+\begin{itemize}
+  \item \textbf{Forza gravitazionale} \\
+    La gravità è la forza che attrae fra di loro corpi come la Terra e il sole, o ancora i corpi sulla superficie terrestre alla Terra stessa.
+    Di gran lunga è la forza più debole fra le quattro fondamentali. La comprensione più completa che ne abbiamo
+    è quella come espressione della geometria spazio-tempo secondo la relatività generale.\\
+    La forza di gravità si applica fra due corpi nella direzione della retta che li congiunge, è direttamente
+    proporzionale alle loro masse e inversamente proporzionale alla distanza fra i due:
+    $$ \vec{F_g} = \frac{m_1m_2}{R^2}G\hat{R}, \quad G = 6.67\times 10^{-11} \mathrm{\frac{Nm^2}{kg^2}} $$
+    dove $\hat{R}$ è il versore nella direzione della distanza fra i due corpi. Chiaramente i corpi sono attratti fra di loro
+    quanto più sono vicini e le loro masse sono grandi. Inoltre, la forza gravitazionale a raggio di azione infinito (seppur insignificante
+    su distanze abbastanza grandi).
+  \item \textbf{Forza elettromagnetica} \\
+    La forza elettromagnetica dà origine ai legami chimici, alle proprietà di atomi e molecole, alla luce nonchè a gran parte
+    delle forze di contatto studiate nella meccanica classica. La forza elettromagnetica si applica fra cariche: 
+    la carica elettrica, misurata in Coulomb (C), ne determina infatti il verso. Carice concordi si respingono, cariche
+    discordi si attraggono. In simboli:
+    $$ \vec{F_c} = \frac{q_1q_2}{R^2}k\hat{R} $$
+    dove k è la costante di Coulomb, ovvero:
+    $$ k = \frac{1}{4\pi\epsilon_0} = 9 \times 10^9 \mathrm{\frac{Nm^2}{C^2}} $$
+    Come per la forza gravitazionale, la forza elettromagnetica ha raggio di azione infinito. La differenza però sta nel verso, che può essere
+    sia attrattivo (come la gravità) che repulsivo.
+  \item \textbf{Forza nucleare (forte)} \\
+    La forza nucleare entra in gioco su distanze estremamente piccole, inferiori ai $10^{-15} \mathrm{m}$. La si può osservare
+    nei nuclei di atomi, formati da protoni carichi positivamente, che però non si disperdono a causa della forza elettromagnetica proprio
+    grazie all'azione della forza nucleare che li mantiene uniti. La forza nucleare determina le interazioni fra particelle elementari come
+    quark e gluoni.
+  \item \textbf{Forza nucleare debole} \\
+    La forza nucleare debole è responsabile delle forze che entrano in gioco nei meccanismi di decadimento nucleare. Ha un range estremamente limitato,
+    di $10^{-18} \mathrm{m}$.
+\end{itemize}
+\textbf{Forze di contatto} \\
+Vediamo quali sono i tipi principali di forze di contatto fra corpi, o fra corpi e fluidi:
+\begin{itemize}
+  \item Fra corpi rigidi
+    \begin{itemize}
+      \item Forze vincolari
+        \begin{itemize}
+          \item normali fra superfici
+          \item ganci o fili inestensibili
+          \item cerniere
+          \item ...
+        \end{itemize}
+      \item Attriti (paralleli alla superficie di contatto):
+        \begin{itemize}
+      \item statico
+      \item dinamico
+    \end{itemize}
+    \end{itemize}
+  \item Fra corpi deformabili:
+    \begin{itemize}
+      \item Forze elastiche
+      \item Forze anelastiche
+    \end{itemize}
+  \item Fra un corpo solido e un fluido
+    \begin{itemize}
+      \item Attrito viscoso
+      \item Forze di pressione
+    \end{itemize}
+\end{itemize}
+\par\smallskip
+\textbf{Forza gravitazionale} \\
+Riprendendo la legge di gravitazione universale:
+$$ \vec{F_m} = \frac{mM_t}{r^2}G $$
+con $M_t$ massa della Terra $(6\times 10^{24})$ e $m$ massa dell'oggetto in questione, possiamo dire:
+$$ \vec{a} = \frac{M_t}{R^2}G $$
+in accordo con:
+$$ \vec{F_m} = m\vec{a} $$
+Chiaramente, nei pressi della Terra $\vec{a}$ sarà uguale a $g$, ovvero l'accelerazione gravitazionale terrestre.
+La forza $F_m$ prende il nome di forza peso (da non confondersi con la massa!). La forza peso è diretta approssimativamente
+verso il centro della terra e vale circa $9.81\cdot m$ per un corpo di massa $m$, sulla superficie terrestre attorno
+al $45^\circ$ parallelo.
+\par\smallskip
+\textbf{Forze normali} \\
+Vediamo adesso tutte quelle forze vincolari che i corpi esercitano l'uno sull'altro perpendicolarmente alle loro superfici.
+Le forze normali si verificano solamente in caso di compressione. Notiamo che la forza normale esercitata da un corpo
+che sorregge un'altro corpo non è sempre uguale al peso: ad esempio, il corpo sorretto potrebbe da parte sua subire altre
+forze, con una componente parallela alla forza peso ma diretta verso l'alto o verso il basso, che andrebbero rispettivamente
+a diminuire o decrementare la reazione vincolare.
+\par\smallskip
+\textbf{Piano inclinato} \\
+Notiamo adesso come la forza normale non è necessariamente diretta verso l'asse verticale. Prendiamo in esempio un piano inclinato
+di angolo $\theta$. Potremo allora dividere la forza di gravità che agisce sul corpo in due componenti: quella 
+parallela e quella perpendicolare alla superfice del piano. Chiamandole rispettivamente $F_\parallel$ e $F_\perp$ potremo dire:
+$$ F_\parallel = F_g \sin{\theta}, \quad F_\perp = -F_g \cos{\theta} $$
+In questo caso, il piano inclinato compenserà con una reazione vincolare soltanto la componente $F_\perp$, mentre la componente
+$F_\parallel$ restera invariata nella direzione parallela al piano.
+\par\smallskip
+\textbf{Contatto diretto} \\
+Due oggetti di massa $m_1$ e $m_2$, in contatto diretto e su cui viene applicata una forza (e che quindi si spingono fra di loro),
+possono essere considerati dal punto di vista della forza come un unico oggetto di massa $m_1 + m_2$, da cui l'accelerazione complessiva:
+$$ a = \frac{F}{m_1 + m_2} $$
+Possiamo a questo punto trovare le due forze di reazione $R_1$ e $R_2$ che i corpi applicano l'uno sull'altro:
+$$ R_1 = \frac{Fm_1}{m_1 + m_2}, \quad R_2 = \frac{Fm_2}{m_1 + m_2} $$
+Notiamo inoltre che $R_1 = F - R_2$ e $R_2 = F - R_1$, ovvero:
+$$ F = R_1 + R_2 $$
+\textbf{Funi e corde} \\
+Consideriamo funi e corde come vincoli monodimensionali privi di massa inerziale e inestensibili. Trasferiscono la forza,
+detta tensione ($T$) fra i loro estremi. 
+\end{document}

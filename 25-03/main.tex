@@ -1,0 +1,189 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{25 Marzo 2024}
+
+\usepackage{amsmath}
+
+\begin{document}
+\maketitle
+\textbf{Lavoro svolto nel moto parabolico} \\
+Prendiamo l'esempio del moto parabolico. La forza peso compirà un lavoro in qualsiasi punto della parabola pari a:
+$$ L_p = -mg(y_f - y_i) = -mgy $$
+$$ \Delta K = \frac{1}{2}mv_f^2 - \frac{1}{2}mv_i^2 = \frac{1}{2}m(v_y^2-v_0^2\sin^2{\theta})$$
+Eguagliando:
+$$ \Delta K = -mgy = \frac{1}{2}m(v_y^2-v_0^2\sin^2{\theta})$$
+Possiamo applicare il teorema delle forze vive:
+$$ -2gy=v_y^2-(v_0\sin{\theta})^2 \Rightarrow v_y^2 = (v_0\sin{\theta})^2 - 2gy$$
+che con quanto trovato attraverso la cinematica:
+$$ 2a_y(y(t)-y_0)=v_y(t)^2-v_{0y}^2$$
+\par\smallskip
+\textbf{Lavoro della forza elettrostatica o gravitazionale} \\
+Possiamo dire, per le forze che dipendono dall'inverso del quadrato della distanza:
+$$ \vec{F} = -\frac{K}{r^2}\hat{r} $$
+attrattiva con $k>0$, repulsiva con $k<0$, che il lavoro svolto è:
+$$ L = \int_i^f \vec{F}\cdot d\vec{s} = -k\int_i^f \frac{\hat{r} \cdot d\vec{s}}{r^2} = -k\int_{r_i}^{r_f}\frac{dr}{r^2} = k(\frac{1}{r_f} - \frac{1}{r_i})$$
+
+\section{Potenza}
+La potenza è la velocità con cui viene sviluppata una forza:
+$$ P = \vec{F} \cdot \vec{v} = \frac{L}{t}$$
+La potenza è una quantita scalare e si misura in $\frac{\mathrm{J}}{\mathrm{s}} = \mathrm{W}$ (watt).
+Possiamo dimostrare la formula sopra riportata con:
+$$ P = \frac{dL}{dt} = \frac{d}{dt}\int\vec{F}\cdot d\vec{r}= \frac{d}{dt}(\vec{F}\cdot\vec{v})dt = \vec{F}\cdot\vec{v} $$
+
+\section{Forze conservative}
+Una forza $\vec{F}$ è detta conservativa se il lavoro che svolge non dipende dal percorso scelto $\gamma$, ma solamente dagli estremi.
+In simboli:
+$$ L = \int_{\vec{r_0} (\gamma)}^{\vec{r_1}} \vec{F} \cdot d\vec{L} = \int_{\vec{r_0}}^{\vec{r_1}} \vec{F} \cdot d\vec{L}$$
+non dipende dal $\gamma$, ma solamente da $r_0$ e $r_1$.
+Esempi di forze conservative sono la gravità, la forza elettrostatica e la forza elastica. Esempi di forze non conservaative sono
+invece l'attrito dinamico e l'attrito viscoso.
+\par\smallskip
+Si consideri una forza $\vec{F}$. Per ogni linea chiusa $\gamma$ si ha:
+$$ \oint_\gamma \vec{F} \cdot d\vec{l} = 0 \Rightarrow L = \int_{\vec{R_0}}^{\vec{R_1}}\vec{F} \cdot d\vec{l}$$
+Ciò si dimostra prendendo sul percorso chiuso due linee arbitrarie $\gamma_1$ e $\gamma_2$, con gli estremi coincidenti:
+$$ \oint_\gamma \vec{F}\cdot d\vec{l} = 0 = \int_{\vec{R_0} (\gamma_1)}^{\vec{R_1}} \vec{F}\cdot d\vec{L} + \int_{\vec{R_1} (\gamma_2)}^{\vec{R_0}} \vec{F}\cdot d\vec{L} = \int_{\vec{R_0} (\gamma_1)}^{\vec{R_1}} \vec{F}\cdot d\vec{L} - \int_{\vec{R_0} (\gamma_2)}^{\vec{R_1}} \vec{F}\cdot d\vec{L} $$
+ovvero:
+$$ \int_{\vec{R_0} (\gamma_1)}^{\vec{R_1}} \vec{F}\cdot d\vec{L} = \int_{\vec{R_0} (\gamma_2)}^{\vec{R_1}} \vec{F}\cdot d\vec{L} $$
+
+Quindi, se per una forza $\vec{F}$ su un percorso chiuso $\gamma$ si ha:
+$$ \oint_\gamma \vec{F} \cdot d\vec{L} = 0 \Rightarrow \int_{\vec{R_0} (\gamma_1)}^{\vec{R_1}} \vec{F}\cdot d\vec{L} = \int_{\vec{R_0} (\gamma_2)}^{\vec{R_1}} \vec{F}\cdot d\vec{L} $$
+Ovvero la forza dipende solamente dalla posizione iniziale e finale per qualsiasi $\gamma$.
+In altre parole:
+$$ L = \int_{\vec{R_0}}^{\vec{R_1}} \vec{F}\cdot d\vec{L} = f(\vec{R_0}, \vec{R_1}) $$
+il lavoro è funzione di $\vec{R_0}$ e $\vec{R_1}$.
+
+\section{Campo di forza e linee di forza}
+Un campo di forze è un campo vettoriale, ovvero una funzione $\vec{F}(x,y,z)$ delle componenti $x, y, z$. Rappresenta
+l'insieme di valori che una grandezza fiisca (in questo caso una forza) assume in un certo punto dello spazio.
+Una \textbf{linea di forza} è una linea formata dall'inviluppo delle direzioni della forza nella regione del campo. La direzione
+della forza è in ogni punto tangente alla linea di forza. Notiamo che le linee di forza non possono intersecarsi. Inoltre,
+un campo di forza conservativo non può contenere linee chiuse. Una \textbf{superficie equipotenziale} è una superficie perpendicolare
+in ogni punto alla direzinoe delle linee di forza.
+
+\section{Energia potenziale}
+Se una forza è conservativa allora esiste una funzione della posizione del punto materiale tramite la quale si può
+esprimere il lavoro:
+$$ L_{{A \rightarrow B}_1} = L_{{A \rightarrow B}_2} = L_{A\rightarrow B} = f(A,B) $$
+Chiamiamo allora variazione di energia potenziale l'integrale:
+$$ \Delta U = U(\vec{R}) - U(\vec{R_0}) = -L_{\vec{R_0} \rightarrow \vec{R}} = -\int_{\vec{R_0}}^{\vec{R}} \vec{F} \cdot d\vec{l} $$
+al pari di qualche costante. L'energia potenziale è l'opposto del lavoro, ed entrambe si misurano in Joule.
+Sulle superfici equipotenziali l'energia potenziale è costante.
+\par\smallskip
+\textbf{Energia potenziale gravitazionale nelle vicinanze della superficie terrestre} \\
+Abbiamo che, vicino alla crosta terrestre, l'energia potenziale è maggiore tanto quanto aumenta la nostra altitudine, ovvero:
+$$ U(Z) - U(Z_0) = L_{Z_0 \rightarrow Z} = -\int_{Z_0}^{Z}M\vec{g} \cdot d\vec{l} = MgZ - MgZ_0 = Mgh $$
+$$ U(Z) = MgZ + \mathrm{const.} $$
+Prendiamo $U(Z_0) = MGZ_0$:
+$$ U(Z) = MgZ $$
+
+\par\smallskip
+\textbf{Energia potenziale di una molla} \\
+Ricordiamo che per una molla:
+$$ L_{x_i, x_f} = \int_{x_i}^{x_f} \vec{F} \cdot d\vec{r} = -\int_{x_i}^{x_f} kxdx = -\frac{k}{2}(x_f^2 - x_i^2) = \frac{k}{2}(l_i-l_0)^2-\frac{k}{2}(l_f-l_0)^2$$
+Dove si nota che il lavoro dipende unicamente dalla lunghezza iniziale $l_i$ e finale $l_f$ della molla.
+Possiamo cambiare variabile indicando con $x$ la lunghezza della molla:
+$$ U(x) - U(x_i) = -L = \frac{k}{2}(x-l_0)^2-\frac{k}{2}(l_f-l_0)^2$$
+Ponendo l'origine delle coordinate in $l_0$:
+$$ U(x) - U(x_i) = -L = \frac{k}{2}(x-l_0)^2$$
+\par\smallskip
+\textbf{Conseguenze delle forze conservative} \\
+Dalla definizione di differenza di energia potenziale deriva:
+$$ U(\vec{R})-U(\vec{R_0}) = -\int_{\vec{R_0}}^{\vec{R}} \vec{F} \cdot d\vec{l} \Rightarrow U(\vec{R}) = U(\vec{R_0}) -\int_{R_0}^{R} \vec{F}\cdot d\vec{l} $$
+Che sulle componenti diventa:
+$$ U(x, y, z) = U(x_0, y_0, z_0) - \int_{(x_0, y_0, z_0)}^{(x,y,z)} (F_xdx + F_ydy + F_zdz) $$
+da cui:
+\begin{align*}
+  F_x = - \frac{\partial U(x,y,z)}{\partial x} && F_y = - \frac{\partial U(x,y,z)}{\partial y} && F_z = - \frac{\partial U(x,y,z)}{\partial z}
+\end{align*}
+Che si riassume in:
+$$ F = -\vec{\nabla} U$$
+Ovvero, in qualsiasi punto del campo dell'energia potenziale possiamo ricavare su un intorno il vettore forza come gradiente.
+
+\par\smallskip
+\textbf{Modelli d'analisi basati sull'energia} \\
+L'energia e il lavoro forniscono un modello d'analisi fisico spesso più conveniente di quello della cinematica.
+Prendiamo in esempio il moto di un punto materiale sul piano inclinato: il corpo inizia il suo moto alla base
+del piano (inclinato di angolo $\theta$) con una certa velocità $v_0$. Risale il piano per una certa distanza $l$, ostacolato dalla forza d'attrito
+(con coefficiente di attrito dinamico $\mu_d$) e dalla forza gravitazionale $g$. Ci chiediamo quale sia la posizione massima
+raggiunta dal punto materiale, e quale sia, una volta iniziata la sua discesa da dato punto, la velocità con cui ripassa dalla posizione
+di partenza. \\
+Vediamo le forze agenti sul punto materiale: la forza peso $mg$, diretta verso $-\hat{j}$, che possiamo dividere nelle due componenti
+parellele e perpendicolari alla superficie del piano. Abbiamo poi la reazione vincolare del piano $N$, parallela alla componente
+perpendicolare della forza peso che andrà ad annullare (e quindi perpendicolare alla superficie del piano). Abbiamo infine la forza di attrito,
+proporzionale ad $|N|$, e diretta nella direzione opposta alla velocità $\vec{v_0}$ del corpo. 
+
+\par\smallskip
+\textbf{Spostamento massimo, approccio cinematico} \\
+Possiamo impostare:
+$$ F_p = -mg, \quad F_{p\perp} = -mg\cos{\theta}, \quad F_{o\parallel} = -mg\sin{\theta} $$
+con $N = -F_{p\perp} = -mg\cos{\theta}$. A questo punto l'attrito sarà:
+$$ F_{att} = -\mu_d|N| = -\mu_dmg\cos{\theta} $$
+Abbiamo già detto che la forza gravitazionale nella direzione perpendicolare al piano viene annullata dalla reazione $N$, e quindi
+l'unica componente che rimane a determinare l'accelerazione è:
+$$ F = ma = \mu_dN + mg\sin{\theta} \Rightarrow a = g(\sin{\theta} + \mu_d\cos{\theta}) $$
+Siamo nel caso del moto rettilineo uniformemente accelerato (nella direzione parallela al piano), e possiamo quindi impostare le leggi
+orarie:
+
+$$
+\begin{aligned}
+\left\{\begin{array}{l}
+  s = v_0t + \frac{1}{2}at^2 \cr \\
+  v = v_0 + at
+\end{array}\right.
+\end{aligned}
+$$
+
+Imponendo $v = 0$, come accadrà nel punto di altezza massima (e quindi di cambio direzione), avremo che:
+$$ v_0 = g(\sin{\theta} + \mu_d\cos{\theta}) \Rightarrow t = \frac{v_0}{g(\sin{\theta} + \mu_d\cos{\theta})} $$
+Da cui ricaviamo lo spostamento (chiamiamiolo $l = s$):
+$$ l = v_0t + \frac{1}{2}at^2 = \frac{v_0^2}{2g(\sin{\theta} + \mu_d\cos{\theta})} $$
+\par\smallskip
+\textbf{Spostamento massimo, approccio energetico} \\
+Impostiamo la differenza dell'energia cinetica, applicando il teorema delle forze vive:
+$$ K_f - K_i = L_{att} + L_{mg} $$
+Ricaviamo il lavoro svolto dalla forza di attrito:
+$$ L_{att} = \int_0^l \mu_d mg dx = -\mu_d mg l\cos{\theta} $$
+e dalla forza peso:
+$$ L_{mg} = \int_0^l mg\sin{\theta} = mgl\sin{\theta} $$
+Diciamo che la variazione di energia cinetica $\Delta K$ è uguale a a:
+$$ \Delta K = -\frac{1}{2}mv^2 = -\mu_dmgl\cos{\theta} - mgl\sin{\theta} $$
+da cui si ottiene:
+$$ l = v_0t + \frac{1}{2}at^2 = \frac{v_0^2}{2g(\sin{\theta} + \mu_d\cos{\theta})} $$
+\par\smallskip
+Notiamo che attraverso entrambi gli approcci otteniamo risposte identiche, ma l'approccio energetico richiede
+meno calcoli (sopratutto vettoriali!). Concludiamo ricavando attraverso entrambi gli approcci la velocità
+di ritorno attraverso il punto di partenza.
+\par\smallskip
+\textbf{Velocità di ritorno, approccio cinematico} \\
+In questo il corpo parte da distanza $l$ dall'inizio del piano,  con velocità iniziale nulla. Forza gravitazionale e
+forza di attrito saranno discordi:
+$$ F = ma = mg\sin{\theta} - \mu_dmg\cos{\theta}, \quad a = g(\sin{\theta} - \mu_d\cos{\theta}) $$
+che sostituito nelle legge orarie:
+$$
+\begin{aligned}
+\left\{\begin{array}{l}
+  s = \frac{1}{2}at^2 \cr \\
+  v = at
+\end{array}\right.
+\end{aligned}
+$$
+fornisce:
+$$ t = \sqrt{\frac{2l}{a}}, \quad v^2 = 2la = 2lg(\sin{\theta} - \mu_d\cos{\theta}) $$
+\par\smallskip
+\textbf{Velocità di ritorno, approccio cinematico} \\
+Impostiamo in modo analogo a prima il lavoro svolti dalla forza di gravità e di attrito sul punto materiale,
+ponendoli adesso discordi:
+$$ L_{att} = -\mu_d mgl\cos{\theta}, \quad L_{mg} mg\sin{\theta} $$
+che possiamo eguagliare alla variazione di energia cinetica:
+$$ \Delta K = \frac{1}{2}Mv^2 = -\mu_d mgl\cos{\theta} + mgl\sin{\theta} $$
+Da cui si ricava subito $v$:
+$$ v^2 = 2lg(\sin{\theta} - \mu_d\cos{\theta}) $$
+\par\smallskip
+Ancora una volta, i risultati coincidono (che è come dovrebbe essere!), e l'approccio energetico risulta più agile nei calcoli.
+\end{document}

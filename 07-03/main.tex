@@ -1,0 +1,64 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{7 Marzo 2024}
+
+\begin{document}
+\maketitle
+\section{Moto circolare non uniforme}
+Data la velocità:
+$$ \vec{V} = \omega R \hat{\theta} $$
+determiniamo l'accelerazione:
+$$ \vec{a} = \frac{d\vec{V}}{dt} = \frac{d(\vec{w} \times \vec{R})}{dt} = \frac{d\vec{\omega}}{dt} \times \vec{R}
++ \vec{\omega} \times \frac{d\vec{R}}{dt} = \vec{\alpha} \times \vec{R} + \vec{\omega} \times (\vec{\omega} \times \vec{R}) $$
+dove $\alpha$ è l'accelerazione angolare:
+$$ \vec{\alpha} = \frac{d\vec{\omega}}{dt} \Rightarrow \alpha = \dot{\omega} = \ddot{\theta} $$
+$$ \vec{\alpha} = (\alpha_r, \alpha_{\theta}, \alpha_z) = (0, 0, \ddot{\theta}) = \ddot{\theta}\hat{z} $$
+$$ \vec{a} = \vec{\alpha} \times \vec{R} - \omega^2 R \hat{R} = \alpha\hat{z}\times \vec{R} - \omega^2 R \hat{R} = \alpha R \hat{\theta} - \omega^2 R \hat{R} $$
+da cui:
+$$ \vec{a} = (-\omega^2 R, \alpha R) $$
+In sostanza, l'accelerazione angolare ha 2 componenti:
+\begin{itemize}
+  \item Componente radiale centripeta:
+    $$ \omega^2 R$$
+  \item Componente tangenziale dipendente dall'accelerazione angolare
+    $$ \alpha R $$
+\end{itemize}
+A questo punto potremo ritrovare la velocità angolare come:
+$$ \omega(t) = \omega_{t_0}  + \int_{t_0}^t \alpha(t')dt' $$
+\section{Moto piano vario}
+Vediamo adesso il caso generale dove sia la velocità angolare che la distanza dalla'origine sono funzioni di $t$:
+\par\smallskip
+\textbf{Velocità} \\
+Posto $|\vec{R}| = R(t)$ e $\vec{\omega} = \omega(t) $:
+$$ \vec{V} = \hat{\theta}V_{\theta} + \hat{R}V_R = \vec{\omega} \times \vec{\vec{R}} + \hat{R} \frac{d|\vec{R}|}{dt}
+= \dot{R}\hat{R} + \vec{\omega} \times \vec{R} $$
+Ovvero la velocità ha componenti polari:
+$$ V_R = \dot{R}, \quad V_{\theta} = \omega R $$
+Ciò si dimostra da:
+$$ \vec{V} = \frac{d\vec{R}}{dt} = \frac{d}{dt}(R\cos{\theta}, R\sin{\theta}, 0) 
+= (-R\hat{\theta}\sin{\theta}, R\hat{\theta}\cos{\theta}, 0) + (\dot{R}\cos{\theta}, \dot{R}\sin{\theta}, 0) $$
+$$ = \dot{R}\hat{R} + \omega R \hat{\theta} = \dot{r} \hat{R} + R \omega \hat{z} \times \hat{R} = \dot{R}\hat{R} + R\vec{\omega} \times \hat{R}$$
+possiamo inoltre dimostrare che, riguardo al solo versore $\hat{R}$:
+$$ \frac{d\vec{R}}{dt} = \frac{d(R\hat{®})}{dt} = \hat{R}\frac{dR}{dt} + R\frac{d\hat{R}}{dt} = \hat{R}\dot{R} + R\frac{d\hat{R}}{dt}$$
+da cui;
+$$ \frac{d\hat{R}}{dt} = \hat{\theta}\dot{\theta} = \vec{\omega} \times \hat{R} $$
+\textbf{Accelerazione} \\
+Poniamoci adesso il problema di descrivere l'accelerazione di un moto sul piano qualsiasi, descritto da coordinate
+polari:
+$$ \vec{a} = \frac{d\vec{V}}{dt} = \frac{d(\vec{\omega} \times \vec{R} + \dot{R}\hat{R})}{dt} = \frac{d\vec{\omega}}{dt} \times \vec{R} + \vec{\omega} \times \frac{d\vec{R}}{dt} + \ddot{R}\hat{{R}} + \dot{R}\frac{d\hat{R}}{dt}$$
+$$ = \vec{\alpha} \times \vec{R} + \vec{\omega} \times (\vec{\omega} \times \vec{R} + \dot{R}\hat{R}) + \ddot{R}\hat{R} + \dot{R}\vec{\omega} \times \hat{R} $$
+usiamo la stessa formula per il prodotto vettoriale vista prima:
+$$ \vec{a} = \vec{\alpha} \times \vec{R} - \omega^2 \vec{R} + \ddot{R}\hat{R} + 2\dot{R}\vec{\omega} \times \hat{R} $$
+notando le solite relazioni coi prodotti vettoriali, ovvero:
+$$ \vec{\alpha} \times \vec{R} = \alpha R \hat{z} \times \hat{R} = \alpha R \hat{\theta}, \quad \vec{\omega} \times \hat{R} = \omega \hat{z} \times \hat{R} = \omega \hat{\theta} $$
+potremo riscrivere come:
+$$ \vec{a} = (-\omega^2 R + \ddot{R})\hat{R} + (\alpha R + 2\dot{R}\omega)\hat{\theta} $$
+ricordando che $\hat{R}$ è il versore in direzione radiale, e $\hat{\theta}$ quello in direzione tangenziale alla traiettoria del
+nostro punto materiale.
+\end{document}

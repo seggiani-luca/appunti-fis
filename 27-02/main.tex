@@ -1,0 +1,139 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{gensymb}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{27 Febbraio 2024}
+
+\begin{document}
+\maketitle
+
+\section{Sistemi di riferimento}
+Criterio generale per la scelta di un sistema di riferimento è la semplicità (ad esempio, è conveniente
+scegliere sistemi con basi fra loro ortogonali e levogiri). Vediamo alcuni esempi di sistemi di riferimento
+comuni su una retta, su curve parametriche, sul piano e nello spazio:
+
+\section{Sistemi di riferimento monodimensionali}
+Su una determinata retta $r$, è sufficiente scegliere un'origine $O$ e una direzione di scorrimento della 
+retta. Avremo quindi:
+$$ P(x) $$
+sulla singola coordinata $x$ per indicare qualsiasi punto su $r$. Il concetto si estende facilmente a curve
+parametriche di qualsiasi tipo, assumendo la nostra coordinata (adesso $t$) come fattore di scorrimento sulla 
+curva ($C$):
+$$ C(t) = (C_x(t), C_y(t), C_z(t)) $$
+
+\section{Sistemi di riferimento bidimensionali}
+Su un piano possiamo definire i due sistemi di riferimento comuni:
+\begin{itemize}
+  \item Coordinate cartesiane:
+    individuo univocamente ogni punto con una coppia ordinata $ (x, y) $ (ascissa e ordinata)
+  \item Coordinate polari:
+    allo stesso modo, individuo ogni punto con l'angolo $\theta$ all'origine e la distanza $\rho$ dalla stessa.
+\end{itemize}
+
+Si può agilmente passare da coordinate cartesiane a polari e viceverso in questo modo:
+\begin{itemize}
+  \item Polari $\rightarrow{}$ cartesiane:
+    notato che $\rho$ è l'ipotenusa di un triangolo rettangolo di angolo $\theta$, ho;
+    $$ x = \rho \cos{\theta} \quad y = \rho \sin{\theta} $$
+  \item Cartesiane $\rightarrow{}$ polari:
+    ottengo $\rho$ con pitagora:
+    $$ \rho = \sqrt{x^2 + y^2} $$
+    e $\theta$ applicando:
+    $$ \theta = \arctan{\frac{y}{x}} $$
+    ricordando il quadrante di appartenenza di $(x, y)$ (l'inversione di $\tan(x)$ comporta la restrizione
+    del dominio a $[-\frac{\pi}{2}, \frac{\pi}{2}]$)
+\end{itemize}
+
+\section{Sistemi di riferimento tridimensionali}
+Come per i sistemi bidimensionali, in 3 dimensioni abbiamo:
+\begin{itemize}
+  \item Coordinate cartesiane:
+    individuo univocamente ogni punto con una tripla ordinata $ (x, y, z) $ (asse x, y, e z)
+  \item Coordinate cilindriche:
+    come per le coordinate polari, definisco un $ r > 0 $ distanza dall'origine, un'angolo $\theta$ sull'asse z,
+    e un'elevazione $z$ sempre sull'asse z, ottenendo la tripla $ (r, \theta, z) $.
+    Posso convertire agevolmente in coordinate cartesiane attraverso:
+    $$ x = r \cos{\theta} \quad
+    y = r \sin(\theta) \quad
+    z = z $$
+    e viceversa:
+    $$ z = z \quad
+    r = \sqrt{x^2 + y^2} \quad
+    \theta = \arctan{\frac{y}{x}} $$
+  \item Coordinate sferiche:
+    questa volta scelgo due angoli, $\phi \in [0, 2\pi]$ sull'asse z e $\theta \in [0, \pi]$ sulla perpendicolare del segmento che forma 
+    angolo $\phi$ con l'asse x (che deciderà l'elevazione del punto), e sempre una distanza $r$ dall'origine.
+    Questa volta dovrò usare le formule di conversione:
+    $$ z = r \cos{\theta} \quad
+    x = r \sin{\theta} \cos{\phi} \quad
+    y = r \sin{\theta} \sin{\phi} $$
+    e viceversa:
+    $$ \cos{\theta} = \frac{z}{\sqrt{x^2 + y^2 + z^2}} \quad
+    r = \sqrt{x^2 + y^2 + z^2} \quad
+    \tan{\phi} = \frac{y}{x} $$
+    Si può notare che questo sistema è lo stesso delle coordinate geografiche, sebbene con intervalli di angoli
+    differenti:
+    \begin{itemize}
+      \item la longitudine corrisponde a $\phi$ con $\phi \in [-180^{\circ}, 180^{\circ}] $, mentre la latitudine
+        corrisponde a $\theta$ con $\theta \in [-90^{\circ}, 90^{\circ}] $
+    \end{itemize}
+\end{itemize}
+
+\section{Sommatorie ed integrali di vettori}
+Notiamo brevemente la differenza fra le forme:
+$$ \textrm{(1)} \quad | \sum_{i = 1}^n \vec{l}_i| \quad \textrm{e} \quad \textrm{(2)} \quad \sum_{i = 1}^n | \vec{l}_i | $$
+con $\vec{l}_i$ un'insieme di vettori in un determinato spazio. Se la forma (1) tiene conto solamente della
+somma finale dei vettori (prendi e.g. la posizione di un corpo traslato dai suddetti), la forma (2) restituisce
+invece la somma di ogni singolo vettore, qualsiasi la sua direzione. Allo stesso modo, su profili (prendo $y_1$) non discreti:
+
+$$ \textrm{(3)} \quad |\int_{y_1} d\vec{l} | \quad \textrm{e} \quad \textrm{(4)} \quad \int_{y_1} | d\vec{l} | $$
+la forma (3) resituisce la sola somma integrale dei differenziali $d\vec{l}$, mentre la forma (4) considera lo
+spostamento (in qualsiasi direzione) totale di $\vec{l}$.
+
+\section{Prodotto scalare e prodotto vettoriale}
+
+Si riportano adesso le formule per il prodotto scalare e il prodotto vettoriale ottenute sfruttando i versori 
+$\hat{i}$, $\hat{j}$ e $\hat{k}$. prenderemo in esame due vettori, $a = (a_x, a_y, a_z)$ e $b = (b_x, b_y, b_z)$.
+\par\medskip
+\textbf{Prodotto scalare} \\
+$$ (\hat{i}A_x + \hat{j}A_y + \hat{k}A_z) \cdot (\hat{i}B_x + \hat{j}B_y + \hat{k}B_z) = $$ $$
+(\hat{i})^2A_xB_x + \hat{i}\hat{j}A_xB_y + \hat{i}\hat{k}A_xB_z + $$ $$
+\hat{j}\hat{i}A_yB_x + (\hat{j})^2A_yB_y + \hat{j}\hat{k}A_yB_z + $$ $$
+\hat{k}\hat{i}A_zB_x + \hat{k}\hat{j}A_zB_y + (\hat{k})^2A_zB_z $$
+visto che il prodotto scalare di due vettori perpendicolari (quindi di due versori diversi fra di loro) vale 0,
+e che il prodotto scalare di un vettore per se stesso vale se stesso al quadrato (su vettori di modulo 1), possiamo
+riscrivere come:
+$$
+A_xB_x+A_yB_y+A_zB_z
+$$
+che è la definizione di prodotto scalare.
+
+\par\medskip
+\textbf{Prodotto vettoriale} \\
+$$ (\hat{i}A_x + \hat{j}A_y + \hat{k}A_z) \times (\hat{i}B_x + \hat{j}B_y + \hat{k}B_z) = $$ $$
+(\hat{i})^2A_xB_x + \hat{i}\hat{j}A_xB_y + \hat{i}\hat{k}A_xB_z + $$ $$
+\hat{j}\hat{i}A_yB_x + (\hat{j})^2A_yB_y + \hat{j}\hat{k}A_yB_z + $$ $$
+\hat{k}\hat{i}A_zB_x + \hat{k}\hat{j}A_zB_y + (\hat{k})^2A_zB_z $$
+di nuovo, visto che il prodotto vettoriale fra due vettori paralleli vale 0, e il prodotto vettoriale fra due
+versori unitari vale quanto il loro perpendicolare secondo la regola della mano destra in un sistema di riferimento
+levogiro, possiamo riscrivere come:
+$$
+\hat{i}(A_yB_z - A_zB_y) + \hat{j}(A_zB_x - A_xB_z) + \hat{k}(A_xB_y - AyB_x)
+$$
+che è la definizione di prodotto vettoriale sui versori $\hat{i}$, $\hat{j}$ e $\hat{k}$. Si noti il fattore $\hat{j}$,
+che ha un segno negativo (distribuito sui fattori). Questo fatto viene dal sistema dalle proprietà del prodotto
+vettoriale su un sistema levogiro. Si ricorda inoltre una mnemonica per il prodotto vettoriale come determinante della matrice:
+\[
+\begin{pmatrix}
+  \hat{i} & \hat{j} & \hat{k} \\
+    A_x & A_y & A_z \\
+    B_x & B_y & B_z
+  \end{pmatrix}
+  \]
+\end{document}

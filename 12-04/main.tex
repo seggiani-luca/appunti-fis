@@ -1,0 +1,109 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{12 Aprile 2024}
+
+\usepackage{amsmath}
+
+\begin{document}
+\maketitle
+\textbf{Urti elastici monodimensionali} \\
+Calcoliamo i valori delle velocità di due corpi a seguito di un urto monodimensionale. Impostiamo la conservazione della quantità
+di moto:
+$$ \vec{P_i} = \vec{P_f} = m_1v_{1i} + m_2v_{2f} = m_1v_{1f} + m_2v_{2f} $$
+$$ -\Delta\vec{P_1} = \Delta\vec{P_2} = m_1(v_{1i} - v_{1f}) = m_2(v_{2f} - v_{2i}) $$
+e la conservazione dell'energia:
+$$ \frac{1}{2}m_1v_{1i}^2 + \frac{1}{2}m_2v_{2i}^2 = \frac{1}{2}m_1v_{1f}^2 + \frac{1}{2}m_2v_{2f}^2 $$
+con alcuni raccoglimenti, si ha che:
+$$ \frac{1}{2}m_1(v_{1i}^2 - v_{1f}^2) = \frac{1}{2}m_2(v_{2f}^2 - v_{2i}^2) $$
+che è molto simile alla conservazione della quantità di moto. Riscriviamo infatti come:
+$$ \frac{1}{2}m_1(v_{1i} - v_{1f})(v_{1i} + v_{1f}) = \frac{1}{2}m_2(v_{2f} - v_{2i})(v_{2f} + v_{2i})$$
+L'uguaglianza dei termini di questa equazione che presentano differenze di velocità è assicurata dalla conservazione
+dell'energia. Resta quindi soltanto:
+$$ v_{1i} + v_{1f} = v_{2i} + v_{2f} \Rightarrow v_{1i} - v_{2i} = v_{2f} - v_{1f} $$
+ovvero le velocità relative dei due oggetti si conservano dopo l'urto. Abbiamo quindi che:
+$$ 
+\left\{\begin{array}{l}
+  v_{1i} - v_{2i} = v_{2f} - v_{1f} \cr \\
+  m_1(v_{1i} - v_{1f}) = m_2(v_{2f} - v_{2i}) \cr
+\end{array}\right.
+$$
+Da questo sistema possiamo ricavare algebricamente le velocità $v_{1f}$ e $v_{2f}$:
+$$ v_{1f} = \frac{m_1-m_2}{m_1+m_2}v_{1i} + \frac{2m_2}{m_1+m_2}v_{2i} $$
+$$ v_{2f} = \frac{m_2-m_1}{m_1+m_2}v_{2i} + \frac{2m_1}{m_1+m_2}v_{1i} $$
+
+\textbf{Urti perfettamente anelastici monodimensionali} \\
+Gli urti elastici sono più complessi da modellizzare, in quanto disponiamo solamente di un'equazione per
+risolvere il problema, la conservazione della quantità di moto ($P$). Nell'urto perfettamente anelastico
+si ha però che dopo l'urto i due corpi procedono assieme attaccati l'uno all'altro, con la stessa velocità $v_f$.
+Avremo quindi che:
+$$ \vec{P} = m_1v_{1i} + m_2v_{2i} = (m_1 + m_2)v_f, \quad v_f = \frac{m_1v_{1i} + m_2v_{2i}}{m_1+m_2}$$
+dove $v_f$ era l'unica incognita del sistema. Possiamo allora considerare l'energia cinetica:
+$$ K_f - K_i = \frac{1}{2}(m_1 + m_2) v_f^2 - \frac{1}{2}m_1v_{1i}^2 - \frac{1}{2}m_2v_{2i}^2 = -\frac{1}{2}\frac{m_1m_2}{m_1+m_2}(v_{1i} - v_{2i})^2<0 $$
+ovvero notiamo che a seguito del processo di urto l'energia cinetica del sistema è diminuita (è stata "usata" nella deformazione
+degli oggetti in collisione, oppure trasformata in suono, energia termica, ecc...).
+\par\smallskip
+\textbf{Pendolo balistico} \\
+Vediamo un esempio: un pendolo balistico usato per rilevare la velocità dei proiettili. Il pendolo è costituito da un blocco sospeso
+da due funi. Il blocco, inizialmente fermo, una volta colpito dal proiettile (di urto completamente anelastico, il proiettile rimane infatti conficcato nel blocco),
+sale di una certa distanza verso l'alto, sottoposto alla spinta infertagli. Le condizioni iniziali sono quindi
+$v_{1i} > 0, \quad v_{2i} = 0$. Il sistema è soggetto sia a forze impulsive
+che si esplicano durante l'urto, sia alla forza peso, che però non consideriamo durante l'urto. Abbiamo innanzitutto
+che la velocità finale del pendolo sarà:
+$$ v_f = \frac{m_1v_{1i}}{m_1+m_2} $$
+Notiamo adesso che dopo l'urto, l'energia si conserva: tutte le forze non conservative agiscono solamente nell'istante
+dell'urto. Posso quindi applicare la conservazione dell'energia:
+$$ \frac{1}{2}(m_1+m_2)v_f^2 = (m_1+m_2)gh, \quad v_f = \sqrt{2gh} $$
+Se diversamente alle nostre ipotesi l'urto fosse stato elastico, oltre ad una situazione particolarmente pericolosa, avremo
+che l'energia cinetica si conserverebbe. Possiamo quindi impostare:
+$$ 
+\left\{\begin{array}{l}
+    v_{1f} = \frac{m_1-m_2}{m_1+m_2}v_{1i} \cr \\
+    v_{2f} = \frac{2m_1}{m_1+m_2}v_{1i}
+\end{array}\right.
+$$
+
+\section{Moto di un corpo rigido}
+Per corpo rigido si intende un sistema di punti materiali le cui distanze l'uno dall'altro non variano nel tempo. In
+altre parole, un corpo rigido non subisce deformazioni.
+Ricordiamo che il centro di massa di un corpo rigido è dato da:
+$$ \vec{r_{CM}} = \frac{1}{M}\int\vec{r}dm = \frac{1}{m}\vec{r}\rho dV = \frac{1}{V}\int \vec{r} dV $$
+Si rimanda per le altre formule agli appunti relativi al centro di massa.
+\par\smallskip
+\textbf{Moto di pura traslazione} \\
+In un moto di pura traslazione, tutte le particelle del corporigido subiscono lo stesso spostamento nello stesso intervallo
+di tempo, ergo hanno la stessa velocità (che corrisponderà obbligatoriamente con la velocità del CM). La velocità dei vari
+punti rispetto al centro di massa sarà allora nulla.
+$$ \vec{v_{CM}} = \frac{d\vec{r_{CM}}}{dt},\quad \vec{v_{CM}} = \frac{\int \vec{v} dm}{M} = \vec{v}{\int dm} {M} = \vec{v}, \quad \vec{P_{CM}} = M\vec{v_{CM}} = M\vec{v} $$
+Se il corpo non è di pura traslazione vale:
+$$ \vec{v_{CM}} = \frac{\int \vec{v}(x,y,z)dm}{M}, \quad \vec{P_{CM}} = M\vec{v_{CM}} = M\frac{\int \vec{v}(x,y,z)dm}{M} $$
+Vediamo quindi l'accelerazione:
+$$ \vec{a_{CM}} = \frac{\int \vec{a}dm}{M} = \vec{a} \frac{\int dm}{M} = \vec{a}, \quad M\vec{a_{CM}} = M\vec{a}$$
+ovvero in ogni punto del corpo l'accelerazione è la stessa. Come prima, non fosse stato il moto di pura traslazione, vale:
+$$ \vec{a_{CM}} = \frac{\int \vec{a}(x,y,z)dm}{M}, \quad M\vec{a_{CM}} = \int \vec{a}(x,y,z)dm $$
+\par\smallskip
+\textbf{Prima equazione cardinale per un corpo rigido} \\
+In modo analogo a quanto detto sui sistemi, su un corpo rigido si può dire che la derivata della quantità di moto
+totale è uguale alla risultante delle sole forze esterne:
+$$ \frac{d\vec{P_{CM}}}{dt} = M\vec{a_{CM}} = \sum \vec{R}^{est} $$
+\par\smallskip
+\textbf{Secondo teorema del CM per un corpo rigido} \\
+Il centro di massa si muove come un punto di massa totale $M$ soggetto alla sola risultante delle forze esterne al 
+sistema. Questo ci permette di enunciare la conservazione della quantità di moto: quando la risultante delle forze esterne e nulla,
+la quantità di moto del corpo rigido resta costante in modulo, direzione e verso.
+\par\smallskip
+\textbf{Lavoro delle forze interne} \\
+Essendo il lavoro dipendente dalla variazione di distanza (spostamento), avremo che il lavoro totale svolto dalle forze interne,
+o, in simboli:
+$$ dL_{ij} = \vec{F_{ij}} \cdot d\vec{r_i} + \vec{F_{ji}} \cdot d\vec{r_j} = \vec{F_{ij}} \cdot d\vec{r_i} - \vec{F_{ij}} \cdot d\vec{r_j} = \vec{F_{ij}} \cdot (d\vec{r_i} - d\vec{r_j}) = 0 $$
+Ciò deriva dal fatto che, per definizione di corpo rigido, le variazioni di posizione fra i punti materiali che compongono il sistema e il centro di massa è nulla,
+e lo è quindi anche fra i punti materiali stessi.
+Questo ci permette di affermare che in un corpo rigido solo le forze esterne determinano la variazione della quantità di moto,
+ovvero la prima equazione cardinale. Ad esempio, prendiamo la forza di gravità:
+$$ M\vec{a_{CM}} = \int \vec{a} dm = \int \vec{g} dm = Mg $$
+\end{document}

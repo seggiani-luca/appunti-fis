@@ -1,0 +1,74 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{21 Marzo 2024}
+
+\begin{document}
+\maketitle
+\section{Energia e Lavoro}
+Possiamo trattare i problemi della dinamica, invece che dal punto di vista delle forze e delle accelerazioni,
+attraverso i concetti di energia e lavoro. L'energia compare in diverse branche della fisica, ad esempio:
+\begin{itemize}
+  \item Energia cinetica $\leftrightarrow$ velocità;
+  \item Energia potenziale $\leftrightarrow$ posizione;
+  \item Energia termica $\leftrightarrow$ temperatura.
+\end{itemize}
+Possiamo definire l'energia come la capacità di compiere un lavoro.
+\par\smallskip
+\textbf{Energia cinetica} \\
+Definiamo l'energia cinetica come:
+$$ K = \frac{1}{2}mv^2$$
+Si misura in Joule: $1\mathrm{J} = 1\mathrm{kg}\times\frac{\mathrm{m}^2}{\mathrm{s}^2}$
+In un sistema formato da più particelle, l'energia cinetica complessiva è la somma delle energie cinetiche di
+tutte le particelle:
+$$ K = \sum_i{K_i} = \sum_i \frac{1}{2}m_iv_i^2 $$
+L'energia cinetica è dovuta al moto delle particelle ed è presente anche a livello microscopico: equivale
+all'energia termica della termodinamica. Notare inoltre che:
+$$ \frac{1}{2}mv^2 = \frac{1}{2}m(\vec{v} \times \vec{v}) $$
+\par\smallskip
+\textbf{Lavoro} \\
+Sia $P$ un certo punto che si sposta su una curva $\gamma$, spinto da una forza $\vec{F}$. Quando il punto
+si sposta dalla posizione $\vec{R_i}$ alla posizione $\vec{R_f}$, il suo lavoro sarà:
+$$ L_{\vec{R_i} \rightarrow \vec{R_f}} = \int_{\vec{R_i}}^{\vec{R_f} (\gamma)}  \vec{F} \cdot d\vec{R} $$
+per ogni punto conosceremo quindi:
+\begin{itemize}
+  \item Il differenziale dello spostamento $d\vec{R}$;
+  \item La forza $\vec{F}$ lungo la curva;
+\end{itemize}
+e fare il loro prodotto scalare $dL = \vec{F} \cdot d\vec{R}$. Notare che l'integrale è un integrale
+di linea su $\gamma$.
+\par\smallskip
+\textbf{Teorema delle forze vive} \\
+Un'importante teorema detto teorema delle forze vive o \textbf{dell'energia cinetica} afferma che il lavoro
+effettuato dalla risultante delle forze $\vec{F}$ agenti su un punto materiale di massa inerziale $m$ tra
+$R_i$ e $R_f$ è uguale alla variazione di energia cinetica del punto materiale tra $R_i$ e $R_f$:
+$$ \Delta K = K_f - K_i = L_{if} = \int_{i (\gamma)}^f \vec{F} \cdot d\vec{R} $$
+Se il lavoro è:
+\begin{itemize}
+  \item \textbf{Positivo}, l'energia cinetica aumenta;
+  \item \textbf{Negativo}, l'energia cinetica diminusice.
+\end{itemize}
+\textbf{Lavoro svolto da una forza costante} \\
+Se $\vec{F}$ è una forza costante che spinge un punto materiale su un segmento dal punto $A$ al punto $B$, con distanza,
+$\Delta\vec{r}$, il lavoro (grandezza scalare) eseguito dalla forza $F$ su $P$ si definisce come:
+$$ L_{AB} = F\Delta r\cos{\theta} $$
+dove $\theta$ è l'angolo che la forza $F$ forma con il segmento. Questo deriva da:
+$$ L_{AB} = \int_{\vec{r}A}^{\vec{r}B}\vec{F}\cdot d\vec{r} = \vec{F} \cdot (\vec{r}_b - \vec{r}_a) $$
+\par\smallskip
+\textbf{Lavoro elementare su ascissa cuvilinea} \\
+Definiamo il lavoro elementare di una forza:
+$$ dL = \vec{F} \cdot d\vec{r} = Fdr\cos{\theta} $$
+$$ dL \vec{F} \cdot d\vec{r} = (\vec{F}_t + \vec{F}_m) \cdot d\vec{r} = (\vec{F}_t + \vec{F}_n) \cdot (\hat{t} ds), \quad dL = F_t(s) ds $$
+il lavoro della forza si può definire si può scrivere in termini di tale componente: 
+$$ L_{if} = \int_{S_i}^{S_f} F_t(s)ds $$
+Il prodotto scalare può essere calcolato anche in funzione delle coordinate cartesiane:
+$$ dL = (F_x\hat{i} + F_y\hat{j} + F_z\hat{k}) \cdot (dx \hat{i}, dy \hat{j}, dz \hat{k}) = F_xdx + F_ydy + F_zdz $$
+dove:
+$$ dL = (dx \hat{i}, dy \hat{j}, dz \hat{k}) = (v_x(t)\hat{i}, v_y(t)\hat{j}, v_z(t)\hat{k}) $$
+conoscendo le leggi orarie.
+\end{document}

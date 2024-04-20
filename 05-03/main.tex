@@ -1,0 +1,155 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{5 Marzo 2024}
+
+\begin{document}
+\maketitle
+\section{Moto di un punto materiale sul piano e nello spazio}
+Definiamo una traiettoria (o supporto di una curva) $r(t)$ sulle diverse componenti x, y e z:
+$$ \vec{r}(t) = (x(t), y(t), z(t)) = \vec{OP}(t), \quad O, P \in \vec{r}(t) $$
+a questo punto posizione, velocità ed accelerazione di un punto materiale in moto su tale traiettoria
+saranno vettori tridimensionali nello spazio (o bidimensionali sul piano).
+\par\smallskip
+\textbf{Vettore spostamento} \\
+Individuiamo due momenti nel tempo $t_1$ e $t_2$, e ricaviamo da $\vec{r}(t)$ due posizioni lungo la curva
+($r_1$ e $r_2$). A questo punto lo spostamento di un punto materiale in moto sulla curva che si sposta dal 
+primo al secondo punto sarà:
+$$ \Delta \vec{r} = \vec{r}(t_2) - \vec{r}(t_1) = \vec{r_2} - \vec{r_1} $$
+oppure, definito un certo intervallo di tempo $\Delta t = t_2 - t_1$:
+$$ \Delta \vec{r} = \vec{r}(t + \Delta t) - \vec{r}(t) $$
+\textbf{Velocità} \\
+Iniziamo col definire la velocità media, proprio come era stato fatto per il moto rettilineo uniforme:
+$$ \vec{V_m} = \frac{\Delta \vec{r}}{\Delta t} = \frac{\vec{r_2} - \vec{r_1}}{t_2 - t_1}
+= \frac{\vec{r}(t + \Delta t) - \vec{r}(t)}{\Delta t} $$
+e la velocità istantanea:
+$$ \vec{V} = \frac{d\vec{r}}{dt} = \lim_{\Delta t \rightarrow 0} \vec{V_m} = 
+\lim_{\Delta t \rightarrow 0} \frac{\vec{r}(t + \Delta t) - \vec{r}(t)}{\Delta t}$$
+vediamo che sulle singole componenti, la velocità $\vec{V_m}$ sarà:
+$$ \vec{V} = (V_x, V_y, V_z) = (\frac{dx}{dt}, \frac{dy}{dt}, \frac{dz}{dt}) = (\dot{x}, \dot{y}, \dot{z}) $$
+Si noti che geometricamente la velocità calcolata in un certo punto è la tangente a $\vec{r}(t)$ in quel punto.
+\par\smallskip
+\textbf{Accelerazione} \\
+Definiamo, come prima, accelerazione media:
+$$ \vec{a_m} = \frac{\Delta \vec{V}}{\Delta \vec{t}} = \frac{\vec{V}(t_2) - \vec{V}(t_1)}{t_2-t_1} $$
+ed istantanea:
+$$ \vec{a}(t) = \lim_{\Delta t \rightarrow 0} \frac{\vec{v}(t + \Delta t) - \vec{t}}{\Delta t} = \frac{d^2r}{dt^2} $$
+sulle singole componenti:
+$$ \vec{a}(t) = \frac{dv_x}{dt}\hat{i} + \frac{dv_y}{dy}\hat{j} + \frac{dv_z}{dt}\hat{k}
+= \frac{d^2x}{dt^2}\hat{i} + \frac{d^2y}{dt^2}\hat{j} +\frac{d^2z}{dt^2}\hat{k} = \ddot{x}\hat{i} + \ddot{y}\hat{j} + \ddot{z}\hat{k} $$
+È fondamentale notare che, fosse $|v_1| = |v_2|$, non è per forza detto che $a=0$! L'accelerazione infatti
+sarà influenzata sia dalla variazione longitudinale di velocità del mio punto materiale che dalla sua variazione
+in quanto a direzione. Poniamo i due versori $\hat{u}_T$ e $\hat{u}_N$, rispettivamente nella direzione tangente
+e radiale del mio punto materiale. Avremo allora:
+$$ \vec{v} = v\hat{u}_T, \quad \vec{a} = \frac{dv}{dt}\hat{u}_T + v \frac{d\hat{u}_T}{dt} $$
+$\hat{u}_T$ dipende dal tempo, ma
+$$ \frac{d(\hat{u}_T \cdot \hat{u}_T)}{dt} = 0 = 2\hat{u}_T \cdot \frac{d(\hat{u}_T)}{dt} \Rightarrow \frac{d\hat{u}_T}{dt} \perp \hat{u}_T $$
+ovvero $a_n$, accelerazione lungo la direzione radiale (o normale, ma comunque stabilita secondo
+un sistema di riferimento levogiro) della curva è perpendicolare all'accelerazione longitudinale (o tangente) $a_t$. Vediamo poi:
+$$ \vec{a} = a_t\hat{u}_T + a_n\hat{u}_N $$
+$$ \vec{a} = \frac{dv}{dt}\hat{u}_T + v\frac{d\hat{u}_T}{dt} $$
+da cui si nota che:
+\begin{itemize}
+  \item $a_t$ è legata alla variazione del modulo della velocità,
+  \item $a_n$ alla variazione della sua direzione.
+\end{itemize}
+Si dice che $a_n$ è l'accelerazione centripeta diretta verso l'interno della traiettoria. Inoltre, approssimando
+un qualsiasi intorno della curva con un segmento di circonferenza, vediamo che l'accelerazione centripeta è diretta
+proprio verso il centro di tale circonferenza. Dal punto di vista delle forze, l'accelerazione centripeta è proprio
+ciò che serve a mantenere il corpo lungo la traiettoria descritta da $\vec{r}(t)$ (ed è l'unica forza / accelerazione
+in gioco! Non esiste alcuna forza centrifuga, è solamente apparente). \\
+Riassumiamo le formule trovate finora:
+$$ \vec{a} = \vec{a_n} + \vec{a_t} $$
+$$ a_t = |\vec{a_t}| = \frac{d|\vec{v}}{dt}, \quad a_n = |\vec{a_n}| = \frac{v^2}{r} $$
+e in totale:
+$$ |\vec{a}| = \sqrt{a_n ^ 2 + a_t ^ 2}$$
+\par\smallskip
+Per concludere l'argomento, osserviamo come, invece di partire dalla definizione di spostamento derivando fino
+all'accelerazione, possiamo procedere per la strada inversa: partendo dall'accelerazione e integrando fino allo
+spostamento. Partiamo quindi da accelerazione a velocità:
+$$ \vec{a} = (a_x, a_y, a_z), \quad t > t_0 $$
+$$ a_x = \frac{dv_x}{dt} = dv_x = a_xdt = v_x(t) - v_x(t_0) = \int_{v_{x_0}}^{v_x} dv_x = \int_{t_0}^{t} a_xdt $$
+E torniamo da velocità a spostamento:
+$$ v_x(t) = v_x(t_0) + \int_{t_0}^{t} a_x(t')dt' $$
+potrò procedere analogamente sulle altre componenti, utilizzando oppurtunamente i versori $\hat{i}, \hat{j}$ e $\hat{k}$.
+
+\section{Moti piani su coordinate polari}
+Avendo visto la definizione di sistema di coordinate polari, con $(R, \theta)$ raggio e angolo rispetto all'asse
+delle ascisse, definiamo:
+$$ \vec{R} = (x, y, 0) = (R\cos{\theta}, R\sin{\theta}, 0) $$
+$$ \hat{\hat{R}} = (x / R, y / R, 0) = (\cos\theta, \sin\theta, 0) $$
+$$ \vec{\theta} = (-\sin\theta, \cos\theta, 0) $$
+Generalmente, $\vec{R}$ individuerà un certo punto su una circonferenza di raggio $R$, e $\vec{\theta}$ sarà
+la direzione della sua velocità (tangenziale alla circonferenza).
+\par\smallskip
+\textbf{Moto piano vario} \\
+Nel caso di moto piano vario, quindi non ben definito su una circonferenza o qualsasi altra funzione analitica, 
+avremo banalmente:
+$$ \theta = \theta(t), \quad R = R(t) $$
+\par\smallskip
+\textbf{Moto piano circolare uniforme non uniforme} \\
+Nel caso almeno il luogo su cui avviene il moto sia una circonferenza, potremo stabilire:
+$$ \theta = \theta(t), \quad R = a $$
+Vediamo ora più nel dettaglio un moto circolare a velocità costante.
+\section{Moto piano circolare uniforme}
+Nel caso il moto avvenga su una circonferenza e a velocità costante, potremo definire completamente velocità e posizione:
+$$ \theta = \omega_0t + \theta_0, \quad R = a $$
+si noti che qua e nel caso precedente a è il raggio della nostra circonferenza.
+\par\smallskip
+\textbf{Velocità angolare} \\
+Definiamo la "posizione angolare", cioè semplicemente l'angolo, come un vettore nella direzione $\vec{z}$ di modulo
+proporzionale all'angolo stesso:
+$$ \vec{\theta} = (0, 0, \theta) = \theta\hat{z} $$
+a questo punto la velocità angolare (misurata in $\frac{\mathrm{rad}}{\mathrm{s}}$, o visto che l'angolo è una 
+grandezza adimensionale (rapporto di due lunghezze (parentesi innestate)), semplicemente $\mathrm{s} ^ {-1}$) non sarà altro che:
+$$ \vec{\omega} = \frac{d\theta}{dt} = (0, 0, \dot{\theta}) = \hat{z}\dot{\theta} $$
+\par\smallskip
+\textbf{Velocità tangenziale} \\
+Definiamo ora la velocità tangenziale, ovvero quella effettiva del punto materiale lungo la tangente alla circonferenza:
+$$ \vec{v} = \frac{d\vec{R}}{dt} = \frac{d}{dt}(R\cos{\theta}, R\sin{\theta}, 0)
+= (-R\dot{\theta}\sin{\theta}, R\dot{\theta}\cos{\theta}, 0) $$
+$$ = R\dot{\theta}(-\sin{\theta}, \cos{\theta, 0})  = \dot{\theta}R\hat{\theta} = \omega R\hat{\theta} $$
+dove $\dot{\theta}$ è il versore tangente alla traiettoria del punto materiale. Vediamo inoltre rispetto al valore assoluto:
+$$ |\vec{v}| = \omega R $$
+e rispetto alla componente radiale:
+$$ v_r = \dot{R} = 0 $$
+ovvero il raggio non cambia (ed era infatti costante da ipotesi). \\
+Riportiamo quindi il vettore finale, in coordinate polari:
+$$ \vec{v} = (v_r, v_\theta, v_z) = (0, \omega R, 0), \quad \vec{v} \perp \vec{R} $$
+dove è inoltre riportato il fatto che la velocità è perpendicolare al vettore posizione sulla circonferenza $\vec{R}$
+in qualsiasi punto. \\
+Dimostriamo adesso un fatto importante riguardo alla velocità, conseguenza dell'asse scelto
+per $\vec{\omega}$, usando il prodotto vettoriale:
+$$ \vec{v} = \vec{\omega} \times \vec{R} $$
+$$ = \dot{\theta}\hat{z} \times \vec{R} = \dot{\theta}\hat{z} \times (\hat{x}R\cos{\theta} + \hat{y}R\sin{\theta}) $$
+$$ = \dot{\theta}R(\hat{z} \times \hat{x}\cos{\theta} + \hat{z} \times \hat{y}\sin{\theta}) = \dot{\theta}R(\hat{y}\cos{\theta} - \hat{x}\sin{\theta}) $$
+$$ = \omega R \dot{\theta} $$
+
+\textbf{Accelerazione centripeta} \\
+Basandoci proprio su quest'ultima equivalenza, studiamo il valore dell'accelerazione centripeta che mantiene il nostro punto
+punto materiale sulla circonferenza:
+$$ \vec{a} = \frac{d(\vec{\omega} \times \vec{R})}{dt} = \frac{d\vec{\omega}}{dt} \times \vec{R} + \vec{\omega} \times \frac{d\vec{R}}{dt}$$
+$$ = \vec{\omega} \times \frac{d\vec{R}}{dt} = \vec{\omega} \times (\vec{\omega} \times \vec{R}) $$
+Notiamo come il primo termine della somma ottenuta nella terza equazione si annulli in quanto la derivata della velocità
+angolare $\omega$, costante, sarà nulla. Risolviamo quindi l'ultimo termine usufruendo
+della relazione:
+$$ \vec{A} \times (\vec{B} \times \vec{C}) = \vec{B}(\vec{A} \cdot \vec{C}) - \vec{C}(\vec{A} \cdot \vec{B}) $$
+ottenendo:
+$$ \vec{\omega} (\vec{\omega} \cdot \vec{R}) - \vec{R}(\vec{\omega} \cdot \vec{\omega}) = -\omega^2 R \hat{R} $$
+$$ -\omega = -\frac{v^2}{r^2}, \quad -\omega^2 R \hat{R} = \frac{-v^2 R}{R^2} \hat{R} = -\frac{V^2}{R} \hat{R} $$
+notiamo che l'ultima e la terzultima formula, equalmente valide, hanno segno negativo: questo perchè, scelto
+un riferimento levogiro sulla circonferenza, il versore $\hat{R}$ viene ad orientarsi verso l'esterno della circonferenza,
+mentre per definizione la forza centripeta è diretta verso il centro della circonferenza.
+\par\smallskip
+\textbf{Periodo e pulsazione} \\
+Infine, riprendiamo brevemente le nozioni di periodo e pulsazione applicate al moto circolare uniforme. Diciamo
+che la velocità angolare $\omega$ può essere chiamata anche pulsazione. A questo punto, trovato un periodo $T$, avremo:
+$$ VT = |\omega|RT = 2\pi R \Rightarrow T = \frac{2\pi}{|\omega|} $$
+ricordando anche la frequenza $v$, definita come:
+$$ v = \frac{1}{|T|} $$
+\end{document}

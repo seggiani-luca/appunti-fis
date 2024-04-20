@@ -1,0 +1,64 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{22 Marzo 2024}
+
+\begin{document}
+\maketitle
+\section{Lavoro svolto da forze costanti}
+\par\smallskip
+\textbf{Lavoro di forze orizzontali} \\
+Prendiamo in esempio un blocco trainato su un piano orizzontale scabro a velocità costante per un tratto $\vec{d} = d\hat{i}$. Il lavoro della forza $F$ sarà:
+$$ L_f = \vec{F} \cdot \vec{d} = F d \cos{\theta} > 0 $$
+Mentre il lavoro della reazione del piano $N$ sarà:
+$$ L_n = \vec{N} \cdot \vec{d} = 0$$
+e il lavoro della forza di gravità $mg$ sarà:
+$$ L_{mg} = m\vec{g} \cdot \vec{d} = 0 $$
+Come vediamo, il lavoro delle forze sul piano verticale è effettivamente nullo in quanto il blocco non si muove verticalmente.
+Si può in generale dire che le forze vincolari compiono lavoro 0:
+$$ L_{\vec{N}} = 0(\vec{F} \perp d\vec{r})$$
+Resta il lavoro della forza d'attrito:
+$$ L_{d} = \vec{F_d} \cdot \vec{d} = -F_dd = -\mu_d N d < 0 $$
+possiamo a questo punto imporre accelerazione nulla:
+$$ -Fd + F\cos{\theta} = -N\mu_d + F\cos{\theta} = ma_x = 0 \Rightarrow L_f + L_d = (-N\mu_d + F\cos{\theta})d = 0$$
+\par\smallskip
+\textbf{Lavoro della gravità nelle vicinanze della superficie terrestre} \\
+La gravità terrestre esercita su tutti i corpi nelle sue vicinanze una forza $mg$, che svolge un lavoro pari a :
+$$ L = L_{if} = m\vec{g} \cdot \vec{s} = -mg(y_f-y_i) $$
+dove $\vec{s}$ rappresenta la variazione dell'altitudine tra le ordinate $y_f$ e $y_i$. Osserviamo quindi che il 
+lavoro dipende quindi solamente dalla quota finale e della quota iniziale. Possiamo in generale dire che
+il lavoro della gravità alla superfice terrestre di un corpo ad altitutinde $h$ è:
+$$ L_{M\vec{g}} = -Mg\Delta h$$
+\par\smallskip
+\textbf{Lavoro delle forze di contatto} \\
+Le forza di attrito dinamico compie lavoro:
+$$ L_{\vec{F}_{AD}} = \int -\mu_d|\vec{N}||d\vec{R}| < 0 $$
+mentre la forza di attrito statico, visto che agisce su distanze nulla, sarà:
+$$ L_{\vec{F}_{AD}} = 0 $$
+\textbf{Teorema dell'energia cinetica} \\
+Il lavoro svolto dalla risultante delle forze $\vec{F}$ agenti su un punto materiale di massa inerziale $M$ che
+si sposta da un punto $\vec{R_0}$ a un punto $\vec{R_1}$ è uguale alla variazione di energia cinetica del punto materiale
+tra $\vec{R_0}$ e $\vec{R_1}$. La stessa cosa vale anche per sistemi di punti materiali.
+$$ K({\vec{R_1}}) - K({\vec{R_0}}) = \sum\int_{\vec{R_0}}^{\vec{R_1}} \vec{F_i} \cdot d\vec{R} $$
+Dimostriamo il caso dei punti materiali:
+$$ \sum\int_{\vec{R_0}}^{\vec{R_1}} \vec{F_i} \cdot d\vec{R} = \int_{\vec{R_0}}^{\vec{R_1}} (\sum{\vec{F_i}}) \cdot d\vec{R} = \int_{\vec{R_0}}^{\vec{R_1}} M\vec{a} \cdot d\vec{R}
+= \int_{\vec{R_0}}^{\vec{R_1}} M\frac{d\vec{V}}{dt} \cdot d\vec{R} = \int_{\vec{t_0}}^{\vec{t_1}} M\frac{d\vec{V}}{dt} \cdot \vec{V} dt$$
+Prendiamo il termine $\frac{d\vec{V}}{dt}\cdot\vec{V}$. Possiamo riscriverlo come:
+$$ \frac{1}{2}\frac{d\vec{V^2}}{dt} = \frac{1}{2} \cdot 2\vec{V} \cdot(\frac{d\vec{V}}{dt}) = \vec{V} \cdot \frac{d\vec{v}}{dt}$$
+Sostituiamo per ottenere:
+$$ \int_{t_0}^{t_1} M \frac{d}{dt} \frac{V^2}{2} dt = \Bigg|M\frac{V^2}{2}\Bigg|_{t_0}^{t_1} = \frac{M}{2}(V^2(t_1) - V^2(t_0))$$
+\textbf{Lavoro della forza elastica} \\
+Studiamo una molla di lunghezza $L_0$. La molla potrà essere spostata dalla sua posizione di riposo nelle due direzioni lungo il suo asse:
+diciamo di avere in momenti distinti spostamenti $L_i$ e $L_f$, con variazione della posizione rispetto alla posizione di riposo $L_0$ pari
+a $x_i = L_i - L_0, \quad x_f = L_f - L_0 $. A questo punto possiamo ricordare la legge elastica che determina
+la forza applicata dalla molla in funzione degli spostamenti $x_i$ e $x_f$:
+$$ \vec{F} = -kx $$
+e calcolare l'integrale:
+$$ L_{x_ix_f} = \int_{x_1}^{x_f} \vec{F} \cdot d\vec{r} = -\int_{x_1}^{x_f} -kx d\vec{r} = -\frac{k}{2}(x_f^2 - x_i^2) $$
+Notiamo che se $x_f = -x_i$, il lavoro svolto è nullo.
+\end{document}

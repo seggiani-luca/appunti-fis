@@ -1,0 +1,86 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{5 Aprile 2024}
+
+\begin{document}
+\maketitle
+\section{Sistemi di riferimento rotanti}
+Consideriamo il caso in cui il nostro sistema mobile non inerziale ruota con una certa velocità
+angolare $\vec{\omega}$. Si può ricavare l'accelerazione di trascinamento:
+$$ \vec{a_T} = 2\vec{\omega} \times \vec{v'} - \vec{\omega} \times (\vec{\omega} \times \vec{r}) 
+= 2\vec{\omega} \times  \vec{v'} - \omega^2\vec{R} $$
+Da cui si ha la relazione fra accelerazioni:
+$$ \vec{a} = \vec{a'} + \vec{a_T} = \vec{a'} + 2\vec{\omega} \times \vec{v'} - \omega^2 \vec{R}$$
+Dove: 
+\begin{itemize}
+  \item $2\vec{\omega} \times \vec{v'}$ è l'accelerazione di Coriolis, diependente dalla velocità del SM
+    sul sistema in rotazione.
+  \item $-\omega^2 \vec{R}$ è un'accelerazione centrifuga dovuta alla forza centripeta che mantiene l'oggetto
+    in rotazione.
+\end{itemize}
+Possiamo quindi esprimere le forze apparenti con:
+$$ m\vec{a'} = \sum \vec{F} + \vec{F}_{app} \Rightarrow \vec{F}_{app} = m(-2\vec{\omega} \times \vec{v'} + \omega^2\vec{R}) $$
+dove le due componenti di $\vec{F}_{app}$ rappresentano rispettivamente la forza di coriolis e la forza centrifuga. \\
+Possiamo dimostrare che queste due componenti sono necessarie facendo l'esempio di un moto circolare uniforme, e osservando
+la relazione fra l'accelerazione osservata dal punto in rotazione e quella osservata da un sistema di riferimento inerziale
+fermo rispetto al moto. Sia $\vec{a'}$ l'accelerazione rispetto al sistema in quiete, abbiamo:
+$$ \vec{a'} = -\omega^2\vec{R}, \quad \vec{v} = -\vec{\omega} \times \vec{R} $$
+che sono le formule dell'accelerazione centripeta e della velocità tangenziale di un punto in rotazione di moto
+circolare uniforme. Possiamo allora applicare la relazione: $\vec{a} = \vec{a'} + \vec{a_T}$, con $\vec{a_T}$ accelerazione apparente:
+$$ \vec{a} = \vec{a'} + \vec{a_T} \Rightarrow \vec{a'} = \vec{a} - \vec{a_T}$$
+$$ \vec{a'} = \vec{a} - 2\vec{\omega} \times \vec{v'} + \omega^2\vec{R} $$
+A questo punto, sappiamo $\vec{a}$ essere nulla in quanto il punto in rotazione è effettivamente in quiete rispetto
+al suo sistema di riferimento (non inerziale), ergo:
+$$ \Rightarrow \vec{a'} = -2\omega^2\vec{R} + \omega^2\vec{R} = -\omega^2\vec{R} $$
+che è coerente con quanto detto prima. \\
+Dal punto di vista opposto, ovvero con $\vec{a'}$ uguale all'accelerazione del punto in rotazione dal suo stesso punto
+di riferimento, avremo:
+$$ \vec{a'} = 0, \quad \vec{a'} = -\omega^2\vec{R}, \quad \vec{v} = -\vec{\omega} \times \vec{R} $$
+di cui le ultime due analoghe al caso precedente. Possiamo allora applicare nuovamente la relazione:
+$$ \vec{a'} = \vec{a} - 2\vec{\omega} \times \vec{v'} + \omega^2\vec{R} = -\omega^2\vec{R} + \omega^2\vec{R} = 0 $$
+che è nuovamente coerente con quanto detto prima, come dovrebbe essere.
+\par\medskip
+\textbf{Dimostrazione dell'accelerazione di trascinamento} \\
+Diamo adesso una dimostrazione formale della formula riportata sopra. Impostiamo, come prima, $S$ come sistema
+di riferimento stazionario, e $S'$ come sistema in rotazione. Avremo allora le relazioni:
+$$ 
+\left\{\begin{array}{l}
+    \vec{r} = \vec{r'} + \vec{r}_{OO'}(t) \cr \\
+  \vec{v} = \vec{v'} + \vec{v_t} \cr \\
+  \vec{a} = \vec{a'} + \vec{a_T}
+\end{array}\right.
+$$
+Notiamo a questo punto che per una qualsiasi posizione $\vec{r'}$ rispetto al sistema mobile $S'$, la relativa posizione in $S$ sarà,
+in termini di derivate:
+\begin{equation} \frac{d}{dt}\vec{r} = \frac{d}{dt}\vec{r'} + \vec{\omega} \times \vec{r} \end{equation}
+e visto che la derivata della posizione non è altro che la velocità, avremo anche:
+\begin{equation} \vec{v} = \vec{v'} + \vec{\omega} \times \vec{r} \end{equation}
+Useremo queste due ultime equazioni nel corso della dimostrazione. Impostiamo allora l'accelerazione, come definita
+dalla relazione precedente:
+$$ \vec{a} = \frac{d}{dt}\vec{v} = \frac{d}{dt}(\vec{v'} + \vec{\omega} \times \vec{r}) = \frac{d}{dt}\vec{v'} + \frac{d}{dt}(\vec{\omega} \times \vec{r})$$
+si applica la (2) e la regola di derivazione del prodotto (vettoriale):
+$$ =\frac{d}{dt}\vec{v'} + \vec{\omega} \times \vec{v'} + \frac{d}{dt}\vec{\omega} \times \vec{r} + \vec{\omega} \times \frac{d}{dt}\vec{r} $$
+si applica la (1), e si riconosce che $\frac{d}{dt}\vec{v'} = \vec{a'}$ e $\frac{d}{dt}\vec{r'} = \vec{v'}$:
+$$ = \frac{d}{dt}\vec{v'} + \vec{\omega} \times \vec{v'} + \frac{d}{dt}\vec{\omega} \times \vec{r} + \vec{\omega} \times (\frac{d}{dt}\vec{r'} + \vec{\omega} \times \vec{r}) = \frac{d}{dt}\vec{v'} + \vec{\omega} \times \vec{v'} + \frac{d}{dt}\vec{\omega} \times \vec{r} + \vec{\omega} \times \vec{v'} + \vec{\omega} \times (\vec{\omega} \times \vec{r}) $$
+Da cui l'equazione finale:
+$$ \vec{a} = \vec{a'} + \frac{d}{dt}\vec{\omega} \times \vec{r} + 2\vec{\omega} \times \vec{v'} + \vec{\omega} \times (\vec{\omega} \times \vec{r}) $$
+di cui notiamo l'ultimo fattore può essere riportato anche come $(-\omega^2\vec{r})$.
+Classifichiamo tutti i termini dell'equazione:
+\begin{itemize}
+  \item $\vec{a'}$ è semplicemente l'accelerazione rispetto al sistema di riferimento mobile;
+  \item $\frac{d}{dt}\vec{\omega} \times \vec{r}$ è una forza (qua accelerazione) conseguente della variazione di velocità angolare del moto,
+    nota come forza di Eulero; 
+  \item $2\vec{\omega} \times \vec{v'}$ è l'accelerazione di Coriolis, che agisce su corpi in movimento rispetto al sistema di riferimento
+    mobile, e influenza ad esempio le correnti dei venti terrestri, provocando fenomeni quali gli uragani (che sulla terra girano in senso
+    antiorario sopra l'equatore e orario sotto).
+  \item $\vec{\omega} \times (\vec{\omega} \times \vec{r})$ oppure $(-\omega^2 \vec{r})$ è l'accelerazione centrifuga.
+\end{itemize}
+Tutte queste forze sono apparenti! Esistono soltanto come conseguenza del sistema di riferimento scelto, e non dall'interazione fra corpi. In
+questo non rispettano le leggi di Newton.
+\end{document}
