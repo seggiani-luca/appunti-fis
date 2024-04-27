@@ -1,0 +1,148 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{26 Aprile 2024}
+
+\usepackage{amsmath}
+
+\begin{document}
+\maketitle
+\par\medskip
+Vediamo alcune applicazioni del teorema di Gauss per il calcolo di flussi e campi elettrici:
+\begin{itemize}
+  \item \textbf{Flusso di un dipolo} \\
+Calcoliamo il flusso generato da un dipolo su una superficie gaussiana ad esso circostante. Si ha che, su una superficie
+gaussiana che comprende entrambe le cariche, tutte le linee di campo escono ed entrano nella superficie, ergo il flusso
+totale vale 0:
+$$ \Phi(\vec{E)} = 0 $$
+Nel caso si prenda una superficie gaussiana che circonda solamente una delle cariche di dipolo, dovremo considerare tale come carica
+puntiforme. Ricordiamo che, data la proporzionalità del campo elettrico $\vec{E}$ generato dal dipolo, e quella della superficie $S$ al crescere
+del raggio:
+$$ \vec{E} \propto \frac{1}{r^3}, \quad S \propto r^2 \Rightarrow \Phi(\vec{E}) \propto \frac{1}{r} $$
+Ergo un eventuale flusso dovrebbe scalare come l'inverso del raggio.
+N.B.: In realtà, non dovrebbe essere possibile applicare il teorema di Gauss ad un dipolo, in quanto non è possibile
+trovare una superficie gaussiana che "racchiuda" l'interezza del campo. Il professore è quantomai ombroso sull'argomento, il risultato
+viene riportato solo a scopo indicativo.
+\item \textbf{Campo generato da un filo uniformemente carico con Gauss} \\
+Possiamo usare il teorema di Gauss per calcolare il campo elettrico generato da un il filo uniformemente carico. 
+Riprendiamo la nozione di densità lineare di carica:
+$$ dQ = \lambda dl $$
+su una qualche lunghezza infinitesima $dl$. La carica complessiva di un filo di lunghezza $h$ sarà allora: 
+$$ Q=h\lambda $$
+Vediamo poi che il sistema formato dal filo (disposto sull'asse z) è invariante a rotazione assiale. Il campo
+deve quindi essere radiale. Prendiamo una superficie gaussiana cilindrica che contiene interamente il filo.
+Impostiamo il flusso attraverso il teorema di Gauss:
+$$ \Phi(\vec{E}) = \frac{h\lambda}{\epsilon_0} $$
+e attraverso la definizione, tenendo conto del fatto che il flusso totale sarà la somma del flusso sulle basi $\Phi_B(\vec{E})$ e sull'area
+laterale del cilindro $\Phi_L(\vec{E})$:
+$$ \Phi(\vec{E}) = \Phi_B(\vec{E}) + \Phi_L(\vec{E}) $$
+Notiamo quindi il campo lungo le basi è nullo, in quanto aventi vettori normali ortogonali alle linee di campo. La totalità del flusso
+sarà quindi data dalla superficie laterale, che forma in ogni punto un angolo $\theta = 0$ con il campo, e restituisce quindi:
+$$ \Phi(\vec{E}) = \int_L d\vec{A} \cdot d\vec{E}(\vec{r}) = \int_L d\vec{A}E(d) = E(d) 2\pi d h $$
+dove $d$ è la distanza dal centro del filo dove si calcola il campo elettrico. Notiamo il passaggio da $\vec{E}$ a $E$ in solo modulo, possibile
+in quanto il campo a una distanza $d$ dal centro (e quindi su una circonferenza) è costante.
+Possiamo a questo punto eguagliare le due espressioni trovate per $\Phi(\vec{E})$:
+$$ E(d)2\pi d h = \frac{h\lambda}{\epsilon_0} \Rightarrow E(d) = \frac{\lambda}{2\pi \epsilon_0 d} $$
+Che è in accordo con quanto trovato precedentemente attraverso il principio di sovrapposizione.
+\item \textbf{Campo generato da una sfera uniformemente carica} \\
+Per calcolare il campo elettrico generato da una sfera uniformemente carica, possiamo sfruttare la sua simmetria radiale: in ogni punto posto a distanza
+$r$ avremo campo costante. Applichiamo allora la densità (volumetrica) di carica $\rho$:
+$$ dq = \rho dV, \quad Q = \rho V = \rho \frac{4}{3}\pi R^3 $$
+dove $\frac{4}{3}\pi R^3$ è il volume della sfera. Possiamo quindi applicare Gauss:
+$$ \Phi(\vec{E}) = \frac{Q}{\epsilon_0} = \frac{\rho4\pi R^3}{3\epsilon_0} $$
+Troviamo un'altra espressione per il flusso applicando la definizione, scegliendo una certa superficie gaussiana $S$ (anch'essa sferica)
+di raggio $r$, che contenga la circonferenza. Avremo che il flusso su tale superficie vale:
+$$ \Phi{\vec{E}} = \int_S d\vec{A} \cdot d\vec{E} = E(r)\int_S d\vec{A} $$
+Avremo che l'integrale di superficie di $\vec{A}$ su $S$ non sarà altro che la superficie della sfera, ergo:
+$$ \int_S d\vec{A} = 4\pi r^2, \quad \Phi{\vec{E}} = E(r)4\pi r^2 $$
+Eguagliando, come prima, questo con il risultato ottenuto da Gauss abbiamo:
+$$ E(r) 4\pi r^2 = \frac{\rho4\pi R^3}{3\epsilon_0} = \frac{Q}{\epsilon_0}, \quad E(r) = \frac{\rho R^3}{3r^2 \epsilon_0} = k \frac{Q}{r^2} $$
+Questo ci assicura che il campo elettrico prodotto da una distribuzione di carica a simmetria sferica è
+proporzionale a $\frac{1}{r^2}$. Potremmo essere interessati al campo generato dalla carica al suo interno: in questo caso
+dovremo scegliere una superficie gaussiana di raggio $r < R$. Si avrà in questo caso che la carica su cui applichiamo il teorema di Gauss
+(che chiameremo $Q_{int}$)è minore: comprende soltanto del volume di sfera in $r$:
+$$ Q_{int} = \rho \frac{4}{3} \pi r^3 $$
+Possiamo allora applicare la stessa uguaglianza precedente:
+$$ E(r)4\pi r^2 = \frac{Q_{int}}{\epsilon_0}, \quad E(r) = k \frac{Q_{int}}{r^2} $$
+Sostituire la formula di $Q_{int}$ sarebbe possibile, ma non conveniente: calcoliamo piuttosto il rapporto $\frac{Q}{Q_{int}}$.
+$$ \frac{Q}{Q_{int}} = \frac{\rho \frac{4}{3} \pi R^3}{\rho \frac{4}{3} \pi r^3} = \frac{R^3}{r^3} $$
+e moltiplichiamo numeratore e denominatore del campo:
+$$ E(r) = k \frac{Q_{int} \cdot \frac{Q}{Q_{int}}}{r^2 \cdot \frac{R^3}{r^2}} = k \frac{Q}{R^3}r $$
+Notiamo che per $r = R$, ovvero avvicinandosi alla superficie della sfera, abbiamo:
+$$ k \frac{Q}{r^2} = k \frac{Q}{R^2} = k \frac{Q}{R^3}R $$
+ovvero quanto calcolato per $r$ interni ed esterni alla sfera va a coincidere. Riassumendo, abbiamo quindi
+che il campo generato dalla sfera vale esattamente 0 nel suo punto di centro, cresce linearmente fino ad un massimo
+di $k\frac{kQ}{R^2}$ sulla sua superficie, e poi decresce quadraticamente al suo esterno.
+\item \textbf{Campo generato da un guscio sferico uniformemente carico}
+Calcoliamo il campo elettrico generato da un guscio sferico completamente cavo, di spessore trascurabile. Avremo bisogno
+della densità di carica superficiale del disco $\sigma$, e potremo calcolare la carica:
+$$ Q = 4\pi R^2 \sigma $$
+Racchiudiamo adesso il guscio con una superficie gaussiana non dissimile da quella adoperata per la sfera carica. Avremo l'uguaglianza:
+$$ E(r)4\pi r^2 = \frac{Q}{\epsilon_0}, \quad E(r) = k\frac{Q}{r^2} $$
+Risultato esattamente identico a quello della sfera. Vediamo adesso cosa succede se prendiamo $r < R$. In questo caso dovremo considerare
+una superficie gaussiana completamente interna al guscio. Questa superficie non conterrà alcuna carica! In altre parole, il campo elettrico
+generato da un guscio sferico uniformemente carico al suo interno è nullo. Questo risultato viene spiegato più generalmente nel cosiddetto
+\textbf{teorema del guscio sferico}, riguardante perlopiù la forza gravitazionale, che stabilisce:
+\begin{itemize}
+  \item Un guscio sferico di massa uniforme genera lo stesso campo di una carica puntiforme posta esattamente al suo centro;
+  \item Il campo generato dal guscio sferico in un punto al suo interno è nullo.
+\end{itemize}
+\item \textbf{Campo generato da un guscio spesso uniformemente carico}
+Facciamo un esempio analogo al precedente, ma considerando il nostro guscio come dotato di un certo spessore. Questo da solo renderà
+necessario l'utilizzo della densità (volumetrica) di carica $\rho$, da cui potremo impostare, chiamando il raggio interno $a$ e quello esterno $b$:
+$$ Q = \rho \frac{4}{3}\pi(b^3 - a^3) $$
+Su un raggio $r$ esterno al guscio, il risultato sarà coincidente con i due precedenti: prendiamo sempre una superficie gaussiana sferica che racchiuda
+l'intero oggetto, applichiamo Gauss ed otteniamo:
+$$ E(r)4\pi r^2 = \frac{Q}{\epsilon_0}, \quad E(r) = k\frac{Q}{r^2} $$
+Il caso interessante è quello in cui il campo viene calcolato all'interno del guscio. Avremo che la carica a questo punto varrà:
+$$ Q_{int} = \rho \frac{4}{3} \pi (r^3-a^3)$$
+questo ci darà:
+$$ E(r)4 \pi r^2 = \frac{Q_{int}}{\epsilon_0}, \quad E(r) = \rho \frac{4}{3} \pi \frac{r^3-a^3}{4\pi R^2} $$
+che, a differenza del caso sferico, non è una funzione lineare di r. Notiamo che per $a\rightarrow 0$,
+questa forma tende al caso lineare: ciò ha senso in quanto un guscio sferico con raggio minore nullo non è altro che
+una sfera.
+\item \textbf{Campo generato da una distribuzione di carica piana, uniforme e infinita} \\
+Vediamo il caso di una distribuzione di carica piana, uniformemente carica e infinita. Ricordiamo che tale distribuzione di carica può essere rappresentata
+da un disco uniformemente carico di raggio infinito, il cui campo abbiamo già calcolato attraverso il principio di sovrapposizione. Ne risulterà che il limite per il raggio
+che tende ad infinito della formula che avevamo trovato corrisponderà a quanto ricaveremo adesso.
+Iniziamo col considerare una lastra piana e uniformemente carica: definita la densità di carica superficiale $\sigma$ potremo applicare Gauss:
+$$ Q = A\sigma, \quad \Phi{\vec{E}} = \frac{A\sigma}{\epsilon_0} $$
+Possiamo scegliere un'altra superficie gaussiana: per un qualsiasi punto $\vec{r}$ sulla lastra a distanza $d$, consideriamo un cilindro perpendicolare alla lastra.
+Avremo che il flusso lungo tale cilindro è diviso nel flusso lungo il lato, che sarà nullo, e il flusso sulle basi:
+$$ \Phi{\vec{E}} = \Phi_L{\vec{E}} + \Phi_B{\vec{E}} = 2AE(d) $$
+Imponendo l'uguaglianza delle formule per il flusso si avrà:
+$$ 2AE(d) = \frac{A\sigma}{\epsilon_0}, \quad E(d) = \frac{\sigma}{2\epsilon_0} $$
+\item \textbf{Campo generato dalle lastre di un condensatore ad armature parallele} \\
+Il risultato appena trovato si presta al calcolo del campo generato all'interno ed all'esterno di un componente circuitale assai comune: il condensatore.
+Assumiamo un condensatore come formato da due lastre piane, che prendiamo come infinite (come si è visto, questa approssimazione descrive piuttosto bene ciò
+che succede lontano dai bordi). Assegneremo alle due lastre le densità di carica superficiale $\sigma_1$ e $\sigma_2$. Un calcolo immediato si può fare attraverso il principio di sovrapposizione,
+per due lastre generanti campo $\frac{\sigma_i}{2\epsilon_0}$, il campo totale esterno sarà:
+$$ E_{int} = \frac{\sigma_1 + \sigma_2}{2\epsilon_0} $$
+mentre il campo totale interno sarà (dovremo considerare segni invertiti, in quanto aprrocciamo le lastre da direzioni opposte):
+$$ E_{est} = \frac{\sigma_1 - \sigma_2}{2\epsilon_0} $$
+Un calcolo simile può essere fatto usufruendo del teorema di Gauss, giungendo allo stesso risultato. Sia $L$ una superficie gaussiana, identica a quella usata sulla lastra
+nell'esempio precedente, posta sulla lastra $\sigma_1$; $R$ una superficie simile sulla lastra $\sigma_2$, e infine $C$ una superficie gaussiana che comprenda di entrambe le lastre.
+Possiamo impostare uguaglianze simili a quelle già usate finora (fra flusso calcolato "a mano" e con Gauss) su queste superfici. Ad esempio, riguardo a $L$:
+$$ A E_L = \frac{Q_{est}}{\epsilon_0} = \frac{A\sigma_1}{2\epsilon_0}, \quad E_L = \frac{\sigma_1}{2\epsilon_0} $$
+Ciò ci permette di ricavare il sistema:
+$$ 
+\left\{\begin{array}{l}
+    E_L = \frac{\sigma_1}{2\epsilon_0} \cr \\
+    E_R = \frac{\sigma_2}{2\epsilon_0} \cr \\ 
+    E_C = E_L + E_R
+\end{array}\right.
+$$
+da cui:
+$$ E_C = E_{est} = \frac{\sigma_1 + \sigma_2}{2\epsilon_0} $$
+Per il campo esterno. Per quanto riguarda il campo interno, basterà prendere una superficie gaussiana che comprende solamente la parte interna delle
+lastre $\sigma_1$ e $\sigma_2$. Impostando Gauss si avrà:
+$$ \int E \cdot dA = E\cdot A = \frac{Q_{int}}{\epsilon_0} = \frac{(\sigma_1 - \sigma_2)A}{2\epsilon_0}, \quad E_{int} = \frac{\sigma_1-\sigma_2}{2\epsilon_0} $$
+Che corrisponde con quanto trovato prima. Possiamo adesso considerare il caso particolare del condensatore, dove $\sigma_1 = -\sigma_2$:
+$$ E_{est} = \frac{\sigma - \sigma}{2\epsilon_0} = 0, \quad E_{int} = \frac{ \sigma + \sigma}{2\epsilon_0} = \frac{\sigma}{\epsilon_0} $$
+\end{itemize}
+\end{document}

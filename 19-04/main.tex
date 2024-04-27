@@ -8,6 +8,8 @@
 \author{Luca Seggiani}
 \date{19 Aprile 2024}
 
+\usepackage{amsmath}
+
 \begin{document}
 \maketitle
 \par\smallskip
@@ -55,5 +57,65 @@ $$ \Delta E = L_{NC} = L_{\vec{T}} - L_{\vec{T}} + L_{R_v} = 0 $$
 Ergo se non ci sono forze non conservative l'energia meccanica si conserva:
 $$ E_i = E_f,\quad E_i = mgh_i, \quad E_f = \frac{1}{2}mv_m^2 + \frac{1}{2}I\omega^2 + mgh_f $$
 $$ \Rightarrow mg(h_i-h_f) = \frac{1}{2}mv_m^2 + \frac{1}{2}I\omega^2 $$
-
+\par\smallskip
+\textbf{Esempio di applicazione della dinamica rotazionale} \\
+Vediamo un problema che sapevamo già risolvere attraverso la dinamica, e applichiamo quello che adesso conosciamo sulla
+dinamica rotazionale per trovare risultati più precisi. \\
+Il problema presuppone una carrucola di raggio $R$ con due masse, $m_1$ e $m_2$. Le masse collegate dalla carrucola
+agiranno su di essa con due tensioni, $T_1$ e $T_2$, dipendenti dalla forza peso. Possiamo immaginare queste due tensioni identiche
+(ovvero sia il filo che la carrucola trascurabili in massa) e impostare le equazioni dinamiche:
+$$ 
+\left\{\begin{array}{l}
+    m_1\vec{a_1} = \vec{T_1} - m_1g \cr \\
+    m_2\vec{a_2} = \vec{T_2} - m_2g
+\end{array}\right.
+, \quad \vec{T_1} = \vec{T_2}, \quad \vec{a_1} = -\vec{a_2} \Rightarrow
+m_1\vec{a}+m_1g = m_2g-m_2\vec{a}
+$$
+Questo si ottiene dal fatto che l'accelerazione in alto di una massa comporta l'accelerazione in basso dell'altra, e viceversa, e dà
+il risultato:
+$$ \vec{a} = g \frac{m_2-m_1}{m_1+m_2} $$
+Questo risultato è corretto nel caso la carrucola, ricordiamo, abbia massa nulla: le equazioni della dinamica rotazionale ci forniscono
+un sistema più completo che può invece tenere conto della sua massa. Partiamo dall'equazione trovata prima:
+$$ I_z \vec{\alpha} = \vec{\tau_{tot}} $$
+Dove $\vec{\alpha}$ è l'accelerazione angolare della carrucola, $I_z$ il suo momento d'inerzia, e $\vec{\tau_{tot}}$ il momento risultante delle
+forze che agiscono su di essa. Possiamo calcolare separatamente questi termini. Iniziamo dal momento d'inzerzia, assumendo la carrucola
+come un disco di massa uniforme $M$:
+$$ I_z = \frac{MR^2}{2}$$
+Vediamo poi il momento risultante delle forze $\tau_{tot}$. Sarà necessario, per tener conto della massa della carucola, adoperare due diverse tensioni,
+una per ogni capo della corda, $T_1$ e $T_2$, da non assumere come uguali fra loro:
+$$ \tau_{tot} = \vec{R} \times (T_2-T_1)$$
+Infine $\vec{\alpha}$ accelerazione angolare è proporzionale di $R$ all'accelerazione $a$, che definiamo come prima come l'accelerazione in direzione di una sola massa
+(la prima):
+$$ \vec{\alpha} = \frac{a}{R} $$
+Possiamo sostituire quanto trovato nella formula iniziale per ottenere che:
+$$ I_z \vec{\alpha} = \vec{\tau_{tot}} = \frac{MR^2}{2} \frac{a}{R} = (T_2-T_1)R \Rightarrow \frac{Ma}{2} = (T_2 - T_1)$$
+Ricaviamo quindi la $(T_2-T_1)$ dalle equazioni dinamiche ricavate precedentemente:
+$$ T_2-T_1 = m_2g-m_2a-m_1a-m_1g$$
+Da cui l'equazione finale:
+$$ \frac{Ma}{2} =  m_2g-m_2a-m_1a-m_1g \Rightarrow a = g\frac{m_2-m_1}{m_1+m_2+\frac{M}{2}}$$
+Notiamo che l'unica differenza dall'approccio precedente è il termine $\frac{M}{2}$ al denominatore. Se assumiamo $M = 0$, le formule
+corrispondono (che è come dovrebbe essere!).
+\par\smallskip
+\textbf{Applicazione della conservazione dell'energia rotazionale} \\
+Lo stesso risultato si può ottenere attraverso la conservazione dell'energia rotazionale. Nel sistema non agiscono
+forze non conservative, o almeno le tensioni della fune non svolgono lavoro e non lo fa nemmeno la reazione vincolare della carrucola.
+Avremo quindi che in qualsiasi momento, l'energia meccanica si conserva:
+$$ \frac{d}{dt}E = 0 $$
+Possiamo quindi impostare l'energia meccanica come:
+$$ E = m_1gh_1 + m_2gh_2 + \frac{1}{2}m_1v_1^2 + \frac{1}{2}m_2v_2^2 + \frac{1}{2}I_z\omega^2 $$
+Dove abbiamo le energie potenziali e cinetiche delle masse e l'energia rotazionale della carrucola. Problematici
+potrebbero essere i fattori $h_1$ e $h_2$. Imponiamo allora l'inestensibilità della fune: diciamo che la sua lunghezza complessiva $l$ è sempre costante,
+ergo le altezze $h_1$ e $h_2$ delle masse dovranno essere una l'opposta dell'altra:
+$$ h_1 = -h_2 $$ 
+Otteniamo così un'equazione da derivare, applicando la relazione già usata prima riguardo alle accelerazioni, $a_1 = -a_2$.
+$$ E = m_1gh-mg_1h + \frac{1}{2}m_1v_1^2 + \frac{1}{2}m_2v_2^2+\frac{1}{2}I_z + \frac{1}{2}I_z\omega^2$$
+$$ \frac{d}{dt}E = m_1gv-m_2gv+m_1av+m_2av+\frac{Mva}{2} = 0$$
+Per quanto riguarda il fattore $\frac{Mva}{2}$, possiamo vedere come si svolgono i calcoli sostituendo $I_z$ prima o dopo la derivazione:
+$$ \frac{1}{2}I_z\omega^2 = \frac{1}{2}\frac{MR^2}{2}\omega^2 = \frac{MR^2\omega^2}{4} =  \frac{Mv^2}{2}, \quad \mathrm{da} \ \omega R = v, \quad \frac{d}{dt}\frac{Mv^2}{2} = \frac{Mva}{4}$$
+oppure:
+$$ \frac{d}{dt}\frac{1}{2}I_z\omega^2 = I_z\omega\alpha = \frac{MR^2}{2}\omega\alpha = \frac{MR^2}{2} \frac{va}{R^2} = \frac{Mva}{4}$$
+Come vediamo, dividendo per $v$ (che sappiamo essere $\neq 0$ in caso di non equilibrio) si ha:
+$$ \frac{Ma}{2} =  m_2g-m_2a-m_1a-m_1g \Rightarrow a = g\frac{m_2-m_1}{m_1+m_2+\frac{M}{2}}$$
+Che è esattamente identico a quanto avevamo ottenuto con gli altri metodi. Tomato tomato.
 \end{document}

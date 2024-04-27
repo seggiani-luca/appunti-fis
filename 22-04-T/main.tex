@@ -1,0 +1,130 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{22 Aprile 2024}
+
+\usepackage{amsmath}
+
+\begin{document}
+\maketitle
+\section{Introduzione all'elettrostatica}
+L'elettrostatica è la branca della fisica che si occupa di cariche elettriche. Possiamo interpretare la carica
+come la capacità di un corpo di esercitare forza elettrostatica.
+\par\smallskip
+\textbf{Carica} \\
+La carica è una caratteristica di un corpo data dalla struttura molecolare, o meglio dall'interazione degli elettroni 
+e dei protoni che costituiscono le sue molecole. La carica ha un segno: può essere positiva o negativa. Si decide per convenzione
+la carica dell'elettrone essere negativa. Vale il principio secondo cui cariche dello stesso segno si respingono e cariche di segno
+discorde si respingono. Può essere utile osservare brevemente la struttura dell'atomo:
+\par\smallskip
+\textbf{Introduzione informale all'atomo} \\
+L'atomo è la particella fondamentale degli elementi chimici. E' formato da un nucleo di neutroni e protoni attorno al quale
+orbitano gli elettroni. Queste tre particelle elementari hanno le seguenti caratteristiche:
+\begin{center}
+\begin{tabular}{|c|c|c|}
+  Particella & Massa & Carica \\
+  Protone & $1.673 \times 10^{-27} \  \mathrm{kg}$ & +1 $e$ \\
+  Elettrone & $9.109 \times 10^{-31} \  \mathrm{kg}$ & - 1 $e$ \\
+  Neutrone & $1.675 \times 10^{-27} \  \mathrm{kg}$ & 0 \\
+\end{tabular}
+\end{center}
+Introduciamo un'unità di misura per la carica: il Coulomb (C). Si definisce la carica fondamentale come la carica di un protone o l'opposto della carica di un elettrone,
+che vale $1.602 \times 10^-19$ C. Visto che la carica viene espressa da quantità
+discrete di particelle elementari, è deducibile che essa sia quantizzata. \\
+Possiamo poi dire che la dimensione di un nucleo di atomo è nell'ordine del Fermi, unità di misura corrispondente a $10^{-15}$ m,
+mentre il raggio atomico è nell'ordine dell'angstrom, corrispondente invece a $10^{-10}$ m.
+Dell'atomo possiamo definire il numero di massa A e il numero atomico Z. Il numero di massa corrisponde al numero
+di particelle elementari (protoni e neutroni) che compongono il nucleo, mentre il numero atomico corrisponde al solo
+numero di protoni. In generale è quindi vero che $A>Z$. Si ha poi che il numero di elettroni, in un atomo con carica neutra,
+è uguale al numero di protoni. Il numero atomico caratterizza periodicamente gli elementi chimici: si ha che un atomo con un numero di massa (quindi
+di neutroni) diverso da quello del suo elemento è un isotopo, e un atomo con numero di elettroni diverso da quello dei suoi protoni è uno ione (che può essere positivamente carico,
+quando perde elettroni, e negativamente carico, quando ne acquista).
+\par\smallskip
+\textbf{Materiali neutri e a reticolo polare} \\
+Si possono distinguere comportamenti diversi della materia:
+\begin{itemize}
+  \item \textbf{Neutro}
+    Di materiali caratterizzati da legami covalenti, e che quindi hanno una distribuzione neutra di carica.
+  \item \textbf{Polare}
+    Di materiali caratterizzati da legami ionici, dove alcuni ioni hanno carica positiva e altri carica negativa. Nel complesso,
+    in genere, la carica è neutra, ma si potrà polarizzare il materiale in modo da renderlo localmente carico in una certa zona.
+\end{itemize}
+\par\smallskip
+\textbf{Elettricità statica in una bacchetta} \\
+Poniamo di avere una bacchetta di vetro e di strofinarla contro un panno di lana. Saremo adesso in grado di sollevare
+dei piccoli pezzi di carta semplicemente avvicinandogli la bacchetta. Questo semplice esperimento può essere spiegato dall'elettrostatica:
+strofinando la bacchetta sul panno, abbiamo costretto i due corpi a scambiarsi cariche. La carica complessiva resterà costante, per il principio di
+conservazione della carica: la bacchetta cederà carica negativa al panno e si caricherà quindi positivamente. Quando la avviciniamo alla carta, la bacchetta,
+ora carica positivamente, indurrà nella carta una carica negativa sul lato superiore (e di conseguenza una carica positiva sull lato inferiore). 
+Questo produrrà una forza di attrazione (forza di Coloumb) che vincerà l'attrazione gravitazionale,
+portando i pezzi di carta a sollevarsi.
+\par\smallskip
+\textbf{Induzione elettrostatica} \\
+Il comportamento appena dimostrato dalla carta è un'esempio di induzione elettrostatica. Supponiamo di avere una sbarretta metallica:
+avvicinando una carica positiva alla sua destra, o una negativa alla sua sinistra, costringiamo la carica positiva ad accumularsi a destra
+e quella negativa a sinistra, caricando localmente la sbarretta. Nella pratica, la variazione di carica è data dalla migrazione degli elettroni,
+liberi di spostarsi nel metallo, da destra verso sinistra: gli ioni rimasti a destra saranno carichi positivamente. Se a questo punto
+dividessi l'oggetto a metà, otterrei due corpi carichi globalmente (o almeno che non potrebbero trasferire fra di loro carica per contatto).
+\par\smallskip
+\textbf{Distribuzione simmetrica di carica} \\
+Intuitivamente, una sfera carica positivamente tende a concentrare le sue cariche verso l'esterno, in modo da minimizzare le forze repulsive. In modo analogo a prima,
+non sono le "cariche" in sé per sé a muoversi, ma gli elettroni che vengono trasferiti dall'esterno verso l'interno, lasciando gli ioni sul bordo
+carichi positivamente.
+\par\smallskip
+\textbf{Bilancia a torsione} \\
+L'attrazione o repulsione elettromagnetica (quindi la forza elettromagnetica) può essere misurata attraverso 
+uno strumento noto come bilancia a torsione. La bilancia a torsione è un'apparato formato da una sbarra avente due sferette cariche alle estremità:
+la sbarra può ruotare su se stessa rispetto ad un asse verticale, torcendo il perno che la tiene ferma. Avvicinando cariche diverse alle sferette,
+possiamo osservare una rotazione della sbarra proporzionale alla forza elettromagnetica esercitata dalle due sferette. Chiaramente, se le due sferette
+tenderanno ad avvicinarsi, le loro cariche saranno opposte, uguali se viceversa. Un'apparato simile fu usato da Cavendish per misurare la costante gravitazionale
+$G$, usando però masse molto più grandi.
+\section{Forza di Coulomb}
+La forza di Coulomb è la forza che due cariche esprimono fra di loro. Poste due cariche $a$ e $b$, 
+la sua espressione è:
+$$ \vec{F_{ab}} = k \frac{q_a\cdot q_b}{r^2}\hat{r}$$
+Questa sarà la forza espressa su $b$ da $a$. $q_a$ e $q_b$ sono rispettivemente le cariche di $a$ e $b$, $r$ distanza
+fra di loro, e $\hat{r}$ il vettore:
+$$ \hat{r} = \frac{\vec{r_b} - \vec{r_a}}{|\vec{r_b} - \vec{r_a}|} $$
+Notiamo che questa forza è espressa come inverso del quadrato delle distanze, proprio come lo era l'attrazione gravitazionale. La differenza
+sta nel fatto che la forza di Coulomb può avere segno negativo, quindi respingere oltre che attrarre. Ovvero,
+rispetta il terzo principio della dinamica:
+$$ \vec{F_{ab}} = -\vec{F_{ba}} $$
+e le caratteristiche di repulsività e attrattività che avevamo prima riportato: con $qA$ e $qB$ discordi, dirige 
+l'uno verso l'altro corpo. In caso contrario, li allontana. Vediamo la costante $k$:
+$$ k = \frac{1}{4\pi \epsilon_0} $$
+dove $\epsilon_0$ è la \textbf{costante dielettrica nel vuoto}, anche detta permettività dielettrica nel vuoto, che
+vale $9 \times 10^{19} \frac{\mathrm{Nm}^2}{\mathrm{C}^2}$.
+\par\smallskip
+\textbf{Principio di sovrapposizione} \\
+Nel caso su una carica agiscano più cariche, la forza risultante sarà semplicemente la somma delle forze rispetto ad ogni singola carica:
+$$ \vec{F} = k \sum_i^n\frac{q_1 q_i}{r_i^2}\hat{r_i} $$
+Nel caso le cariche non siano allineate, occorrerà dividere la forza nelle componenti relative agli assi, e trovare quindi il vettore risultante.
+\section{Campo elettrico}
+Dal principio appena enunciato ricaviamo che la forza di Coulomb relativa a una singola carica $q_1$ è:
+$$ \vec{F} = k \sum_i^n\frac{q_1 q_i}{r_i^2}\hat{r_i} = q_1 \sum k\frac{kq_i}{r_i^2}\hat{r_i} $$
+Diciamo che $q_1$ è la nostra carica di prova, dal valore di 1 C. Possiamo allora dividere entrambi i lati dell'eguaglianza per $q_1$:
+$$ \frac{\vec{F}}{q_1} = \sum k\frac{kq_i}{r_i^2}\hat{r_i} = \vec{E}$$
+chiamiamo questa nuova misura campo elettrico. Il campo elettrico è un campo, ovvero una funzione:
+$$ \vec{E}: \mathbf{R}^3 \rightarrow \mathbf{R}^3 $$
+che associa ad ogni punto nello spazio un vettore, che rappresenta la forza che subirebbe una carica di 1 C in quel punto. Questa definizione
+operativa può essere usata nella pratica per calcolare il campo elettrico in un punto: si collochi una carica nello spazio, ne se misuri la forza risultante,
+il quoziente fra questi due valori sarà il campo elettrico in quel punto. Converrà che la nostra carica di prova sia piccola in modo
+da non influire sulla configurazione di cariche che vogliamo analizzare.
+\par\smallskip
+\textbf{Campo generato da una carica} \\
+Analizziamo un caso ad alta simmetria: una singola carica nello spazio. Applicando la definizione, abbiamo che il campo nei pressi
+della carica sarà:
+$$ \frac{F}{q_p} = \frac{k \frac{q_p q_1}{r^2}\hat{r}}{q_p} = k \frac{q_1}{r^2}\hat{r}$$
+Il campo elettrico avrà quindi simmetria sferica attorno al punto generatore del campo stesso. Per avere una visione
+migliore del campo, introduciamo le:
+\par\smallskip
+\textbf{Linee di campo} \\
+Le linee di campo di un campo vettoriale sono un'insieme di linee parallele in ogni punto al campo vettoriale. Possiamo usare le linee
+di campo per visualizzare gli andamenti dei campi.
+
+\end{document}

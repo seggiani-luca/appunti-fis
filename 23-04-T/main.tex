@@ -1,0 +1,152 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{24 Aprile 2024}
+
+\begin{document}
+\maketitle
+\par\smallskip
+\textbf{Dipolo elettrico} \\
+Consideriamo il campo elettrico generato da una coppia di cariche $q$ di segno opposto $+q$ e $-q$ separate da una distanza $d$. Sia l'origine del piano cartesiano coincidente col centro del dipolo: avremo che $+q$ ha coordinata
+$(0, 0, \frac{d}{2})$, e $-q$ ha coordinata $(0, 0, -\frac{d}{2})$. Calcoliamo il campo lungo l'asse del dipolo z e lungo un'asse ad esso perpendicolare (prendiamo x, y sarebbe equivalente).
+\begin{itemize}
+  \item \textbf{Lungo z}: sarà il caso più semplice, basterà applicare la formula del campo elettrico generato da una carica ad entrambe le cariche:
+    $$ \vec{E} = \sum k\frac{kq_i}{r_i^2}\hat{r_i} $$
+    considerando la distanza $\pm\frac{d}{2}$ dall'origine lungo z:
+    $$ \vec{E}(0, 0, z) = \frac{kq\hat{z}}{\left(z-\frac{d}{2}\right)^2} - \frac{kq\hat{z}}{\left(z+\frac{d}{2}\right)^2} = kq\hat{z}\left(\frac{1}{\left(z-\frac{d}{2}\right)^2} - \frac{1}{\left(z+\frac{d}{2}\right)^2}\right) $$
+    $$ = kq\hat{z}\left(\left(z-\frac{d}{2}\right)^{-2} - \left(z+\frac{d}{2}\right)^{-2}\right) = \frac{kq\hat{z}}{z^2}\left( \left(1 - \frac{d}{2z}\right)^{-2} - \left(1 + \frac{d}{2z}\right)^{-2} \right) $$
+    A noi interessa il caso in cui $z$ sia molto maggiore di $d$, ovvero $z >> d$. Questo ci permette di usare l'approssimazione:
+    $$ z >> d \Rightarrow \left(1 + \frac{d}{2z}\right)^{-2} \approx \left(1 - 2\frac{d}{2z}\right) = \left(1 - \frac{d}{z}\right) $$
+    Questo ci dà il risultato:
+    $$ \frac{kq\hat{z}}{z^2}\left( \left(1 - \frac{d}{2z}\right)^{-2} - \left(1 + \frac{d}{2z}\right)^{-2} \right) \approx \frac{kq\hat{z}}{z^2}\left(\left(1+\frac{d}{z}\right) - \left(1-\frac{d}{z}\right)\right) = 2\frac{kqd}{z^3}\hat{z} $$
+    Ciò significa che a grandi distanze $z$, o a distanze $d$ trascurabili, il campo elettrico a $z$ dal dipolo lungo il suo asse vale $2\frac{kqd\hat{z}}{z^3}$ $\frac{N}{C}$. Definiamo allora la quantità $p$, detta \textbf{momento di dipolo}, come:
+    $$ p = qd, \quad \vec{E}(0, 0, z) = 2\frac{kqd}{z^3}\hat{z} = 2\frac{kp}{z^3}\hat{z} $$
+    Che ci dà il risultato finale. Notiamo $\hat{z}$ versore essere diretto verso $\vec{z}$ ovvero lo spostamento: in sostanza, il campo del dipolo è sempre diretto nella stessa direzione. Se siamo vicini al polo positivo, tenderemo ad allontanarci dal dipolo;
+    se siamo vicini al polo negativo, tenderemo ad avvicinarci.
+  \item \textbf{Lungo x/y}: assumiamo il caso x essere uguale a y: in entrambi i casi il campo sarà calcolato sul piano ortogonale al dipolo. Calcoliamo, come prima, il campo generato dalle cariche: avremo che la componente lungo x,
+    parallela all'asse del dipolo, è nulla (le componenti ortogonali si annullano fra di loro). A restare sarà solamente la componente parallela all'asse del dipolo, che avrà il valore di due volte il campo generato da una singola carica in quel punto, negativo.
+    Calcoliamo quest'ultimo valore: è utile costruire un triangolo rettangolo con un cateto sulla semidistanza fra i poli e l'altro sulla distanza tra il centro del dipolo e il punto $(x, 0, 0)$. A questo punto la distanza $r$ sarà l'ipotenusa del triangolo:
+    $$ r = \sqrt{x^2 + \left(\frac{d}{2}\right)^2} $$
+    e il campo:
+    $$ \vec{E}(x, 0, 0) = -2\frac{kq\hat{z}}{\left(x^2 + \frac{d^2}{4}\right)} $$
+    A noi interessa soltanto il campo lungo $z$, ergo dobbiamo moltiplicare il campo per il seno dell'angolo $\alpha$ che l'ipotenusa forma sull'asse $x$. $\sin{\alpha}$ è dato da cateto minore su ipotenusa, ergo:
+    $$ \sin{\alpha} = \frac{\frac{d}{2}}{\sqrt{x^2+ \frac{d^2}{4}}}, \quad \vec{E}(x, 0, 0) = -2\frac{kq\hat{z}}{\left(x^2 + \frac{d^2}{4}\right)} \frac{\frac{d}{2}}{\sqrt{x^2+ \frac{d^2}{4}}} = -\frac{kqd\hat{z}}{\left( x^2 + \frac{d^2}{4} \right)^{\frac{3}{2}}} $$
+    Come prima, imponiamo il fatto che x è molto maggiore di d:
+    $$ x >> d \Rightarrow \vec{E}(x, 0, 0) = -\frac{kqd}{x^3}\hat{z} = -\frac{kp}{x^3}\hat{z} $$
+    Notiamo dal risultato finale che il campo lungo l'asse ortogonale ad un dipolo è antiparallelo all'asse del dipolo stesso.
+\end{itemize} 
+\section{Densità di carica}
+Passiamo al calcolo del campo elettrico su distribuzioni continue di cariche.
+\begin{itemize}
+  \item \textbf{Densità (di volume) di carica} \\
+    Consideriamo l'incremento di carica $dq$ sul volume infinitesimo $dV$. Possiamo definire una densità $\rho_q$ di carica tale per cui:
+    $$ \rho_q = \frac{dq}{dV} $$
+    si misura in $\frac{C}{m^3}$. Possiamo calcolare il campo elettrico dalla densità di carica su un infinitesimo di volume in $\vec{r}$ visto da $\vec{r'}$ applicando la forza di Coulomb, come:
+    $$ d\vec{E}(\vec{r}) = \frac{k\rho_q{\vec{r'}}dV}{(r-r')^3}(\vec{r}-\vec{r'})$$
+    Dove notiamo il cubo al denominatore è li solamente per normalizzare $(\vec{r} - \vec{r'})$ in $(\hat{r-r'})$ versore. A questo punto potremo passare alla distribuzione completa di cariche sul volume $V$ prendendo l'integrale:
+    $$ \vec{E}(\vec{R}) = \int_V \frac{k\rho_q{\vec{r'}}}{(r-r')^3}(\vec{r}-\vec{r'})dV $$
+  \item \textbf{Densità superficiale di carica} \\
+    Similmente, possiamo definire la densità superficiale di carica:
+    $$ \sigma_q = \frac{dq}{dA} $$
+    si misura in $\frac{q}{m^2}$.
+  \item \textbf{Densità lineare di carica} \\
+    Infine, possiamo definire la densità lineare di carica:
+    $$ \lambda_q = \frac{dq}{dl} $$
+    si misura in $\frac{q}{m}$. 
+\end{itemize}
+Vediamo alcune applicazioni della densità di carica per descrivere il campo generato da diversi oggetti:
+\begin{itemize}
+  \item \textbf{Anello uniformemente carico} \\
+    Calcoliamo la campo generato da un'anello metallico $A$ uniformemente carico, giaciente sul piano xy dello spazio, lungo il suo asse di simmetria centrale. Consideriamo l'oggetto solo nella sua lunghezza, ergo usiamo la densità lineare di carica $\lambda_q$. Anche
+    in questo caso è efficace costruire un triangolo rettangolo, con un cateto posto sulla distanza fra l'origine il punto $(0,0,z)$, e l'altro posto sul raggio dell'anello. Avremo che le componenti lungo il piano parallelo a xy si annullano, e l'unica risultante è quella in z.
+    Calcoliamo allora il campo infinitesimo come il campo generato sul punto $(0,0,z)$ per il coseno dell angolo fra l'asse z e la congiungente del punto con un altro punto sul raggio, ovvero il rapporto fra la distanza $z$ e l'ipotenusa del triangolo:
+    $$ d\vec{E}(0,0,z) = \frac{k\,dq\,\hat{z}}{(r^2+z^2)} \frac{z}{\sqrt{r^2+z^2}} $$
+    Calcoliamo allora il campo totale come l'integrale:
+    $$ \vec{E}(0,0, z) = \int_A  \frac{k\hat{z}}{(r^2+z^2)} \frac{z}{\sqrt{r^2+z^2}}\lambda_q dl $$
+    Notiamo che nessun termine dentro l'integrale dipende da $l$, e $\int_A dl$ non è altro che $2\pi r$, ergo:
+    $$ \vec{E}(0,0,z) =  \frac{k\hat{z}}{(r^2+z^2)} \frac{z}{\sqrt{r^2+z^2}}\lambda_q \int_A dl = \frac{k 2\pi r \lambda_q \hat{z}}{(r^2+z^2)} \frac{z}{\sqrt{r^2+z^2}} $$
+    Abbiamo che la carica totale sull'anello è:
+    $$ Q = 2\pi r \lambda_q, \quad \vec{E}(0,0,z) = \frac{kzQ}{(r^2+z^2)^\frac{3}{2}}\hat{z} $$
+    Da cui la soluzione esatta. Possiamo ora considerare il comportamento "da lontano" dell'anello, applicando la stessa approssimazione di prima:
+    $$ z >> r \Rightarrow \vec{E}(0,0,z) = \frac{kQ}{z^2}\hat{z} $$
+    Puè essere interessante fare la considerazione inversa: in punti molto vicini all'anello, ovvero dove $z << r$, si ha:
+    $$ z << r \Rightarrow \vec{E}(0,0,z) = z\frac{kQ}{r^3} $$
+    Si nota che per una carica $-q$ di segno opposto alla $Q$ dell'anello, la forza ha effettivamente la forma della legge di Hooke, e forma un'oscillatore armonico.
+  \item \textbf{Disco uniformemente carico}
+    Vediamo un caso simile: il campo generato da un disco $D$ uniformemente carico, giaciente sul piano xy dello spazio, lungo il suo asse di simmetria centrale. In questo caso considereremo l'oggetto sulla sua superficie, ergo useremo la densità superficiale
+    di carica $\sigma_q$. Consideriamo lo stesso schema precedente, ma variando $r$ dal centro della circonferenza fino al suo bordo: avremo che su un frammento infitesimo del disco (ergo una circonferenza con lunghezza $2\pi r$) il campo generato sarà:
+    $$ d\vec{E}(0,0,z) = \frac{kz\hat{z}}{(r^2+z^2)^\frac{3}{2}} 2\pi r\sigma_m \,dr $$
+    Troviamo allora il campo totale prendendo l'integrale:
+    $$ \vec{E}(0,0,z) = \int_0^R \frac{kz\hat{z}}{(r^2+z^2)^\frac{3}{2}} 2\pi r\sigma_m \,dr = kz\sigma_m\hat{z}\pi \int_0^R \frac{2r\,dr}{(r^2+z^2)^\frac{3}{2}} $$
+    $$ = kz\sigma_m\hat{z}\pi \left[ -\frac{2}{\sqrt{r^2+z^2}} \right]_0^R = kz\sigma_m\hat{z}\pi \left(\frac{2}{z} - \frac{2}{\sqrt{R^2 + z^2}}\right) $$
+    $$ = 2k\sigma_m\pi\left(1 - \frac{z}{\sqrt{R^2+z^2}}\right) $$
+    Da cui l'equazione finale. Notiamo come per:
+    $$ \lim_{R\rightarrow \infty} \vec{E} = 2k\sigma_m = \frac{\sigma_m}{2\epsilon_0} $$
+    è il campo generato da un piano infinito (a qualunque distanza!), che è una buona approssimazione per l'armatura di un condensatore lontano dai bordi.
+  \item \textbf{Filo uniformemente carico} \\
+    Come ultimo esempio prendiamo un filo di lunghezza $2l$, centrato sull'origine, e calcoliamone il campo a una certa distanza $x$. Applicando la forza di Coulomb osserviamo che di poter prendere due punti, ad un capo e all'altro del filo,
+    e calcolarne il contributo: se prendiamo y uguali ma opposte abbiamo che le forze si annullano lungo l'asse verticale z, e la risultante è tutta diretta verso il piano ortogonale (prendo x) con modulo pari a 2 volte la componente x della forza
+    esercitata da un singolo punto. Notiamo che questo approccio ci permette però di trovare la forza esercitata da 2 punti per volta, ergo dividiamo per due per ottenere il contributo:
+    $$ d\vec{E}(x,0,0) = \frac{k\lambda dz}{z^2+x^2} \frac{x}{\sqrt{z^2+x^2}}\hat{x} $$
+    Dove il primo denominatore è il quadrato della distanza del punto sul filo da quello dove calcoliamo il campo, ovvero l'ipotenusa di un triangolo costruito sull'asse x con cateti $l$ e $x$, e la seconda frazione rappresenta il coseno dell'angolo formato
+    dall'ipotenusa e l'asse x. Prendiamo allora l'integrale per avere il campo totale:
+    $$ \vec{E}(x,0,0) = \int_{-l}^l \frac{k\lambda dz}{z^2+x^2} \frac{x}{\sqrt{z^2+x^2}}\hat{x} = k\lambda x\hat{x} \int_{-l}^l \frac{dz}{(z^2+x^2)^\frac{3}{2}} $$
+    L'integrale calcolato si risolve attraverso sostituzione trigonometrica, e dà il risultato:
+    $$ \int \frac{dx}{(x^2+a^2)^{\frac{3}{2}}} = \frac{x}{a^2\sqrt{x^2+a^2}} + c $$
+    con cui possiamo quindi risolvere:
+    $$ \vec{E}(x,0,0) = k\lambda x\hat{x} \int_{-l}^l \frac{dz}{(z^2+x^2)^\frac{3}{2}} = k\lambda x \hat{x} \left[\frac{z}{x^2\sqrt{z^2+x^2}}\right]_{-l}^l$$
+    $$ = k\lambda x\hat{x} \frac{2l}{x^2\sqrt{l^2+x^2}} = k\lambda\frac{2l}{x\sqrt{l^2+x^2}}\hat{x} $$
+    Che è la formula per il campo generato dal filo di lunghezza finita. Sostituiamo a $k$ il suo valore, ovvero $\frac{1}{4\pi \epsilon_0}$:
+    $$ \vec{E}(x,0,0) = k\lambda\frac{2l}{x\sqrt{l^2+x^2}}\hat{x} = \frac{l\lambda}{2\pi \epsilon_0 x\sqrt{l^2+x^2}} $$
+    e vediamo il caso per un filo di lunghezza infinita prendendo il limite:
+    $$ \lim_{l\rightarrow\infty} \frac{l\lambda}{2\pi \epsilon_0 x\sqrt{l^2+x^2}} = \frac{\lambda}{2\pi \epsilon_0 x} $$
+\end{itemize}
+\section{Flusso del campo elettrico}
+Si introduce adesso il concetto di flusso di un campo vettoriale, e in particolare di flusso del campo elettrico. Si inizia con un esempio piuttosto semplice:
+\par\smallskip
+\textbf{Flusso lungo una superficie piana} \\
+Prendiamo una superficie piana $A$, immersa in un campo vettoriale $\vec{E}$. Definiamo un vettore $\vec{A}$ corrispondente alla normale della superficie, con modulo pari alla sua area. Definiremo allora il flusso del campo sulla superficie come:
+$$ \Phi_E = EA $$
+Ruotiamo adesso la superficie di un certo angolo $\theta$ (o ruotiamo il campo dello stesso angolo, poco cambia). Avremo che il flusso non è più attraverso l'intera supeficie, ma attraverso una sua frazione, data dal prodotto scalare:
+$$ \Phi_E = EA\cos{\theta} = \vec{E} \cdot \vec{A} $$
+\par\smallskip
+\textbf{Flusso su una superficie} \\
+Le definizioni date finora sono valide su superfici localmente piane, ma spesso saremo interessati a calcolare flussi su superfici anche irregolari. Definiamo quindi, sulla base della scorsa formula, il flusso su un'elemento infinitesimo
+di superficie $d\vec{A}$:
+$$ d\Phi_E = \vec{E} \cdot d\vec{A} $$
+Questo ci permette di calcolare il flusso lungo un'intera superficie $\Omega$, prendendo l'\textbf{integrale di superficie}:
+$$ \Phi_E = \int_\Omega \vec{E} \cdot d\vec{A} $$
+Notiamo che il flusso può avere verso positivo (superficie e campo sono allineati), verso negativo (l'esatto contrario) e, intuitivamente, può essere nullo (nel caso in cui il campo scorra perpendicolare alla superficie).
+\par\smallskip
+\textbf{Flusso del campo elettrico} \\
+Il flusso può essere usato sul campo elettrico: cariche $q$ influenzeranno il campo elettrico $\vec{E}$ che avrà un certo flusso $\Phi_E$ su diverse superfici. Sarà a noi utile considerare superfici chiuse, ovvero superfici che delimitano
+porzioni finite di spazio. Considerata una certa superficie chiusa $\Omega$, vediamo l'impatto sul flusso della stessa
+che hanno cariche poste al suo interno e al suo esterno.
+\begin{itemize}
+  \item \textbf{Cariche esterne}: abbiamo una carica $q$ posta esternamente alla nostra superficie $\Omega$. Possiamo dividere il flusso lungo $\Omega$ in flusso in entrata e in uscita, ovvero il flusso del campo \textit{entrante} nella superficie
+    e il flusso del campo \textit{uscente} dalla superficie:
+    $$ d\Phi_E = d\Phi_{Ei} + d\Phi_{Ef} = -|d\vec{A_i} \cdot \vec{E_i}| + |d\vec{A_u} \cdot \vec{E_u}| $$
+    $$ = -|d\vec{A_i} \cdot \vec{E_i}| + d\vec{A_i}\left(\frac{du}{di}\right)^2 \cdot \vec{E_i}\left(\frac{di}{du}\right)^2 = 0 $$
+    ovvero, tutte le linee di campo che entrano nella superficie prima o poi escono dalla superificie, ergo il flusso netto vale necessariamente 0. I differenziali quadri rappresentano il fatto che il campo scala col quadrato della variazione dell'elemento di superficie,
+    la superficie l'esatto opposto (anche se non sono affatto sicuro di quest'ultima affermazione, l'argomento delle linee di campo è sicuramente più convincente).
+  \item \textbf{Cariche interne}: poniamo adesso $q$ all'interno della superficie, e assumiamo temporanamente la suddetta essere sferica. Applicando la definizione di flusso abbiamo:
+    $$ \Phi_E = \int_\Omega \vec{E} \cdot d\vec{A} = \vec{E} \int_\Omega d\vec{A} $$
+    Visto che il campo, dipendente dal raggio, non varia su una sfera. Il secondo termine sarà semplicemente la superficie della sfera stessa. Applichiamo quindi questo e la definizione di campo sulla forza di Coulomb:
+    $$ \Phi_E = k \frac{q}{r^2} (4\pi r^2) = 4\pi kq $$
+    Questo spiega perchè $ k = \frac{1}{4\pi \epsilon_0}$:
+    $$ \Phi_E = 4\pi kq = \frac{q}{\epsilon_0}$$
+    Quest'ultimo risultato, fondamentale, prende il nome di:
+\end{itemize}
+\section{Teorema di Gauss}
+Abbiamo appena dimostrato l'assunto fondamentale del teorema di Gauss: su una superficie sferica, il flusso del campo elettrico è:
+$$ \Phi_E = \frac{q}{\epsilon_0}$$
+Facciamo alcune generalizzazioni. Innanzitutto, generalizziamo il risultato a superfici chiuse di qualsiasi forma: notiamo che tutte le linee di campo uscenti dalla sfera sono anche uscenti da una qualsiasi superficie chiusa, ergo il teorema vale per
+ognuna. Infine, possiamo dire che il risultato vale per qualsiasi combinazioni di cariche \textit{interne} alla superficie, ergo:
+$$ \Phi_E = \sum_i^n \frac{q_i}{\epsilon_0} $$
+per tutte le cariche $i < n$ comprese all'interno della superificie. Ricordiamo che le cariche esterne non hanno invece alcun contributo.
+\end{document}
