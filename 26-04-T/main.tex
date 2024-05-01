@@ -134,15 +134,31 @@ $$
 \left\{\begin{array}{l}
     E_L = \frac{\sigma_1}{2\epsilon_0} \cr \\
     E_R = \frac{\sigma_2}{2\epsilon_0} \cr \\ 
-    E_C = E_L + E_R
+    E_C = E_L - E_R
 \end{array}\right.
 $$
 da cui:
-$$ E_C = E_{est} = \frac{\sigma_1 + \sigma_2}{2\epsilon_0} $$
+$$ E_C = E_{est} = \frac{\sigma_1 - \sigma_2}{2\epsilon_0} $$
 Per il campo esterno. Per quanto riguarda il campo interno, basterà prendere una superficie gaussiana che comprende solamente la parte interna delle
 lastre $\sigma_1$ e $\sigma_2$. Impostando Gauss si avrà:
-$$ \int E \cdot dA = E\cdot A = \frac{Q_{int}}{\epsilon_0} = \frac{(\sigma_1 - \sigma_2)A}{2\epsilon_0}, \quad E_{int} = \frac{\sigma_1-\sigma_2}{2\epsilon_0} $$
+$$ \int E \cdot dA = E\cdot A = \frac{Q_{int}}{\epsilon_0} = \frac{(\sigma_1 + \sigma_2)A}{2\epsilon_0}, \quad E_{int} = \frac{\sigma_1+\sigma_2}{2\epsilon_0} $$
 Che corrisponde con quanto trovato prima. Possiamo adesso considerare il caso particolare del condensatore, dove $\sigma_1 = -\sigma_2$:
 $$ E_{est} = \frac{\sigma - \sigma}{2\epsilon_0} = 0, \quad E_{int} = \frac{ \sigma + \sigma}{2\epsilon_0} = \frac{\sigma}{\epsilon_0} $$
+\item \textbf{Distribuzione di carica cilindrica}
+  Vediamo un'esempio di distribuzione di carica cilindrica che non è un filo monodimensionale, ma un vero e proprio cilindro con un dato volume $V$. Diciamo che $R$ è il raggio del cilindro, $h$ la sua altezza, e che il campo elettrico
+  è ortogonale alla sua parete: questo significherà che il flusso lungo le basi è nullo. Diciamo allora di calcolare il campo a una distanza $r>R$. Possiamo dire che la carica è, stabilita una densità di carica $\rho$:
+  $$ Q = \rho V = \rho \pi R^2 h$$
+  A questo punto potremo impostare il campo:
+  $$ \Phi_L = \int \vec{E} \cdot dA = E(r) 2\pi r h $$
+  Su una superficie cilindrica di raggio $r$. Lo stesso valore per Gauss:
+  $$ \Phi_L = \frac{\rho V}{\epsilon_0} = \frac{\rho \pi R^2 h}{\epsilon_0} $$
+  da cui diciamo:
+  $$ E(r)2\pi r h = \frac{\rho \pi R^2 h}{\epsilon_0}, \Rightarrow E(r) = \frac{\rho R^2}{2r\epsilon_0} $$
+  Calcoliamo allora il campo su un punto interno $r < R$. Dovremo considerare la carica interna, e non totale:
+  $$ Q_int = \rho V_int = \rho \pi r^2 h$$
+  E impostare la stessa uguaglianza di prima:
+  $$ E(r)2\pi r h = \frac{\rho \pi r^2 h}{\epsilon_0}, \Rightarrow E(r) = \frac{\rho r}{2\epsilon_0} $$
+  Notiamo che i campi sulla frontiera del cilindro si equivalgono. Infatti:
+  $$ r = R \Rightarrow \frac{\rho R^2}{2\pi \epsilon_0} = \frac{\rho R}{2\epsilon_0} = \frac{\rho r}{2\epsilon_0}\Big|_{r=R}$$
 \end{itemize}
 \end{document}

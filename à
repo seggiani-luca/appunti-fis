@@ -1,0 +1,62 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{30 Aprile 2024}
+
+\begin{document}
+\maketitle
+\par\smallskip
+\textbf{Lavoro e potenziale elettrico} \\
+Avevamo stabilito che, riguardo alla relazione fra lavoro, energia potenziale, e potenziale elettrico per un percorso $A\rightarrow B$:
+$$ -\Delta U_{AB} = L_{AB} = -\Delta V q $$
+e nello specifico, riguardo al potenziale di una singola carica puntiforme:
+$$ (q \cdot) V(\vec{r}) = (q \cdot) \frac{kq_0}{r} =  -\Delta U_{AB} = L_{AB}$$
+notando il limite:
+$$ \lim_{r\rightarrow \infty} V({\vec{r}}) = 0$$
+In sostanza, abbiamo che il lavoro svolto \textit{dal campo} generato da una carica positiva per spostare un'altra carica positiva (o dal campo generato da una carica negativa per spostare un'altra carica negativa) è positivo, e la variazione di energia negativa: ci sposteremo da una zona di maggiore potenziale
+ad una zona di minore potenziale, allontanandoci dalla carica. Di contro, se la carica immersa nel campo è negativa (o comunque discorde), tenderà a spostarsi da una zona di minore potenziale a una zona di maggiore potenziale, contro la direzione del campo. Notiamo che il lavoro è comunque positivo:
+la direzione della forza di Coulumb e dello spostamento della particella corrispondono.
+\par\smallskip
+\textbf{Lavoro svolto da forze esterne} \\
+Introduciamo un'agente esterno, che cerca di spingere la carica nella direzione opposta al campo: nel caso di una carica positiva, cercherà quindi di spostarla nella direzione opposta a quella del campo. Questo comporterà una differenza di potenziale positiva:
+la forza esterna dovrà \textit{compiere} lavoro, e il campo elettrico invece dovrà fare lavoro negativo, per opporsi ad essa. Sia invece presa in considerazione una carica negativa, che cercheremo di spostare in direzione opposta al campo. In questo caso
+ci sposteremo da zone a differenziale maggiore a zone a differenziale minore: la differenza di potenziale è minore. Il lavoro da noi svolto dovrò comunque essere positivo, in quanto ci opporremo al campo, e il campo di contro dovrà svolgere
+lavoro negativo. Questo significa che il lavoro svolto dalla forza esterna si opporrà al campo, e sarà pari a:
+$$ L_{est} = -qq_0k\left(\frac{1}{r_A} - \frac{1}{r_B}\right) = qq_0k\left(\frac{1}{r_B} - \frac{1}{r_A}\right) = q(V_B - V_A) = q\Delta V$$
+Questo può essere ottenuto anche dalla definizione di campo:
+$$ F = qE, \quad F_{est} = -F = -qE $$
+ricordando che il potenziale su un certo percorso di lunghezza $s$ è (in termini molto semplicistici):
+$$ E = -\frac{V}{s} $$
+che spiega i segni opposti. \\
+\par\smallskip
+\textbf{Nota sulle trasformazioni quasistatiche} \\
+Facciamo un'ultima precisazione: tutto ciò che abbiamo appena detto è vero solo e soltanto se i processi descritti avvengono in regime quasistatico: ovvero, invece di fornire vere e proprie accelerazioni alle cariche in questione,
+le facciamo passare attraverso più stati continui di equilibrio, in modo che in ogni momento nessuna quantità di energia venga trasformata in energia cinetica. Questo significa che se una certa forza deve avere, per opporsi al campo, un valore maggiore di $\epsilon$ alla forza espressa dal campo (in modo da vincerla), noi prendiamo il limite per $\epsilon \rightarrow 0$. Ciò significa che il tempo impiegato dalla carica a muoversi effettivamente lungo i percorsi
+di cui parliamo è $t \rightarrow \infty$, ovvero infinito. Questo non ci disturba, perché ne parleremo e basta, non aspetteremo che accada.
+\par\smallskip
+\textbf{Superfici equipotenziali} \\
+Si dicono superfici equipotenziali particolari regioni dello spazio dove il potenziale è costante. Le superfici equipotenziali possono rivelarsi strumenti utili per descrivere il potenziale elettrico. Vediamo la forma delle superfici equipotenziali
+di diverse distribuzioni di carica:
+\begin{itemize}
+  \item \textbf{Superfici equipotenziali di una carica puntiforme} \\
+    Avremo che il potenziale nei pressi di una carica puntiforme $q$ è dato da:
+    $$ V = \frac{kq}{r} $$
+    E' chiara la simmetria radiale: le superfici equipotenziali avranno la forma di sfere centrate sulla carica. A sfere di raggio maggiore si associerà potenziale minore e viceversa, fino al limite ad infinito:
+    $$ \lim_{r\rightarrow\infty} \frac{kq}{r} = 0 $$
+  \item \textbf{Superfici equipotenziali dentro un condensatore} \\
+    Fra le lastre di un condensatore si ha che il campo è in ogni punto ortogonale alle lastre. Possiamo sfruttare il fatto che una superficie equipotenziale è in ogni punto ortogonale al campo: si avrà quindi che le superfici
+    equipotenziali del condensatore saranno tutte piani (trascurando gli effetti di bordo) paralleli alle lastre. Il potenziale massimo sarà sul piano immediatamente adiacente alla lastra caricata positivamente, il potenziale minimo
+    su quello immediatamente adiacente alla lastra caricata negativamente.
+  \item \textbf{Superfici equipotenziali di un dipolo} \\
+    Per un dipolo elettrico, potremo sfruttare la stessa proprietà che abbiamo appena visto: le superfici equipotenziali saranno curvilinee ed in ogni punto perpendicolari alle linee di campo che partono dalle cariche.
+\end{itemize}
+\par\smallskip
+\textbf{Elettronvolt} \\
+Come unità di misura \textit{dell'energia} (e non del potenziale elettrico!) introduciamo l'elettronvolt (eV). Si definisce 1 eV come l'energia di un sistema formato da un elettrone che si muove lungo una differenza di potenziale
+di 1 V, che equivale a $1.602 \times 10^{-19}$J.
+\end{document}

@@ -53,11 +53,11 @@ Passiamo al calcolo del campo elettrico su distribuzioni continue di cariche.
   \item \textbf{Densità superficiale di carica} \\
     Similmente, possiamo definire la densità superficiale di carica:
     $$ \sigma_q = \frac{dq}{dA} $$
-    si misura in $\frac{q}{m^2}$.
+    si misura in $\frac{C}{m^2}$.
   \item \textbf{Densità lineare di carica} \\
     Infine, possiamo definire la densità lineare di carica:
     $$ \lambda_q = \frac{dq}{dl} $$
-    si misura in $\frac{q}{m}$. 
+    si misura in $\frac{C}{m}$. 
 \end{itemize}
 Vediamo alcune applicazioni della densità di carica per descrivere il campo generato da diversi oggetti:
 \begin{itemize}
@@ -132,8 +132,9 @@ che hanno cariche poste al suo interno e al suo esterno.
     e il flusso del campo \textit{uscente} dalla superficie:
     $$ d\Phi_E = d\Phi_{Ei} + d\Phi_{Ef} = -|d\vec{A_i} \cdot \vec{E_i}| + |d\vec{A_u} \cdot \vec{E_u}| $$
     $$ = -|d\vec{A_i} \cdot \vec{E_i}| + d\vec{A_i}\left(\frac{du}{di}\right)^2 \cdot \vec{E_i}\left(\frac{di}{du}\right)^2 = 0 $$
-    ovvero, tutte le linee di campo che entrano nella superficie prima o poi escono dalla superificie, ergo il flusso netto vale necessariamente 0. I differenziali quadri rappresentano il fatto che il campo scala col quadrato della variazione dell'elemento di superficie,
-    la superficie l'esatto opposto (anche se non sono affatto sicuro di quest'ultima affermazione, l'argomento delle linee di campo è sicuramente più convincente).
+    ovvero, tutte le linee di campo che entrano nella superficie prima o poi escono dalla superficie, e il flusso netto vale necessariamente 0. I differenziali quadri rappresentano il fatto che il campo scala col quadrato della variazione dell'elemento di superficie,
+    la superficie l'esatto opposto. In sostanza, il campo di una carica esterna alla superficie, una volta uscito, avrà valore proporzionale all'inverso del quadrato della distanza su un area che scala come il quadrato della distanza:
+    i due effetti si annullano e il flusso totale risulta nullo.
   \item \textbf{Cariche interne}: poniamo adesso $q$ all'interno della superficie, e assumiamo temporanamente la suddetta essere sferica. Applicando la definizione di flusso abbiamo:
     $$ \Phi_E = \int_\Omega \vec{E} \cdot d\vec{A} = \vec{E} \int_\Omega d\vec{A} $$
     Visto che il campo, dipendente dal raggio, non varia su una sfera. Il secondo termine sarà semplicemente la superficie della sfera stessa. Applichiamo quindi questo e la definizione di campo sulla forza di Coulomb:

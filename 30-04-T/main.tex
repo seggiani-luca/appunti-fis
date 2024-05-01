@@ -1,0 +1,127 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{30 Aprile 2024}
+
+\begin{document}
+\maketitle
+\par\smallskip
+\textbf{Lavoro e potenziale elettrico} \\
+Avevamo stabilito che, riguardo alla relazione fra lavoro, energia potenziale, e potenziale elettrico per un percorso $A\rightarrow B$:
+$$ -\Delta U_{AB} = L_{AB} = -\Delta V q $$
+e nello specifico, riguardo al potenziale di una singola carica puntiforme:
+$$ (q \cdot) V(\vec{r}) = (q \cdot) \frac{kq_0}{r} =  -\Delta U_{AB} = L_{AB}$$
+notando il limite:
+$$ \lim_{r\rightarrow \infty} V({\vec{r}}) = 0$$
+In sostanza, abbiamo che il lavoro svolto \textit{dal campo} generato da una carica positiva per spostare un'altra carica positiva (o dal campo generato da una carica negativa per spostare un'altra carica negativa) è positivo, e la variazione di energia negativa: ci sposteremo da una zona di maggiore potenziale
+ad una zona di minore potenziale, allontanandoci dalla carica. Di contro, se la carica immersa nel campo è negativa (o comunque discorde), tenderà a spostarsi da una zona di minore potenziale a una zona di maggiore potenziale, contro la direzione del campo. Notiamo che il lavoro è comunque positivo:
+la direzione della forza di Coulumb e dello spostamento della particella corrispondono.
+\par\smallskip
+\textbf{Lavoro svolto da forze esterne} \\
+Introduciamo un'agente esterno, che cerca di spingere la carica nella direzione opposta al campo: nel caso di una carica positiva, cercherà quindi di spostarla nella direzione opposta a quella del campo. Questo comporterà una differenza di potenziale positiva:
+la forza esterna dovrà \textit{compiere} lavoro, e il campo elettrico invece dovrà fare lavoro negativo, per opporsi ad essa. Sia invece presa in considerazione una carica negativa, che cercheremo di spostare in direzione opposta al campo. In questo caso
+ci sposteremo da zone a differenziale maggiore a zone a differenziale minore: la differenza di potenziale è minore. Il lavoro da noi svolto dovrò comunque essere positivo, in quanto ci opporremo al campo, e il campo di contro dovrà svolgere
+lavoro negativo. Questo significa che il lavoro svolto dalla forza esterna si opporrà al campo, e sarà pari a:
+$$ L_{est} = -qq_0k\left(\frac{1}{r_A} - \frac{1}{r_B}\right) = qq_0k\left(\frac{1}{r_B} - \frac{1}{r_A}\right) = q(V_B - V_A) = q\Delta V$$
+Questo può essere ottenuto anche dalla definizione di campo:
+$$ F = qE, \quad F_{est} = -F = -qE $$
+ricordando che il potenziale su un certo percorso di lunghezza $s$ è (in termini molto semplicistici):
+$$ E = -\frac{V}{s} $$
+che spiega i segni opposti. \\
+\par\smallskip
+\textbf{Nota sulle trasformazioni quasistatiche} \\
+Facciamo un'ultima precisazione: tutto ciò che abbiamo appena detto è vero solo e soltanto se i processi descritti avvengono in regime quasistatico: ovvero, invece di fornire vere e proprie accelerazioni alle cariche in questione,
+le facciamo passare attraverso più stati continui di equilibrio, in modo che in ogni momento nessuna quantità di energia venga trasformata in energia cinetica. Questo significa che se una certa forza deve avere, per opporsi al campo, un valore maggiore di $\epsilon$ alla forza espressa dal campo (in modo da vincerla), noi prendiamo il limite per $\epsilon \rightarrow 0$. Ciò significa che il tempo impiegato dalla carica a muoversi effettivamente lungo i percorsi
+di cui parliamo è $t \rightarrow \infty$, ovvero infinito. Questo non ci disturba, perché ne parleremo e basta, non aspetteremo che accada.
+\par\smallskip
+\textbf{Superfici equipotenziali} \\
+Si dicono superfici equipotenziali particolari regioni dello spazio dove il potenziale è costante. Le superfici equipotenziali possono rivelarsi strumenti utili per descrivere il potenziale elettrico. Vediamo la forma delle superfici equipotenziali
+di diverse distribuzioni di carica:
+\begin{itemize}
+  \item \textbf{Superfici equipotenziali di una carica puntiforme} \\
+    Avremo che il potenziale nei pressi di una carica puntiforme $q$ è dato da:
+    $$ V = \frac{kq}{r} $$
+    E' chiara la simmetria radiale: le superfici equipotenziali avranno la forma di sfere centrate sulla carica. A sfere di raggio maggiore si associerà potenziale minore e viceversa, fino al limite ad infinito:
+    $$ \lim_{r\rightarrow\infty} \frac{kq}{r} = 0 $$
+  \item \textbf{Superfici equipotenziali dentro un condensatore} \\
+    Fra le lastre di un condensatore si ha che il campo è in ogni punto ortogonale alle lastre. Possiamo sfruttare il fatto che una superficie equipotenziale è in ogni punto ortogonale al campo: si avrà quindi che le superfici
+    equipotenziali del condensatore saranno tutte piani (trascurando gli effetti di bordo) paralleli alle lastre. Il potenziale massimo sarà sul piano immediatamente adiacente alla lastra caricata positivamente, il potenziale minimo
+    su quello immediatamente adiacente alla lastra caricata negativamente.
+  \item \textbf{Superfici equipotenziali di un dipolo} \\
+    Per un dipolo elettrico, potremo sfruttare la stessa proprietà che abbiamo appena visto: le superfici equipotenziali saranno curvilinee ed in ogni punto perpendicolari alle linee di campo che partono dalle cariche.
+\end{itemize}
+\par\smallskip
+\textbf{Elettronvolt} \\
+Come unità di misura \textit{dell'energia} (e non del potenziale elettrico!) introduciamo l'elettronvolt (eV). Si definisce 1 eV come l'energia di un sistema formato da un elettrone che si muove lungo una differenza di potenziale
+di 1 V, che equivale a $1.602 \times 10^{-19}$J.
+\par\smallskip
+\textbf{Campo elettrico come gradiente del potenziale} \\
+Esiste un'importante relazione matematica fra campo elettrico e potenziale. Stabilita una certa densità di carica $\rho(\vec{r'})$, possiamo calcolare il campo elettrico in un punto $r$ come:
+$$ \vec{E}(\vec{r}) = k\int \frac{\rho{(\vec{r'})}dV'(\vec{r}-\vec{r'})}{(\vec{r}-\vec{r'})^3} $$
+dove il cubo, come avevamo già visto, serve a normalizzare il versore $\hat{(\vec{r}-\vec{r'})}$. Notiamo inoltre il termine $dV'$, che si riferisce al volume, non al potenziale. Possiamo anche calcolare
+il potenziale elettrico (che è uno scalare) come:
+$$ V(\vec{r}) = k\int \frac{\rho(\vec{r})dV'}{(\vec{r}-\vec{r'})} $$
+Notiamo allora la relazione:
+$$ -dV = \vec{E} \cdot ds $$
+su uno spostamento infinitesimo $ds$. Questa non è che la definizione stessa di potenziale. Sarà allora possibile dividere lo spostamento $ds$ sulle tre direzioni:
+$$ ds = dx \hat{x} + dy \hat{y} + dz \hat{z} $$
+e riscivere il tutto come:
+$$ -dV(x,y,z) = \vec{E} \cdot ds = E_xdx + E_ydy + E_zdz $$
+Questo ci permette di effettuare le derivate parziali:
+$$ -\frac{\partial V}{\partial x} = E_x, \quad -\frac{\partial V}{\partial y} = E_y, \quad -\frac{\partial V}{\partial z} = E_z, \quad $$
+Questo non è altro che il gradiente di $V$. Ciò significa che possiamo scrivere la relazione fondamentale:
+$$ -\nabla V = \vec{E} $$
+\par\smallskip
+\textbf{Potenziale di sistemi di cariche} \\
+Vediamo come calcolare il potenziale elettrico e l'energia potenziale di sistemi di cariche puntiformi. Iniziamo col \textbf{potenziale elettrico}: avremo che per una singola carica puntiforme, il potenziale ad una distanza $r$ è:
+$$ V = k \frac{q}{r} $$
+come avevamo calcolato dalla definizione. Per potenziali dovuti a più cariche, vale il principio di sovrapposizione:
+$$ V_{tot} = k \sum_i^n \frac{q_i}{r_i} $$
+Calcoliamo poi l'energia potenziale del sistema: questa è definita come l'energia necessaria a portare le cariche in una certa configurazione, partendo da distanza infinita. Questa definizione è valida in quanto ricordiamo che:
+$$ \lim_{r\rightarrow \infty} V = 0 $$
+Ciò ci permette di dire che il lavoro (e quindi l'energia) necessario a spostare la carica è:
+$$ \mathcal{L}_{\infty} = U(\vec{r}) = U(\vec{r}) - U(\infty)= q(V(\vec{r}) - V(\infty)) = q(V(\vec{r}))$$
+Potremo allora applicare la formula che lega il potenziale elettrico all'energia potenziale:
+$$ U = q_0\Delta V \Rightarrow U = k\frac{qq_0}{r} $$
+Per distribuzioni di più cariche vale lo stesso principio di sovrapposizione di prima:
+$$ U_{tot} = k\sum_i^n \frac{qq_i}{r} $$
+Occorre notare che, come l'energia, il potenziale ha senso solo in quanto variazione di potenziale: il valore dello "0" del potenziale può essere scelto a piacere, in quanto ne considereremo soltanto le variazioni.
+\par\smallskip
+\textbf{Potenziale di alcune distribuzioni di carica} \\
+Usiamo adesso il calcolo integrale per ottenere il potenziale di alcune distribuzioni di carica.
+\begin{itemize}
+  \item \textbf{Potenziale di un'anello uniformemente carico} \\
+    Consideriamo un disco di raggio $R$, e calcoliamone il potenziale ad una distanza $x$ lungo il suo asse. Dovremo stabilire una densità lineare $\lambda$ tale che:
+    $$ dq = \lambda dl $$
+    Il potenziale infinitesimo sarà allora, dalla formula:
+    $$ dV = k \frac{dq}{r} = k\frac{\lambda dl}{d} $$
+    dove la distanza $d$ vale quanto l'ipotenusa:
+    $$ d = \sqrt{R^2 + x^2} \Rightarrow k\frac{\lambda dl}{\sqrt{R^2 + x^2}} $$
+    Calcoliamo allora il potenziale elettrico totale prendendo l'integrale:
+    $$ V = k\int \frac{\lambda dl}{\sqrt{R^2 + x^2}}$$
+    Visto che nessun termine all'interno dell'integrale dipende dall'angolo sull'anello, possiamo semplicemente stabilire la carica totale sull'anello $Q$:
+    $$ Q = 2\pi R \lambda, \quad V = k\frac{Q}{\sqrt{R^2+x^2}}$$
+    Possiamo adesso prendere l'opposto del gradiente di questo potenziale per verificare la formula prima dimostrata:
+    $$ -\nabla V = \vec{E}, \quad -\frac{dV}{dx} = k \frac{Qx}{(R^2+x^2)^\frac{3}{2}}$$
+    che è coerente con quanto avevamo dimostrato attraverso il principio di sovrapposizione.
+  \item \textbf{Potenziale di un disco uniformemente carico} \\
+    Consideriamo un'oggetto simile: un disco di raggio $R$, che possiamo modellizzare come una successione concentrica di anelli. Calcoliamone quindi il potenziale ad una distanza $x$ lungo il suo asse. Dovremo stavolta
+    stabilire una densità superficiale di carica $\sigma$ tale che:
+    $$  q = 2\pi r dr \sigma, \quad dV = \frac{dqk}{d} = k\frac{2\pi r dr \sigma}{\sqrt{r^2 + x^2}} $$
+    Basterà adesso prendere quest'ultimo potenziale infinitesimo nell'integrale da 0 a $R$:
+    $$ V = k\int_0^R k\frac{2\pi r dr \sigma}{\sqrt{r^2 + x^2}} = 2k\pi \sigma \int_0^R \frac{r}{\sqrt{x^2+r^2}}dr = 2\pi k \sigma \left[(r^2+x^2)^{\frac{1}{2}}\right]_0^R $$
+    $$ =2\pi k\sigma(\sqrt{R^2+x^2} - x) = 2\pi k \sigma x\left(\sqrt{\frac{R^2}{x^2}} - 1\right) $$
+    notando l'integrale:
+    $$\int \frac{r}{\sqrt{r^2+x^2}}dr = (r^2+x^2)^\frac{1}{2} $$
+    Possiamo prendere nuovamente l'opposto del gradiente per verificare la relazione fra potenziale e campo:
+    $$ -\nabla V = \vec{E} = -\frac{d}{dx}\left( 2\pi k\sigma \left( \sqrt{R^2-x^2} \right) \right) $$
+    $$ = -\left(\frac{d}{dx} 2\pi k \sigma x \left( \sqrt{\frac{R^2}{x^2+1}-1} \right) - \frac{d}{dx} 2\pi k \sigma x\right) = 2k\pi\sigma - 2k\pi\sigma \frac{x}{\sqrt{R^2+x^2}}$$
+    $$ = 2k\pi\sigma\left(1 - \frac{x}{\sqrt{R^2+x^2}}\right) $$
+    che è nuovamente coerente con quanto avevamo dimostrato attraverso il principio di sovrapposizione.
+\end{itemize}
+\end{document}

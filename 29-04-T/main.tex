@@ -1,0 +1,101 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{29 Aprile 2024}
+
+\begin{document}
+\maketitle
+\section{Isolanti e conduttori}
+La distinzione fra materiali conduttori e isolanti sta nel comportamento dei loro elettroni: negli isolanti, gli elettroni non sono liberi di muoversi, e le parti che vengono caricate (per induzione) restano tali soltanto localmente.
+Al contrario, nei conduttori gli elettroni sono liberi di muoversi: la carica su un conduttore si distribuisce sempre ed immediatamente (o quasi, in un tempo nell'ordine dei $10^{-16}$s) sulla sua superficie. Questo può ricondursi alla struttura
+dell'atomo: nel modello di Bohr, si associano livelli energetici ad elettroni a distanze diverse (e quantizzate) dal nucleo. Gli elettroni più vicini al nucleo hanno energia maggiore di quelli più esterni. Di contro, gli elettroni esterni
+sono quelli più semplici da ionizzare, cioè da sottrarre all'atomo. Gli elettroni sullo stato occupato più esterno prendono il nome di banda di valenza: ora, il fenomeno della conduzione è dato dalla banda immediatamente superiore, ovvero
+la più piccola non occupata da elettroni, che viene detta banda di conduzione. E' su questa banda che gli elettroni possono scorrere liberamente portando allo spostamento della carica fra atomi circostanti. 
+Il gap fra banda di valenza e banda di conduzione viene detto "banda proibita".
+\par\smallskip
+\textbf{Equilibrio elettrostatico di conduttori} \\
+Si possono enunciare (e dimostrare) 4 proprietà fondamentali dei conduttori in stato di equilibrio elettrostatico, ovvero dove le cariche non si muovono.
+\begin{itemize}
+  \item Il campo elettrico all'interno di un conduttore è sempre nullo. Questo perchè la carica si distribuisce sui bordi: possiamo dimostrare tale risultato attraverso il teorema di Gauss. Se prendiamo una qualsiasi superficie di Gauss
+    completamente interna ad un corpo conduttore, il flusso attraverso essa sarà necessariamente nullo. Se tale non fosse il caso, il campo generato all'interno della superficie porterebbe le cariche a spostarsi verso l'esterno del corpo:
+    esso non sarebbe più in equilibrio. In altre parole, l'unico punto dove la carica può disporsi senza muoversi ulteriormente è il bordo (la superficie) del corpo. Questo principio è alla base della gabbia di Faraday: il campo interno
+    è nullo sia per corpi pieni che in presenza di cavità. Per questo motivo una gabbia metallica, come qualsiasi corpo conduttore provvisto di una cavità, isola completamente il suo interno da qualsiasi campo elettrico esterno.
+  \item Se il conduttore è isolato, le cariche si possono trovare solo sulla sua superficie. Questo è un'altro modo di formulare quanto detto prima. Anche in questo caso possiamo applicare Gauss: visto che il campo interno ad un corpo conduttore
+    è nullo, una qualsiasi superficie gaussiana (poniamo cilindrica) che comprende il corpo avrà necessariamente flusso nullo. L'unica possibile superficie gaussiana che registra un qualche flusso è quella disposta in modo da contenere soltanto il bordo 
+    del corpo: e anche in questo caso, avrà flusso solamente sulla faccia esterna parallela alla superficie stessa, in quanto la faccia interna avrà (come prima) flusso zero.
+  \item Il campo è perpendicolare alla superficie in ogni punto immediatamente circostante al corpo. Anche questo è necessario per preservare l'equilibrio: poniamo che il campo immediatamente esterno abbia una componente aggiuntiva
+    rispetto alla sola componente normale. In questo caso le cariche verranno spinte verso una direzione tangente alla superficie del corpo: l'equilibrio è stato violato.
+  \item Il campo si accumula sulle zone a raggio di curvatura minore: le "punte" della superficie accumulano quantità maggiori di carica. Questo risultato è spiegato dal potenziale elettrico: si ha che il campo elettrico è in ogni
+    punto perpendicolare alle isolinee del potenziale elettrico. Immaginiamo allora due sfere, di raggio $r_1$ e $r_2$, collegate fra di loro da un filo conduttore di volume trascurabile. Visto che le due sfere sono collegate,
+    il loro potenziale è identico. Possiamo allora dire:
+    $$ V = k \frac{q_1}{r_1} = k \frac{q_2}{r_2} $$
+    Immpostiamo allora i campi:
+    $$ E_1 = k \frac{q_1}{r_1^2} = \frac{V}{r_1} E_2 = k \frac{q_2}{r_2^2} = \frac{V}{r_2}, \quad  \frac{E_1}{E_2} = \frac{r_2}{r_1} $$
+    Il rapporto fra i raggi corrisponde all'inverso del rapporto fra i campi: a raggi minori, campi maggiori e viceversa.
+\end{itemize} 
+\par\smallskip
+\textbf{Campo elettrico immediatamente circostante ad un conduttore} \\
+Calcoliamo adesso il campo elettrico immediatamente circostante ad un conduttore, che sappiamo essere concentrato dalla superficie. Basterà applicare gauss su una superficie che comprende solamente la superficie esterna, o meglio
+la carica accumulata sulla superficie esterna. Poniamo di prendere una superficie cilindrica: l'unico flusso effettivo sarà lungo la base del cilindro esterna alla superficie $A$. Allora:
+$$ \int dA \cdot E(\vec{r}) = E A = A \cdot \frac{q}{\epsilon_0} \Rightarrow E = \frac{\sigma}{\epsilon_0} $$
+per una qualche distribuzione superficiale di carica $\sigma$.
+\par\smallskip
+\textbf{Campo elettrico di una lastra conduttiva ed isolante} \\
+Cerchiamo di chiarire le differenze fra isolanti e conduttori attraverso l'esempio del campo esterno ad una lastra. Facciamo sia l'esempio conduttivo che quello isolante:
+\begin{itemize}
+  \item \textbf{Campo esterno ad una lastra conduttiva} \\
+    Nel caso della lastra conduttiva la carica si distribuisce sulle due superfici (trascuriamo gli effetti di bordo) con densità superficiale $\sigma_1$. Il campo esterno può allora essere calcolato attraverso Gauss,
+    usando un cilindro che prende l'interezza della lastra. Consideriamo quindi il flusso sulle 2 basi:
+    $$ 2 E dA = \frac{2\sigma dA}{\epsilon_0} \Rightarrow E = \frac{\sigma}{\epsilon_0} $$
+    Sia $\sigma_c$ la densità superficiale "totale" della lastra, data da $\sigma_c = 2\sigma$. Si avrà che il campo esterno vale:
+    $$ E = \frac{\sigma_c}{2\epsilon_0}$$
+  \item \textbf{Campo esterno ad una lastra isolante} \\
+    Facciamo adesso lo stesso esemio, ma con una lastra isolante. La carica non sarà distribuita sulla superficie ma lungo l'intero corpo, e andremo a considerare la densità di carica $\sigma_c$. Il risultato è però analogo
+    al caso precedente:
+    $$ E = \frac{\sigma_c}{2\epsilon_0} $$
+    per una stessa superficie gaussiana. In sostanza, il campo elettrico generato dalle due lastre è identico finche è identica la loro densità di carica.
+\end{itemize}
+\
+\section{Potenziale elettrico}
+Introduciamo adesso una grandezza fondamentale: il potenziale elettrico. 
+\par\smallskip
+\textbf{Circuitazione del campo elettrico} \\
+Si ha che il campo elettrico è un campo conservativo: l'integrale di linea $\int_S$ su un qualche percorso $S$ al suo interno non dipende in valore dal percorso adottato, ma solamente dal punto di partenza e dal punto di arrivo:
+$$ \vec{E} = \sum_i^n d\vec{E_i} \rightarrow \int_A^B \vec{E} ds $$
+non dipende dalla traiettoria e:
+$$ \int_A^B \vec{E} ds = \int_A^B \vec{E} ds' $$
+per qualsiasi coppia di percorsi $S$ e $S'$ diversi.
+Questo significa che su un percorso chiuso (ovvero un percorso che torna su stesso) l'integrale ha sempre valore nullo. Questo è particolarmente utile per determinare il lavoro necessario per spostare una carica su un campo
+elettrico.
+\par\smallskip
+\textbf{Circuitazione e lavoro} \\
+Consideriamo, per una certa carica $q_0$ immersa in un campo elettrico in moto sul percorso $S$, l'integrale di linea:
+$$ \mathcal{L}_S = \int_S \vec{F}ds = q_0\int_S \vec{E}ds$$
+dove sappiamo $q_0\vec{E} = \vec{F}$ essere la forza esercitato dal campo sulla carica. Questo non sarà altro che il lavoro necessario a spostare $q$ su $S$, opponendosi al campo elettrico.
+\par\smallskip
+\textbf{Energia potenziale}\\
+Introduciamo ancora un'altro concetto: su un percorso che parte da $A$ e arriva a $B$, possiamo usare lo stesso integrale di prima per calcolare la variazione di energia potenziale:
+$$ \mathcal{L}_{AB} = -\Delta U = U_A - U_B = q_0\int_A^B \vec{E} ds $$
+Prendiamo il campo generato da una carica singola, attraverso la legge di Coulomb:
+$$ = q_0qk\int_A^B \frac{1}{r^2}(dr \hat{r}) = -qq_0k \frac{1}{r}\Big|^B_A = qq_0k\left(\frac{1}{r_A} - \frac{1}{r_B}\right) $$
+Da questo abbiamo che l'energia potenziale per una carica $q_0$ è:
+$$ U(\vec{r}) = \frac{qq_0k}{r}, \quad \lim_{r\rightarrow +\infty} U(\vec{r}) = 0$$
+Dove $r$ è la distanza di $\vec{r}$ dalla carica.
+Questo ci permette finalmente di definire il potenziale elettrico:
+\par\smallskip
+\textbf{Potenziale elettrico} \\
+Possiamo svolgere sul potenziale elettrico un'operazione simile a quella fatta sulla forza generata dal campo: dividiamo quindi tutto per $q_0$, la nostra carica di prova:
+$$ \frac{U(\vec{r})}{q_0} = \frac{qk}{r} = V(\vec{r})$$
+Questo ultimo valore è il potenziale elettrico. Nel S.I. la sua unità di misura è il Volt (V), che equivale a  1 $\frac{J}{C}$. Notiamo la stretta correlazione fra potenziale elettrico e campo elettrico: il campo elettrico definisce una "direzione" di spostamento,
+o meglio di applicazione di forza per qualsiasi carica immerso in esso, ed il campo è definito sul potenziale in modo da spostare suddette cariche da zone ad alto potenziale verso zone a basso potenziale (almeno nel caso di cariche positive,
+per cariche negative accadrà il contrario). Come vedremo poi, questa relazione è meglio sintetizzata attraverso il calcolo differenziale: si può dire che il campo è il gradiente del potenziale. Questa relazione ha anche una constatazione
+in termini di unità di misura: se finora avevamo misurato il campo come $\frac{N}{C}$, notiamo adesso di poterlo anche definire in $\frac{V}{m}$:
+$$ [E] = k\frac{[q]}{[l^2]} = \frac{[V]}{[l]} = \frac{[F]}{[q]} $$
+Che è banale da dimostrare in termini di coerenza dimensionale. Diciamo:
+$$ k = \frac{[F][l]^2}{q^2}, \quad [E] = \frac{[F][l]^2}{q^2} \frac{[q]}{[l^2]} = \frac{[F]}{[q]} $$
+\end{document}
