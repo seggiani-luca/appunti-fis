@@ -1,0 +1,116 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{2 Maggio 2024}
+
+\begin{document}
+\maketitle
+\par\smallskip
+\textbf{Potenziale elettrico generato da una sfera uniformemente carica} \\
+Calcoliamo il potenziale elettrico generato da una sfera uniformemente carica di raggio $R$. Stabilito il raggio $R$ della sfera, calcoliamo innanzitutto il campo ad una distanza $r > R$ dalla sfera. 
+Avevamo ottenuto che:
+$$ -\nabla V = E $$
+Questo è equivalente a dire:
+$$ v = -\int E dr $$
+sull'unità infinitesima di distanza $dr$. Potremo allora calcolare il campo della sfera, che sappiamo essere equivalente al campo generato da una carica puntiforme posta al centro della stessa:
+$$ E = \frac{Kq}{r^3}r = \frac{Kq}{r^2}\hat{r} $$
+Impostiamo adesso l'integrale. Quello che vogliamo immaginare è di prendere una carica, portarla da un punto ad infinita distanza (sapendo che $V(\infty) = 0$) fino ad $r$. La differenza potenziale
+tra il punto di partenza e il punto d'arrivo sarà il potenziale in quel punto:
+$$ V = -qk\int_\infty^r \frac{1}{r^2} dr = -kq(-r^{-1} + 0) = \frac{kq}{r} $$
+\begin{itemize}
+  \item[$\rightarrow$] \textbf{Calcolo alternativo:} possiamo altrimenti dire che il potenziale esterno attraverso l'"integrale indefinito":
+$$ V = -qk\int \frac{1}{r^2} dr = -kq(-r^{-1}) = \frac{kq}{r} + c $$
+dove il $c$ dipende dallo "0" scelto per il potenziale (che sappiamo avere significato solo in termini di variazione).
+\end{itemize}
+Possiamo calcolare il potenziale per una distanza $r < R$: calcoliamo innanzitutto il potenziale sulla superficie della sfera, imponendo $r=R$:
+$$ r = R \Rightarrow V = \frac{kq}{R} $$
+A questo punto, il potenziale all'interno della sfera sarà dato dal potenziale da infinito fino alla superficie della sfera più il potenziale dalla superficie della sfera fino al punto interno $r$, ovvero dai due integrali:
+$$ V(r) =-\int_\infty^R \frac{kq}{r^2}dr - \int_R^r \frac{kq}{R^3}dr = kq\left(\frac{1}{r}\Big|^1_\infty - \frac{1}{R^3} \frac{r^2}{2}\Big|^r_R\right) = kq\left(\frac{1}{R} - \frac{1}{R^3}\left(\frac{r^2}{2} - \frac{R^2}{2}\right)\right) $$
+$$ kq\left(\frac{1}{R} - \frac{1}{2}\frac{r^2}{R^3} + \frac{1}{2R}\right) = kq\left(\frac{1}{R} + \frac{1}{2R} - \frac{1}{2} \frac{r^2}{R^3}\right) = \frac{3}{2} \frac{kq}{R} - \frac{kqr^2}{2R^3} $$
+Questa funzione equivale al frammento di parabola che ha massimo in $r = 0$ di $\frac{3}{2} \frac{kq}{R}$, e si congiunge con i rami del potenziale esterno nei punti $r = \pm R$ (la cui unione a suddetta funzione è fra l'altro differenziabile pure in quei punti).
+\par\smallskip
+\textbf{Potenziale elettrico generato da una sfera conduttrice carica} \\
+Calcoliamo adesso il potenziale elettrico generato da una sfera carica, ma stavolta conduttrice. Il potenziale all'esterno della sfera ($r>R$) potrà essere trovato in modo analogo a prima:
+$$ V = -qk\int_\infty^r \frac{1}{r^2} dr = -kq(-r^{-1} + 0) = \frac{kq}{r} $$
+Per calcolare il potenziale all'interno della sfera, potremo a questo punto partiere dal calcolare il potenziale sulla superficie della sfera ($r=R$):
+$$ r = R \Rightarrow V = \frac{kq}{R} $$
+Il potenziale su qualsiasi punto interno alla sfera non potrà essere che uguale al potenziale sulla sua superficie, in quanto il potenziale all'interno di un conduttore è costante (così come il campo elettrico è nullo).
+Avremo quindi che, per ogni $r <R$:
+$$ r < R \Rightarrow V = \frac{kq}{R} $$
+\section{Capacità}
+La capacità è una grandezza che misura la quantità di carica accumulata su una certa differenza di potenziale all'interno di un condensatore:
+$$ C = \frac{Q}{\Delta V} $$
+La sua unità di misura è il Farad (F), equivalente a 1 Coulomb su 1 Volt: $ 1F = \frac{1C}{1V}$. Si noti che la capacità è una quantita (per definizione) sempre positiva. Si noti che la carica complessiva di un condensatore è nulla:
+per capacità di un condensatore si intende comunemente la carica accumulata su una sola armatura. Possiamo considerare, a scopo di esempio, il caso più semplice di un condensatore: una singola carica sferica, con
+densità superficiale di carica $\sigma$, che funge da prima armatura.
+La seconda armatura sarà assimilabile ad un guscio sferico di raggio infinito. Potremo allora dire:
+$$ C = \frac{Q}{\Delta V}, \quad Q = 4\pi R^2 \sigma, \quad \Delta V = k\frac{Q}{R} \Rightarrow C = \frac{R}{k} = 4\pi\epsilon_0 R$$
+Notiamo come la capacità della sfera non dipende dalla sua carica, ne dalla differenza di potenziale che essa genera: dipende solo dal suo raggio, che una quantità estensiva. Questo resterà vero anche per i condensatori tradizionali, a lastre parallele.
+\par\smallskip
+\textbf{Condensatore come elemento circuitale} \\
+Il condensatore (o capacitore) è un'importante elemento circuitale: un condensatore collegato ad un circuito che fornisce corrente continua accumulerà carica, che potrà poi essere rilasciata una volta scollegato il circuito di carica.
+Questa energia viene usata nei modi più disparati: per realizzare memorie, flash di fotocamere, defibrillatori, ecc...
+\par\smallskip
+\textbf{Calcolo delle capacità} \\
+Calcoliamo le capacità di diversi tipi di condensatore.
+\begin{itemize}
+  \item \textbf{Capacità di un condensatore a lastre parallele} \\
+    Calcoliamo la capacità di un condensatore a lastre parallele. Si avrà che la carica su una singola armatura è data da:
+    $$ Q = A\sigma$$
+    Possiamo poi calcolare il potenziale assumendo il campo fra le due lastre come uniforme:
+    $$ \Delta V = Ed = \frac{\sigma}{\epsilon_0}d $$
+    usando il fatto che $E = \frac{\sigma}{\epsilon_0}$ in un condensatore, come già calcolato più volte.
+    Possiamo allora ottenere la capacità:
+    $$ C = \frac{Q}{\Delta V} = \frac{A\sigma}{\frac{\sigma}{\epsilon_0}d} = \frac{\epsilon_0A}{d} $$
+    \par\smallskip
+    \textbf{Nota sugli effetti di bordo} \\
+    Quanto calcolato è effettivamente vero solo nel caso ideale, di un condensatore a lastre parallele di area infinita. O meglio, lo sarebbe su una \textit{sezione} di tale condensatore, cui capacità totale sarebbe sennò, anch'essa infinita.
+    Questo è perche si vanno a trascurare i cosiddetti \textbf{effetti di bordo}: visto che il campo elettrico è conservativo, il campo ai bordi delle lastre del condensatore non potrà semplicemente svanire. Si avrà quindi una certa conformazione radiale
+    delle linee di campo che introdurrà un'errore nei calcoli. Le specifiche di questo meccanismo verrano trattate più avanti.
+  \item \textbf{Capacità di un condensatore sferico} \\
+    Calcoliamo la capacità di un condensatore sferico, formato da una carica sferica di raggio $a$, e da un guscio sferico esterno ad essa di raggio $b$, con $a < b$. Le due distribuzioni avranno densità di carica superficiale $\sigma_1$ e $\sigma_2$, rispettivamente.
+    Potremo allora impostare le cariche sulle superfici del condensatore come uguali ed opposte:
+    $$ 4\pi a^2 \sigma_1 = q, \quad 4\pi b^2 \sigma_2 = -q$$
+    Da questo potremo calcolare la differenza di potenziale, utilizzando l'equazione trovata prima:
+    $$ V(r) = \frac{qk}{r} + c, \quad 0 < \Delta V = V(a) - V(b) = kq\left(\frac{1}{a} - \frac{1}{b}\right) $$
+    Potremo quindi calcolare la capacità:
+    $$ C = \frac{q}{\Delta V} = \frac{q}{qk\left(\frac{1}{a} - \frac{1}{b}\right)} = \frac{4\pi \epsilon_0 ab }{b - a} = \frac{ab}{k(b-a)} $$
+    Notiamo come da questo risultato possiamo trovare la capacità del condensatore a lastre parallele: impostiamo $b$ come $a + \epsilon$ su una piccola variazione di distanza $\epsilon$.
+    Avremo allora, con del calcolo un po' discutibile:
+    $$ c= \frac{4\pi\epsilon_0 a (b+\epsilon)}{b+\epsilon-a}, \quad \lim_{a,b\rightarrow\infty} \frac{4\pi\epsilon a^2}{\epsilon} = \frac{\epsilon_0 A}{d} $$
+    che è esattamente la capacità del condensatore piano, assunto $A = 4\pi a^2$ e $\epsilon = d$.
+  \item \textbf{Capacità di un condensatore cilindrico} \\
+    Calcoliamo la capacità di un condensatore cilindrico, come quello che forma un cavo coassiale. Consideriamo quindi due cilindri infinitamente lunghi di raggio $a$ e $b$, con $a < b$, quindi contenuti l'uno dentro l'altro.
+    Possiamo impostare le cariche in modo analogo a prima, facendo una considerazione: sarà inutile calcolare la capacità lungo tutto il cavo (essa è semplicemente infinita). Svolgeremo allora il calcolo della capacità \textit{per unità
+    di lunghezza}: $ C_h  = \frac{C}{h}$.
+    $$ 2\pi a h \sigma_1 = q, \quad 2 \pi b h \sigma_2 = -q $$
+    Calcoliamo allora la differenza di potenziale attraverso il teorema di Gauss. Troviamo quindi per primo il campo elettrico:
+    $$ \Phi(E) = h 2\pi r E(r) = \frac{q}{\epsilon_0} = \frac{2\pi a h\sigma_1}{\epsilon_0}, \quad E(r) = \frac{a\sigma}{\epsilon_0 r} $$
+    E integriamo su $r$, in modo da ottenere una funzione potenziale che rispetti $-\frac{\Delta V}{\partial r} = E(r)$:
+    $$ V(r) = -\int E(r)dr = -\frac{a\sigma_1}{\epsilon_0}\ln{(r)} $$
+    Infine, calcoliamo esplicitamente la differenza di potenziale da $a$ a $b$:
+    $$ \Delta V = V_b - V_a = -\frac{a\sigma_1}{\epsilon_0} (\ln{(b)} - \ln{(a)}) =  = -\frac{a\sigma_1}{\epsilon_0}\left(\ln{\frac{b}{a}}\right) $$
+    Ottenuto il potenziale, possiamo calcolare la capacità come:
+    $$ C = \frac{Q}{\Delta V} = \frac{2\pi a h \sigma_1}{\frac{a\sigma_1}{\epsilon_0}\ln{(\frac{b}{a})}} = \frac{2\pi \epsilon_0}{\ln{(\frac{b}{a})}}h = \frac{h}{2k\ln{(\frac{b}{a})}} $$
+    Quindi, la capacità su unità di lunghezza che stavamo cercando è:
+    $$ \frac{C}{h} = \frac{2\pi\epsilon_0}{\ln{(\frac{b}{a})}} = \frac{1}{2k\ln{(\frac{b}{a})}} $$
+\end{itemize} 
+\par\smallskip
+\textbf{Energia immagazzinata da un condensatore} \\
+Mentre viene caricato, il condensatore accumula una certa quantità di energia: questa quantita di energia corrisponde al lavoro fatto da una certa forza elettromotrice (all'esempio quella di una batteria) per spostare
+le cariche da un armatura all'altra del condensatore. La resistenza che il condensatore oppone a questa forza cresce linearmente con la carica che esso accumula. Si ha che in un campo uniforme:
+$$ V(t) = E(t)d = \frac{\sigma(t)}{\epsilon_0}d $$
+Il lavoro sarà allora:
+$$ \mathcal{L} = \int \frac{\sigma(t)}{\epsilon_0}d\,dq = \int \frac{q(t)d\, dq}{A\epsilon_0} = \frac{d}{A\epsilon_0}\int q\, dq = \frac{d}{A\epsilon_0} \frac{q^2}{2} = \frac{1}{2} \frac{q^2}{\frac{A\epsilon_0}{d}} = \frac{1}{2} \frac{q^2}{C} $$
+Notando che $ \frac{A\epsilon_0}{d}$ non è altro che $C$. A questo punto applichiamo $C = \frac{Q}{V}$:
+$$ \mathcal{L} = \frac{1}{2} \frac{q^2}{C} = \frac{1}{2} \frac{C^2V^2}{C} = \frac{1}{2}CV^2  = U$$
+che coincide con l'energia che un condensatore è in grado di immagazzinare. Esiste un'altra importante formulazione dello stesso risulato, tenendo conto che $C = \frac{A\epsilon_0}{d}$ e $V=Ed$ nel campo uniforme:
+$$ U = \frac{1}{2} \left( \frac{\epsilon_0 A}{d} \right)(Ed)^2 = \frac{1}{2}\epsilon_0AE^2d$$
+Possiamo quindi dividere per $Ad$, che non è altro che la regione dello spazio occupato dal campo elettrico del condensatore, per ottenere la \textbf{densità di energia}:
+$$ \frac{U}{Ad} = u = \frac{1}{2} \epsilon_0 E^2 $$
+\end{document}
