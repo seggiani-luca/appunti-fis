@@ -1,0 +1,199 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica 1}
+\author{Luca Seggiani}
+\date{3 Maggio 2024}
+
+\usepackage{amsmath}
+
+\begin{document}
+\maketitle
+\par\smallskip
+\textbf{Calcolo dell'energia all'interno di un condensatore sferico} \\
+Applichiamo le formule viste per il calcolo dell'energia all'interno di un condensatore. Possiamo seguire 3
+strade:
+\begin{itemize}
+  \item $$ U = \frac{1}{2} \frac{Q^2}{C} $$
+    Attraverso il calcolo diretto, si ha:
+  $$ C = \frac{1}{k\left(\frac{1}{a}-\frac{1}{b}\right)}, \quad U = \frac{1}{2}\frac{q^2}{4\pi \epsilon_0} \left(\frac{1}{a} - \frac{1}{b}\right) = \frac{q^2}{8\pi\epsilon_0}\left(\frac{1}{a}-\frac{1}{b}\right) $$
+  Oppure:
+  $$ C = \frac{ab}{k(b-a)}, \quad U = \frac{1}{2} \frac{(b-a)}{ab} \frac{1}{4\pi\epsilon_0} =  \frac{q^2}{8\pi\epsilon_0}\left(\frac{1}{a}-\frac{1}{b}\right)$$
+  Notando:
+  $$ \frac{1}{a} - \frac{1}{b} = \frac{b-a}{ab} $$
+\item $$ U = \frac{1}{2}CV^2 $$
+  Anche qui, possiamo applicare le formule:
+  $$ C = \frac{1}{k\left(\frac{1}{a} - \frac{1}{b}\right)}, \quad V = kq\left(\frac{1}{a} - \frac{1}{b}\right) $$ 
+  $$ U = \frac{1}{2} \frac{1}{k\left( \frac{1}{a} - \frac{1}{b} \right)} k^2q^2\left(\frac{1}{a} - \frac{1}{b}\right)^2 = \frac{kq^2}{2}\left(\frac{1}{a} - \frac{1}{b}\right) = \frac{q^2}{8\pi\epsilon_0}\left(\frac{1}{a}-\frac{1}{b}\right) $$
+\item Attraverso la \textbf{densità di carica} $\frac{1}{2}E^2\epsilon_0 $ :
+  $$ U = \int \frac{1}{2} E^2 \epsilon_0 \, dV = \frac{1}{2}\epsilon_0 \int_a^b E^2(r) 4 \pi r^2 dr = 2\pi\epsilon_0 \int_a^b E^2(r) r^2 dr $$
+  Abbiamo allora $E(r)$ (con Gauss, calcolo già svolto):
+  $$ E(r) = \frac{kq}{r^2}$$
+  $$ U = 2\pi \epsilon_0 \int_a^b k^2 \frac{q^2}{r^4} r^2 \, dr = 2\pi \epsilon_0 k^2 q^2 \int_a^b \frac{1}{r^2} dr = \frac{q^2}{8\pi \epsilon_0}\left(\frac{1}{a}-\frac{1}{b}\right)$$
+\end{itemize}
+\par\smallskip
+\textbf{Condensatori in parallelo e in serie} \\
+Vediamo adesso come calcolare la capacità totale dei capacitori visti come \textit{elementi circuitali}, disposti in serie e in parallelo:
+\begin{itemize}
+  \item \textbf{Condensatori in parallelo} \\
+    Nel caso di due condensatori disposti in parallelo, si avrà che la differenza di potenziale sulle armature è uguale per entrambi. Potremo quindi impostare:
+    $$ q_1 = C_1 V_1, \quad q_2 = C_2 V_2, \quad V_1 = V_2 \Rightarrow q_1+q_2 = (C_1+C_2)V $$
+    Da questo potremo ricavare la capacità totale:
+    $$ C = C_1 + C_2 = \frac{q_1}{V} + \frac{q_2}{V} $$
+    La capacità totale è la somma delle capacità dei condensatori presi singolarmente.
+    Questo ragionamento si estende a combinazioni teoricamente illimitate di condensatori, da cui:
+    $$ C_{eq} = C_1+C_2+...$$
+    Questo risultato può essere visualizzato come segue: la capacità totale di un insieme di condensatori di area $A$ collegati in parallelo equivale a quella di un unico grande condensatore di area $A$:
+    la capacità è quindi somma algebrica delle capacità dei singoli condensatori:
+    $$ C_{eq} = \frac{\epsilon_0 (2A)}{d} = 2 \frac{\epsilon_0A}{d} = 2C $$
+  \item \textbf{Condensatori in parallelo} \\
+    Nel caso di due condensatori disposti in serie, non potremo dire che il potenziale è lo stesso: si osserverà anzi una caduta di potenziale $\Delta V$ su ognuno dei condensatori. A conservarsi sarà invece la carica,
+    per il principio di conservazione della carica. Avremo quindi che:
+    $$ \Delta V_{tot} = \Delta V_1 + \Delta V_2 = \frac{q}{C_1} + \frac{q}{C_2} $$
+    Da cui potremo ricavare la capacità:
+    $$ \Delta V_{tot} = \frac{q}{C_{eq}} = \frac{q}{C_1} + \frac{q}{C_2} \Rightarrow \frac{1}{C_{eq}} = \frac{1}{C_1} + \frac{1}{C_2} = $$
+    Questo si estende a combinazioni illimitate di condensatori come:
+    $$ \frac{1}{C_{eq}} = \frac{1}{C_1} + \frac{1}{C_2} + ..., \quad C_{eq} = \left( \frac{1}{C_1} + \frac{1}{C_2} \right)^{-1} $$
+    Da questo si ha che la capacità totale dei condensatori messi in serie è sempre minore di quella che si otterrebbe mettendoli in parallelo, e anzi che è minore della capacità di uno qualsiasi dei condensatori che formano
+    la serie.
+\end{itemize}
+\par\smallskip
+\textbf{Dielettrici} \\
+La capacità di un condensatore può essere aumentata attraverso l'inserzione al suo interno di un \textbf{dielettrico}. Si dice dielettrico qualsiasi materiale manifesti capacità di polarizzazione elettrica. Il fenomeno della polarizzazione elettrica
+è tipico degli oggetti che, introdotti all'interno di un campo elettrico, si polarizzano formando un campo elettrico opposto. Esistono due metodi di polarizzazione:
+\begin{itemize}
+  \item \textbf{Polarizzazione per deformazione} \\
+    La polarizzazione per deformazione si verifica quando gli orbitali degli atomi che compongono il materiale vengono deformati dal campo elettrico. Questo provoca uno spostamento delle cariche positive, che di conseguenza
+    genera un campo opposto al campo che dà vita in primo luogo alla deformazione.
+  \item \textbf{Polarizzazione per orientamento} \\
+    La polarizzazione per orientamento si verifica quando le molecole di un materiale formano un dipolo elettrico: immerse all'interno di un campo elettrico, la loro struttura le porta quindi ad orientarsi nella direzione del campo,
+    generando quindi un campo opposto.
+\end{itemize}
+Diciamo di avere un capacitore con densità superficiale di carica $\sigma_0$, differenza di potenziale $V_0$, campo interno $E_0$ e capacità $C_0$. Introduciamo un dielettrico all'interno del capacitore: si avrà che se inizialmente:
+$$ E_0 = \frac{\sigma_0}{\epsilon_0}, \quad V_0 = E_0 h$$
+dopo l'introduzione dell'elemento dielettrico il campo e il potenziale cambieranno, di preciso come:
+$$ |E_k| < |E_0|: \quad E_k = \frac{E_0}{k}, \quad |V_k| < |V_0|: \quad V_k = \frac{V_0}{k} $$
+dove $k$, un valore adimensionale $>0$, prende il nome di \textbf{costante dielettrica} del materiale. Possiamo ricavare la differenza (della differenza) di potenziale:
+$$ E_0 - E_k = \frac{\sigma_0}{\epsilon_0} - \frac{\sigma_0}{\epsilon_0k} = \frac{\sigma_0}{\epsilon_0}\left(\frac{k-1}{k}\right) $$
+Dove il valore $k - 1 = \chi, \quad \chi > 0$, prende il nome di \textbf{suscettività elettrica} del materiale dielettrico. Il valore di differenza fra i potenziali è il \textit{campo di polarizzazione} $E_p$ del dielettrico, ovvero il campo
+che il dielettrico oppone a quello del condensatore, generato dalla densità di carica del dielettrico $\sigma_p$:
+$$ \sigma_p = \frac{(k - 1)\sigma_0}{k} = \frac{\chi \sigma_0}{k}, \quad E_p =  \frac{(k - 1)\sigma_0}{k\epsilon_0} = \frac{\chi \sigma_0}{k\epsilon_0} $$
+Possiamo allora vedere che cosa accade alla capacità. Visto che $C = \frac{Q}{V}$:
+$$ C_k = \frac{q_0 k}{V_0} = C_0 k, \quad C_0 = \frac{\epsilon_0 A}{d} \Rightarrow C_k = k \frac{\epsilon_0 A}{d} $$
+Notiamo una caratteristica importante: esistono due situazioni in cui possiamo inserire il nostro dielettrico. La prima è quella in cui carichiamo il dielettrico attraverso una certa forza elettromotrice (ad esempio quella di una batteria), che poi
+scolleghiamo. In questo caso la carica sul capacitore resterà costante, e a cambiare sarà la differenza di potenziale. Avremo:
+$$ V_k = \frac{V_0}{k} \Rightarrow C = \frac{q_0}{\frac{V_0}{k}} = \frac{q_0 k}{V_0} $$
+La seconda situazione sarà quella dove la forza elettromotrice continua ad agire (cioè non scolleghiamo la batteria). In questo caso la carica verrà spostata in modo da mantenere costante la differenza di potenziale. Avremo:
+$$ Q_k = kQ_0 \Rightarrow C = \frac{q_0 k}{V_0} $$
+Come vediamo, qualsiasi sia il caso il risultato non cambia.
+Facciamo qualche altra considerazione sulla costante dielettrica $k$ (o sulla suscettibilità $\chi$). Abbiamo che per valori $k \rightarrow 1$ ($\chi \rightarrow 0$) il materiale assomiglia sempre di più al vuoto. Per valori sempre più grandi
+$k \rightarrow \infty$ ($\chi \rightarrow \infty)$ il materiale assomiglia sempre di più un conduttore: questo potrebbe sembrare poco intuitivo, ma è semplicemente conseguenza del fatto che in un conduttore le cariche sono libere di muoversi, e il campo
+interno viene effettivamente annullato. Possiamo poi introdurre un'altra grandezza, la \textbf{rigidità dielettrica}: un dielettrico si comporta come tale (e può quindi migliorare le caratteristiche di un capacitore) fino ad un certo punto:
+sottoposte ad un potenziale troppo elevato, le molecole che lo compongono vengono ionizzate, gli elettroni sono liberi di circolare e il materiale si comporta effettivamente come un conduttore. La rigidità dielettrica rappresenta il potenziale massimo a cui può essere
+sottoposto un dielettrico prima del punto di rottura. Si riporta una lista delle costanti dielettriche e le rigidità
+dielettriche di alcuni materiali comuni:
+\begin{center}
+\begin{tabular}{|c|c|c|}
+  Materiale & Costante dielettrica $k$ & Rigidità dielettrica \\
+  Vuoto & 1 & - \\
+  Aria & 1.00059 & $3\times 10^6$ \\
+  Bachelite & 4.9 & $24\times 10^6$ \\
+  Gomma & 6.7 & $12\times 10^6$ \\
+  Carta & 3.7 & $16\times 10^6$ \\
+  Vetro & 4 - 7 & $20\times 10^6$ \\
+\end{tabular}
+\end{center}
+\par\smallskip
+\textbf{Energia di un condensatore con dielettrico} \\
+Vediamo come varia l'energia all'interno di un condensatore a seguito dell'inserzione di un dielettrico. Conoscevamo già le formule:
+$$ U_0 = \frac{1}{2}C_0V_0^2 = \frac{1}{2} \frac{q_0^2}{C_0}, \quad u = \frac{1}{2}\epsilon_0 E^2 $$
+Notiamo che in questo caso la situazione a potenziale costante è diversa da quella a carica costante: avremo un comportamento diverso in presenza o meno di una forza elettromotrice.
+\begin{itemize}
+  \item \textbf{Carica costante} (batteria scollegata) \\
+    Nel caso si vada ad introdurre un dielettrico in un capacitore carico, la sua capacità aumenterà e l'energia immagazzinata al suo interno diminuirà. Abbiamo:
+    $$ U_k = \frac{1}{2} \frac{q_0^2}{C_k}, \quad C_k = \frac{q_0k}{V_0} \Rightarrow U_k = \frac{1}{2} q_0^2 \frac{V_0}{q_0k} = \frac{1}{2} \frac{q_0V_0}{k} $$
+    Che possiamo dividere e moltiplicare per $V_0$:
+    $$ U_k = \frac{1}{2} \frac{q_0}{V_0} \frac{V_0^2}{k} = \frac{U_0}{k} $$
+  \item \textbf{Potenziale costante} (batteria collegata) \\
+    Nel caso la batteria resti collegata al capacitore, la forza elettromotrice continuerà a caricarlo: l'energia immagazzinata finale sarà maggiore:
+    $$ U_k = \frac{1}{2} \frac{q_k^2}{C_k}, \quad C_k = \frac{q_0k}{V_0} \Rightarrow \frac{1}{2} q_0^2k^2 \frac{V_0}{q_0k} = \frac{1}{2} \frac{q_0V_0}{k} $$
+    Che possiamo nuovamente dividere e moltiplicare per $V_0$:
+    $$ U_k = \frac{1}{2} \frac{q_0}{V_0} V_0^2 k = U_0k $$
+\end{itemize}
+\par\smallskip
+\textbf{Dielettrici parzialmente inseriti} \\
+Poniamo adesso di avere un capacitore dove viene inserito un dielettrico che non copre completamente la distanza fra le due lastre: chiamiamo $h$ questa distanza, e $s$ lo spessore del dielettrico.
+Potremo applicare le formule:
+$$ V = Ed, \quad C = \frac{Q}{V} $$
+Posta carica costante, la capacità sar infatti $\frac{Q}{V}$ su qualsiasi differenza di potenziale si andrà a formare dentro il condensatore. Quest'ultimo parametro si otterrà da $V = Ed$:
+$$ V = \frac{E}{k}s + E_0(h - s) = E_0h\left(\frac{s}{kh} + \frac{h - s}{h}\right) $$
+A questo punto la capacità è:
+$$ C_k = \frac{q_0}{E_0h\left(\frac{s}{kh} + \frac{h - s}{h}\right)} $$
+Notiamo allora $\frac{q_0}{E_0h}$ essere uguale a $\frac{E_0}{V_0} = C_0$, quindi:
+$$ C_k = \frac{C_0}{\left(\frac{s}{kh} + \frac{h - s}{h}\right)}$$
+Questo ci porta a dire:
+$$ \frac{1}{Ck} = \frac{\left(\frac{s}{kh} + \frac{h - s}{h}\right)}{C_0} = \frac{1}{C_0} + \frac{s}{h}\left(\frac{1}{Ck} - \frac{1}{C_0}\right)$$
+Da cui notiamo che la forma della capacità totale è la stessa di quella di una coppia di capacitori in serie: questo ha senso, in quanto il sistema formato dalle due sezioni con e senza dielettrico è effettivamente
+formato da due condensatori in serie. Si noti che la distanza del dielettrico dalle armature non conta, conta solamente il suo spessore.
+\par\smallskip
+\textbf{Forza di risucchio dielettrico} \\
+L'energia che abbiamo calcolato essere persa quando si inserisce il dielettrico può essere pensata come il lavoro che il capacitore esegue sul dielettrico stesso, "risucchiandolo" per portarlo nella sua posizione finale.
+Questa forza di risucchio è data dalla polarizzazione parziale del dielettrico che si ha nei pressi degli effetti di bordo del condensatore. Questo porta alla formazione di una carica positiva sul dielettrico dove il condensatore
+ha la lastra negativa, e viceversa, generando una forza di attrazione fra i due oggetti. Possiamo ricavare un potenziale di tale energia studiando la capacità totale. Definiamo un sistema di coordinate: il nostro moto avverrà
+sull'asse x. Chiamiamo allora $h$ la distanza fra le lastre del condensatore, $l$ la loro lunghezza, $s$ lo spessore del dielettrico, e $x$ la sua posizione sull'asse x. La capacità interna sarà allora la somma della capacità
+di due "sottocondensatori": uno in corrispondenza del dielettrico ($C_1$), l'altro nella parte rimasta libera ($C_2$):
+Avremo:
+$$C = C_1+C_2 = \frac{\epsilon_0 k s x}{h} + \frac{\epsilon_0(l -x)s}{h} $$
+da cui:
+$$ C = \frac{\epsilon_0 s}{d}\left( l -x (k - 1) \right) $$
+Un potenziale può a questo punto essere calcolato imponendo:
+$$ U = \frac{1}{2} \frac{Q^2}{C} \Rightarrow \frac{1}{2} \frac{Q^2}{C(x)} $$
+Notiamo che la forza è attrattiva verso l'interno del condensatore: una volta uscito, il dielettrico si troverà attratto verso la direzione opposta. Avremo in sostanza un moto oscillatorio, non propiamente armonico (il potenziale
+non è quadratico) ma comunque caratterizzato da un oscillazione periodica attorno a un punto di equilibrio.
+\section{Pressione elettrostatica}
+La pressione elettrostatica è la forza elettrica esercitata su un conduttore su unità di superficie, ovvero:
+$$ P = \frac{F_{el}}{A} $$
+\begin{itemize}
+  \item \textbf{Pressione elettrostatica in un condensatore} \\
+Calcoliamo la pressione elettrostatica su un'armatura di condensatore. Abbiamo che il campo elettrico all'interno di un condensatore, data una certa densità superficiale di carica $\sigma$, è:
+$$ E = \frac{\sigma}{2\epsilon_0} $$
+A questo punto, dato che la carica sull'armatura è semplicemente $q = \sigma A$, si avrà che la pressione elettrostatica è:
+$$ P = \frac{F}{A} = \sigma A \frac{\sigma}{2\epsilon_0} = \frac{\sigma^2}{2\epsilon_0} $$
+Notiamo che, dall'equazione della densità di energia in un condensatore si può ricavare:
+$$ \frac{U}{V} = \frac{1}{2} \epsilon_0 E^2, \quad E = \frac{\sigma}{\epsilon_0} \Rightarrow \frac{1}{2} \frac{\sigma^2}{\epsilon_0^2}\epsilon_0 = \frac{\sigma^2}{2\epsilon_0} = P$$
+ergo:
+$$ \frac{U}{V} = \frac{F}{S} = P $$
+Che è un risultato interessante.
+  \item \textbf{Pressione elettrostatica di due emisferi} \\
+    I risultati trovati prima possono applicarsi anche ad altre distribuzioni di carica. Vogliamo calcolare la pressione elettrostatica fra due emisferi di una sfera carica di raggio $R$. Si noti
+    che, finchè i due emisferi sono \textit{in contatto} fra di loro, la distribuzione della carica è sulla superficie della sfera (i lati interni degli emisferi non hanno carica!).
+    Dimostriamo innanzitutto la validità delle formule. Iniziamo con la formula della forza in un campo $F = qE$. Vogliamo calcolare il campo $E$
+    sull'immediata superficie della sfera. Potremmo applicare la formula $\frac{\sigma}{\epsilon_0}$, ma poniamo di volerla ricavare. Si ha:
+    $$ E = k \frac{Q}{R^2}, \quad Q = 4\pi R^2 \sigma \Rightarrow E = k \frac{4 \pi R^2 \sigma}{R^2} = \frac{4 \pi R^2 \sigma}{4 \pi \epsilon_0 R^2} = \frac{\sigma}{\epsilon_0} $$
+    Che è come dovrebbe essere. Calcoliamo allora la forza per unità di area, ponendo la carica su unità di area come $q = \sigma dA$:
+    $$ F = qE = \sigma dA \frac{\sigma}{\epsilon_0} = \frac{\sigma^2}{\epsilon_0} dA $$
+    Prendiamo allora l'integrale sulla superficie \textit{curva} della semisfera $\int_A dA = 2\pi R^2$:
+    $$ F = \int_A \frac{\sigma^2}{\epsilon_0} dA = \frac{\sigma^2}{\epsilon_0} 2\pi R^2 $$
+    Ricordiamo infine che $P = \frac{F}{A}$, ergo il risultato è:
+    $$ P = \frac{F}{A} = \frac{\frac{\sigma^2}{\epsilon_0} 2\pi R^2}{4\pi R^2} = \frac{\sigma^2}{2\epsilon_0} $$
+    Che dimostra la formula essere valida per una sfera (lo sarà per qualsiasi distribuzione di carica dalla formula per il campo immediatamente esterno).\\
+    Possiamo ottenere la stessa formula dall'equivalenza:
+    $$ \frac{F}{A} = \frac{U}{V} $$
+    prendendo come $\frac{U}{V}$ la densità di energia $ \frac{U}{V} = \frac{1}{2} \epsilon_0 E^2$:
+    $$ P = \frac{F}{A} = \frac{U}{V} = \frac{1}{2} \epsilon_0 E^2 = \frac{1}{2} \epsilon_0 \frac{\sigma^2}{\epsilon_0^2} = \frac{\sigma^2}{2\epsilon_0}$$
+    Che è analogo a prima. Possiamo usare al posto della densità di carica superficiale, la carica totale, ricavando $\sigma$ e sostituendola nella formula:
+    $$ Q = \sigma 4\pi R^2, \quad \sigma = \frac{Q}{4\pi R^2} \Rightarrow \quad P = \frac{\sigma^2}{2\epsilon_0} = \frac{\left(\frac{Q}{4\pi R^2}\right)^2}{2\epsilon_0} = \frac{Q^2}{32\pi^2R^4\epsilon_0}$$
+    oppure:
+    $$ Q = [...] \Rightarrow P = \frac{1}{2} \epsilon_0 \left(\frac{Q}{4\pi R^2 \epsilon_0}\right)^2 = \frac{Q^2}{32\pi^2R^4\epsilon_0}$$
+    Infine, possiamo dire che la forza di pressione totale esercitata (quindi la forza necessaria a mantenere gli emisferi connessi fra di loro) è pari a:
+    $$ P = \frac{F}{A}, \quad F = PA = \frac{\sigma^2}{2\epsilon_0} 2\pi R^2 = \frac{\sigma^2 \pi R^2}{\epsilon_0} = \frac{Q^2}{16\pi\epsilon_0 R^2} $$
+    E la forza esercitata da un singolo emisfero:
+    $$ F' = \frac{1}{2}F = \frac{\sigma^2 \pi R^2}{2\epsilon_0} = \frac{Q^2}{32\pi \epsilon_0 R^2} $$
+    (Quest'ultimo passaggio andrebbe in verità verificato ponendo che il campo elettrico su cui calcoliamo la pressione e quello di un singolo emisfero, ergo la forza totale è dimezzata... per chiarimenti ulteriori
+    si rimanda al testo di provenienza dell'esercizio, \textit{Griffith, Introduction to Electrodynamics}).
+\end{itemize}
+
+\end{document}
