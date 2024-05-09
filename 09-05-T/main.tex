@@ -1,0 +1,52 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{9 Maggio 2024}
+
+\begin{document}
+\maketitle
+\section{Corrente elettrica}
+Descriviamo ora il fenomeno che si presenta quando un conduttore non è in equilibrio ed è sottoposto ad un potenziale: la corrente elettrica. Immaginiamo, a scopo di esempio, due sfere collegate fra di loro, e
+a potenziale $V_1$ e $V_2$, dove $V_2 - V_1 = \Delta V < 0, \ V_1 > V_2$. Prima che le sfere si trovino in equilibrio elettrostatico, l'equalizzazione del potenziale porterà carica dalla sfera $V_1$ alla
+sfera $V_2$. Questo genererà, di conseguenza, una corrente elettrica lungo il collegamento fra le sfere (che però a basse resistenze potremo osservare solo per alcuni istanti).
+\par\smallskip
+\textbf{Portatori di carica} \\
+Il concetto di corrente si basa su un modello: quello dei portatori di carica. I portatori di carica sono particelle che si muovono all'interno di un conduttore, trasportando carica.
+Nella maggior parte dei conduttori metallici, i portatori di carica rappresentano semplicemente gli elettroni liberi nel reticolo. Definiamo la $n$ come il numero di elettroni per unità di volume, sulla base
+della densità di massa $\rho$ e la massa molare $A$:
+$$ n = \frac{\rho \cdot 6.022 \times 10^{23}}{A} $$
+\par\smallskip
+\textbf{Velocità di deriva} \\
+I portatori di carica in un conduttore sono costantemente in moto: procedono infatti di moto retilineo uniforme, finchè non urtano qualcosa (siano essi altri elettroni, asperità del metallo, non andremo nel dettaglio) e vengono
+deviati. La somma totale dei moduli di queste velocità è nulla finché non si osserva un campo elettrico:
+$$ \sum_i \frac{v_i(t)}{n} = <\vec{v}> = 0 $$
+Nel momento in cui si induce una differenza di potenziale (e un conseguente campo elettrico), attraverso un generatore che sia in grado di esprimere una qualche forza elettromotrice, al moto casuale dei portatori di carica
+si aggiunge una velocità di deriva nella direzione del campo. Più propriamente, le cariche negative vengono spostate nella direzione opposta al campo, e le cariche positive nella direzione del campo, con un risultante
+spostamento di carica (corrente) complessiva nella direzione del campo. Potremo valutare questo spostamento su un filo conduttore di area prendendone una sezione di superficie $A$:
+$$ dI = n\vec{v_d}\,dA\cos{\theta}\,q_p = nq_p\vec{v_d} \times \vec{dA} $$
+dove $v_d$ è la velocità di deriva, $q_p$ la carica elementare dei portatori di carica (qua la carica del protone), $\theta$ l'angolo fra la superficie e la direzione dello spostamento di carica, e $\vec{dA} = dA \times n$ normale
+della superficie. La corrente totale sarà a questo punto:
+$$ I = nq_pv_dA = \frac{dQ}{dt} $$
+ovvero la carica totale che passa attraverso $A$ in un unità di tempo. Possiamo poi introdurre la \textbf{densità di corrente}:
+$$ J = nq_pv_d $$
+dove ci siamo liberati del termine $A$. \\
+Definiamo le unità di misura: Ampere ($1\mathrm{A} = \frac{1\mathrm{C}}{1\mathrm{S}}$) per la corrente, e  Ampere su metro quadro $\frac{\mathrm{A}}{\mathrm{m^2}}$ per la densità di carica $J$. \\
+Facciamo un calcolo quantitativo della velocità di deriva. Posta una corrente di 8 Ampere su un filo di raggio 4 $\mathrm{mm}^2$, potremo impostare:
+$$ I = \Phi{J} = JA, \quad J = nq_pv_d, \quad i = nq_pv_dA \Rightarrow v_d = \frac{i}{q_p n A} = 0.2 \times 10^{-3} \frac{\mathrm{m}}{\mathrm{s}} $$
+Notiamo che la velocità di deriva ha valori molto piccoli. La corrente ha comunque effetti considerevoli: questo è dato dal fatto che il numero $n$ è gigantesco, e di conseguenza carica complessiva che si sposta è relativamente grande.
+\section{Legge di Ohm}
+Mettiamo adesso in relazione differenza di potenziale e corrente. Si ha di alcuni materiali, detti \textbf{materiali ohmici}, che la densità di corrente e il campo sono direttamente proporzionali con una certa costante di proporzionalità
+$\sigma$ detta \textbf{conducibilità}:
+$$ J = \sigma E $$
+Questo ci permette di dire, visto che il potenziale è $\Delta V = Es$ e la densità $J = \frac{I}{A}$:
+$$ El = \frac{J}{\sigma}l = \Delta V = \left(\frac{l}{\sigma A}\right)I = RI $$
+dove abbiamo definito la \textbf{resistenza} R:
+$$ R = \left(\frac{l}{\sigma A}I \right) = \frac{\Delta V}{I} $$
+Possiamo infine definire la \textbf{resistività} $\rho$, che non è altro che l'inverso della conducibilità:
+$$ \rho = \frac{1}{\sigma} $$
+\end{document}
