@@ -1,0 +1,92 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{10 Maggio 2024}
+
+\usepackage{amsmath}
+
+\begin{document}
+\maketitle
+\section{Teorema di König per il momento angolare}
+Per un corpo rigido in rotazione con velocità $\omega$, il momento rispetto ad un asse di simmetria di distribuzione
+della masse, o un asse ad esso parallelo, vale per il teorema di König:
+$$ \vec{L} = M\vec{R}_{CM} \times \vec{V}_{CM} + I\omega$$
+dove il primo termine rappresenta il momento angolare del centro di massa rispetto al polo scelto, e il secondo termine rappresenta
+il momento angolare dovuto alla rotazione attorno al centro di massa.
+\par\smallskip
+\textbf{Dimostrazione} \\
+Dimostriamo adesso questo risultato: iniziamo con la definizione di momento angolare per un sistema di punti materiali:
+$$ \vec{L} = \sum m_i(\vec{R_i} \times \vec{V_i}) $$
+Adesso scomponiamo $\vec{R_i}$ e $\vec{V_i}$ in $(\vec{R'_i} + \vec{R}_{CM})$ e $(\vec{V'_i} + \vec{V}_{CM})$ rispettivamente,
+ovvero posizione e velocità del corpo rigido e del punto $i$ rispetto al punto rigido. Lo svolgimento dei calcoli porterà a:
+$$ L = \sum m_i (\vec{R'_i} + \vec{R}_{CM}) \times (\vec{V'_i} + \vec{V}_{CM}) $$
+$$ = \sum m_i (\vec{R'_i} \times \vec{V'_i}) + \sum m_i(\vec{R'_i} \times \vec{V}_{CM}) + \sum m_i ( \vec{R}_{CM} \times \vec{V'_i}) + M(\vec{R}_{CM} + \vec{V}_{CM}) $$
+Fra questi termini notiamo $\sum m_i(\vec{R'_i} \times \vec{V}_{CM})$ e $\sum m_i ( \vec{R}_{CM} \times \vec{V'_i})$, entrambi nulli, in quanto il primo rappresenta
+la posizione del CM nel sistema di riferimento del CM , e il secondo la quantità di moto del CM nel sistema di riferimento del CM. Abbiamo quindi:
+$$ L =  \sum m_i (\vec{R'_i} \times \vec{V'_i})  + M(\vec{R}_{CM} + \vec{V}_{CM}) $$
+Riconosciamo il primo termine: è la quantità di moto del corpo rigido attorno ad un asse, divisa nelle componenti $\hat{z}$ e $\hat{u}$:
+$$ L_z = I\omega, \quad L_u = \sum m_i\omega R_i^2 \sin{\theta_i} \cos{\theta_i} $$
+Assumendo un asse su una distribuzione di massa simmetrica, o un asse ad esso parallelo, avremo:
+$$ \vec{L} = M\vec{R}_{CM} \times \vec{V}_{CM} + I\omega$$
+che è quanto volevamo dimostrare.
+\section{Pendolo fisico o composto}
+Vediamo il comportamento di un corpo rigido imperniato su un assediverso da quello passante per il suo centro di massa. 
+Potremo innanzitutto studiare la condizione di equilibrio, imponendo:
+$$ 
+\left\{\begin{array}{l}
+    \vec{R} + m\vec{g} = 0 \cr \\
+    \vec{\tau} = 0
+\end{array}\right.
+$$
+Ovvero la risultante di reazione vincolare e gravita è nulla, e il momento delle forze è nullo.
+Per la prima equazione potremo vedere i due assi:
+$$ 
+\left\{\begin{array}{l}
+    \vec{R}_x = 0 \cr \\
+    \vec{R_y} = m\vec{g}
+\end{array}\right.
+$$
+Mentre per il momento avremo:
+$$ \vec{\tau} = 0 \Rightarrow \vec{R}_{CM} \times Mg = -\vec{R}_{C} MG \sin{\theta} = 0, \quad \theta = 0$$
+Ovvero, il corpo è in equilibrio se il centro di massa si trova esattamente il polo, come l'intuito potrebbe suggerire. \\
+Più interessante è il caso di non equilibrio, dove il sistema si comporta effettivamente come un oscillatore armonico per piccole
+oscillazioni. Avremo la prima cardinale:
+$$ \vec{R} + m\vec{g} = m\vec{a_{CM}} $$
+e la seconda cardinale:
+$$ \vec{\tau} = I\vec{\alpha} = \vec{R}_{CM} \times m\vec{g} $$
+Scriviamo $\alpha$ come $\ddot{\theta}$, ovvero la derivata seconda della posizione angolare:
+$$ I\ddot{\theta} = -\vec{R}_{CM} mg\sin{\theta} $$
+Il fattore $\sin{\theta}$ risulta svantaggioso: per piccole oscillazioni, possiamo prendere il primo termine dello sviluppo di Taylor:
+$$ \ddot{\theta} + \frac{\vec{R}_{CM} \times m\vec{g}}{I}\theta = 0 $$
+Da cui otterremo la pulsazione (indicata con $\Omega$ per distinguerla dalla velocità angolare $\theta$), il periodo e la posizione angolare in funzione del tempo:
+$$ \Omega = \sqrt{\frac{\vec{R}_{CM} \times m\vec{g}}{I}}, \quad T = \frac{2\pi}{\Omega}, \quad \theta(t) = A\cos(\Omega t + \phi) $$
+\par\smallskip
+\textbf{Urti fra corpi rigidi e punti materiali} \\
+Vediamo adesso come studiare urti fra corpi rigidi, vincolati e non:
+\begin{itemize}
+  \item \textbf{Urti fra corpi rigidi non vincolati e punti materiali} \\
+    In un urto fra un corpo rigido non vincolato e un punto materiale, si conserveranno:
+    \begin{itemize}
+      \item Quantità di moto del sistema (sui due assi),
+      \item Momento angolare rispetto a un \textit{qualunque} polo.
+    \end{itemize}
+    Nel caso l'urto sia elastico, si conserverà anche l'energia. Notiamo che questo da solo non ci permette
+    di assumere che l'energia si conservi in ogni caso: dovremo prima determinare il tipo di urto.
+    L'indifferenza nella scelta del polo significa che potremo scegliere un polo ottimo per il tipo di situazione
+    che stiamo analizzando (spesso il centro di massa).
+  \item \textbf{Urti fra corpi rigidi vincolati e punti materiali} \\
+    Vediamo adesso il caso in cui il corpo sia vincolato attorno a un qualche asse. La presenza del vincolo
+    comporterà l'azione di una forza impulsiva applicata dal vincolo sul corpo rigido, identica all'impulsiva generata dalla collisione del punto
+    materiale e opposta in verso. Chiamando questa forza $\vec{R}$ reazione, avremo sul tempo dell'impulso $\tau$:
+    $$ I = \int_0^\tau \vec{R}(t)dt' = \vec{P}(\tau) - \vec{P}(0) = \Delta \vec{P} $$
+    ergo non si conserva la quantità di moto. \\
+    Si conserverà invece il momento angolare sul polo coincidente con l'asse del vincolo: questo perchè qualsiasi forza impulsiva applicata sul punto del 
+    vincolo avra raggio distanza $\vec{R_i} = 0$ dal polo, e quindi momento angolare nullo. \\
+    Come prima, poi, nel caso l'urto sia elastico, si conserverà anche l'energia.
+\end{itemize}
+\end{document}
