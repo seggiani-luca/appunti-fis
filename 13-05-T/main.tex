@@ -1,0 +1,100 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{13 Maggio 2024}
+
+\usepackage{amsmath}
+
+\begin{document}
+\maketitle
+\section{Resistenza}
+Cominciamo a parlare di resistenza, sia come componente circuitale che come resistenza interna a un generatore. Abbiamo, dalla legge di Ohm, che il campo elettrico è proporzionale alla densità di corrente $J$ di una costante $\sigma$, conducibilità, o
+dell'inverso della costante $\rho$, resistività:
+$$ E = \sigma J = \frac{1}{\rho}J $$
+Inoltre, abbiamo che la corrente $I$ è data dal prodotto fra la densità $J$ e la superficie $A$ del conduttore:
+$$ I = J\cdot A, \quad E = \rho \frac{I}{A} $$
+moltiplichiamo entrambi i lati per $l$, ricordando che $El = \Delta V$:
+$$ El = \rho \frac{l}{A} I = \Delta V, \quad V = IR \Rightarrow R = \rho \frac{l}{A}$$
+Che è nuovamente la resistenza di un conduttore di lunghezza $l$ e sezione $A$.
+Si riportano le resistività e i coefficienti termici (che ci torneranno utili fra poco) di alcuni materiali di uso comune.
+\begin{center}
+\begin{tabular}{|c|c|c|}
+  Materiale & Resitività $\left(\mathrm{\Omega \cdot m}\right)$ & Coefficiente termico $\alpha$ $\left( {}^\circ C^{-1} \right)$\\
+  Argento & $1.59 \times 10^{-8}$ & $3.8 \times 10^{-3}$ \\
+  Rame & $1.7 \times 10^{-8}$ & $3.9 \times 10^-3$ \\
+  Oro & $2.44 \times 10^{-8}$ & $3.4 \times 10^{-3}$ \\
+  Ferro & $10 \times 10^{-8}$ & $5 \times 10^{-3}$ \\
+  $\mathrm{Silicio^*}$ & $2.3 \times 10^{3}$ & $-75 \times 10^{-3}$ \\
+  Vetro & $ 10^{10} - 10^{14} $ & - \\
+  Gomma & $10^{13}$ & - \\
+\end{tabular}
+\end{center}
+(*) Notiamo una particolarità del silicio: la sua resistività è fortemente dipendente dalla presenza di eventuali impurità. L'introduzione di altri atomi (\textbf{drogaggio}) può variarla di diversi ordini di grandezza. Per questo
+motivo il silicio è il superconduttore più utilizzato: la sua resistenza può essere fortemente ridotta attraverso il drogaggio con atomi di antimonio, fosforo o arsenico.
+\par\smallskip
+\textbf{Modello Drude-Lorentz} \\
+Si presenta adesso un modello che mette il fenomeno della conduzione in relazione con il comportamento microscopico degli atomi che formano il reticolo metallico. Modellizziamo un metallo come un reticolo di ioni carichi positivamente che cedono
+ciascuno gli atomi nel loro strato di valenza: si forma un "mare" di elettroni liberi di circolare liberamente. Il rame, ad esempio, cede un elettrone per ogni atomo (ha configurazione elettronica $[\mathrm{Ar}]3d^{10} 4s^{1}$), ovvero l'unico presente nel suo strato di valenza.
+Sappiamo poi che gli elettroni liberi urtano, nel loro moto, gli ioni del reticolo metallico, descrivendo quindi traiettorie lineari spezzate. Possiamo allora prendere uno di questi urti, e cercare una relazione fra la velocità $\vec{\mathrm{v}_i}$ subito dopo dell'urto 
+$\vec{\mathrm{v}}_{i+1}$ un'attimo prima dell'urto successivo. Visto che la forza a cui sono sottoposti gli elettroni immersi in un campo elettrico vale $q\vec{E}$, abbiamo:
+$$ \vec{a} = \frac{\vec{F}}{m} = \frac{q\vec{E}}{m_e}, \quad \vec{\mathrm{v}}_{i+1} = \vec{\mathrm{v}_i} + \frac{q\vec{E}}{m_e}\tau $$
+dove il tempo $\tau$ è il tempo medio che trascorre fra due urti distinti, ovvero il \textit{cammino libero medio} $l$ sulla velocità media $\vec{\mathrm{v}}_{med}$:
+$$ \tau = \frac{l}{\vec{\mathrm{v}}_{med}} $$
+Notiamo inoltre che questo implica la relazione:
+$$ q\vec{E}\tau = V_d m_e \sim F \cdot t = m \cdot V $$
+dove su entrambi i lati figura la definizione di impulso, ovvero l'impulso fornito all'elettrone quando urta il reticolo metallico (in termini molto approssimativi).
+Da questo possiamo ricavare la velocità di deriva $\vec{v_d}$, che è semplicemente:
+$$ <\vec{\mathrm{v}}_{i+1}> \, = \, <\vec{\mathrm{v}_i} + \frac{q\vec{E}}{m_e}\tau> \, = \vec{v_d} = \frac{q\vec{E}}{m_e}\tau $$
+Abbiamo quindi un'espressione per la velocità di deriva $v_d$, che possiamo sostituire in quanto avevamo già trovato riguardo alla corrente:
+$$ J = nqv_d = nq\left( \frac{q\vec{E}}{m_e}\tau\right) = \frac{nq^2\tau}{m_e}\vec{E}, \quad I = JA = nqv_d = nq\left( \frac{q\vec{E}}{m_e}\tau\right)A = \frac{nq^2\tau A}{m_e}\vec{E} $$
+e a conducibilità e resistività:
+$$ \sigma = \frac{nq^2\tau}{m_e}, \quad \rho = \frac{1}{\sigma} = \frac{m_e}{nq^2\tau} $$
+Notiamo come $\vec{E}$ non dipende dal campo $\vec{E}$: questa, avevamo detto, è la caratteristica fondamentale dei materiali ohmici (equivale alla dipendenza lineare fra campo e desità di corrente).
+\par\smallskip
+\textbf{Resistenza e temperatura} \\
+Il modello Drude-Lorentz è una semplificazione della realtà dei fatti: stiamo cercando di modellizzare in modo classico fenomeni squisitamente relativistici, e non potremo quindi ottenere previsioni accurate. Un esempio può essere la temperatura:
+le previsioni del modello Drude-Lorentz non permettono di stimare in modo accurato la correlazione fra resistività e temperatura. Si ha in generale che la resistività e direttamente proporzionale alla temperatura. 
+Ponendo di misurare la resistività
+ad una certa temperatura $T_0$ di riferimento:
+$$ \rho(T) = \rho(T_0)(1 + (T-T_0) \alpha) = \rho_0(1+\Delta T \alpha) $$
+dove abbiamo chiamato $\rho_0$ la resistività del materiale a $T_0$. Abbiamo il coefficiente termico $\alpha$, espresso come la variazione di resistività su variazione di temperatura:
+$$ \alpha = \frac{\Delta \rho / \rho_0}{\Delta T} $$
+Questo corrisponde a equazioni in forma identica per la resistenza totale, visto che resistività e resistenza sono direttamente proporzionali ($\rho \propto R$):
+$$ R(T) = R(T_0)(1 + (T-T_0) \alpha) = R_0(1+\Delta T \alpha) $$
+\par\smallskip
+\textbf{Potenza elettrica} \\
+Calcoliamo ora la derivata sul tempo dell'energia dissipata da una resistenza $R$. Notiamo che quest'ultima non è che l'energia fornita dal generatore alla resistenza. Possiamo ricavare dalla definizione di potenziale che l'energia dissipata (e quindi la potenza) è:
+$$ U = Q\Delta V, \quad P = \frac{dU}{dt} = \frac{dQ }{dt}\Delta V =  I\Delta V $$
+visto che $I = \frac{dQ}{dt}$. Possiamo combinare questo risultato con quanto ottenuto dalla legge di Ohm $V = IR$ per ottenere:
+$$ P = I\Delta V = I^2R = \frac{(\Delta V)^2}{R} $$
+Questa potenza è collegata al cosiddetto \textbf{effetto Joule}: un resistore attraversato da una certa corrente dissipa parte della sua energia (che è la stessa energia usata per generare la differenza potenziale che ha poi creato la corrente), trasformandola in calore.
+\par\smallskip
+\textbf{Resistenza in parallelo e in serie} \\
+Vediamo adesso come calcolare la capacità delle resistenze viste come $\textit{elementi circuitali}$, disposti in serie e in parallelo:
+\begin{itemize}
+  \item \textbf{Resistenze in serie} \\
+    Nel caso di resistenze poste in serie, ci aspettiamo che la corrente sia costante fra qualsiasi coppia di esse. A variare sarà il potenziale, che subirà cadute lungo le resistenze stesse:
+    $$ I_1 = I_2 = I, \quad V_2 - V_3 = \Delta V_1 = R_1I, \quad V_3 - V_2 = \Delta V_2 = R_2I $$
+    da cui:
+    $$ IR = IR_1 + IR_2 \Rightarrow R = R_1 + R_2 $$
+    La resistenza totale è la somma delle resistenze dei resistori presi singolarmente. Questo ragionamento si estende a numeri illimitati di resistenze messe in serie, come:
+    $$ R_{eq} = R_1 + R_2 +... $$
+  \item \textbf{Resistenze in parallelo} \\
+    Nel caso di resistenze poste in parallelo, la corrente non sarà più la stessa sui due resistori: avremo invece che:
+    $$ I = I_1 + I_2 $$
+    da questo potremo calcolare la differenza di potenziale:
+    $$ \Delta V = V_B - V_A = R_1 I_1 = R_2 I_2 $$
+    Ovvero, la differenza di potenziale su $R_1$ e su $R_2$ è equivalente. Avremo allora:
+    $$ \frac{\Delta V}{R} = \frac{\Delta V}{R_1} + \frac{\Delta V}{R_2} \Rightarrow \frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2} $$
+    Qesto si è estende a combinazioni illimitate di resistori come:
+    $$ \frac{1}{R_{eq}} = \frac{1}{R_1} + \frac{1}{R_2} + ... , \quad R_{eq} = \left( \frac{1}{R_1} + \frac{1}{R_2} \right)^{-1} $$
+\end{itemize} 
+\par\smallskip
+\textbf{Circuiti RC} \\
+
+\end{document}

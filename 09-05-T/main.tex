@@ -36,9 +36,9 @@ ovvero la carica totale che passa attraverso $A$ in un unità di tempo. Possiamo
 $$ J = nq_pv_d $$
 dove ci siamo liberati del termine $A$. \\
 Definiamo le unità di misura: Ampere ($1\mathrm{A} = \frac{1\mathrm{C}}{1\mathrm{S}}$) per la corrente, e  Ampere su metro quadro $\frac{\mathrm{A}}{\mathrm{m^2}}$ per la densità di carica $J$. \\
-Facciamo un calcolo quantitativo della velocità di deriva. Posta una corrente di 8 Ampere su un filo di raggio 4 $\mathrm{mm}^2$, potremo impostare:
-$$ I = \Phi{J} = JA, \quad J = nq_pv_d, \quad i = nq_pv_dA \Rightarrow v_d = \frac{i}{q_p n A} = 0.2 \times 10^{-3} \frac{\mathrm{m}}{\mathrm{s}} $$
-Notiamo che la velocità di deriva ha valori molto piccoli. La corrente ha comunque effetti considerevoli: questo è dato dal fatto che il numero $n$ è gigantesco, e di conseguenza carica complessiva che si sposta è relativamente grande.
+Facciamo un calcolo quantitativo della velocità di deriva. Posta una corrente di 8 Ampere su un filo di raggio 4 $\mathrm{mm}^2$, e nota la densità di portatori di carica del rame (secondo il modello di Drude-Lorentz, $8,47 \times 10^{22} \mathrm{cm}^{-3}$), potremo impostare:
+$$ I = \Phi(J) = JA, \quad J = nq_pv_d, \quad i = nq_pv_dA \Rightarrow v_d = \frac{i}{q_p n A} = 0.29 \times 10^{-3} \frac{\mathrm{m}}{\mathrm{s}} $$
+Notiamo che la velocità di deriva ha valori molto piccoli. La corrente ha comunque effetti considerevoli: questo è dato dal fatto che la densità $n$ è molto grande, e di conseguenza lo è anche la carica complessiva che si sposta.
 \section{Legge di Ohm}
 Mettiamo adesso in relazione differenza di potenziale e corrente. Si ha di alcuni materiali, detti \textbf{materiali ohmici}, che la densità di corrente e il campo sono direttamente proporzionali con una certa costante di proporzionalità
 $\sigma$ detta \textbf{conducibilità}:
@@ -46,7 +46,11 @@ $$ J = \sigma E $$
 Questo ci permette di dire, visto che il potenziale è $\Delta V = Es$ e la densità $J = \frac{I}{A}$:
 $$ El = \frac{J}{\sigma}l = \Delta V = \left(\frac{l}{\sigma A}\right)I = RI $$
 dove abbiamo definito la \textbf{resistenza} R:
-$$ R = \left(\frac{l}{\sigma A}I \right) = \frac{\Delta V}{I} $$
+$$ R = \left(\frac{l}{\sigma A}\right)I = \frac{\Delta V}{I} $$
 Possiamo infine definire la \textbf{resistività} $\rho$, che non è altro che l'inverso della conducibilità:
 $$ \rho = \frac{1}{\sigma} $$
+Da cui possiamo definire la resistenza su un conduttore come:
+$$ R =  \rho\frac{\ l}{A} $$
+Notiamo come la resistenza è direttamente proporzionale alla lunghezza del conduttore, e inversamente proporzionale alla sua superficie: questo ha senso, sopratutto nel paragone con la fluidodinamica, in quanto su una superficie maggiore
+possono passare più portatori di carica, e su una lunghezza maggiore incontreranno più resistenza (cioè collisioni col reticolo metallico).
 \end{document}

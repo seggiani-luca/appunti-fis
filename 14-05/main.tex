@@ -1,0 +1,150 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{14 Maggio 2024}
+
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\begin{document}
+\maketitle
+\section{Conservazione del momento angolare}
+Ricapitoliamo il significato dell'assenza di forze esterne per il momento angolare. Abbiamo, dalla definizione:
+$$ \tau_{tot} = \frac{d\vec{L}}{dt} \rightarrow  \tau_{tot} = 0 \Leftrightarrow \vec{L} = \mathrm{const.} \quad (\vec{L_f} = \vec{L_i}) $$
+Ergo, se sul sistema non agiscono momenti di forze esterne, allora il momento angolare del sistema. Si può dire che il sistema si oppone alla variazione del momento angolare. Possiamo dire da:
+$$ \vec{L} = I\omega $$
+che una diminuzione del momento d'inerzia provoca come conseguente risposta un'aumento della velocità angolare, e viceversa un suo aumento provoca un rallentamento. Possiamo osservare questo fenomeno osservando una pattinatrice sul ghiaccio
+ruotare su stessa: una volta che essa sta ruotando, può variare la sua velocità angolare avvicinando o allontandando dal suo asse verticale le braccia: quello che sta effettivamente accadendo è che il momento di inerzia sta variando,
+e la velocità varia di conseguenza per mantenere costante il momento angolare. \\
+La conservazione del momento angolare è alla base dei sistemi di controllo dell'assetto che mantengono i satelliti in orientamento corretto verso la superficie terrestre: attraverso la rotazione di grandi volani, infatti,
+si può provocare una variazione della velocità angolare, e quindi variare l'angolazione del satellite. Più nello specifico, poniamo di avere un sistema composto da un satellite (rotazionalmente) in quiete, e un volano ad esso solidale
+inizialmente statico. Se si fa ruotare il volano fino al raggiungimento di una velocità angolare $\omega$, allora il satellite inizierà a ruotare con una velocità angolare opposta per mantenere costante la quantità di moto. Viceversa, se si rallenta
+il volano, il satellite ruoterà nella direzione opposta. Sistemi di questo tipo sono suscettibili alla cosiddetta \textit{saturazione}: una volta accumulata troppa velocità angolare, i volani non possono più apportare modifiche significative
+alla rotazione del satellite. In questo caso si adottano processi di desaturazione utilizzando propulsori esterni (cosa che non rende meno conveniente l'uso dei volani, che permettono effettivamente (in condizioni normali) manovre senza l'uso di propulsori). 
+\section{Moto di puro rotolamento}
+Vediamo adesso di studiare un moto piuttosto intuitivo: quello di un corpo in rotolamento. Iniziamo col prendere un corpo a simmetria sferica o cilindrica (quindi un disco, un anello, un cilindro o una sfera, ecc...). Vediamo il suo comportamento in 3 casi preliminari:
+\begin{itemize}
+  \item \textbf{Pura traslazione} \\
+    Nella situazione di pura traslazione, ogni punto del corpo rigido è in moto con velocità $V$, identica in modulo e verso. Le distanze relative fra il centro di massa e ogni punto del corpo rigido $r_0$ restano costanti. In questo caso,
+    osserviamo uno \textit{strisciamento} sul punto di contatto $P$ col piano di traslazione: nel caso di superfici scabre, osserveremo una forza d'attrito diretta nella direzione opposta al moto (e atta a mettere quel moto in rotazione nella direzione del rotolamento).
+  \item \textbf{Pura rotazione} \\
+    Vediamo allora il comportamento d un corpo fissato sul suo centro di massa, e messo in rotazione con un certo momento angolare, e quindi una certa velocità angolare $\omega$. Anche in questo caso osserveremo uno strisciamento sul punto di contatto $P$. Per la precisione,
+    tale punto avrà velocità:
+    $$ \vec{V_p} = \vec{\omega} \times \vec{R} $$
+  \item \textbf{Roto-traslazione} \\
+    E' questo il caso di rotazione e traslazione combinate: ancora non si parla di rotolamento puro, in quanto il punto di contatto $P$ è sempre libero di strisciare. Si ha che, nel sistema di riferimento del centro di massa,
+    velocità e accelerazione di un punto $i$ del corpo è:
+    $$ 
+    \left\{\begin{array}{l}
+        \vec{v'_i} = \vec{\omega} \times \vec{R_i} \cr \\ 
+        \vec{a'_i} = \vec{\alpha} \times \vec{R_i}
+    \end{array}\right.
+    $$
+    e gli stessi valori nel sistema di riferimento di laboratorio sono quindi:
+    $$ 
+    \left\{\begin{array}{l}
+        \vec{v_i} = \vec{v}_{CM} + \vec{\omega} \times \vec{R_i} \cr \\ 
+        \vec{a_i} = \vec{a}_{CM} + \vec{\alpha} \times \vec{R_i}
+    \end{array}\right.
+    $$
+\end{itemize}
+\par\smallskip
+\textbf{Moto di puro rotolamento} \\
+Possiamo adesso descrivere il moto di puro rotolamento. Si impone la condizione di puro rotolamento, ovvero il fatto che il punto di contatto $P$ sia stazionario, o in altre parole:
+$$ \vec{V}_{CM} = -\vec{\omega} \times \vec{R} $$
+Questo sta a significare che, se il piano su cui si svolge il rotolamento è scabro (come deve essere per iniziare un rotolamento in primo luogo!), l'attrito fra il corpo rigido e il piano è di tipo stazionario (non c'è strisciamento).
+Possiamo trovare la velocità di altri punti: abbiamo detto che $P$ ha velocità nulla ($\vec{V_p}=0$), il centro di massa ha velocità $\vec{V}_{CM} = -\vec{\omega} \times \vec{R}$, mentre un punto diametralmente opposto $T$ ha velocità $\vec{V}_T = -2\vec{\omega} \times \vec{R}$ (questo risultato verrà
+dimostrato fra poco).
+\par\smallskip
+\textbf{Leggi orarie del puro rotolamento} \\
+Cerchiamo di trovare una formula chiusa per la posizione e la velocità di un punto su una circonferenza di raggio $R$ in puro rotolamento con velocità angolare $\omega$, in funzione del tempo $t$. Abbiamo che, riguardo la posizione,
+la curva descritta è il cicloide:
+$$ 
+\left\{\begin{array}{l}
+    x(t) = \omega R t - R\sin{\omega t} \cr \\
+    y(t) = R - R\cos{\omega t}
+\end{array}\right.
+$$
+Possiamo poi dire che per un punto interno alla circonferenza, la curva descritta sarà più propriamente un trocoide (la cui parametrizzazione non riportiamo). Una visualizzazione interattiva si può trovare al seguente link:
+\url{https://www.desmos.com/calculator/ynfbmkyf95}. \\
+Calcoliamo allora dalla parametrizzazione del punto sulla circonferenza, la sua velocità:
+$$ 
+\left\{\begin{array}{l}
+    \dot{x}(t) = \omega R - \omega R \cos{\omega t} \cr \\ 
+    \dot{y}(t) = \omega R \sin{\omega t}
+\end{array}\right.
+$$
+Si ha che in $t' = \frac{2kpi}{\omega}$, il modulo della velocità è nullo (entrambi gli assi si annullano). Questo ha senso: al tempo $t'$ si trova il punto stazionario $P$, che ha per definizione velocità nulla.
+\par\smallskip
+\textbf{Velocità di un punto interno} \\
+Possiamo ricavare la velocità di un punto $P'$ qualsiasi, interno alla circonferenza, ponendo:
+$$ \vec{V}(P') = \vec{V}(P') - \vec{V}(P) = \vec{V}_{CM} + \vec{\omega} \times \vec{OP'} $$
+$$  = \vec{V}_{CM} + \vec{\omega} \times \vec{OP'} - (\vec{V}_{CM} + \vec{\omega} \times \vec{OP}) = \vec{\omega} \times (\vec{OP'} + \vec{PO}) $$
+Notiamo che, alla fine di tutti i calcoli, il vettore $\vec{OP'} + \vec{PO}$ è semplicemente la corda che collega $P$ (punto stazionario) a $P'$. $O$ è il centro di massa.
+\par\smallskip
+\textbf{Determinare attrito e accelerazione} \\
+Vediamo come determinare la forza di attrito (necessaria alla manifestazione di un moto di puro rotolamento) e l'accelerazione del corpo in diverse situazioni.
+\begin{itemize}
+  \item \textbf{Forza costante sul C.M.} \\
+    Vediamo il caso in cui un corpo di raggio $R$ e massa $m$ è fatto rotolare su un piano scabro (con coefficiente di attrito statico $\mu_s$) da una forza applicata sul centro di massa, $\vec{F}$. Si comincia con l'impostare
+    le equazioni cardinali, chiamando $\vec{F_a}$ la forza di attrito e $\vec{N}$ la reazione planare:
+    $$ 
+    \left\{\begin{array}{l}
+        \vec{F} + \vec{F_a} + \vec{N} + m \vec{g} = m\vec{a}_{CM} \cr \\
+        \vec{\tau} = \vec{OP} \times \vec{F_a}
+    \end{array}\right.
+    $$
+    proiettiamo la prima equazione sugli assi:
+    $$ 
+    \left\{\begin{array}{l}
+        \vec{F} - \vec{F_a} = m\vec{a}_{CM_x} = m\vec{a}_{CM} \cr \\
+        \vec{N} - m\vec{g} = m\vec{a}_{CM_y} = 0
+    \end{array}\right.
+    $$
+    e notiamo che $\vec{a}$ ha solo componente sull'asse x. Vediamo allora il momento delle forze (cioè la seconda equazione cardinale):
+    $$ \vec{\tau} = I\vec{\alpha} = \vec{OP} \times \vec{F_a} = -R \vec{F_a}\hat{z} $$
+    da cui:
+    $$ \vec{\alpha} = -\frac{\vec{R}\vec{F_a}}{I}\hat{z}$$
+    ci portiamo dietro il versore $\hat{z}$ per esprimere meglio la direzione della rotazione. Potremo allora passare dall'accelerazione angolare $\vec{\alpha}$ all'accelerazione del centro di massa $\vec{a}_{CM}$ imponendo la condizione
+    di puro rotolamento, cioè:
+    $$ \vec{v}_{CM} = -\vec{\omega} \times \vec{R}, \quad \vec{a}_{CM} = -\vec{\alpha} \times \vec{R} \Rightarrow \vec{a}_{CM} = \frac{RF_a}{I}\hat{z} \times (-R\hat{y}) = \frac{R^2F_a}{I}\hat{x}$$
+    Da questo, e dalla prima cardinale, possiamo ricavare il valore della forza di attrito:
+    $$ \vec{F} = \vec{F_a}+ m\vec{a}_{CM} = F_a + \frac{mR^2F_a}{I} = F_a\left( 1 + \frac{mR^2}{I} \right), \quad F_a = \frac{F}{1 + \frac{mR^2}{I}}$$
+    Notiamo che, in quanto la forza di attrito non è altro che:
+    $$ F_a = \mu_s \vec{N} = \mu_s m\vec{g}$$
+    bisognerà imporre:
+    $$ F \leq \mu_s m\vec{g}\left(1 + \frac{mR^2}{I} \right)$$
+    perchè il moto sia effettivamente di rotolamento. Per valori di $\vec{F}$ troppo grandi, si verificherà uno strisciamento.
+  \item \textbf{Momento di una forza costante} \\
+    Facciamo un'esempio simile, ma dove la rotazione non è mantenuta da una forza, bensì dal momento $\vec{M}$ di una forza che agisce sull'asse di rotazione del corpo. Si impostano, come prima, le cardinali:
+    $$ 
+    \left\{\begin{array}{l}
+        \vec{F} + \vec{F_a} + \vec{N} + M \vec{g} = m\vec{a}_{CM} \cr \\
+        \tau = \vec{M} + \vec{OP} \times \vec{F_a}
+    \end{array}\right.
+    $$
+    possiamo quindi proiettare la prima cardinale sugli assi:
+    $$ 
+    \left\{\begin{array}{l}
+        \vec{F_a} = m\vec{a}_{CM_x} = m\vec{a_{CM}}  \cr \\ 
+        \vec{N} - m\vec{g} = m\vec{a_{CM_y}} = 0
+    \end{array}\right.
+    $$
+    Come prima, l'accelerazione è tutta sull'asse x. Vediamo allora il momento nella seconda cardinale:
+    $$ \tau = \vec{M} + \vec{OP} \times \vec{F_a} = -m\hat{z} + \vec{R}\vec{F_a}\hat{z} = I\vec{\alpha} $$
+    da cui:
+    $$ \vec{\alpha} = \frac{\vec{R}\vec{F_a} - M}{I}\hat{z} = \frac{\vec{R}m\vec{a}_{CM} - M}{I}\hat{z} $$
+    Come prima, possiamo ricavare l'accelerazione del centro di massa $\vec{a}_{CM}$ dall'accelerazione angolare $\vec{\alpha}$ imponendo la condizione di puro rotolamento:
+    $$ \vec{v}_{CM} = -\vec{\omega} \times \vec{R}, \quad \vec{a}_{CM} = -\vec{\alpha} \times \vec{R} \Rightarrow \vec{a}_{CM} = -\alpha_z\hat{z} \times (-R\hat{y})$$
+    $$ = -\left( \frac{Rm\vec{a}_{CM} - M}{I}  \right)R\hat{x} \Rightarrow \vec{a}_{CM} = \frac{MR}{mR^2 + I}  $$
+    Ponendo nuovamente:
+    $$ F_a = \mu_s \vec{N} = \mu_s m\vec{g}$$
+    si ha il limite per il momento:
+    $$ \vec{M} \leq \mu_s m\vec{g}R \left( 1 + \frac{I}{mR^2} \right) $$
+\end{itemize}
+\end{document}
