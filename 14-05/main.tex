@@ -124,8 +124,8 @@ Vediamo come determinare la forza di attrito (necessaria alla manifestazione di 
     Facciamo un'esempio simile, ma dove la rotazione non è mantenuta da una forza, bensì dal momento $\vec{M}$ di una forza che agisce sull'asse di rotazione del corpo. Si impostano, come prima, le cardinali:
     $$ 
     \left\{\begin{array}{l}
-        \vec{F} + \vec{F_a} + \vec{N} + M \vec{g} = m\vec{a}_{CM} \cr \\
-        \tau = \vec{M} + \vec{OP} \times \vec{F_a}
+        \vec{F} + \vec{F_a} + \vec{N} + m \vec{g} = m\vec{a}_{CM} \cr \\
+        \vec{\tau} = \vec{M} + \vec{OP} \times \vec{F_a}
     \end{array}\right.
     $$
     possiamo quindi proiettare la prima cardinale sugli assi:
@@ -136,7 +136,7 @@ Vediamo come determinare la forza di attrito (necessaria alla manifestazione di 
     \end{array}\right.
     $$
     Come prima, l'accelerazione è tutta sull'asse x. Vediamo allora il momento nella seconda cardinale:
-    $$ \tau = \vec{M} + \vec{OP} \times \vec{F_a} = -m\hat{z} + \vec{R}\vec{F_a}\hat{z} = I\vec{\alpha} $$
+    $$ \vec{\tau} = \vec{M} + \vec{OP} \times \vec{F_a} = -m\hat{z} + \vec{R}\vec{F_a}\hat{z} = I\vec{\alpha} $$
     da cui:
     $$ \vec{\alpha} = \frac{\vec{R}\vec{F_a} - M}{I}\hat{z} = \frac{\vec{R}m\vec{a}_{CM} - M}{I}\hat{z} $$
     Come prima, possiamo ricavare l'accelerazione del centro di massa $\vec{a}_{CM}$ dall'accelerazione angolare $\vec{\alpha}$ imponendo la condizione di puro rotolamento:
@@ -146,5 +146,50 @@ Vediamo come determinare la forza di attrito (necessaria alla manifestazione di 
     $$ F_a = \mu_s \vec{N} = \mu_s m\vec{g}$$
     si ha il limite per il momento:
     $$ \vec{M} \leq \mu_s m\vec{g}R \left( 1 + \frac{I}{mR^2} \right) $$
+\item \textbf{Applicazione di impulso} \\
+    Facciamo adesso un caso più complesso (e più interessante). Abbiamo, come prima, un disco di massa $m$ e raggio $R$, Su cui viene applicato,
+    al CM, un impulso dal valore di $J$. Posto $J = mv_0$, questo equivale a dire che il centro di massa inizia a muoversi con una velocità di $v_0$.
+    Le grandezze di interesse saranno la velocità del centro di massa $v_{CM}(t)$ in funzione del tempo, e il tempo $t^\star$ necessario affinché la forza di attrito
+    rallenti abbastanza il centro di massa, e fornisca una velocità angolare al corpo abbastanza grande, da trasformare il moto in un moto di puro rotolamento.
+    Impostiamo le equazioni cardinali:
+    $$ 
+    \left\{\begin{array}{l}
+        \vec{F_a} + \vec{N} + m\vec{g} = m\vec{a}_{CM} \cr \\ 
+        \vec{\tau} = \vec{F_a} \times \vec{R}
+    \end{array}\right.
+    $$
+    Abbiamo, come prima, che la componente verticale della prima cardinale non ha alcun'effetto sulla velocità (ci importa soltanto di $\vec{N}$ per il valore dell'attrito $\vec{F_a}$).
+    Allora, diciamo:
+    $$ \vec{F_a} = m\vec{a}_{CM} = -m\vec{g}\mu_d, \quad \vec{a}_{CM} = -g\mu_d $$
+    il moto è effettivamente un moto uniformemente accelerato (nel solo asse x) con velocità iniziale $v_0$ e accelerazione $a_{CM}$:
+    $$ v_{CM}(t) = v_0 - a_{CM}t = \frac{J}{m} - g\mu_dt = \frac{J - mg\mu_dt}{m} $$
+    Abbiamo quindi trovato la velocità del centro di massa $v_{CM}(t)$ in funzione del tempo. Facciamo la stessa cosa per la velocità
+    angolare, usando la seconda cardinale:
+    $$ \vec{\tau} = I\vec{\alpha} = \mu_dm\vec{g}\vec{R}$$
+    Come per la velocità lineare, la velocità angolare aumenta linearmente col tempo. Si ha:
+    $$ I\vec{\omega} = \mu_dm\vec{g}\vec{R}t, \quad \omega(t) = \frac{\mu_dmgR}{I}t $$
+    Imponiamo quindi la condizione di puro rotolamento:
+    $$ \omega(t^\star) \cdot R = v(t^\star), \quad \frac{\mu_dmgR^2}{I}t^\star = \frac{J-mg\mu_d}{m}t^\star \Rightarrow t^\star = \frac{J}{mg\mu_d\left( 1 + \frac{mR^2}{I} \right)}$$
+    Dopo il tempo $t^\star$, il moto diventa di puro rotolamento (almeno in condizioni di attrito ideali).
+    \par\smallskip
+    \textbf{Lavoro svolto dalla forza di attrito} \\
+     Vediamo adesso di calcolare il lavoro svolto dalla forza di attrito per rallentare il centro di massa (e applicare una coppia sufficiente sul corpo), dal momento
+     $t = 0$ fino a $t = t^\star$. Impostiamo l'equazione di bilancio energetico. Per il teorema delle forze vive, avremo:
+      $$ \mathcal{L} = \Delta E = \frac{m}{2}v(t^\star)^2 + \frac{I}{2}\omega(t^\star)^2 - \frac{m}{2}v(0)^2 $$
+      si pone il problema di calcolare $v(t^\star)$, $\omega(t^\star)$, e $v(0)$. Fra i primi due varrà la relazione $v(t^\star) = \omega(t^\star) \times R$,
+      mentre l'ultimo sarà semplicemente: 
+      $$ v(0) = \frac{J}{m} - \mu_dg \cdot 0 = \frac{J}{m} $$
+      Abbiamo allora due modi di calcolare $v(t^\star)$: attraverso la formula per $v(t)$ appena usata, o attraverso la formula di $\omega(t)$. Vediamoli entrambi:
+      \begin{enumerate}
+        \item Da $v(t)$, si ha:
+          $$ v(t^\star) = \frac{J}{m} - \mu_dg \frac{J}{m\mu_dg\left( 1 + \frac{mR^2}{I} \right)} = \frac{2}{3}\frac{J}{m} $$
+        \item Da $\omega(t)$, si ha:
+          $$ v(t) = \omega(t)R, \quad \omega(t) = \frac{\mu_dmgR}{I}t $$
+          $$ \Rightarrow v(t^\star) = \frac{\mu_dmgR^2}{I} \frac{J}{mg\mu_d\left( 1 + \frac{mR^2}{I} \right)} = \frac{2}{3}\frac{J}{m} $$
+      \end{enumerate}
+      I risultati corrispondono, come dovrebbe essere. Possiamo allora calcolare $\omega(t^\star)$ con facilità:
+      $$ \omega(t^\star) = \frac{v(t^\star)}{R} = \frac{2}{3} \frac{J}{mR} $$
+      A questo punto, sostituiamo nell'equazione di bilancio:
+      $$ \mathcal{L} = \Delta E = \frac{mv(t^\star)}{2} + \frac{I\omega(t^\star)}{2} - \frac{mv(0)}{2} = -\frac{1}{6}\frac{J^2}{m} $$
 \end{itemize}
 \end{document}

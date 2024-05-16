@@ -93,8 +93,50 @@ Vediamo adesso come calcolare la capacità delle resistenze viste come $\textit{
     $$ \frac{\Delta V}{R} = \frac{\Delta V}{R_1} + \frac{\Delta V}{R_2} \Rightarrow \frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2} $$
     Qesto si è estende a combinazioni illimitate di resistori come:
     $$ \frac{1}{R_{eq}} = \frac{1}{R_1} + \frac{1}{R_2} + ... , \quad R_{eq} = \left( \frac{1}{R_1} + \frac{1}{R_2} \right)^{-1} $$
-\end{itemize} 
+\end{itemize}
+\par\smallskip
+\textbf{Resistenza interna} \\
+Parliamo brevemente del fenomeno della resistenza interna. Finora abbiamo parlato solamente di \textbf{resistenza esterna}, cioè
+della resistenza impressa da resistori (o anche dal filo conduttore stesso...) sulle cariche messe in moto dalla forza elettromotrice $\mathcal{E}$ prodotta
+da un qualche generatore di potenziale. In verità, il generatore stesso presenta una resistenza, appunto resistenza interna. Potremo quindi modellizzare
+un generatore come un complesso più complesso, formato da un generatore e da una resistenza. Spesso, però, la resistenza interna viene omessa per semplicità.
+Svolgiamo i calcoli: se una batteria ha resistenza interna $r$, e deve muovere carica attraverso una \textbf{resistenza di carico} (esterna) $R$, la corrente finale sarà:
+$$ I = \frac{\mathcal{E}}{R + r} $$
+Diciamo di voler massimizzare la potenza del circuito $P$. Potremo usare la formula (nota che $\mathcal{E} = V$, non è altro che una differenza di potenziale):
+$$ P = RI^2 = R \left(\frac{\mathcal{E}}{R + r}\right)^2, \quad \frac{d}{dR}P = \left( \frac{V}{R+r} \right) \left( \frac{V}{R+r} - \frac{2VR}{(R+r)^2} \right)$$
+da cui si ottiene:
+$$ \frac{d}{dR}P = 0 \Rightarrow r = R$$
+ergo la potenza è massima quando la resistenza esterna corrisponde alla resistenza interna.
 \par\smallskip
 \textbf{Circuiti RC} \\
-
+Studiamo il comportamento di un circuito formato da un generatore di forza elettromotrice e due componenti circuitali:
+un condensatore e un resistore collegati in serie. L'andamento della corrente (come quello della carica nel condensatore) sarà
+un transiente che andrà stabilizzandosi fino ad una condizione di equilibrio col tempo. Ci aspettiamo che all'istante $t=0$ (quando abbiamo appena
+chiuso il circuito), la corrente sarà massima e la carica nel condensatore nulla. Al contrario, dopo un certo tempo, ci aspetteremo che la corrente
+tenda a 0 e la carica nel condensatore approssimi il suo livello massimo. Possiamo usare la seconda legge di Kirchoff (che formalmente non abbiamo ancora visto),
+imponendo che la differenza di potenziale totale sulla maglia del circuito sia nulla: le differenze di potenziale saranno quella del generatore di fem e dei due componenti
+circuitali (ricordando le formule per condensatore e resistore: $C = \frac{Q}{V}$, $V = IR$), ovvero:
+$$ \mathcal{E} - \frac{q}{C} - iR = 0$$
+Possiamo porre subito $q = 0$ e $i = 0$ per verificare quanto avevamo assunto all'inizio. Si avrà che, per $q = 0$:
+$$ I = \frac{\mathcal{E}}{R} $$
+è il valore massimo della corrente, e che per $i = 0$:
+$$ Q = C\mathcal{E} $$
+è il valore massimo della carica nel condensatore.
+Per quantificare le casistiche intermedie, esprimiamo la corrente $i$ attraverso la sua definizione, $i = \frac{dq}{dt}$:
+$$ \frac{dq}{dt} = \frac{\mathcal{E}}{R} - \frac{q}{RC} $$
+Questa è un'equazione differenziale a variabili separabili: mette in relazione la \textit{variazione} di carica con la carica stessa. Possiamo riscrivere come, e risolvere:
+$$ \frac{dq}{q - C\mathcal{E}} = -\frac{1}{RC}dt \rightarrow \int_0^q \frac{dq}{q - C\mathcal{E}} = -\frac{1}{RC}\int_0^t dt \rightarrow \ln{\frac{q-C\mathcal{E}}{-C\mathcal{E}}} = -\frac{t}{RC}  $$
+Possiamo riscrivere il risultato appena trovato come:
+$$ q(t) = C\mathcal{E}\left(1 - e^{-\frac{t}{RC}}\right) = C\mathcal{E}\left(1 - e^{-\frac{t}{\tau}}\right)$$
+chiamando $\tau = RC$ \textbf{costante temporale} del circuito RC. Calcoliamo allora, derivando questa equazione, l'espressione della corrente:
+$$ i(t) = \frac{\mathcal{E}}{R}e^{-\frac{t}{\tau}}$$
+Questo è il caso di un condensatore in fase di carica. Calcoliamo adesso cosa succede in fase di scarica, partendo da una carica massima $Q$. Eliminiamo innanzitutto
+la forza elettromotrice dalla seconda legge di Kirchoff:
+$$ -\frac{q}{C} - iR = 0 $$
+Effettuiamo quindi la stessa sostituzione di prima, e risolviamo in modo simile la differenziale:
+$$ \frac{dq}{q} = -\frac{1}{RC}dt \rightarrow \int_Q^q \frac{dq}{q} = -\frac{1}{RC} \int_0^t dt \rightarrow \ln{\frac{q}{Q}} = -\frac{t}{RC} $$
+Possiamo nuovamente riscrivere questo come:
+$$ q(t) = Qe^{-\frac{t}{\tau}}$$
+Infine, deriviamo per trovare la corrente:
+$$ i(t) = -\frac{Q}{RC}e^{-\frac{t}{\tau}} $$
 \end{document}
