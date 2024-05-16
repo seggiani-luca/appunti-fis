@@ -1,0 +1,39 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{16 Maggio 2024}
+
+\begin{document}
+\maketitle
+\par\smallskip
+\textbf{Divergenza e rotore del campo elettrico} \\
+Il concetto di flusso e circuitazione sono espressi matematicamente dal flusso e dal rotore del campo elettrico, come vedremo poi nelle prime due equazioni di Maxell in forma differenziale.
+\begin{itemize}
+  \item \textbf{Divergenza} \\
+    Nel corso di analisi II, si introduce la divergenza come "la tendenza di un punto di comportarsi come un pozzo o una sorgente". In elettrostatica, questo significa che la divergenza di un punto determina
+    la sua capacità di comportarsi come una carica positiva o negativa (se così si può dire). Dal teorema di Gauss, abbiamo l'equazione di bilancio:
+    $$ \int_S \vec{E} \cdot d\vec{A} = \Phi(\vec{E}) = \int_V \nabla \cdot \vec{E} \, dV $$
+    che possiamo così interpretare: il flusso su una superficie $S$ di un campo $\vec{E}$ equivale all'integrale sul volume interno alla superficie della divergenza del campo.
+    Questo si applica direttamente al campo elettrico come:
+    $$ \int_V \nabla \cdot \vec{E} \, dV = \frac{Q_{int}}{\epsilon_0} = \frac{1}{\epsilon_0}\int_V \rho dV $$
+    dove $\nabla \cdot \vec{E} = \rho(x, y, z)$ è la densità di carica di un punto $(x, y, z)$ arbitrario. Intuitivamente, se la divergenza 
+    è la capacità di un punto di comportarsi come carica positiva o negativa, cioè di generare un campo che attragga cariche del senso opposto e respinga cariche
+    dello stesso segno, corrisponderà con la densità di carica (come risulta dalla prima equazione di Maxwell, cioè la legge di Gauss).
+    Ricordando poi che il campo elettrico non è altro che il gradiente della funzione potenziale ($\vec{E} = -\nabla V)$, possiamo dire:
+    $$ \nabla \cdot \vec{E} = \nabla \cdot(-\nabla P) = -\nabla^2 P = \frac{\rho}{\epsilon_0} $$
+    L'ultima equazione è detta \textbf{equazione di Poisson}, e usa l'\textbf{operatore laplaciano}. Possiamo esprimerla sulle tre coordinate come:
+    $$ \frac{\partial^2}{\partial x^2}V + \frac{\partial^2}{\partial y^2}V + \frac{\partial^2}{\partial z^2}V = -\frac{\rho}{\epsilon_0} $$
+  \item \textbf{Rotore} \\
+    Il rotore del campo elettrico fornisce informazioni riguardo alla sua circuitazione. Sappiamo che un campo conservativo (ovvero un campo
+    che è gradiente di una funzione potenziale) ha rotore nullo in ogni suo punto. Di contro, sappiamo che una campo irrotazionale (definito su un insieme semplicemente
+    connesso), è necessariamente conservativo. Questo porta alla forma differenziale della seconda equazione di Maxwell:
+    $$ \vec{E} = -\nabla P \Rightarrow \nabla \times \vec{E} = 0 $$
+    Si noti che  questo vale nell'elettrostatica. Nel caso il campo (e quindi la densità di carica) vari nel tempo, l'irrotazonalità
+    del campo potrebbe non essere assicurata.
+\end{itemize}
+\end{document}

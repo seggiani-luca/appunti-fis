@@ -1,0 +1,48 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{16 Maggio 2024}
+
+\begin{document}
+\maketitle
+\section{Analisi circuitale}
+Formalizziamo adesso alcuni dei metodi usati per l'analisi dei circuiti DC (in corrente continua).
+\par\smallskip
+\textbf{Leggi di Kirchoff} \\
+Le leggi di Kirchoff sono regole riguardanti la corrente e il potenziale sui circuiti, specialmente quelli che non possono essere ricondotti ad una singola maglia.
+\begin{itemize}
+  \item \textbf{Prima legge di Kirchoff} (corrente sui nodi) \\
+    In un circuito formato da più fili, ogni punto di incontro fra più fili è chiamato \textbf{nodo}. La prima legge di Kirchoff
+    ci assicura che la somma totale delle correnti sul nodo è nulla:
+    $$ \sum_j i_j = 0 $$
+    Abbiamo chiaramente bisogno di una convenzione per i segni: scelta una direzione di scorrimento della corrente,
+    le correnti entranti avranno segno positivo e quelle uscenti senso negativo.
+  \item \textbf{Seconda legge di Kirchoff} (potenziale sulle maglie) \\
+    Ogni circuito può essere ridotto ad una serie di percorsi chiusi detti \textbf{maglie}. Su una maglia, la somma di differenza
+    di potenziale ai capi di tutti gli elementi è nulla:
+    $$ \sum_j \Delta V_j = 0 $$
+    Questo è dato dal fatto che, per una maglia formata da un certo numero di generatori di fem $\mathcal{E}_j$, e di componenti circuitali che
+    usano la fem $R_j$, si avrà che tutta la forza elettromotrice viene usata dai componenti:
+    $$ \sum_j R_j = \sum_j \mathcal{E}_j \Rightarrow \sum_j \Delta V_j = 0 $$
+    Anche in questo caso occorrerà una convenzione di segno: si ha:
+    \begin{itemize}
+      \item \textbf{Resistori}: per i resistori, il potenziale è $\Delta V = -IR$ nel caso si percorra il resistore
+        nella direzione della corrente, $\Delta V = IR$ nel caso si percorra nella direzione opposta.
+      \item \textbf{Sorgenti}: per le sorgenti, il potenziale è $\Delta V = \mathcal{E}$ nel caso si percorra la
+        sorgente nella direzione della corrente, $\Delta V = -\mathcal{E}$ nel caso si percorra nella direzione opposta.
+    \end{itemize}
+\end{itemize}
+\par\smallskip
+\textbf{Circuito con resistenza} \\
+Usiamo le leggi appena definite per studiare il comportamento di un semplice circuito, formato da un generatore di forza elettromotrice e da una resistenza.
+Questa resistenza potrà essere interpretata come una resistenza interna al generatore o esterna, è irrilevante. Abbiamo, dalla seconda legge di Kirchoff, che
+il potenziale sull'unica maglia del circuito, presa la direzione della corrente come quella dal polo negativo al positivo del genratore, è:
+$$ \mathcal{E} - IR = 0 , \quad \mathcal{E} = IR $$
+da cui si nota chiaramente che la fem $\mathcal{E}$ non è altro che la differenza di potenziale a cui il generatore mantiene
+i due capi di filo a cui è collegato.
+\end{document}

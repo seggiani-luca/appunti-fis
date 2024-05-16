@@ -113,7 +113,10 @@ Studiamo il comportamento di un circuito formato da un generatore di forza elett
 un condensatore e un resistore collegati in serie. L'andamento della corrente (come quello della carica nel condensatore) sarà
 un transiente che andrà stabilizzandosi fino ad una condizione di equilibrio col tempo. Ci aspettiamo che all'istante $t=0$ (quando abbiamo appena
 chiuso il circuito), la corrente sarà massima e la carica nel condensatore nulla. Al contrario, dopo un certo tempo, ci aspetteremo che la corrente
-tenda a 0 e la carica nel condensatore approssimi il suo livello massimo. Possiamo usare la seconda legge di Kirchoff (che formalmente non abbiamo ancora visto),
+tenda a 0 e la carica nel condensatore approssimi il suo livello massimo. 
+\par\smallskip
+\textbf{Carica di un condensatore} \\
+Possiamo usare la seconda legge di Kirchoff (che formalmente non abbiamo ancora visto),
 imponendo che la differenza di potenziale totale sulla maglia del circuito sia nulla: le differenze di potenziale saranno quella del generatore di fem e dei due componenti
 circuitali (ricordando le formule per condensatore e resistore: $C = \frac{Q}{V}$, $V = IR$), ovvero:
 $$ \mathcal{E} - \frac{q}{C} - iR = 0$$
@@ -130,7 +133,20 @@ Possiamo riscrivere il risultato appena trovato come:
 $$ q(t) = C\mathcal{E}\left(1 - e^{-\frac{t}{RC}}\right) = C\mathcal{E}\left(1 - e^{-\frac{t}{\tau}}\right)$$
 chiamando $\tau = RC$ \textbf{costante temporale} del circuito RC. Calcoliamo allora, derivando questa equazione, l'espressione della corrente:
 $$ i(t) = \frac{\mathcal{E}}{R}e^{-\frac{t}{\tau}}$$
-Questo è il caso di un condensatore in fase di carica. Calcoliamo adesso cosa succede in fase di scarica, partendo da una carica massima $Q$. Eliminiamo innanzitutto
+\par\smallskip
+\textbf{Energia dispersa in carica} \\
+Calcoliamo l'energia che la resistenza trasforma in calore (diremo \textbf{energia interna del resistore}), nel tempo necessario a caricare
+completamente il capacitore. Chiaramente, il capacitore non sarà mai veramente carico del tutto: prenderemo l'integrale improprio per $t\rightarrow\infty$. Usiamo il fatto
+che l'integrale della potenza corrisponde all'energia, e che possiamo facilmente ricavare la potenza da:
+$$ P = i^2 R, \quad E_r = \int_0^\infty Pdt = \int_0^\infty i^2R\,dt$$
+sostituiamo allora il valore trovato per $i$:
+$$ E_r = \int_0^\infty \left( \frac{\mathcal{E}}{R}e^{-\frac{t}{\tau}}\right)^2Rdt = \frac{1}{2}C\mathcal{E}^2$$
+L'integrale si ottiene sostituendo $\tau = RC$, e corrisponde a quanto avremo trovato applicando l'energia del condensatore: $E_c = \frac{1}{2}CV^2$.
+Questo ci dice che l'energia dissipata dal resistore equivale all'energia immagazzinata nel condensatore: questo ha senso in quanto, considerando
+il circuito come un sistema chiuso, la variazione di energia deve corrispondere all'energia finale del sistema.
+\par\smallskip
+\textbf{Scarica di un condensatore} \\
+Abbiamo visto il caso di un condensatore in fase di carica. Calcoliamo adesso cosa succede in fase di scarica, partendo da una carica massima $Q$. Eliminiamo innanzitutto
 la forza elettromotrice dalla seconda legge di Kirchoff:
 $$ -\frac{q}{C} - iR = 0 $$
 Effettuiamo quindi la stessa sostituzione di prima, e risolviamo in modo simile la differenziale:
@@ -139,4 +155,12 @@ Possiamo nuovamente riscrivere questo come:
 $$ q(t) = Qe^{-\frac{t}{\tau}}$$
 Infine, deriviamo per trovare la corrente:
 $$ i(t) = -\frac{Q}{RC}e^{-\frac{t}{\tau}} $$
+\textbf{Energia dispersa in scarica}
+Calcoliamo quindi l'energia dispersa dalla resistenza nel corso della scarica. Come prima, considereremo il caso ideale in cui $t\rightarrow \infty$, ergo
+tutta la carica viene scaricata. Potremo nuovamente impostare la potenza (e quindi l'energia):
+$$ P = i^2 R, \quad E_r = \int_0^\infty Pdt = \int_0^\infty i^2R\,dt$$
+sostituiamo allora il valore trovato per $i$:
+$$ E_r = \int_0^\infty \left( -\frac{Q}{RC}e^{-\frac{t}{\tau}}\right)^2Rdt = \frac{1}{2}\frac{Q^2}{C}$$
+La situazione è identica a quella della carica: l'energia dissipata dal resistore durante la scarica del capacitore è uguale all'energia iniziale
+del capacitore.
 \end{document}
