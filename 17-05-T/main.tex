@@ -1,0 +1,52 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{17 Maggio 2024}
+
+\begin{document}
+\maketitle
+\section{Introduzione alla magnetostatica}
+Studiando l'elettrostatica, abbiamo dato una definizione di \textbf{campo elettrico}. Vediamo adesso un campo
+collegato al campo elettrico, il \textbf{campo magnetico}. Il campo magnetico viene generato dai \textbf{magneti},
+che possono essere magneti permanenti, oppure elettromagneti (che saranno visti nel dettaglio in seguito). 
+E' fondamentale notare che non esiste un equivalente magnetico della carica elettrica: in altre parole, 
+non esistono \textbf{monopoli} magnetici, e i magneti si presentano sempre come dipoli con un polo nord e un polo sud.
+N.B.: Il campo magnetico è un costrutto dell'elettrodinamica classica. In realtà, campo magnetico e campo elettrico
+sono manifestazioni dello stesso fenomeno attraverso punti di vista diversi. Il campo magnetico è un'effetto relativistico
+del campo elettrico, e viceversa.
+\par\smallskip
+\textbf{Forza di Lorentz} \\
+Il campo magnetico influenza le cariche elettriche, proprio come faceva il campo elettrico. La forza applicata dal
+campo magnetico $\vec{B}$ ad una carica $q$ in moto con velocità $\vec{\mathrm{v}}$ è:
+$$ \vec{F} = q\vec{\mathrm{v}} \times \vec{B}$$
+Si osserva che la forza applicata dal campo elettrico dipende sia dalla carica che dalla sua velocità. Il campo magnetico
+$\vec{B}$ si misura in Tesla ($1\mathrm{T} = 1\frac{\mathrm{N}}{\mathrm{A}\cdot\mathrm{m}}$). Notiamo che, visto
+che il prodotto vettoriale restituisce un vettore perpendicolare alla velocità della particella (e al campo magnetico),
+la forza di Lorentz non varia il \textit{modulo} della sua velocità. In altre parole, il lavoro della forza di Lorentz è nullo. \\
+Possiamo conciliare la formula della forza di Lorentz col modello di Drude-Lorentz. Iniziamo con l'esprimere la forza
+applicata su una carica $q$ da campo elettrico e campo magnetico (la cui formula sarebbe quella che prende effettivamente
+il nome di \textit{forza di Lorentz}, bensì solitamente ci si riferisce con questo nome solamente alla parte magnetica):
+$$ \vec{F} = q(\vec{E} + \vec{\mathrm{v}} \times \vec{B}) $$
+Possiamo da questo ricavare l'accelerazione che una particella immersa in un certo campo elettromagnetico subisce:
+$$ \frac{d\vec{\mathrm{v}}}{dt} = \vec{a} = \frac{q}{m}(\vec{E} + \vec{\mathrm{v}} \times \vec{B}) $$
+Possiamo quindi considerare (come avevamo già fatto nello studio della conducibilità attraverso Drude-Lorentz), due velocità medie
+$<\vec{\mathrm{v}}_i>$ e $<\vec{\mathrm{v}}_{i + 1}>$, corrispondenti rispettivamente all'attimo appena prima e appena dopo un'urto
+col reticolo metallico o con un'altra particella. Come sappiamo, quanto accade fra un'urto e un altro è effettivamente irrilevante
+in quanto le particelle continuano a muoversi di moto rettilineo uniforme, e la loro quantità di moto quindi non cambia. Si ha allora,
+stabilito un cammino libero medio $\tau$:
+$$ <\vec{\mathrm{v}_{i + 1}}>\, =\, < \vec{\mathrm{v}}_i + \frac{q\tau}{m}(\vec{E} + \vec{\mathrm{v}_i} \times \vec{B}) > \, =  \frac{q\tau}{m}(\vec{E} + \vec{\mathrm{v}_i} \times \vec{B}) $$
+come velocità media (potremo forse assimilarla alla velocità di deriva) di una particella. Dividiamo nelle due componenti:
+$$ < \vec{\mathrm{v}} > = \frac{q\tau}{m}\vec{E} + \frac{q\tau}{m}(\vec{\mathrm{v}} \times \vec{B}) $$
+Prendiamo come approssimazione che l'effetto $ \frac{q\tau}{m}(\vec{\mathrm{v}} \times \vec{B}) $ del campo magnetico
+sia molto minore dell'effetto $ \frac{q\tau}{m}\vec{E} $ del campo elettrico. Potremo allora trovare un'approssimazione di $\vec{\mathrm{v}}$:
+$$ \vec{\mathrm{v}} \approx   \frac{q\tau}{m}\vec{E} $$
+Possiamo quindi risostituire nella formula per la forza di Lorentz:
+$$ \vec{F} = q(\vec{E} + \vec{\mathrm{v}} \times \vec{B}) =  \vec{F} = q(\vec{E} +  \frac{q\tau}{m}\vec{E} \times \vec{B}) $$
+Questo ci suggerisce che l'applicazione della forza di Lorentz al modello di Drude-Lorentz fornisce a livello microscopico risultati
+consistenti con quelli che osserviamo a livello macroscopico.
+\end{document}
