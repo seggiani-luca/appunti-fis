@@ -1,0 +1,183 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{20 Maggio 2024}
+\begin{document}
+\maketitle
+\par\smallskip
+\textbf{Un caso di circuitazione del campo magnetico} \\
+Vediamo la circuitazione del campo magnetico su una spira percorsa da corrente. Prendiamo, a scopo di esempio, 
+una firma semicircolare di raggio $R$ (si considerino, se necessario, unità di misurà S.I.). Il campo
+magnetico sarà in questo caso perpendicolare alla base della semicirconferenza. Possiamo dividere
+la forza totale applicata dal campo magnetico nella forza applicata sulla parte curva della spira 
+(la semicirconferenza in sé per sé), e la forza applicata sul diametro di base:
+$$ \vec{F} = \vec{F_s} + \vec{F_d} $$
+Avevamo che, dalla forza di Lorentz:
+$$ \vec{F} = I\int_A^B dl \times \vec{B} $$
+Visto che nell'integranda compare il prodotto vettoriale con $\vec{B}$, l'unico spostamento che ci interessa è
+quello sull'asse perpendicolare a $\vec{B}$, ergo l'asse x. Abbiamo allora:
+$$ \vec{F_s} = I\int_A^B dl \times \vec{B} = 2IRB\hat{z}, \quad \vec{F_b} = I\int_A^B dl \times \vec{B} = -2IRB\hat{z} $$
+da cui:
+$$ \vec{F} = 2IRB\hat{z} - 2IRB\hat{z} = 0 $$
+Come si poteva già verificare dal fatto che il percorso della spira è chiuso (ergo circuitazione nulla per il campo magnetico).
+\par\smallskip
+\textbf{Momento di una spira} \\
+Consideriamo il caso di una spira rettangolare, di lati $a$ e $b$, immersa in un campo magnetico e percorsa da corrente. Sia l'asse verticale della spira perpendicolare
+al campo magnetico, $a$ la lunghezza dei lati verticali, $b$ la lunghezza dei lati orizzontali. La forza di Lorentz applicata sui lati
+orizzontali della spira sarà identica è diretta verso l'alto e verso il basso rispettivamente, quindi a risultante nulla. La forza di Lorentz
+applicata sui lati verticali dipenderà dalla corrente e dal campo magnetico, e tendera a ruotare la spira, allineandone la normale
+col campo magnetico nel caso di corrente positiva (antioraria guardandola con campo uscente), l'inverso nel caso di corrente negativa.
+Quantitaviamente, la forza applicata sarà, per un singolo lato di lunghezza $a$:
+$$ \vec{F} = aI \times \vec{B}, \quad F = aIB\sin{\theta} $$
+Dove $\theta$ è l'angolo formato dalla normale della spira con il campo magnetico. Da questo si ricava il momento della forza:
+$$ \vec{M} = aIB \cdot b\sin{\theta} \, \hat{z} $$
+Sulla base di questo definiamo il \textbf{momento magnetico}:
+$$ \vec{m} = AI\hat{n} $$
+Sulla normale $\hat{n}$ della spira. Attraverso il momento magnetico, possiamo ricavare il \textbf{momento meccanico} (quello calcolato prima) come:
+$$ \vec{M} = \vec{m} \times \vec{B} $$ 
+\par\smallskip
+\textbf{Piccole oscillazioni di una spira} \\
+Possiamo esprimere il momento meccanico di una spira $\hat{M}$ come la derivata del momento d'inerzia rispetto al tempo:
+$$ \vec{M} = \frac{d\vec{L}}{dt} = I\vec{\alpha} $$
+da cui, sostituendo:
+$$ I\ddot{\theta}\hat{z} = -mB\sin{\theta}\hat{z}$$
+Osserviamo che questa è un'equazione differenziale che descrive un moto armonico. Trascurando i versori, abbiamo:
+$$ \ddot{\theta} + \frac{mB}{I}\theta = 0 $$
+da cui ricaviamo pulsazione e periodo:
+$$ \omega = \sqrt{\frac{mB}{I}}, \quad T = 2\pi\sqrt{\frac{I}{mB}} $$
+\par\smallskip
+\textbf{Considerazioni energetiche sul momento di una spira} \\
+Calcoliamo l'energia potenziale della spira, posta nel campo con un certo angol $\theta$. Notiamo innanzitutto che la spira percorsa da
+corrente forma effettivamente un \textbf{dipolo magnetico}: attraverso la regola della mano destra, possiamo individuare la direzione del campo:
+ruotando le dita nella direzione della corrente sarà la direzione indicata dal pollice. Possiamo allora dire che l'energia potenziale (o il lavoro
+fatto per raggiungere tale energia potenziale) per un moto rotazionale è, analogamente a quanto avevamo definito su moti traslazionali:
+$$ dL = \vec{F} \cdot ds \sim dL = \vec{\tau} \cdot d\theta $$
+In questo il momento della forza $\tau$ sarà il momento meccanico $\vec{M} = AI\hat{n} \times \vec{B}$:
+$$ dL = AI\hat{n} \times \vec{B} \, d\theta = AI \cdot B\sin{\theta} \, d\theta $$
+Passando ad integrale si ha:
+$$ L = \int dL = \int AI \cdot B\sin{\theta} \, d\theta = -AIB \cos{\theta} $$
+Questo è in accordo col fatto che $\frac{d}{d\theta}L = \vec{\tau} = \vec{M}$:
+$$ \frac{d}{d\theta} (-AIB\cos{\theta}) = AIB\sin{\theta} = \vec{M} $$
+Notiamo che questo sistema è analogo a quello formato da un dipolo elettrico immerso in un campo elettrico. In questo,
+il momento magnetico $\vec{m} = AI\hat{n}$ equivale al momento di dipolo $\vec{p} = qd\hat{n}$, e vale $\tau = \vec{p} \times \vec{E}$.
+\par\smallskip
+\textbf{Effetto Hall} \\
+Descriviamo adesso l'effetto Hall, fenomeno che può essere usato per verificare la natura effettiva dei portatori di carica di un materiale conduttore.
+Poniamo di avere una sbarra di materiale conduttore di lunghezza arbitraria, con una differenza di potenziale fra le estremità tale da generare un campo
+elettrico (che assumeremo diretto verso destra), e quindi una corrente al suo interno. Immergiamo adesso la sbarra in un campo elettrico perpendicolare
+al campo elettrico (che assumiamo entrante). Abbiamo la densità di carica $J = nq\vec{v_d}$, dove figura la \textit{velocità di deriva} dei portatori
+di carica, e la forza di Lorentz $\vec{F} = q(\vec{E} + \vec{v} \times \vec{B})$. I portatori di carica, passando attraverso il campo magnetico, spinti dal
+campo elettrico, subiranno una spinta verso l'alto o verso il basso a seconda del loro segno. Questo porterà alla registrazione
+di una differenza di carica (e quindi di potenziale) sull'estremità superiore e inferiore della sbarra. Per la precisione, abbiamo che se i portatori
+di carica sono negativi (come nel caso degli elettroni), la parte inferiore si carica positivamente e la parte superiore negativamente, mentre se
+sono positivi (ad esempio, lacune elettroniche) abbiamo l'effetto inverso.
+\par\smallskip
+\textbf{Moto di particelle immerse in un campo magnetico} \\
+Vediamo il comportamento di particelle carice immerse in un campo magnetico, in due casi: quello dove la velocità iniziale è
+tutta perpendicolare al campo, e quello in cui la velocità iniziale possiede una componente parallela al campo.
+\begin{itemize}
+  \item \textbf{Velocità iniziale perpendicolare al campo} \\
+    Nel caso in cui una particella si trovi all'interno di un campo magnetico con una velocità $\vec{v}$ perpendicolare al campo, varrà la forza
+    di Lorentz: $\vec{F} = q\vec{v} \times \vec{B}$, diretta in direzione sempre ortogonale alla velocità della particella. In questa configurazione di
+    forze, la particella subisce un'accelerazione centripeta che la porta a descrivere una circonferenza, muovendosi di moto circolare uniforme. Possiamo
+    ricavere, raggio, pulsazione e periodo di tale moto attraverso la formula per l'accelerazione centripeta in un moto circolare uniforme:
+    $$ a = \frac{v^2}{r}, \quad ma = qvB\sin{\theta} $$
+    notiamo che $\theta = \frac{pi}{2}$ (forza sempre ortogonale alla velocità), quindi:
+    $$ a = \frac{qvB}{m}, \quad \frac{v^2}{r} = \frac{qvB}{M} $$
+    da cui si ricava:
+    $$ r = \frac{mv}{qB}, \quad \omega = \frac{v}{r} = \frac{qB}{m}, \quad v = \omega r = \frac{qBr}{m}, \quad T = \frac{2\pi}{\omega} = \frac{2\pi m}{qB} $$
+  \item \textbf{Velocità iniziale con componente parallela al campo} \\
+    Nel caso la particella iniziale presenti una velocità con componente parallela al campo, avremo che tale componente non influenzerà
+    il moto circolare. Più precisamente, potremo dire:
+    $$ \vec{v} = \vec{v}_\parallel + \vec{v}_\perp $$
+    Varranno tutte le formule precedenti, rispetto alla sola $\vec{v}_\perp$:
+    $$ r = \frac{mv_\perp}{qB}, \quad \omega = \frac{v_\perp}{r} = \frac{qB}{m}, \quad v_\perp = \omega r = \frac{qBr}{m}, \quad T = \frac{2\pi}{\omega} = \frac{2\pi m}{qB} $$
+    Mentre sull'asse parallelo si conserverà $v_\parallel$. Il moto risultante sarà quindi a traiettoria elicoidale, con pulsazione e periodo
+    uguali a quelle del caso planare. Potremo calcolare il passo dell'elica descritta dalla particella come:
+    $$ d = v_\parallel \cdot T = v_\parallel \cdot \frac{2\pi m}{qB} $$
+\end{itemize}
+\section{Legge di Biot-Savart}
+Il campo magnetico non è generato esclusivamente da magneti permanenti: nel 1819 Oersted scoprì che anche un filo percorso da corrente
+genera un campo magnetico. Un formalismo per la definizione di questo campo è dato dalla cosiddetta prima legge di Laplace, detta anche \textbf{Legge di Biot-Savart}:
+$$ d\vec{B} = \frac{\mu_0}{4\pi} \frac{Id\vec{s} \times \vec{r}}{r^2} $$
+Diamo un significato ai simboli della formula. Innanzitutto, $\frac{\mu_0}{4\pi} = k_m$ detta \textbf{costante magnetica}, è il corrispettivo
+magnetico della costante elettrica $k_e$. Si noti che in questi appunti $k_m$ viene indicata quasi sempre come $\frac{\mu_0}{4\pi}$, e la
+lettera k viene riservata alla costante elettrica. Nel caso sia necessario, si useranno esplicitamente $k_m$ e $k_e$. $\mu_0$ è la permittività
+magnetica del vuoto, corrispettivo magnetico della permettività elettrica del vuoto $\epsilon_0$, e assume il valore di $4\pi \cdot 10^{-7} \frac{\mathrm{T} \cdot \mathrm{m}}{\mathrm{A}}$, com'è di
+facile verifica dalla legge di Biot-Savart. Vediamo quindi il vettore $d\vec{s}$ e il versore $\hat{r}$. La legge di Biot-Savart si riferisce
+al campo magnetico infinitesimo $d\vec{B}$ generato da un circuito filiforme (un filo) su un certo punto ad esso esterno $\vec{P}$. A questo i punto, il vettore
+$d\vec{s}$ è l'elemento infinitesimo del filo $s$, e il versore $\hat{r}$ è il versore rivolto da $ d\vec{s}$ al punto $\vec{P}$. A questo punto abbiamo
+quindi che il campo magnetico generato da un filo sui punti circostanti ha la forma di circonferenze concentriche al filo, che ruotano in senso antiorario rispetto alla direzione
+di scorrimento della corrente (come dalla legge della mano destra), e diminuisce come l'inverso del quadrato della distanza. Inoltre, possiamo calcolare il contributo sul campo di ogni elemento infinitesimale $d\vec{s}$, prendendo
+l'integrale:
+$$ \vec{B} = \frac{\mu_0 I}{4\pi} \int \frac{d\vec{s} \times \hat{r}}{r^2} $$
+\par\smallskip
+\textbf{Applicazioni di Biot-Savart} \\
+Vediamo adesso l'applicazione della legge di Biot-Savat (prima formula di Laplace) ad alcune distribuzioni circuitali:
+\begin{itemize}
+  \item \textbf{Campo magnetico generato da un filo rettilineo} \\
+    Vediamo il caso più semplice: quello di un filo conduttore attraversato da una corrente $I$, che genera un campo magnetico in un certo punto $\vec{P}$.
+    Tracciamo i segmenti che si staccano dal filo con angolo $\theta$ (sempre orientato nella stessa direzione) dagli estremi di un segmento di lunghezza $2s$ e centro coincidente
+    con $d\vec{s}$, e raggiungono il punto $\vec{P}$. Questa situazione non è dissimile da quella che abbiamo studiato per cercare il campo elettirico generato da un filo uniformemente
+    carico. Possiamo quindi applicare Biot-Savart per il calcolo dell'elemento infinitesimo di campo:
+    $$ d\vec{B} = \frac{\mu_0}{4\pi} \frac{Id\vec{s} \times \vec{r}}{r^2} $$
+    Iniziamo col notare che il prodotto vettoriale fra $d\vec{s}$ e $\hat{r}$ è uguale a:
+    $$ d\vec{s} \times \hat{r} = ds \sin{\theta} $$
+    essendo $\pi - \theta$ uguale all'angolo compreso fra $d\vec{s}$ e $\hat{r}$, e:
+    $$ \sin{\theta} = \sin{(\pi - \theta)} $$
+    Adesso dobbiamo trovare il valore di $d\vec{s}$ e $r$.
+    Iniziamo con $d\vec{s}$. Notiamo che il rapporto fra $R$ e l'elemento di lunghezza $s$ è uguale alla tangente di $\frac{\pi}{2} - \theta$:
+    $$ \frac{R}{s} = \tan{\left(\frac{\pi}{2} - \theta\right)} = \cot{\theta} $$
+    e quindi:
+    $$ \frac{R}{s} = \cot{\theta} \Rightarrow \frac{s}{R} = \frac{1}{\cot{\theta}} = \tan{\theta}, \quad s = R\tan{\theta} $$
+    derivando da entrambe le parti, con un po' di calcolo discutibile, abbiamo:
+    $$ \frac{ds}{d\theta} = \frac{d}{d\theta} R\tan{\theta} = \frac{R}{\sin^2{\theta}} \Rightarrow ds = \frac{Rd\theta}{\sin^2{\theta}} $$
+    abbiamo un'espressione di $ds$. Troviamo quindi $r$, notando che:
+    $$ r\sin{\theta} = R, \quad r = \frac{R}{\sin{\theta}} $$
+    Possiamo adesso sostituire nella legge di Biot-Savart:
+    $$ d\vec{B} = \frac{\mu_0I}{4\pi} \frac{Rd\theta}{\sin^2{\theta}} \frac{\sin^2{\theta}}{R^2} = \frac{\mu_0 I}{4\pi R} \sin{\theta} \, d\theta $$
+    Questo si presta all'integrazione del termine $\sin{\theta}\,d\theta$, per trovare il campo generato da un filo di lunghezza arbitraria. Per il filo
+    la cui lunghezza è determinato da un certo angolo $\theta'$ che si stacca dal filo conduttore, si ha:
+    $$ \vec{B} =  \frac{\mu_0 I}{4\pi R} \int_{\theta'}^{\pi - \theta'} \sin{\theta} \, d\theta =  \frac{\mu_0 I}{4\pi R} \Big| -\cos{\theta} \Big|^{\pi - \theta'}_{\theta'}  =  \frac{\mu_0 I}{2\pi R}\cos{\theta'} $$
+    Per un filo di lunghezza arbitraria $2s$ possiamo porre $\tan{\theta'} = \frac{R}{s}$. Il caso di interesse sarà però quello
+    di un filo di lunghezza infinita. In questo caso l'angolo $\theta'$ tenderà a $0$, e si avrà:
+    $$ \vec{B} = \frac{\mu_0I}{2\pi R} = k_m \frac{2I}{R}$$
+    Notiamo le similiarità col campo generato da un filo uniformemente carico:
+    $$ \vec{E} = \frac{\lambda}{2\pi\epsilon_0 R} $$
+  \item \textbf{Campo magnetico generato da una spira} \\
+    Studiamo adesso il campo magnetico generato da una spira circolare di raggio $R$. Anche qui, il caso è analogo a quanto avevamo già visto riguardo
+    al campo elettrico generato da una distribuzione simile. Poniamo $\theta$ come l'angolo che collega un punto sulla circonferenza a $\vec{P}$, punto a distanza
+    $x$ dal centro della spira. Potremo nuovamente prendere in considerazione Biot-Savart:
+    $$ d\vec{B} = \frac{\mu_0}{4\pi} \frac{Id\vec{s} \times \vec{r}}{r^2} $$
+    Vediamo quindi che l'elemento $d\vec{s}$ e il versore $\hat{r}$ sono sempre perpendicolari, ergo:
+    $$ d\vec{s} \times \hat{r} = ds $$
+    Noto l'angolo $\theta$, l'elemento di campo si ridurrà a:
+    $$ d\vec{B} = \frac{\mu_0}{4\pi} \frac{ds}{r^2}\cos{\theta} $$
+    Basterà quindi trovare $r$ e $\cos{\theta}$. Per quanto riguarda $r$, ricaviamo con Pitagora:
+    $$ r^2 + R^2 + x^2 $$
+    Mentre per $\cos{\theta}$, calcoliamo direttamente dal rapporto fra il raggio e la distanza $r$ appena trovata:
+    $$ \cos{\theta} = \frac{R}{\sqrt{R^2 + x^2}} $$
+    Sostituendo in Biot-Savart, abbiamo:
+    $$ d\vec{B} = \frac{\mu_0 I}{4\pi} \frac{ds}{R^2 + x^2} \frac{R}{\sqrt{R^2+x^2}} = \frac{\mu_0I}{4\pi} \frac{R}{(R^2+x^2)^{\frac{3}{2}}}ds $$
+    Passiamo alla versione integrale per trovare il campo totale, notando che $ds$ è l'elemento di una circonferenza di raggio $R$.
+    $$ \vec{B} = \frac{\mu_0I}{4\pi} \frac{R}{(R^2+x^2)^{\frac{3}{2}}}\int ds = \frac{\mu_0I}{4\pi} \frac{R}{(R^2+x^2)^{\frac{3}{2}}} 2\pi R = \frac{\mu_0IR^2}{2(R^2+x^2)^{\frac{3}{2}}} $$
+    Da questo risultato possiamo ricavare il camp magnetico in un punto esattamente interno alla spira:
+    $$ \vec{B}_0 = \frac{\mu_0I}{2R} $$
+    e un'approssimazione per raggi molto piccoli (o distanze molto grandi):
+    $$ x >> a \Rightarrow B \approx \frac{\mu_0IR^2}{2R^3} $$
+    per un momento magnetico (corrente per area, $\mu = I(\pi R^2)$) $\mu$ avremo:
+    $$ \vec{B} = \frac{\mu_0}{2\pi} \frac{\mu}{R^3}$$
+    che notiamo essere consistente con il campo generato da un dipolo:
+    $$ \vec{E} = \frac{2kp}{R^3} $$
+    Questo è naturale, in quanto una spira in corrente è effettivamente un dipolo magnetico. Si potrebbe
+    adesso porre la questione di come mai, visto che il campo generato da un magnete qualsiasi (ergo un dipolo) decade
+    come $\frac{1}{R^3}$, nella legge di Biot-Savart figura il termine $\frac{1}{R^2}$. Si può dire che sebbene il contributo
+    di ogni segmento infinitesimo della distribuzione filiforme decada come $\frac{1}{R^3}$, il loro contributo collettivo va
+    come $\frac{1}{R^2}$.
+\end{itemize} 
+\end{document}
