@@ -1,0 +1,92 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{23 Maggio 2024}
+
+\begin{document}
+\maketitle
+\textbf{Campo generato da un solenoide} \\
+Prendiamo in considerazione un solenoide ottenuto avvolgendo un filo conduttore attorno a un anima (in molti casi magnetica, ma che ora trascureremo). Possiamo analizzare il solenoide immaginandolo come una distribuzione continua di spire,
+di cui avevamo già calcolato il campo prodotto. Definiamo allora alcuni dati. Innanzitutto, si ha la densità di spire:
+$$ n = \frac{N}{l} $$
+che rappresenta il rapporto fra il numero di spire $N$ e la lunghezza del solenoide $l$. Come semplificazione, assumeremo una distribuzione continua di spire, senza quindi studiare gli effetti dati da una loro distribuzione discreta.
+Questa è un'approssimazione comunque abbastanza accurata in quanto solitamente i solenoidi sono ottenuti attraverso numerosi avvoglimenti del filo. Inoltre non terremo conto di eventuali effetti di bordo.
+Possiamo quindi chiamare $R$ il raggio del solenoide, $d$ la sua lunghezza, e $I$ la
+corrente che lo attraversa. Prendiamo allora un punto $P$ esattamente al centro del solenoide, cioè ad esso assiale e distante $\frac{d}{2}$ dai capi. Sarà poi utile considerare uno spostamento infinitesimo $ds$, e lo spostamento dall'origine $s$.
+Conviene utilizzare un sistema di angoli, com'era stato fatto per altre distribuzioni di corrente. Prendiamo quindi due angoli, $\theta_1$ e $\theta_2$, formati da vettori di lunghezza $r$ e l'asse del solenoide, che sottendono
+una certa porzione di solenoide di lunghezza $2s$. A questo punto lo spostamento $s$ è semplicemente la base di uno dei triangoli rettangoli formati dagli angoli $\theta$, la cui altezza sarà $R$ e l'ipotenusa $r$. Potremo quindi prendere
+il campo generato da una spira e porlo  come elemento infinitesimo del campo totale del solenoide:
+$$ d\vec{B} = \frac{\mu_0 dI R^2}{2(R^2+s^2)^{\frac{3}{2}}} $$
+Dovremo trovare una definizione in funzione di $\theta$ di quest'espressione. Iniziamo con la corrente. Si ha, dalla densità di spire, che:
+$$ dI = \frac{N}{L}I\, ds= nI\,ds $$
+Troviamo quindi una relazione fra $R$ e $r$. Dalle proprietà dei triangoli rettangoli, potremo dire semplicemente:
+$$ R = r\sin{\theta} $$
+e, riguardo a $s$:
+$$ s = r\cos{\theta} $$
+Da cui possiamo ricavare $ds$:
+$$ \frac{ds}{d\theta} = \frac{d}{d\theta} r\cos{\theta} = \frac{d}{d\theta} \frac{R}{\sin{\theta}}{\cos{\theta} = \frac{d}{d\theta} R\cot{\theta}} = \frac{Rd{\theta}}{\sin^2{\theta}}$$
+Notiamo che in questo calcolo abbiamo trascurato il segno (nell'ultima derivata). Questo è sbagliato ma non si ripercuote in errori definitivi in quanto la simmetria del sistema studiato non necessita di particolari considerazioni di segno.
+Possiamo quindi sostituire:
+$$ d\vec{B} = \frac{\mu_0 dI R^2}{2(R^2+s^2)^{\frac{3}{2}}} = \frac{\mu_0 n I ds R^2}{2(R^2+x^2)^{\frac{3}{2}}} = \frac{\mu_0 n I R^3d\theta}{2\sin^2{\theta}(R^2+x^2)^{\frac{3}{2}}} $$
+$$ = \frac{\mu_0 n I r^3 \sin^3{\theta}d\theta}{2\sin^2{\theta}(r^2\sin^2{\theta} + r^2\cos^2{\theta})^{\frac{3}{2}}} = \frac{\mu_0 n I r^3 \sin^3{\theta}d\theta}{2\sin^2{\theta}r^3} = \frac{\mu_0 n I}{2}\sin{\theta}\,d\theta $$
+Possiamo quindi calcolare il campo completo in un punto interno al solenoide attraverso l'integrale:
+$$ \int_{\theta_1}^{\theta_2} \frac{\mu_0 n I}{2}\sin{\theta}\,d\theta = \frac{\mu_0 n I}{2}(\cos{\theta_1} - \cos{\theta_2}) $$
+Abbiamo adesso che, osservando il triangolo rettangolo costruito, e assumendo un punto centrale al solenoide:
+$$ \cos{\theta} = \frac{\frac{d}{2}}{\sqrt{\left(\frac{d}{2}\right)^{\frac{3}{2}} + R^2}}  $$
+da cui:
+$$ B = \frac{\mu_0 n I}{2}\left(  \frac{d}{\sqrt{\left(\frac{d}{2}\right)^{\frac{3}{2}} + R^2}} \right) = \mu_0 n I \left( \frac{d}{\sqrt{d^2 + 4R^2}} \right)$$
+Che è la formula del campo al centro di un solenoide. Ora, molto spesso è conveniente considerare un solenoide dove la lunghezza è considerevolmente maggiore del raggio, ergo si può ossumere $\cos{\theta_1} - \cos{\theta_2} = 2$, da cui:
+$$ B = \mu_0 n I$$
+Che è la formula più comune per il campo di un solenoide.
+\par\smallskip
+\textbf{Forza magnetica fra conduttori paralleli} \\
+La forza magnetica fra due fili conduttori paralleli può essere calcolata attraverso l'espressione ricavata dalla legge di Biot-Savart sul campo magnetico $\vec{B}$ generato da un filo conduttore di lunghezza infinita:
+$$ \vec{B} = \frac{\mu_0 I}{2\pi R} $$
+assieme a quanto avevamo dimostrato, attraverso l'applicazione del modello di Drude-Lorentz alla forza di Lorentz, riguardo la forza magnetica su fili conduttori:
+$$ \vec{F} = q(\vec{V} \times \vec{B}) = I\vec{l} \times \vec{B}$$
+Chiamiamo le lunghezza dei due fili $l$ (questo torna utile a definire una \textit{"densità lineare di forza"}) e le loro correnti $I_1$ e $I_2$. Si avrà che il filo 1 esprime una forza sul filo 2 pari a quella che il filo 2 esprime sul filo 1. Prendendo uno solo di questi casi,
+ad esempio la forza esercitata dal filo 2, abbiamo che il filo 1 risente della forza di Lorentz del campo generato dal filo 2 nella sua posizione. Questa forza è identica per ogni elemento infinitesimo del filo
+(in quanto i fili sono paralleli, ergo la distanza $R$ non cambia). Si ha quindi, dall'applicazione delle due formule riportate sopra:
+$$ F_1 = I_1l\left(\frac{\mu_0 I_2}{2\pi R}\right) = l \frac{\mu_0 I_1I_2}{2\pi R} $$
+Visto che come abbiamo detto le forze esercitate dai due fili sono identiche, si può dire:
+$$ \frac{F}{l} = \frac{\mu_0 I_1I_2}{2\pi R} $$
+Notiamo che la forza è attrattiva nel caso in cui le correnti scorrano nella stessa direzione, repulsiva in caso contrario (questo si dimostra facilmente con la legge della mano destra, magari evitando di usare la mano sinistra
+nel ruolo del secondo filo, in quanto sinistra $\neq$ destra).
+\section{Legge di Ampere}
+La legge di Ampere riguarda la circuitazione del campo magnetico su un percorso chiuso. Abbiamo dimostrato, con Biot-Savart, che il campo magnetico $\vec{B}$ generato da un filo conduttore di lunghezza infinita è:
+$$ \vec{B} = \frac{\mu_0 I}{2\pi R} $$
+Questo significa che le linee di campo magnetico sono circonferenze concentriche al filo di raggio via via maggiore. La circuitazione di un percorso nel campo magnetico è quindi dipendente dalla sola componente tangenziale
+alla circonferenza. Possiamo quindi scrivere, presi due punti $A$ e $B$ intorno ad un filo conduttore in corrente:
+$$ \int_A^B \vec{B} \cdot d\vec{s} = \int_A^B \frac{\mu_0I}{2\pi R}ds = \frac{\mu_0 I}{2\pi R}R\theta = \frac{\mu_0 I \theta}{2\pi} $$
+Possiamo poi dire che qualsiasi percorso chiuso che concatena la corrente del filo (cioè che la contiene nella sua superficie sottesa)
+riceve un contributo sulla sua circuitazione che è in ogni punto uguale al suo spostamento tangenziale al filo (la componente radiale ha circuitazione nulla):
+$$ \int_{A=B} \vec{B} \cdot d\vec{s} = \frac{\mu_0 I}{2\pi R}(2\pi R) = \mu_0 I $$
+Questo risultato prende il nome di \textbf{legge di Ampere}:
+$$ \int \vec{B} \cdot d\vec{s} = \mu_0 I_{conc} $$
+Ergo, la circuitazione su un qualsiasi percorso chiuso del campo magnetico equivale alla corrente concatenata totale per le permittività magnetica. Questo risultato può essere riformulato, più formalmente, attraverso
+il teorema di Stokes. Sappiamo da Stokes che la circuitazione su una curva è uguale al flusso del rotore sulla superficie sottesa. Questo significa che:
+$$ \int_r \vec{B} \cdot d\vec{s} = \int_s \nabla \times \vec{B} d\vec{A} = \mu_0 I = \mu_0 \int_s \vec{J} \cdot d\vec{A}, \quad \nabla \times \vec{B} = \mu_0 J$$
+Ovvero il rotore del campo magnetico è direttamente proporzionale alla densità di corrente. Questo risultato è una delle equazioni di Maxwell.
+\par\smallskip
+\textbf{Calcolo del campo magnetico generato da un filo con Ampere} \\
+Possiamo applicare la legge di Ampere nel calcolo del campo magnetico generato da un filo conduttore di raggio $R$ e percorso da una corrente $I$ ad una distnaza $r$. Sfruttiamo la simmetria radiale del sistema
+e calcoliamo il campo sia per $r > R$ che per $r < R$. Avremo che, per $r > R$, varrà la legge di Ampere su una curva contenente il filo, come:
+$$ \int \vec{B} \cdot d\vec{s} = \mu_0 I = B\int ds $$
+Visto che gli unici contributi dell'infinitesimo $d\vec{s}$ di curva sono quelli tangenziali. Possiamo allora notare che $\int ds = 2\pi r$ su una curva chiusa di raggio $r$, ergo:
+$$ B \int ds = B 2\pi r = \mu_0 I, \quad B = \frac{\mu_0 I}{2\pi r} $$
+Che è identico a quanto trovato applicando Biot-Savart. \\
+Per quanto riguarda distanze $r < R$, sarà prima necessario trovare un rapporto fra la carica concatenata dal percorso chiuso interno $\frac{I'}{I}$. Possiamo per questo applicare la definizione di corrente sulla base di densità
+di corrente:
+$$ I = J \cdot A $$
+Notando che le aree della superficie del filo $A$ e della superficie sottesa al percorso chiuso $A'$ sono:
+$$ A = \pi R^2, \quad A' = \pi r^2 $$
+Ergo si ha:
+$$ \frac{I'}{I} = \frac{J\pi r^2}{J\pi R^2}, \quad I' = \frac{r^2}{R^2}I $$
+Sostituendo nell'equazione di prima, e ricordando $\int ds = 2\pi r$, si ha:
+$$ B \int ds = B 2\pi r = \mu_0 \left( \frac{r^2}{R^2}I \right), \quad B = \frac{\mu_0 I r}{2\pi R^2} $$
+\end{document}

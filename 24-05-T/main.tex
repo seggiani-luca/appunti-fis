@@ -1,0 +1,116 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{24 Maggio 2024}
+
+\begin{document}
+\maketitle
+\par\smallskip
+\textbf{Campi solenoidali} \\
+Parliamo brevemente dal campo magnetico. Si ha che la divergenza del campo magnetico è uguale a zero (non esistono monopoli magnetici).
+Questo significa che per ogni superficie (non chiusa) nel campo magnetico, la circuitazione sul bordo dipende solamente dalle correnti
+concatenate. Campi di questo tipo si dicono campi solenoidali:
+$$ \nabla \cdot \vec{B} = 0 $$
+\par\smallskip
+\textbf{Campo generato dal solenoide con Ampere} \\
+Si può usare la legge di ampere per calcolare il campo magnetico generato da un solenoide. Si ha che:
+$$ \vec{B} = \mu_0 I_{conc} $$
+Prendiamo allora un solo lato del solenoide, dove tutte le correnti scorrono nello stesso verso. Definiamo
+una curva chiusa, detta $\gamma$, che contiene N di queste spire, di altezza $h$ e lunghezza $l$. Avremo
+che la circuitazione lungo $\gamma$:
+$$ \int_\gamma \vec{B} \cdot d\vec{l} = \vec{B} \cdot l = \mu_0 n I, \quad B = \mu_0 n I$$
+che è esattamente quanto avevamo trovato con Biot-Savart. Il campo dipende solamente da $l$ (nemmeno da $2l$) in quanto
+l'unica parte della linea $\gamma$ immersa nel campo, tutto interno al solenoide, è quella di lunghezza $l$.
+Notiamo infine che questo campo, idealmente, è tutto interno (il solenoide, tendendo in lunghezza ad infinito,
+"scherma" il campo magnetico interno), ergo si può dire che l'espressione appena trovata rappresenta, per un solenoide
+disposto sull'asse x:
+$$ \mu_0nI \hat{x} = \vec{B}(y,z)  \theta(R_|\sqrt{y^2+z^2}|)$$
+Dove $\theta$ è la funzione gradino di Heaviside (qui serve solo ad annullare il campo fuori dal solenoide).
+\par\smallskip
+\textbf{Campo generato da un solenoide toroidale} \\
+Poniamo il caso di un solenoide formato da una filo avvolto attorno a un anima toroidale. Avremo che il campo magnetico è interno
+alle spire e circolare, ergo:
+$$ \vec{B} = B(r)\hat{\theta} $$
+Considerando i versori $\hat{\theta}$ e $\hat{r}$ tangenziali e radiali alla circonferenza. Prendiamo, come prima, un percorso
+chiuso $\gamma$: ad esempio una linea chiusa contenuta all'interno delle spire. Avremo che la circuitazione lungo tale curva è:
+$$ \int_\gamma \vec{B} \cdot d\vec{l} = 2\pi r B = \mu_0 I N, \quad B = \mu_0I\frac{N}{2\pi R} $$
+Possiamo seguire la forma del campo generato da un solenoide rettilineo definendo una certa "densità radiale di spire" $n' = \frac{N}{2\pi r}$:
+$$ \vec{B} = \mu_0 n' I $$
+\section{Legge di Faraday}
+Finora abbiamo visto come le correnti elettriche generano campi magnetici. Vedremo adesso che è vero, in qualche
+modo anche il contrario: una variazione del flusso magnetico genera corrente.
+\par\smallskip
+\textbf{Flusso magnetico} \\
+Avevamo visto la relazione fra il flusso del campo magnetico e la sua circuitazione stabilita dalla legge di Ampere, ovvero
+come la circuitazione del campo magnetico dipende dalle correnti concatenate al percorso chiuso scelto. Questo significa
+che il flusso del campo su una superficie chiusa è nullo ($\int_\Sigma \vec{B} \cdot d\vec{A} = 0$ su $\Sigma$ chiusa).
+Questo però non significa che sia nullo il flusso su una qualsiasi superficie. In particolare, potremo dire riguardo
+a superfici piane di area $A$ immerse in campi (almeno localmente) uniformi:
+$$ \int \vec{B} \cdot d\vec{A} = BA\cos{\theta} $$
+dove $\theta$ è l'angolo fra la normale della superficie $A$ e la direzione del campo $B$. L'unita di misura del flusso nel sistema
+S.I. è il Weber (Wb), definito come $ 1 \mathrm{Wb} = \mathrm{T} \cdot \mathrm{m}^2 $.
+\par\smallskip
+\textbf{Legge dell'induzione di Faraday} \\
+Su un qualsiasi circuito chiuso, si ha che viene indotta una forza elettromotrice all'opposto della variazione del flusso all'interno
+della superficie sottesa al circuito:
+$$ \mathcal{E} = - \frac{d\Phi_B}{dt} $$
+Questa $\mathcal{E}$, a sua volta, genera una corrente all'interno del circuito. Il segno negativo è dato da una conseguenza
+della conservazione dell'energia: il verso della corrente corrisponde alla generazione di un campo magnetico che si oppone alla variazione
+di flusso che induce la corrente stessa. Questo risultato prende il nome di \textbf{legge di Lenz}. La legge di Faraday, riguardo alla generazione
+di una forza elettromotrice, può essere applicato anche a circuiti non chiusi, e anzi vale su qualsiasi regione dello spazio
+delimitata da una linea chiusa. Chiaramente, si sperimenta una corrente solo nel caso il circuito sia chiuso.
+\par\smallskip
+\textbf{Generatori e motori elettrici} \\
+Il principio dell'induzione elettrica può essere usato per costruire generatori e motori elettrici. Un semplice generatore
+può essere costruito da una spira messa in rotazione all'intero di un campo magnetico costante (rotore e statore). La spira rotante è collegata
+ad un circuito mediante delle spazzole, che vanno a chiudere un circuito entrando in contatto con un commutatore. La presenza
+del commutatore è resa necessaria se si vuole generare corrente continua. Nel caso si voglia generare corrente alternata,
+il commutatore sarà sostituito da due collettori rotanti in presa continua con le spazzole, e si parlerà quindi di alternatore.
+Vediamo una decrizione quantitativa più dettagliata della fisica dietro il funzionamento di generatori e alternatori:
+\begin{itemize}
+  \item \textbf{Generatore di corrente continua} \\
+    Si ha che il flusso attraverso la spira, dalla definizione di flusso su un campo magnetico uniforme, è:
+    $$ \Phi_b = BA\cos{\theta} = BA\cos{\omega t}$$
+    Dove la posizione angolare $\theta$ è dato dalla velocità angolare $\omega$ con cui si muove il rotore. A
+    questo punto potremo usare la legge di Faraday per calcolare la forza elettromotrice esercitata sulla spira
+    dalla variazione di flusso:
+    $$ \mathcal{E} = |-N \frac{d}{dt}BA\cos{\omega t}| = NBA\omega |\sin{\omega t}| $$
+    dove si è introdotto un termine $N$ per indicare eventuali avvoglimenti multipli della spira (nella realtà
+    non si parlerà tanto di spire quanto di bobine), e il valore assoluto per rappresentare il verso
+    della corrente forzato dal commutatore. La funzione di $t$ della fem avrà la forma di una sinusoide rettificata.
+    Dall'equazione possiamo quindi ricavare il valore massimo della fem:
+    $$ \mathcal{E}_{max} = NBA\omega $$
+    e sapere che tale valore viene raggiunto per $\omega t = \frac{\pi}{2} + k\pi $, mentre per $\omega t  = k\pi$
+    la fem è nulla.
+  \item \textbf{Generatore di corrente alternata} (alternatore) \\
+    Come prima, si ha flusso:
+    $$ \Phi_b = BA\cos{\theta} = BA\cos{\omega t}$$
+    E forza elettromotrice:
+    $$ \mathcal{E} = -N \frac{d}{dt}BA\cos{\omega t} = NBA\omega \sin{\omega t} $$
+    Da questa equazione possiamo, come prima, ricavare il valore massimo della fem:
+    $$ \mathcal{E}_{max} = NBA\omega $$
+    e sapere che tale valore viene raggiunto per $\omega t = \frac{\pi}{2} + k\pi $, mentre per $\omega t  = k\pi$
+    la fem è nulla. Il tipo di corrente generata da un'alternatore si chiama \textbf{corrente alternata}. La corrente
+    alternata è caratterizzata dal variare nel tempo della sua direzione, secondo una funzione sinusoidale. La frequenza
+    avrà quindi il valore $f = \frac{\omega}{2\pi}$, dove $\omega$ sarà la velocità angolare del generatore (o più in
+    generale la pulsazione).
+\end{itemize}
+Un motore elettrico (o almeno un certo tipo di motore elettrico, detto \textit{brushed} per distinguerlo dai modelli \textit{brushless}, senza spazzole)
+è effettivamente un generatore al contrario: invece di applicare un momento che porti il rotore
+a ruotare con velocità angolare $\omega$, si dà corrente alla spira in modo che la forza di Lorentz la porti a ruotare.
+Si ha che, per la legge di Lenz, la rotazione della spira porta alla formazione di una forza sulla spira che si oppone
+alla variazione del flusso magnetico, e quindi della forza elettromotrice che aveva creato la corrente di partenza. Questa
+forza prende il nome di \textit{forza controelettromotrice}, e influenza la corrente totale all'interno della spira:
+$$ \mathcal{E}_{opp.} = NBA\omega $$
+Visto che la corrente all'interno di un circuito dipende dalla sua resistenza $R$, e che la resistenza totale all'interno di un motore
+\textit{in rotazione} è aumentata dalla presenza della forza controelettromotrice, si deve allora fornire al motore una forza elettromotrice
+maggiore di quella che sarebbe bastata a creare la stessa corrente senza tale effetto.
+Si noti che, si dovesse fermare il motore, la corrente potrebbe crescere a livelli inaspettati senza più l'effetto della forza controelettromotrice.
+Questo è il motivo per cui un motore elettrico bloccato tende a surriscaldarsi.
+\end{document}
+

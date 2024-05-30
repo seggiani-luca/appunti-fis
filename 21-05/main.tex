@@ -1,0 +1,35 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Fisica I}
+\author{Luca Seggiani}
+\date{21 Maggio 2024}
+
+\begin{document}
+\maketitle
+\par\smallskip
+\textbf{Energia cinetica nel moto di puro rotolamento} \\
+L'energia cinetica di un corpo in puro rotolamento può essere trovata con un polo all'origine, o (in modo molto più conveniente) con un polo al punto di contatto:
+questo perché il punto di contatto è effettivamente fermo, e la forza di attrito statico non compie lavoro. Abbiamo quindi 
+$$ K = \frac{1}{2}I_p\omega^2 = \frac{1}{2} I_{CM}\omega^2 + \frac{1}{2}Mv_{CM}^2 $$
+Possiamo notare l'uguaglianza delle due forme attraverso Steiner-Huygens:
+$$ I_p = I_{CM} + MR^2$$
+Da cui:
+$$ \frac{1}{2}I_p\omega^2 = \frac{1}{2}(I_{CM} + MR^2)\omega^2 = \frac{1}{2}I_{CM}\omega^2 + \frac{1}{2}MR^2\omega^2 = \frac{1}{2}I_{CM}\omega^2 + \frac{1}{2}Mv_{CM}^2 $$
+che è uguale a prima.
+
+\par\smallskip
+\textbf{Teorema dell'impulso o del momento dell'impulso} \\
+Sappiamo che all'applicazione di una forza impulsiva $\vec{F}$ in un tempo molto ristretto $t - t_0 = \tau$ comporta
+una variazione di quantità di moto:
+$$ \vec{I} = \int_{t_0}^t \vec{F}dt' = \Delta \vec{P} = \vec{P}(t) - \vec{P}(t_0) $$
+Analogamente, possiamo definire rispetto al momento delle forze l'impulso angolare:
+$$ \vec{J} = \int_{t_0}^t \vec{\tau}dt' = \Delta \vec{L} = \vec{L}(t) - \vec{L}(t_0) $$
+Impulso e impulso angolare sono legati dal \textbf{teorema del momento dell'impulso}:
+$$ \vec{J} = \vec{r} \times \vec{I} $$
+Questo significa che, con un applicazione a $r$ raggio diverso da zero, una forza impulsiva comporta anche una
+variazione del momento angolare.
+\end{document}

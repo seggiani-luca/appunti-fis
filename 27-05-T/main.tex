@@ -1,0 +1,144 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[french,italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\frenchspacing 
+\title{Appunti Fisica I}
+\author{Luca Seggiani}
+\date{27 Maggio 2024}
+
+\begin{document}
+\maketitle
+\par\smallskip
+\textbf{F.e.m. nei circuiti in moto} \\
+Studiamo il caso di un circuito comune, dove lo spostamento di un segmento di circuito comporta la generazione di una forza elettromotrice. Supponiamo quindi di avere due rotaie collegate fra di loro su un estremo,
+e unite da una sbarra libera di scorrere sull'altro. Le rotaie distano fra di loro $l$, e la distanza fra un'estremo del circuito e la sbarra in movimento è $a$. Inoltre, circuito ha una resistenza complessiva $R$, 
+ed è immerso in un campo magnetico $B$ uscente ed uniforme. Un agente esercita una forza $\vec{F}_{est}$ costante sulla sbarra, in modo da mantenerla ad una velocità trasversa costante $\vec{\mathrm{v}}_\perp$, allontanandola dal circuito.
+Avremo, dalla forza di Lorentz, che inizialmente i portatori di carica all'interno della sbarretta verrano sottoposti ad una forza $\vec{F_B} = q\vec{V} \times \vec{B}$. Questa forza genererà sulla sbarra un campo elettromotore:
+$$ \vec{E}_{em} = \frac{\vec{F}}{q} = \frac{q\mathrm{v}_\perp B}{q} = \mathrm{v}_\perp B $$
+La forza elettromotrice indotta complessiva equivarrà all'integrale di linea del campo elettromotore sulla zona interessata (cioè la spira):
+$$ \mathcal{E}_{ind} = \int \vec{E}_{em} \, dl = E_{em} l = B l \mathrm{v}_\perp $$
+Questa equivale alla differenza di potenziale fra gli estremi della sbarra, che possiamo ricavare dalla formula valida per campi uniformi:
+$$ \Delta V = E l = E_{em} l = B l \mathrm{v}_\perp$$
+Nel circuito si forma quindi una corrente che vale, per la legge di Ohm:
+$$ I = \frac{\Delta V}{R} = \frac{\mathcal{E}_{ind}}{R} = \frac{Bl \mathrm{v}_\perp}{R} $$
+Possiamo arrivare allo stesso risultato attraverso la legge di Faraday, trovando prima di tutto il flusso del capo sulla superficie interna al circuito:
+$$ \Phi_B = Bla $$
+e imponendo quindi:
+$$ \mathcal{E}_{ind} = -\frac{d\Phi_B}{dt} = -\frac{d}{dt} Bla = -Bl \frac{da}{dt} = -Bl\mathrm{v}_\perp $$
+dove notiamo che la derivata di a rispetto al tempo non è altro che la velocità trasversa $\vec{\mathrm{v}}_\perp$.  Il risultato è lo stesso, e la stessa è anche la corrente:
+$$ I =\frac{|\mathcal{E}_{ind}|}{R} = \frac{Bl\mathrm{v}_\perp}{R} $$
+\par\smallskip
+\textbf{Considerazioni sulla potenza} \\
+Si possono fare considerazioni interessanti sulla potenza generata dall'agente (potenza meccanica) e fatta passare attraverso la resistenza $R$ (potenza elettrica). Iniziamo col dire che, una volta stabilita una corrente che circola all'interno del circuito,
+la forza di Lorentz sulla sbarretta (ergo la forza che l'agente dovrà vincere per mantenere la sbarretta in moto con velocità $\vec{\mathrm{v}}_\perp$) sarà:
+$$ \vec{F_B} = I \vec{l} \times \vec{B} $$
+Possiamo quindi calcolare la potenza generata dalla forza esterna $\vec{F}_{est}$, uguale e opposta alla forza magnetica $\vec{F}_B$ ($\vec{F}_{est} = \vec{F}_B$), considerando che dalla definizione:
+$$ [P] = \frac{[L]}{[t]} = \frac{[F][s]}{[t]} = [F] \frac{[s]}{[t]} = [F][v] $$
+da cui si ha che la potenza meccanica è:
+$$ P_{mecc.} = IlB \mathrm{v}_\perp = \frac{Bl\mathrm{v}_\perp}{R} lB \mathrm{v}_\perp = \frac{B^2l^2\mathrm{v}_\perp^2}{R} $$
+Avevamo invece definito la potenza elettrica, attraverso la legge di Ohm, come:
+$$ P_{el.} = I^2R = \left(\frac{Bl\mathrm{v}_\perp}{R}\right)^2 R = \frac{B^2l^2\mathrm{v}_\perp^2}{R} $$
+da cui:
+$$ P_{mecc.} = P_{el.} $$
+Si ha un risultato importante: potenza meccanica e potenza elettrica corrispondono. L'energia che l'agente usa per spostare la sbarra è trasferita alla resistenza, che la trasforma a sua volta in calore.
+\par\smallskip
+\textbf{Potenza e momento di dipolo} \\
+Vediamo un'ulteriore intuizione sull'equivalenza fra energia meccanica ed energia elettrica. Si aveva, riguardo ad una spira immersa in un campo magnetico,
+che il momento meccanico su di essa generato valeva $\vec{M} = \vec{m} \times \vec{B} =  IAB\sin{\theta}$, e il potenziale $U = -\vec{m} \cdot \vec{B} = -IAB\cos{\theta}$, definito il momento magnetico $\vec{m} = IA\hat{n}$.
+A questo punto, la potenza non è altro che la derivata dell'energia (potenziale), considerando $\frac{d\theta}{dt} = \omega$:
+$$ P_{mecc.} = \frac{dL}{dt} = \frac{Md\theta}{dt} = iAB\omega\sin{\theta}$$ 
+Si può allora calcolare la forza elettromotrice indotta sulla spira, attraverso la legge di Faraday, come:
+$$ \Phi(\vec{B}) = AB\cos{\theta}, \quad \mathcal{E} = -\frac{d\Phi(\vec{B})}{dt} = AB\omega\sin{\theta} $$
+Possiamo quindi calcolare la potenza elettrica sulla spira come:
+$$ P_{el.} = \mathcal{E} i = iAB\omega\sin{\theta} $$
+Abbiamo, di nuovo, che:
+$$ P_{mecc.} = P_{el.} $$
+ergo la potenza applicata nella rotazione della spira è la stessa della sua corrente della spira.
+\par\smallskip
+\textbf{Induttanza} \\
+Prendiamo l'esempio di una spira $\gamma$ chiusa percorsa da una corrente $I$. Abbiamo che il campo magnetico all'interno di un punto $P$ all'interno della spira vale, per la legge di Biot-Savart:
+$$ \vec{B} = \int \frac{I}{4\pi\mu_0} \frac{d\vec{l} \times \hat{r}}{r^2} $$
+e che il flusso attraverso la spira, definito un vettore area $\vec{A}$ sulla superfice sottesa alla curva $\Sigma$, è:
+$$ \Phi{\vec{B}} = \int_\Sigma \vec{B} \cdot d\vec{A} $$
+Noto questo campo magnetico, sarà ragionevole dire una sua variazione provocherà, per la legge di Faraday, la formazione di una forza elettromotrice sulla spira (detta forza elettromotrice autoindotta):
+$$ \mathcal{E}_{aut.} = -\frac{d\Phi(\vec{B})}{dt} = -\frac{d}{dt} \int_\Sigma \vec{B} \cdot d\vec{A} = -\frac{d}{dt} \int_\Sigma \int_\gamma \frac{I}{4\pi\mu_0} \frac{d\vec{l} \times \hat{r}}{r^2} $$
+Notiamo di poter portare $I$ fuori dall'integrale. A questo punto ciò che resta all'interno dell'integrale sarà una costante dipendente dalla conformazione geometrica della spira, che chiameremo
+induttanza $L$. A questo punto, la forza elettromotrice autoindotta sarà:
+$$ \mathcal{E}_{aut.} = -\frac{dI}{dt}L $$
+L'induttanza si misura in Henry (H), con: $ 1 \mathrm{H} = \frac{\mathrm{V} \cdot \mathrm{t}}{\mathrm{A}} $
+\par\smallskip
+\textbf{Energia in un'induttanza} \\
+Diciamo che un circuito chiuso ha sempre una certa induttanza. Si possono però costruire componenti circuitali appositamente progettati per ottenere grandi valori di induttanza: i cosiddetti \textbf{induttori} (o \textit{induttanze}).
+Abbiamo che, per indurre una corrente in un'induttanza, bisogna vincere la resistenza data dall'autoinduzione di una forza elettromotrice opposta a quella che forniamo, ergo compiere un certo lavoro. Questo lavoro viene trasformato
+in energia, l'\textbf{energia magnetica} (per contraddistinguerla dall'\textbf{energia elettrica} immagazzinata in un capacitore) dell'induttanza. Valgono le seguenti formule, di cui si notano le similarità con le equivalenti
+del capacitore:
+$$ U_{ind.} = \frac{1}{2}LI^2 \  \leftrightarrow \  U_{cap.} = \frac{1}{2}CV^2 $$
+$$ U_{ind.} = \int_V u_i \, dV, \quad u_i = \frac{1}{2} \frac{B^2}{\mu_0} \ \leftrightarrow \ U_{cap.} = \int_V u_c \, dV, \quad u_c = \frac{1}{2} \epsilon_0 E^2 $$
+dove $u_i$ è la densità di energia dell'induttanza, come avevamo già definito $u_c$ sul capacitore. Dimostriamo le formule appena introdotte. Consideriamo innanzitutto un circuito formato da una resistenza,
+da un'induttanza e da un qualche generatore di forza elettromotrice, come ad esempio una batteria (questo è un circuito LC, che vedremo nel dettaglio fra poco). Si avrà, per la seconda legge di Kirchoff, che il potenziale sulla maglia (ergo la fem erogata
+dalla batteria) sarà:
+$$ \mathcal{E} = iR + \frac{d}{dt}L $$
+ovvero la somma della differenza di potenziale sulla resistenza e sull'induttanza (che notiamo essere concordi, entrambe si oppongono alla corrente). In tal caso, possiamo moltiplicare per $i$, ottenendo:
+$$ i\mathcal{E} = i^2R +Li \frac{di}{dt} $$
+dove notiamo $i\mathcal{E}$ essere la potenza con cui la batteria eroga energia e  $i^2R$ la potenza che viene fatta passare attraverso la resistenza. Deve allora essere vero che $Li \frac{d}{dt}$ equivale alla potenza fatta
+passare attraverso all'induttanza. Sappiamo quindi la derivata della potenza essere uguale all'energia immagazzinata in un certo istante nell'induttanza: potremo quindi scrivere un'espressione per l'energia magnetica (o potenziale
+magnetico, insomma ciò che avevamo prima chiamato $U_{ind.}$:
+$$ \frac{d}{dt}U_B = Li \frac{di}{dt} $$
+Chiudendo gli occhi, possiamo moltiplicare da entrambi i lati per $dt$, e integrare sull'intervallo di tempo da carica $0$ a $i$:
+$$ U_B = \int dU_B = \int_0^i Li \, di = L \int_0^i i \, di = \frac{1}{2}Li^2 $$
+Che è la formula cercata. Dimostriamo allora la seconda. Iniziamo con un solenoide (che è l'esempio più comune di induttanza). Assumendo il campo magnetico interno come uniforme, si ha che vale $\vec{B} = -\mu_0 n i$
+su una densità di spire $n = \frac{N}{l}$. Si possono allora applicare le definizioni direttamente, notando $A$ area di una spira del solenoide (per il flusso del campo magnetico):
+$$ \mathcal{E} = -L \frac{di}{dt} = -\frac{d\Phi(\vec{B})}{dt}, \quad \Phi(\vec{B}) = \mu_0 n I N A \ \Rightarrow \ -L \frac{di}{dt} = -\frac{d}{dt} \mu_0 n I N A $$
+$$ \mu_0 n N A \frac{di}{dt} = L \frac{di}{dt}, \quad L = \mu_0 n N A $$
+Allora possiamo applicare la formula appena trovata per l'energia in un'induttanza, con il valore $L$ appena trovato e ricavando la corrente $i$ come $i = \frac{B}{\mu_0 n}$ da $B = \mu_0 n i$
+$$ U = \frac{1}{2}Li^2 = \frac{1}{2} \mu_0 n N A \frac{B^2}{\mu_0^2 n^2} = \frac{1}{2}NA \frac{B^2}{\mu_0 n} = \frac{1}{2} \frac{B^2}{\mu_0} \frac{NA}{\frac{N}{l}} = \frac{1}{2} \frac{B^2}{\mu_0} Al$$
+dove notiamo $Al$ essere il volume all'interno dell'induttanza. Questo significa che sarà valido l'integrale sul volume:
+$$ U = \int_V \frac{1}{2}\frac{B^2}{\mu_0}dV $$
+\par\smallskip
+\textbf{Circuito RL} \\
+Iniziamo lo studi di alcuni circuiti contenenti induttori. Iniziamo con un circuito formato da una batteria con fem $\mathcal{E}$, un resistore $R$, e un induttore $L$. Dalla seconda legge di Kirchoff, si avrà che il potenziale
+sulla maglia rispetterà:
+$$ \mathcal{E} -iR -L \frac{di}{dt} = 0 $$
+Questo si ricondurrà ad'un equazione differenziale ordinaria di primo grado. Dividamo per $R$:
+$$ \frac{\mathcal{E}}{R} - i - \frac{L}{R}\frac{di}{dt} = 0 $$
+Scegliamo la variabile $i_{eq} = \frac{\mathcal{E}}{R} - i$, notando che $di_{eq} = -di$, e riscriviamo quindi come:
+$$ i_{eq} + \frac{L}{R} \frac{di}{dt} = 0 $$
+L'equazione a questo punto è omogenea, quindi:
+$$ \lambda + \frac{L}{R} \lambda = 0 \Rightarrow \lambda = -\frac{R}{L}, \quad i_{eq} = Ae^{-\frac{R}{L}t}, \quad i = \frac{\mathcal{E}}{R} - Ae^{-\frac{R}{L}t}$$
+imponiamo le condizioni iniziali, ergo a $t = 0$, $i = 0$:
+$$ i = 0, \quad t = 0 \Rightarrow A = \frac{\mathcal{E}}{R}, \quad i = \frac{\mathcal{E}}{R}\left( 1 - e^{-\frac{R}{L}t} \right) $$
+Introduciamo poi, come avevamo fatto per il capacitore, il \textbf{tempo caratteristico} (\textit{costante temporale}) dell'induttore come $\tau = \frac{L}{R}$, per riscrivere quindi come:
+$$ i = \frac{\mathcal{E}}{R}\left( 1 - e^{-\frac{t}{\tau}} \right)$$
+Vediamo la situazione di scarica. Quando si scollega la batteria, la seconda legge di Kirchoff diventa:
+$$ iR + L\frac{di}{dt} = 0 $$
+si può dire direttamente:
+$$ R + L\lambda = 0 \Rightarrow \lambda = -\frac{R}{L}, \quad i = Ae^{-\frac{t}{\tau}} $$
+Imponendo le condizioni iniziali, si avrà che a $t = 0$, $i$ avrà un valore iniziale $I$ che potremo assumere come uguale a $\frac{\mathcal{E}}{R}$ corrente raggiunta dopo la "carica" dell'induttore:
+$$ t = 0,\quad i = I = \frac{\mathcal{E}}{R} \rightarrow A = I = \frac{\mathcal{E}}{R}, \quad i = Ie^{-\frac{t}{\tau}} = \frac{\mathcal{E}}{R} e^{-\frac{t}{\tau}}$$
+Notiamo infine che la forma funzionale sia per quanto riguarda la carica che per quanto riguarda la scarica è identica a quella del condensatore, con tempi caratteristici di $\tau_c = RC$ per il condensatore
+e $\tau_i = \frac{R}{L}$ per l'induttanza.
+\par\smallskip
+\textbf{Circuito LC} \\
+Vediamo adesso un circuito formato da un capacitore e da un induttore collegati fra di loro in serie. Assumiamo il condensatore
+come carico dall'inizio (in un caso più realistico si può assumere che il condensatore venga prima caricato da una batteria, secondo i modelli già
+studiati, e che poi venga collegato all'induttanza). Si avrà in questo caso, che l'energia elettrica del condensatore verrà trasferita, sotto forma di corrente,
+all'induttore, che la immagazzinerà sotto forma di energia magnetica. Una volta che il condensatore è completamente scarico, e l'induttanza completamente carica,
+il processo ricomincia in modo inverso (la corrente stessa inizia a scorrere in direzione opposta), e così via ciclicamente. Possiamo dare
+una descrizione quantitativa del processo. Iniziamo con l'usare la seconda di legge di Kirchoff sulle cadute di potenziale lungo il circuito,
+usando la fem dell'induttanza e il voltaggio che avevamo già calcolato riguardo al condensatore:
+$$ L\frac{di}{dt} + \frac{q}{C} = 0 $$
+Notiamo che, visto che $i = \frac{dq}{dt}$, possiamo riscrivere come:
+$$ L\frac{d^2 q}{dt^2} + \frac{q}{C} = \frac{d^2q}{dt^2} + \frac{q}{LC} = 0 $$
+Questa è un'equazione differenziale armonica, e ci fornisce un'espressione per la carica sul condensatore:
+$$ q = q_0\sin{(\omega t + \phi)}, \quad \omega = \frac{1}{\sqrt{LC}} $$
+Possiamo derivare quest'espressione per ottenere la corrente nel circuito, come:
+$$ i = \frac{d}{dt}q = \frac{d}{dt} q_0 \sin{(\omega t + \phi)} = q_0\omega \cos{(\omega t + \phi)} = i_0\cos{(\omega t + \phi)} $$
+Dove $i_0 = q_0\omega$ è la corrente di picco circuito, data dalla carica iniziale nel condensatore.
+Si può arrivare ad un risultato simile sfruttando l'energia sul condensatore e sull'induttanza e la sua conservazione:
+$$ E_{tot} = \frac{1}{2}Li^2 + \frac{1}{2} \frac{q^2}{C} = const. \quad \frac{d}{dt}\left(  \frac{1}{2}Li^2 + \frac{1}{2} \frac{q^2}{C} \right) = Li \frac{di}{dt} + \frac{q}{c} \frac{dq}{dt} = 0$$
+Notando la setssa equivalenza di prima fra $i$ e $\frac{dq}{dt}$, si può dividere per $i$:
+$$ L \frac{di}{dt} + \frac{q}{c} = 0 $$
+Che è la stessa equazione differenziale di prima.
+\end{document}
